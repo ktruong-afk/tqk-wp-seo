@@ -1,0 +1,13 @@
+{
+"Last check of this page": "Lần kiểm tra gần nhất của trang này",
+"%1$s · %2$s — scan again for fresh results": "%1$s · %2$s — scan lại để có kết quả mới",
+"from the Site analysis audit": "từ Audit trong Phân tích site",
+"from the Scan button": "từ nút Scan",
+"Security check…": "Đang kiểm tra bảo mật…",
+"Sent": "Đã gửi",
+"Malware check of each page (as a visitor, from Google, as Googlebot) — adds about 10 seconds per page": "Kiểm tra mã độc từng trang (như khách, khách từ Google, Googlebot) — thêm khoảng 10 giây mỗi trang",
+"Push all pages with issues to MCP": "Push tất cả trang có lỗi sang MCP",
+"Push to MCP": "Push sang MCP",
+"%d page(s) with issues sent to the AI app.": "Đã gửi %d trang có lỗi cho ứng dụng AI.",
+"From the site audit": "Từ audit toàn site"
+}

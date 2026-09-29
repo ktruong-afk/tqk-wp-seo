@@ -1,0 +1,17 @@
+{
+"%1$d / %2$d px · %3$d chars": "%1$d / %2$d px · %3$d ký tự",
+"AI suggestions": "Gợi ý AI",
+"Choose an AI provider (free Gemini key, or Ollama / LM Studio on your machine) to get title, description and keyword ideas. Nothing is written without your approval.": "Chọn nhà cung cấp AI (key Gemini miễn phí, hoặc Ollama / LM Studio trên máy bạn) để nhận gợi ý tiêu đề, mô tả và từ khoá. Không ghi gì nếu bạn chưa duyệt.",
+"Content ≥ %1$d %2$s": "Nội dung ≥ %1$d %2$s",
+"Google will cut it here": "Google sẽ cắt ở đây",
+"Live — not saved yet": "Trực tiếp — chưa lưu",
+"No analysis yet. Type a focus keyword, or save the post, to see the checklist.": "Chưa có phân tích. Gõ từ khoá chính, hoặc lưu bài, để xem bảng kiểm.",
+"No description: Google will pick a snippet from the page.": "Chưa có mô tả: Google sẽ tự lấy một đoạn trong trang.",
+"No over-long paragraphs": "Không có đoạn văn quá dài",
+"Sentences ≤ %1$d %2$s on average": "Câu trung bình ≤ %1$d %2$s",
+"Set a focus keyword to check this.": "Đặt từ khoá chính để kiểm tra mục này.",
+"Updating…": "Đang cập nhật…",
+"content read from the editor (view the page once to analyse builder content)": "đọc nội dung từ trình soạn thảo (mở xem trang một lần để phân tích nội dung builder)",
+"content read from the page as visitors see it": "đọc nội dung từ trang như khách truy cập thấy",
+"from template": "từ mẫu"
+}

@@ -1,0 +1,9 @@
+{
+"Quick fix: pages missing SEO basics (%d)": "Sửa nhanh: trang thiếu thông tin SEO cơ bản (%d)",
+"From the pages already checked. Fill the empty fields and press Save: done here, no need to open each post. Empty SEO title = the title template is used.": "Lấy từ các trang đã kiểm tra. Điền các ô còn trống rồi bấm Lưu: xong ngay tại đây, không cần mở từng bài. Để trống SEO title = dùng mẫu tiêu đề chung.",
+"Missing: %s": "Thiếu: %s",
+"1–2 sentences, about 150 characters": "1–2 câu, khoảng 150 ký tự",
+"Page": "Trang",
+"Save": "Lưu",
+"+%d more page(s): fix these first, the list refreshes after the next audit.": "+%d trang khác: sửa các trang này trước, danh sách sẽ cập nhật sau lần audit tiếp theo."
+}

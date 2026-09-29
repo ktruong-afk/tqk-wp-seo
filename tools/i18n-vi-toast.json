@@ -1,0 +1,7 @@
+{
+"Copied %1$s — %2$s characters. Paste it into the AI chat.": "Đã copy %1$s — %2$s ký tự. Dán vào khung chat AI nhé.",
+"Not copied automatically: the text is selected in the box below, press Ctrl+C.": "Chưa copy tự động được: nội dung đã được bôi đen ở ô bên dưới, bấm Ctrl+C.",
+"Could not prepare the text. Reload the page and try again.": "Không tạo được nội dung. Tải lại trang rồi thử lại.",
+"CSS copied. Paste it in Appearance → Customize → Additional CSS.": "Đã copy CSS. Dán vào Giao diện → Tùy biến → CSS bổ sung.",
+"Not copied: select the CSS line under the item and press Ctrl+C.": "Chưa copy được: bôi đen dòng CSS dưới mục đó rồi bấm Ctrl+C."
+}

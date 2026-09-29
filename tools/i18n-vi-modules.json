@@ -1,0 +1,16 @@
+{
+"XML sitemap per post type, robots.txt editor, llms.txt.": "XML sitemap theo post type, sửa robots.txt, llms.txt.",
+"JSON-LD @graph, templates per post type, BreadcrumbList.": "JSON-LD @graph, mẫu theo post type, BreadcrumbList.",
+"Focus keyword, headings, images, links, readability + score 0-100.": "Từ khoá chính, heading, ảnh, link, độ dễ đọc + điểm 0-100.",
+"Search Console clicks/impressions/CTR/position.": "Lượt nhấp/hiển thị/CTR/vị trí từ Search Console.",
+"301/302/307/410 manager, auto-slug, CSV import/export.": "Quản lý redirect 301/302/307/410, tự redirect khi đổi slug, nhập/xuất CSV.",
+"Miss logging + hits + referrer, one-click redirect.": "Ghi lại lỗi 404 + số lượt + nguồn, tạo redirect một cú bấm.",
+"Internal graph, orphans, broken-link checker.": "Sơ đồ link nội bộ, trang mồ côi, kiểm tra link hỏng.",
+"ALT/dimensions/weight audit, auto ALT fallback, lazy-load check.": "Kiểm tra ALT, kích thước, dung lượng ảnh, tự điền ALT dự phòng, kiểm tra lazy-load.",
+"Capability per role for SEO screens.": "Phân quyền màn hình SEO theo vai trò.",
+"Google Indexing API + Bing URL submission on publish.": "Gửi URL cho Google Indexing API + Bing khi đăng bài.",
+"Business profile → LocalBusiness schema + NAP.": "Hồ sơ doanh nghiệp → schema LocalBusiness + NAP.",
+"Product Offer/Review schema, product sitemap. Loads only with Woo.": "Schema Offer/Review cho sản phẩm, sitemap sản phẩm. Chỉ chạy khi có WooCommerce.",
+"Ollama/LM Studio suggestions with preview-approve + business context.": "Gợi ý từ Ollama/LM Studio, xem trước rồi duyệt, có ngữ cảnh doanh nghiệp.",
+"REST tools for local AI agents (token auth).": "Công cụ REST cho AI agent chạy local (xác thực bằng token)."
+}

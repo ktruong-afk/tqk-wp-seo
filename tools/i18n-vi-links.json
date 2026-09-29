@@ -1,0 +1,13 @@
+{
+"Check links": "Kiểm tra link",
+"Checked %d link(s)…": "Đã kiểm tra %d link…",
+"Checks external links and internal links that do not point to a post (archives, files, typos) with HTTP requests in small batches.": "Kiểm tra link ra ngoài và link nội bộ không trỏ tới bài viết nào (trang chuyên mục, file, gõ sai) bằng request HTTP, chạy theo lô nhỏ.",
+"Every indexable post and page has at least one incoming link from content or menus.": "Mọi bài và trang cần index đều có ít nhất một link trỏ tới, từ nội dung hoặc menu.",
+"Indexed %1$d / %2$d posts…": "Đã đọc %1$d / %2$d bài…",
+"Last full index: %s": "Lần đọc toàn bộ gần nhất: %s",
+"Link index": "Chỉ mục link",
+"No link from any post or menu points here, so visitors and Google can hardly find it. Link to it from a related post or a menu. Front page, cart / checkout / account and noindex pages are left out.": "Không có link nào từ bài viết hay menu trỏ tới đây, nên khách và Google khó tìm thấy. Hãy thêm link từ một bài liên quan hoặc từ menu. Trang chủ, giỏ hàng / thanh toán / tài khoản và trang noindex không được tính.",
+"Reads every published post, page and product (shortcodes expanded) plus your menus. Posts are re-indexed on save; rebuild once after installing, or after big changes.": "Đọc mọi bài, trang, sản phẩm đã xuất bản (kể cả shortcode) và các menu. Bài được đọc lại mỗi khi lưu; hãy bấm Dựng lại một lần sau khi cài plugin, hoặc sau khi thay đổi lớn.",
+"Rebuild link index": "Dựng lại chỉ mục link",
+"The link index has never been built on this site, so the orphan list below is not reliable yet. Press Rebuild.": "Site này chưa từng dựng chỉ mục link, nên danh sách trang mồ côi bên dưới chưa đáng tin. Hãy bấm Dựng lại."
+}

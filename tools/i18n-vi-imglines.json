@@ -1,0 +1,22 @@
+{
+"%1$s — original %2$s, box %3$s on %4$s: resize to about %5$dpx": "%1$s — ảnh gốc %2$s, khung %3$s trên %4$s: nên resize khoảng %5$dpx",
+"+%d more image(s): see \"Image optimizer\" below.": "+%d ảnh khác: xem mục \"Tối ưu ảnh\" bên dưới.",
+"%d image(s) should be resized for each screen": "%d ảnh nên được resize cho từng màn hình",
+"Original: %s": "Ảnh gốc: %s",
+"Box: %1$s (%2$s)": "Khung: %1$s (%2$s)",
+"Resize to: %dpx": "Nên resize: %dpx",
+"Images to optimize (%d)": "Ảnh cần tối ưu (%d)",
+"Optimize these images automatically": "Tự động tối ưu các ảnh này",
+"Auto optimize · resize · convert to WebP": "Tự động tối ưu · resize · chuyển WebP",
+"Display score per screen, out of 100: points are lost for sideways scrolling, tiny text, small buttons, images without size, oversized images.": "Điểm hiển thị theo từng màn hình, thang 100: bị trừ khi trang tràn ngang, chữ quá nhỏ, nút quá nhỏ, ảnh thiếu kích thước, ảnh quá to.",
+"Display (/100)": "Hiển thị (/100)",
+"Display score per screen (/100)": "Điểm hiển thị theo màn hình (/100)",
+"Display score on this screen, out of 100.": "Điểm hiển thị trên màn hình này, thang 100.",
+"Points lost for:": "Bị trừ điểm vì:",
+"Nothing to fix.": "Không có gì cần sửa.",
+"scrolls sideways by %dpx": "tràn ngang %dpx",
+"%d text(s) under 12px": "%d chữ nhỏ hơn 12px",
+"%d button(s)/link(s) under 44px": "%d nút/link nhỏ hơn 44px",
+"%d image(s) without width/height": "%d ảnh thiếu width/height",
+"%d oversized image(s)": "%d ảnh quá to"
+}

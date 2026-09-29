@@ -1,0 +1,15 @@
+{
+"Bing refused the sitemap (HTTP %d).": "Bing từ chối sitemap (HTTP %d).",
+"Empty = /sitemap_index.xml. With a name, the sitemap moves to /{name}.xml, the usual addresses return a normal 404 and robots.txt no longer lists it; it is sent to Google Search Console and Bing directly instead. 6-40 characters: a-z, 0-9, dashes.": "Để trống = /sitemap_index.xml. Khi đặt tên, sitemap chuyển sang /{tên}.xml, các địa chỉ quen thuộc trả về trang 404 bình thường và robots.txt không còn ghi nó; thay vào đó sitemap được gửi thẳng cho Google Search Console và Bing. 6-40 ký tự: a-z, 0-9, dấu gạch ngang.",
+"Last submission: %1$s — %2$s": "Lần gửi gần nhất: %1$s — %2$s",
+"Not listed in robots.txt or llms.txt; /sitemap_index.xml and /wp-sitemap.xml return a normal 404. Search engines get this address only from you (below).": "Không ghi trong robots.txt hay llms.txt; /sitemap_index.xml và /wp-sitemap.xml trả về trang 404 bình thường. Công cụ tìm kiếm chỉ biết địa chỉ này khi bạn gửi (bên dưới).",
+"Not submitted — see the reasons below.": "Chưa gửi được — xem lý do bên dưới.",
+"Private sitemap name (optional)": "Tên sitemap riêng (tuỳ chọn)",
+"Public address, listed in robots.txt. Give it a private name in Settings → Sitemap if you do not want competitors to read your full URL list.": "Địa chỉ công khai, có ghi trong robots.txt. Đặt tên riêng trong Cài đặt → Sitemap nếu không muốn đối thủ đọc được toàn bộ danh sách URL của bạn.",
+"Search Console is not connected: add the property and OAuth token, or submit the sitemap by hand in Search Console.": "Chưa kết nối Search Console: hãy thêm property và OAuth token, hoặc gửi sitemap bằng tay trong Search Console.",
+"Sitemap sent to Bing.": "Đã gửi sitemap cho Bing.",
+"Sitemap submitted to Google Search Console.": "Đã gửi sitemap lên Google Search Console.",
+"Sitemap submitted.": "Đã gửi sitemap.",
+"Submit to Google & Bing now": "Gửi lên Google & Bing ngay",
+"private address": "địa chỉ riêng"
+}

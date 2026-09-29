@@ -1,0 +1,21 @@
+{
+"Analytics website": "Analytics website",
+"Keep audit snapshots & files": "Giữ ảnh chụp & file audit",
+"1 day (safest)": "1 ngày (an toàn nhất)",
+"7 days": "7 ngày",
+"30 days": "30 ngày",
+"Audit every page (%d)": "Audit tất cả trang (%d)",
+"Skip": "Bỏ qua",
+"1 sample post": "1 bài mẫu",
+"All %d": "Tất cả %d",
+"Upgrade to Pro to audit every %s.": "Mời bạn nâng cấp Pro để audit toàn bộ %s.",
+"Content": "Nội dung",
+"Published": "Đã đăng",
+"Audit": "Audit",
+"Choose at least one thing to audit.": "Hãy chọn ít nhất một mục để audit.",
+"%d page(s) will be audited.": "Sẽ audit %d trang.",
+"%1$d page(s) will be audited — about %2$s. It runs by itself and resumes if stopped.": "Sẽ audit %1$d trang — khoảng %2$s. Tự chạy và tự tiếp tục nếu bị dừng.",
+"Pages are each built by hand, so every one is checked. Posts, products and other types share a template: one sample post already shows whether its SEO tags and schema are right.": "Mỗi trang (Page) được dựng riêng nên đều được kiểm tra hết. Bài viết, sản phẩm và các loại khác dùng chung một mẫu: chỉ cần 1 bài mẫu là biết thẻ SEO và schema đã chuẩn chưa.",
+"Auditing every post of %s is a Pro feature. Choose \"1 sample\" or upgrade to Pro.": "Audit toàn bộ %s là tính năng Pro. Hãy chọn \"1 bài mẫu\" hoặc nâng cấp Pro.",
+"Over %1$d checks: SEO %2$d → %3$d, to fix now %4$d → %5$d": "Qua %1$d lần kiểm tra: SEO %2$d → %3$d, việc cần sửa ngay %4$d → %5$d"
+}

@@ -1,0 +1,19 @@
+{
+"Archive pages (taxonomies)": "Trang lưu trữ (taxonomy)",
+"Archive pages of %s": "Trang danh mục của %s",
+"1 sample page": "1 trang mẫu",
+"Upgrade to Pro to audit every %s page.": "Mời bạn nâng cấp Pro để audit toàn bộ trang %s.",
+"AI apps connected by MCP may write SEO fields without my approval": "Cho phép ứng dụng AI (MCP) ghi trường SEO mà không cần tôi duyệt",
+"Off (recommended): the AI app sends suggestions; you review them in the post editor and choose what to use.": "Tắt (khuyên dùng): ứng dụng AI chỉ gửi gợi ý; bạn xem trong trang sửa bài và chọn dùng cái nào.",
+"Suggestion from an AI app — waiting for your approval": "Gợi ý từ ứng dụng AI — chờ bạn duyệt",
+"%1$s · %2$s": "%1$s · %2$s",
+"Dismiss this suggestion": "Bỏ qua gợi ý này",
+"Filled values are saved when you update the post.": "Giá trị đã điền chỉ được lưu khi bạn bấm Cập nhật bài.",
+"Suggestion dismissed.": "Đã bỏ qua gợi ý.",
+"Filled. Check the fields, then update the post to save them.": "Đã điền. Kiểm tra lại các ô rồi bấm Cập nhật để lưu.",
+"AI suggestions waiting for approval (%d)": "Gợi ý từ AI chờ duyệt (%d)",
+"Sent back by AI apps connected over MCP. Nothing has been changed on these pages: open one to read the advice and choose which values to use.": "Do các ứng dụng AI (qua MCP) gửi về. Chưa có gì thay đổi trên các trang này: mở từng trang để đọc lời khuyên và chọn giá trị muốn dùng.",
+"Advice": "Lời khuyên",
+"Fields": "Số trường",
+"Review": "Xem & duyệt"
+}

@@ -1,0 +1,21 @@
+# Build output
+dist/
+
+# Local tools / editor
+.claude/
+.perch/
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Internal notes (sales / licensing plans) — keep off the public repo
+docs/NEXT.md
+docs/drafts/
+docs/PUSH-MANIFEST.md

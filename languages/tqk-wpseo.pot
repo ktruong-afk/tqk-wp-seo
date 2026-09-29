@@ -1,0 +1,3264 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\"%1$s\" merged into %2$s on 1 July 2025: update the address."
+msgstr ""
+
+msgid "\"Nulled\" / cracked distribution marker"
+msgstr ""
+
+msgid "%1$d / %2$d done · %3$d failed · %4$d waiting"
+msgstr ""
+
+msgid "%1$d / %2$d pages · %3$d failed · %4$d requests · %5$d from cache · today %6$d/%7$d"
+msgstr ""
+
+msgid "%1$d / %2$d px · %3$d chars"
+msgstr ""
+
+msgid "%1$d element(s) overflow — %2$s (%3$s)"
+msgstr ""
+
+msgid "%1$d files · %2$d inline"
+msgstr ""
+
+msgid "%1$d image(s) ready · phone download %2$s → %3$s · %4$s"
+msgstr ""
+
+msgid "%1$d page(s) will be audited — about %2$s. It runs by itself and resumes if stopped."
+msgstr ""
+
+msgid "%1$d paragraph(s) over %2$d %3$s: split them for phone readers."
+msgstr ""
+
+msgid "%1$d post(s) with SEO data · %2$d redirect(s) (%3$d regex/partial skipped). Sample below."
+msgstr ""
+
+msgid "%1$d px file shown at %2$d px on a phone: needs a smaller size (srcset)"
+msgstr ""
+
+msgid "%1$d px file shown at %2$d px: too heavy"
+msgstr ""
+
+msgid "%1$d px file stretched to %2$d px: blurry"
+msgstr ""
+
+msgid "%1$d robots meta tags, they contradict: %2$s"
+msgstr ""
+
+msgid "%1$d sections, %2$d images checked, %3$d thing(s) to fix."
+msgstr ""
+
+msgid "%1$d warning(s). Verified against official checksums: %2$s. Heuristics only (no official checksums): %3$s."
+msgstr ""
+
+msgid "%1$s (%2$s) is %3$spx and takes %4$s lines on %5$s: about %6$spx"
+msgstr ""
+
+msgid "%1$s (%2$s) is only %3$spx on %4$s: about %5$spx"
+msgstr ""
+
+msgid "%1$s gets a different page than %2$s: %3$s"
+msgstr ""
+
+msgid "%1$s schema is missing: %2$s"
+msgstr ""
+
+msgid "%1$s snapshot of %2$s"
+msgstr ""
+
+msgid "%1$s · %2$s"
+msgstr ""
+
+msgid "%1$s · %2$s — scan again for fresh results"
+msgstr ""
+
+msgid "%1$s — original %2$s, box %3$s on %4$s: resize to about %5$dpx"
+msgstr ""
+
+msgid "%1$s: %2$s characters (~%3$s tokens)."
+msgstr ""
+
+msgid "%1$s: %2$s text on %3$s is hard to read (%4$s:1, needs %5$s:1): use %6$s"
+msgstr ""
+
+msgid "%1$s: crop %2$d×%3$d at x=%4$d, y=%5$d."
+msgstr ""
+
+msgid "%1$s: file %2$dpx wide for a %3$dpx box"
+msgstr ""
+
+msgid "%1$s: lines of about %2$s characters on %3$s: keep 60–75"
+msgstr ""
+
+msgid "%1$s: lines too tight (line-height %2$s) on %3$s: use %4$s"
+msgstr ""
+
+msgid "%1$s: text %2$spx is too big on %3$s: about %4$spx"
+msgstr ""
+
+msgid "%1$s: text %2$spx is too small on %3$s: use %4$spx"
+msgstr ""
+
+msgid "%d administrator account(s) on this site."
+msgstr ""
+
+msgid "%d button(s)/link(s) under 44px"
+msgstr ""
+
+msgid "%d buttons / links are too small to tap"
+msgstr ""
+
+msgid "%d characters (120-160)"
+msgstr ""
+
+msgid "%d characters (max 60)"
+msgstr ""
+
+msgid "%d checks"
+msgstr ""
+
+msgid "%d critical sign(s) of compromise found."
+msgstr ""
+
+msgid "%d field(s) filled. Review them, then update the post to save."
+msgstr ""
+
+msgid "%d file(s) generated. Check them, then activate."
+msgstr ""
+
+msgid "%d fix now"
+msgstr ""
+
+msgid "%d image(s) heavier than 500 KB."
+msgstr ""
+
+msgid "%d image(s) missing ALT"
+msgstr ""
+
+msgid "%d image(s) missing ALT text."
+msgstr ""
+
+msgid "%d image(s) missing width/height."
+msgstr ""
+
+msgid "%d image(s) should be resized for each screen"
+msgstr ""
+
+msgid "%d image(s) without width/height"
+msgstr ""
+
+msgid "%d images"
+msgstr ""
+
+msgid "%d images should be resized for each screen"
+msgstr ""
+
+msgid "%d link(s) without text: Google and screen readers cannot tell where they go"
+msgstr ""
+
+msgid "%d links without text"
+msgstr ""
+
+msgid "%d nice to have"
+msgstr ""
+
+msgid "%d oversized image(s)"
+msgstr ""
+
+msgid "%d page(s) checked, clean"
+msgstr ""
+
+msgid "%d page(s) will be audited."
+msgstr ""
+
+msgid "%d page(s) with issues sent to the AI app."
+msgstr ""
+
+msgid "%d post(s) had \"nofollow only\", which has no equivalent here: left on default."
+msgstr ""
+
+msgid "%d post(s) with data"
+msgstr ""
+
+msgid "%d should fix"
+msgstr ""
+
+msgid "%d text(s) under 12px"
+msgstr ""
+
+msgid "%d words"
+msgstr ""
+
+msgid "%d%% more or less text"
+msgstr ""
+
+msgid "%s is active and may also resize, convert or rewrite images. Use one image optimizer only, or turn off its WebP / srcset rewriting before activating ours."
+msgstr ""
+
+msgid "%s is required for %s."
+msgstr ""
+
+msgid "%s: value not accepted, skipped."
+msgstr ""
+
+msgid "(empty)"
+msgstr ""
+
+msgid "+%d more image(s): see \"Image optimizer\" below."
+msgstr ""
+
+msgid "+%d more page(s): fix these first, the list refreshes after the next audit."
+msgstr ""
+
+msgid "1 day (safest)"
+msgstr ""
+
+msgid "1 sample page"
+msgstr ""
+
+msgid "1 sample post"
+msgstr ""
+
+msgid "1–2 sentences, about 150 characters"
+msgstr ""
+
+msgid "30 days"
+msgstr ""
+
+msgid "301 / 302 redirects when a URL changes, in one hop."
+msgstr ""
+
+msgid "301/302/307/410 manager, auto-slug, CSV import/export."
+msgstr ""
+
+msgid "404 Monitor"
+msgstr ""
+
+msgid "7 days"
+msgstr ""
+
+msgid "<html> has no lang attribute"
+msgstr ""
+
+msgid "<picture>, one crop per screen"
+msgstr ""
+
+msgid "A personal SEO engine: offline-first, no fees, local AI optional. Seven quick steps and you are done."
+msgstr ""
+
+msgid "ACTIVE on the site"
+msgstr ""
+
+msgid "AI Advisor (Gemini Flash)"
+msgstr ""
+
+msgid "AI apps connected by MCP may write SEO fields without my approval"
+msgstr ""
+
+msgid "AI provider (optional)"
+msgstr ""
+
+msgid "AI suggestions"
+msgstr ""
+
+msgid "AI suggestions to approve"
+msgstr ""
+
+msgid "AI suggestions waiting for approval (%d)"
+msgstr ""
+
+msgid "ALT saved."
+msgstr ""
+
+msgid "ALT · declared"
+msgstr ""
+
+msgid "ALT/dimensions/weight audit, auto ALT fallback, lazy-load check."
+msgstr ""
+
+msgid "API key (optional)"
+msgstr ""
+
+msgid "Account holder"
+msgstr ""
+
+msgid "Account number"
+msgstr ""
+
+msgid "Action plan"
+msgstr ""
+
+msgid "Activate"
+msgstr ""
+
+msgid "Activate on site"
+msgstr ""
+
+msgid "Active: visitors now get the new sizes."
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Add old → new address; 404s can be turned into redirects with one click."
+msgstr ""
+
+msgid "Add property + OAuth token first (guide below)."
+msgstr ""
+
+msgid "Add redirect"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Administrator created %d day(s) ago — make sure you know this account."
+msgstr ""
+
+msgid "Administrators"
+msgstr ""
+
+msgid "Advanced"
+msgstr ""
+
+msgid "Advice"
+msgstr ""
+
+msgid "Agency / brand name"
+msgstr ""
+
+msgid "All %d"
+msgstr ""
+
+msgid "All images have ALT"
+msgstr ""
+
+msgid "All images have dimensions"
+msgstr ""
+
+msgid "An audit is running. Leave anyway? You can continue it later."
+msgstr ""
+
+msgid "Analytics (Google)"
+msgstr ""
+
+msgid "Analytics website"
+msgstr ""
+
+msgid "Anchor"
+msgstr ""
+
+msgid "Applied %d change(s)."
+msgstr ""
+
+msgid "Applied."
+msgstr ""
+
+msgid "Apply selected"
+msgstr ""
+
+msgid "Apply ticked"
+msgstr ""
+
+msgid "Archive / listing page: the result is shown here but not stored (reports belong to posts and pages)."
+msgstr ""
+
+msgid "Archive pages (taxonomies)"
+msgstr ""
+
+msgid "Archive pages of %s"
+msgstr ""
+
+msgid "Art-directed images are wrapped in <picture>. Check the page after activating: CSS written as \"parent > img\" no longer matches a wrapped image."
+msgstr ""
+
+msgid "Article, WebPage and BreadcrumbList nodes are added on singular views."
+msgstr ""
+
+msgid "Asking Gemini…"
+msgstr ""
+
+msgid "At"
+msgstr ""
+
+msgid "Attendance mode"
+msgstr ""
+
+msgid "Audit"
+msgstr ""
+
+msgid "Audit every page (%d)"
+msgstr ""
+
+msgid "Audit every page like a visitor: SEO tags, schema, 4 screen sizes, images, malware. Each page gets an action plan; send pages to an AI app over MCP."
+msgstr ""
+
+msgid "Audit page"
+msgstr ""
+
+msgid "Audit this page (4 screens)"
+msgstr ""
+
+msgid "Auditing %1$s — %2$s"
+msgstr ""
+
+msgid "Auditing every post of %s is a Pro feature. Choose \"1 sample\" or upgrade to Pro."
+msgstr ""
+
+msgid "Author"
+msgstr ""
+
+msgid "Auto optimize · resize · convert to WebP"
+msgstr ""
+
+msgid "Automatic (from template)"
+msgstr ""
+
+msgid "Automatic check"
+msgstr ""
+
+msgid "Automatic image optimization is a Pro feature. The manual steps are listed under each image."
+msgstr ""
+
+msgid "Automatic: featured image"
+msgstr ""
+
+msgid "Automatic: first image in the content"
+msgstr ""
+
+msgid "Automatic: site default image"
+msgstr ""
+
+msgid "Average SEO score"
+msgstr ""
+
+msgid "Average mobile score"
+msgstr ""
+
+msgid "Average rating (0–5)"
+msgstr ""
+
+msgid "Average sentence length is over %1$d %2$s."
+msgstr ""
+
+msgid "Background"
+msgstr ""
+
+msgid "Background file %1$dpx wide for a %2$dpx box."
+msgstr ""
+
+msgid "Background set in a CSS file on an element without an id we can target: resize it by hand or in the builder."
+msgstr ""
+
+msgid "Bank"
+msgstr ""
+
+msgid "Batch audits 50/job, dashboard snapshot, orphan reports. Needs Analyzer."
+msgstr ""
+
+msgid "Beginner"
+msgstr ""
+
+msgid "Below the first screen but not lazy-loaded"
+msgstr ""
+
+msgid "Best size 1200×630 (1.91:1). The frame shows how Facebook and Zalo crop it."
+msgstr ""
+
+msgid "Bing API key"
+msgstr ""
+
+msgid "Bing notified."
+msgstr ""
+
+msgid "Bing refused the sitemap (HTTP %d)."
+msgstr ""
+
+msgid "Bing rejected the URL (check key)."
+msgstr ""
+
+msgid "Blank rows are ignored. First match wins."
+msgstr ""
+
+msgid "Box per screen"
+msgstr ""
+
+msgid "Box: %1$s (%2$s)"
+msgstr ""
+
+msgid "Branch"
+msgstr ""
+
+msgid "Brand colour"
+msgstr ""
+
+msgid "Broken links"
+msgstr ""
+
+msgid "Broken schema (JSON-LD)"
+msgstr ""
+
+msgid "Bulk AI (local)"
+msgstr ""
+
+msgid "Business"
+msgstr ""
+
+msgid "Business details found (%s) were not imported: your own name, phone and address belong in Settings."
+msgstr ""
+
+msgid "Business name"
+msgstr ""
+
+msgid "Business profile (for AI)"
+msgstr ""
+
+msgid "Business profile → LocalBusiness schema + NAP."
+msgstr ""
+
+msgid "Buttons / links too small to tap"
+msgstr ""
+
+msgid "CSS copied. Paste it in Appearance → Customize → Additional CSS."
+msgstr ""
+
+msgid "Cannot create the uploads/audit-pics folder."
+msgstr ""
+
+msgid "Canonical"
+msgstr ""
+
+msgid "Canonical URL"
+msgstr ""
+
+msgid "Canonical URL set"
+msgstr ""
+
+msgid "Canonical points to another URL: %s"
+msgstr ""
+
+msgid "Canonical points to another page"
+msgstr ""
+
+msgid "Capability per role for SEO screens."
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Categories / tags with SEO data: %d."
+msgstr ""
+
+msgid "Categories / tags: %1$d, %2$d field(s) written."
+msgstr ""
+
+msgid "Change image"
+msgstr ""
+
+msgid "Check a few pages, then deactivate and DELETE the old plugin (a cracked copy keeps its malware while it stays installed)."
+msgstr ""
+
+msgid "Check links"
+msgstr ""
+
+msgid "Check which plugin, theme or tracking code adds them; remove what you do not recognise."
+msgstr ""
+
+msgid "Checked %d link(s)…"
+msgstr ""
+
+msgid "Checked the page as visitors see it (%s)."
+msgstr ""
+
+msgid "Checking the page as visitors and Google get it…"
+msgstr ""
+
+msgid "Checks external links and internal links that do not point to a post (archives, files, typos) with HTTP requests in small batches."
+msgstr ""
+
+msgid "Choose Gemini as AI provider and paste an API key in Settings."
+msgstr ""
+
+msgid "Choose Google Gemini and paste an API key in %s first."
+msgstr ""
+
+msgid "Choose Yoast SEO or Rank Math."
+msgstr ""
+
+msgid "Choose an AI provider (free Gemini key, or Ollama / LM Studio on your machine) to get title, description and keyword ideas. Nothing is written without your approval."
+msgstr ""
+
+msgid "Choose at least one thing to audit."
+msgstr ""
+
+msgid "Choose what goes in, then \"Submit to Google & Bing\" sends it directly."
+msgstr ""
+
+msgid "Choose what search engines may index. Attachments and search pages are hidden by default."
+msgstr ""
+
+msgid "Chosen automatically — pick an image below to change it."
+msgstr ""
+
+msgid "Chosen for this post"
+msgstr ""
+
+msgid "Claude Code — run in a terminal:"
+msgstr ""
+
+msgid "Claude Desktop — Settings → Developer → Edit config (needs Node.js):"
+msgstr ""
+
+msgid "Clicks"
+msgstr ""
+
+msgid "Clicks (Δ)"
+msgstr ""
+
+msgid "Client report (PDF)"
+msgstr ""
+
+msgid "Cloaking: "
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Conditional rules (Pro-style builder)"
+msgstr ""
+
+msgid "Connect Claude Desktop, Claude Code or Cursor to this site once, then send pages from here with one click. Turn on the MCP module first."
+msgstr ""
+
+msgid "Connect an AI app once. Then scan a page in the editor and press \"Send to AI\": the app reads the report, the action plan and screenshots of 4 screens, and can fill the SEO fields after you agree."
+msgstr ""
+
+msgid "Connect once, Sync for clicks/impressions/CTR/position (28d). Free quota, no rank SaaS. Property format: sc-domain:example.com or https://example.com/"
+msgstr ""
+
+msgid "Connection lost, retrying in %d s…"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Contact line (phone, Zalo, website)"
+msgstr ""
+
+msgid "Content"
+msgstr ""
+
+msgid "Content Analyzer"
+msgstr ""
+
+msgid "Content checklist not met"
+msgstr ""
+
+msgid "Content checklist: %1$d serious, %2$d warnings"
+msgstr ""
+
+msgid "Content is thin (under %1$d %2$s)."
+msgstr ""
+
+msgid "Content ≥ %1$d %2$s"
+msgstr ""
+
+msgid "Continue"
+msgstr ""
+
+msgid "Contradicting robots tags"
+msgstr ""
+
+msgid "Contributor"
+msgstr ""
+
+msgid "Cook time"
+msgstr ""
+
+msgid "Copied"
+msgstr ""
+
+msgid "Copied %1$s — %2$s characters. Paste it into the AI chat."
+msgstr ""
+
+msgid "Copied. Paste it into Claude, ChatGPT or Gemini, then paste the reply below."
+msgstr ""
+
+msgid "Copied: paste it first so the AI knows the page, then send the other sets."
+msgstr ""
+
+msgid "Copies titles, descriptions, focus + secondary keywords, canonical, robots, social tags, schema type and redirects. Works even if the old plugin is deactivated. Empty fields are filled; existing TQK values are kept unless you tick overwrite."
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Copy CSS"
+msgstr ""
+
+msgid "Core"
+msgstr ""
+
+msgid "Core file differs from the official WordPress release."
+msgstr ""
+
+msgid "Could not audit: %s"
+msgstr ""
+
+msgid "Could not fetch the URL."
+msgstr ""
+
+msgid "Could not prepare the text. Reload the page and try again."
+msgstr ""
+
+msgid "Could not reach Bing."
+msgstr ""
+
+msgid "Could not reach Google API."
+msgstr ""
+
+msgid "Could not reach Google."
+msgstr ""
+
+msgid "Could not reach the license server."
+msgstr ""
+
+msgid "Course URL"
+msgstr ""
+
+msgid "Course description"
+msgstr ""
+
+msgid "Cracked \"Pro\" plugins and themes are the usual way malware gets in. This scan checks WordPress core and every WordPress.org plugin against their official checksums, scans premium plugins, themes and uploads for backdoor patterns, lists recently created admins, and compares what Googlebot sees with what visitors see (cloaking, hidden gambling / pharma links). Read-only: nothing is changed."
+msgstr ""
+
+msgid "Create redirect"
+msgstr ""
+
+msgid "Creates an administrator account in code"
+msgstr ""
+
+msgid "Critical"
+msgstr ""
+
+msgid "Critical issues"
+msgstr ""
+
+msgid "Crop the original to %1$d×%2$d starting at x=%3$d, y=%4$d (only that part is visible)."
+msgstr ""
+
+msgid "Crypto-mining / malicious script: %s"
+msgstr ""
+
+msgid "Cursor — .cursor/mcp.json:"
+msgstr ""
+
+msgid "Daily quota used up. Resumes after %s — press Continue then."
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Database tables created"
+msgstr ""
+
+msgid "Day"
+msgstr ""
+
+msgid "Deactivate"
+msgstr ""
+
+msgid "Deactivated."
+msgstr ""
+
+msgid "Default (index, follow)"
+msgstr ""
+
+msgid "Default Schema type per post type. A post can override this in its SEO box."
+msgstr ""
+
+msgid "Default share image (site-wide)"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete all TQK WP SEO data and start over?"
+msgstr ""
+
+msgid "Delete files"
+msgstr ""
+
+msgid "Deleted."
+msgstr ""
+
+msgid "Describe each image in a few words (ALT), in the Media Library or in the builder."
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Description over 160 chars (%d)"
+msgstr ""
+
+msgid "Description template"
+msgstr ""
+
+msgid "Description ≤ 160 chars"
+msgstr ""
+
+msgid "Descriptions"
+msgstr ""
+
+msgid "Dismiss this suggestion"
+msgstr ""
+
+msgid "Display (/100)"
+msgstr ""
+
+msgid "Display score on this screen, out of 100."
+msgstr ""
+
+msgid "Display score per screen (/100)"
+msgstr ""
+
+msgid "Display score per screen, out of 100: points are lost for sideways scrolling, tiny text, small buttons, images without size, oversized images."
+msgstr ""
+
+msgid "District level (quận / huyện / thị xã) was abolished on 1 July 2025: use the new ward (phường / xã) + province."
+msgstr ""
+
+msgid "Does not load"
+msgstr ""
+
+msgid "Done: %1$d post(s), %2$d field(s) written, %3$d kept (already filled)."
+msgstr ""
+
+msgid "Downloading official checksums…"
+msgstr ""
+
+msgid "Each screen shows a different crop: serve one crop per screen with <picture>."
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit SEO of this page"
+msgstr ""
+
+msgid "Edit Schema"
+msgstr ""
+
+msgid "Edit in Settings"
+msgstr ""
+
+msgid "Edit robots.txt"
+msgstr ""
+
+msgid "Editor"
+msgstr ""
+
+msgid "Empty = /sitemap_index.xml. With a name, the sitemap moves to /{name}.xml, the usual addresses return a normal 404 and robots.txt no longer lists it; it is sent to Google Search Console and Bing directly instead. 6-40 characters: a-z, 0-9, dashes."
+msgstr ""
+
+msgid "Empty = site title template. Variables: %title%, %site_name%."
+msgstr ""
+
+msgid "Empty response."
+msgstr ""
+
+msgid "Enable Local AI in Settings first."
+msgstr ""
+
+msgid "Enable sitemap"
+msgstr ""
+
+msgid "Enable the Analyzer module first."
+msgstr ""
+
+msgid "End date & time"
+msgstr ""
+
+msgid "Endpoint"
+msgstr ""
+
+msgid "Every \"page not found\" hit, with how often it happens."
+msgstr ""
+
+msgid "Every SEO feature is free. The Pro add-on adds the automatic image optimizer (resize, crop, compress, WebP, srcset) and \"audit all\" in Live Audit."
+msgstr ""
+
+msgid "Every Sync snapshots positions. Daily cron keeps history while connected — no SaaS."
+msgstr ""
+
+msgid "Every indexable post and page has at least one incoming link from content or menus."
+msgstr ""
+
+msgid "Every script visitors load, and where it comes from. Unknown domains are not always bad: check which plugin or theme adds them. Nothing is removed automatically."
+msgstr ""
+
+msgid "Everything"
+msgstr ""
+
+msgid "Everything in this JSON is already filled in."
+msgstr ""
+
+msgid "Everything is configured. Run your first scan to fill the dashboard."
+msgstr ""
+
+msgid "Exclude"
+msgstr ""
+
+msgid "Executable PHP file inside uploads (uploads should only hold media)."
+msgstr ""
+
+msgid "Export CSV"
+msgstr ""
+
+msgid "Export at %d px wide."
+msgstr ""
+
+msgid "Export one file per screen: %s."
+msgstr ""
+
+msgid "Export settings (JSON)"
+msgstr ""
+
+msgid "Export these widths: %s px (small ones for phones, the largest for retina desktops)."
+msgstr ""
+
+msgid "Extra roles allowed into SEO screens (admins always have access)."
+msgstr ""
+
+msgid "Extract from post content"
+msgstr ""
+
+msgid "Extracted from post content. Review before saving."
+msgstr ""
+
+msgid "FAQ items"
+msgstr ""
+
+msgid "Facebook and Zalo keep the old preview for a while. After changing the image or texts, refresh it with their sharing debugger:"
+msgstr ""
+
+msgid "Facebook, Zalo and X read these tags. Open the Social tab: title, description and image are filled automatically from the SEO values."
+msgstr ""
+
+msgid "Fallbacks used when a post has no custom SEO title or description."
+msgstr ""
+
+msgid "Featured image first, then this default, then the first image inside the post."
+msgstr ""
+
+msgid "Fetches the page exactly like an outside bot (shortcodes and builders fully rendered), then audits headings, keyword, meta, social, schema and every image. Fix in one go below — no page jumps."
+msgstr ""
+
+msgid "Field"
+msgstr ""
+
+msgid "Fields"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "File modified compared with the official release."
+msgstr ""
+
+msgid "Files deleted."
+msgstr ""
+
+msgid "Fill selected fields"
+msgstr ""
+
+msgid "Filled values are saved when you update the post."
+msgstr ""
+
+msgid "Filled. Check the fields, then update the post to save them."
+msgstr ""
+
+msgid "Findings"
+msgstr ""
+
+msgid "Fingers need about 44×44 px. Make them bigger or add padding."
+msgstr ""
+
+msgid "Finish"
+msgstr ""
+
+msgid "Finished"
+msgstr ""
+
+msgid "Finished."
+msgstr ""
+
+msgid "Finished: %1$d done, %2$d failed."
+msgstr ""
+
+msgid "Fix"
+msgstr ""
+
+msgid "Fix now"
+msgstr ""
+
+msgid "Fix the frequent ones with a redirect; noise (bots, .map files) is ignored."
+msgstr ""
+
+msgid "Focus keyword"
+msgstr ""
+
+msgid "Focus keyword set"
+msgstr ""
+
+msgid "Focus keyword, headings, images, links, readability + score 0-100."
+msgstr ""
+
+msgid "For example"
+msgstr ""
+
+msgid "Free"
+msgstr ""
+
+msgid "Free tier: keep the limits low (5/min, 200/day), each request fixes 3 pages. On the free tier Google may use what you send to improve its products."
+msgstr ""
+
+msgid "Free: each image lists the exact manual steps. Pro: the same steps done automatically with one click."
+msgstr ""
+
+msgid "From %s"
+msgstr ""
+
+msgid "From the pages already checked. Fill the empty fields and press Save: done here, no need to open each post. Empty SEO title = the title template is used."
+msgstr ""
+
+msgid "From the site audit"
+msgstr ""
+
+msgid "Full address"
+msgstr ""
+
+msgid "Full screen"
+msgstr ""
+
+msgid "Full — every page"
+msgstr ""
+
+msgid "Full-page pictures of this scan: open, save, or give them to an AI for design advice."
+msgstr ""
+
+msgid "Function name taken from request input"
+msgstr ""
+
+msgid "Gemini API key"
+msgstr ""
+
+msgid "Gemini API key or model is missing."
+msgstr ""
+
+msgid "Gemini answered with invalid JSON."
+msgstr ""
+
+msgid "Generate"
+msgstr ""
+
+msgid "Generate files"
+msgstr ""
+
+msgid "Generate writes resized, compressed files to uploads/audit-pics/{id}-page/ (original uploads are never touched); Activate serves them through WordPress srcset, so it works with any builder."
+msgstr ""
+
+msgid "Get TQK WP SEO Pro"
+msgstr ""
+
+msgid "Get token: Google Cloud Console → Enable Search Console API → OAuth consent → Desktop app → copy token. Or paste export later."
+msgstr ""
+
+msgid "Give every key page its own short, unique SEO title and description (this box)."
+msgstr ""
+
+msgid "Go H1 → H2 → H3 in order, without skipping a level."
+msgstr ""
+
+msgid "Go to Dashboard"
+msgstr ""
+
+msgid "Goes through the page slowly, one section at a time: outlines each part, points at every image (size shown vs file, weight, ALT, lazy-load, blurry or oversized) and shows the result next to the page as it goes. Then checks 4 screen sizes."
+msgstr ""
+
+msgid "Google API error (check token/property)."
+msgstr ""
+
+msgid "Google Indexing API + Bing URL submission on publish."
+msgstr ""
+
+msgid "Google Search Console (standard)"
+msgstr ""
+
+msgid "Google and Facebook / Zalo / X previews, title and description with pixel counters, live checklist, Scan of the page, AI sets and AI suggestions to approve."
+msgstr ""
+
+msgid "Google connection saved."
+msgstr ""
+
+msgid "Google notified."
+msgstr ""
+
+msgid "Google picks sitelinks by itself; no tag or plugin can switch them on. They mostly show when people search your brand or site name."
+msgstr ""
+
+msgid "Google rejected the URL (check token)."
+msgstr ""
+
+msgid "Google will cut it here"
+msgstr ""
+
+msgid "Google will not show this page. Check Advanced → Robots, and Settings → Reading → \"Discourage search engines\"."
+msgstr ""
+
+msgid "Googlebot"
+msgstr ""
+
+msgid "Googlebot gets another <title>: \"%s\""
+msgstr ""
+
+msgid "Googlebot text is %d%% different in length."
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "H1 present"
+msgstr ""
+
+msgid "Head tags"
+msgstr ""
+
+msgid "Heading hierarchy OK"
+msgstr ""
+
+msgid "Heading hierarchy is broken (level skipped)."
+msgstr ""
+
+msgid "Heading levels skip (%s)"
+msgstr ""
+
+msgid "Headings too big on phones"
+msgstr ""
+
+msgid "Health %d · Critical %d · Warnings %d"
+msgstr ""
+
+msgid "Heavy: %s"
+msgstr ""
+
+msgid "Hidden from Google (noindex)"
+msgstr ""
+
+msgid "Hidden iframe loading %s"
+msgstr ""
+
+msgid "Hidden spam link: %s"
+msgstr ""
+
+msgid "Hide from sitemap (bot won't crawl via sitemap)"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Homepage"
+msgstr ""
+
+msgid "Homepage title or tagline is empty."
+msgstr ""
+
+msgid "Hours must be a positive number."
+msgstr ""
+
+msgid "How do some sites get extra links under their result (sitelinks)?"
+msgstr ""
+
+msgid "How-to title"
+msgstr ""
+
+msgid "Icon-only links need a label (aria-label or a title) so Google and screen readers know where they go."
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Image SEO"
+msgstr ""
+
+msgid "Image is stretched (box ratio differs, object-fit: fill). Set object-fit: cover or use a matching image."
+msgstr ""
+
+msgid "Image optimizer (from Live Audit)"
+msgstr ""
+
+msgid "Images"
+msgstr ""
+
+msgid "Images (%d)"
+msgstr ""
+
+msgid "Images per screen"
+msgstr ""
+
+msgid "Images to optimize (%d)"
+msgstr ""
+
+msgid "Images to resize for each screen"
+msgstr ""
+
+msgid "Images without ALT text"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Import / Export"
+msgstr ""
+
+msgid "Import CSV"
+msgstr ""
+
+msgid "Import from Yoast SEO / Rank Math"
+msgstr ""
+
+msgid "Import from Yoast SEO / Rank Math, MCP connection for Claude / Cursor, settings export, reset."
+msgstr ""
+
+msgid "Import redirects too"
+msgstr ""
+
+msgid "Import settings"
+msgstr ""
+
+msgid "Importing %1$d / %2$d…"
+msgstr ""
+
+msgid "Impressions"
+msgstr ""
+
+msgid "In each post (TQK SEO box)"
+msgstr ""
+
+msgid "Indexability"
+msgstr ""
+
+msgid "Indexable (not unexpected noindex)"
+msgstr ""
+
+msgid "Indexed %1$d / %2$d posts…"
+msgstr ""
+
+msgid "Industry"
+msgstr ""
+
+msgid "Industry + audience feed every AI prompt. Fill once at setup, AI writes in context."
+msgstr ""
+
+msgid "Ingredients (one per line)"
+msgstr ""
+
+msgid "Inline script #%1$d: %2$s"
+msgstr ""
+
+msgid "Inline scripts to review"
+msgstr ""
+
+msgid "Instant Indexing"
+msgstr ""
+
+msgid "Instructions (one step per line)"
+msgstr ""
+
+msgid "Intermediate"
+msgstr ""
+
+msgid "Internal Links"
+msgstr ""
+
+msgid "Internal graph, orphans, broken-link checker."
+msgstr ""
+
+msgid "Internal link target not found: %s"
+msgstr ""
+
+msgid "Internal links between your posts, orphan pages nobody links to, and broken links."
+msgstr ""
+
+msgid "Internal links present"
+msgstr ""
+
+msgid "Intrinsic · weight"
+msgstr ""
+
+msgid "Invalid JSON-LD block (Google drops it)"
+msgstr ""
+
+msgid "Invalid answer from the license server."
+msgstr ""
+
+msgid "Invalid redirect (check URLs and type)."
+msgstr ""
+
+msgid "Invalid settings file."
+msgstr ""
+
+msgid "Issue"
+msgstr ""
+
+msgid "Issues"
+msgstr ""
+
+msgid "JSON-LD @graph, templates per post type, BreadcrumbList."
+msgstr ""
+
+msgid "Keep a clear main menu of 4–8 key pages, with short menu labels that match those pages' titles."
+msgstr ""
+
+msgid "Keep audit snapshots & files"
+msgstr ""
+
+msgid "Keep it under about 580 px (≈ 60 characters) so it is not cut."
+msgstr ""
+
+msgid "Keep it under about 920 px (≈ 155 characters) so it is not cut."
+msgstr ""
+
+msgid "Keep one H1 for the main title; turn the others into H2 in the builder."
+msgstr ""
+
+msgid "Keyword density OK"
+msgstr ""
+
+msgid "Keyword density is low."
+msgstr ""
+
+msgid "Keyword in H1"
+msgstr ""
+
+msgid "Keyword in H2"
+msgstr ""
+
+msgid "Keyword in URL"
+msgstr ""
+
+msgid "Keyword in description"
+msgstr ""
+
+msgid "Keyword in first paragraph"
+msgstr ""
+
+msgid "Keyword in image ALT"
+msgstr ""
+
+msgid "Keyword in title"
+msgstr ""
+
+msgid "Keyword not found in H1."
+msgstr ""
+
+msgid "Keyword not found in SEO title."
+msgstr ""
+
+msgid "Keyword not found in URL."
+msgstr ""
+
+msgid "Keyword not found in any H2."
+msgstr ""
+
+msgid "Keyword not found in first paragraph."
+msgstr ""
+
+msgid "Keyword not found in image ALT text."
+msgstr ""
+
+msgid "Keyword not found in meta description."
+msgstr ""
+
+msgid "Keyword, length, links and readability: see the checklist below."
+msgstr ""
+
+msgid "Keywords"
+msgstr ""
+
+msgid "Large encoded payload decoded at runtime"
+msgstr ""
+
+msgid "Last check of this page"
+msgstr ""
+
+msgid "Last check: %s"
+msgstr ""
+
+msgid "Last full index: %s"
+msgstr ""
+
+msgid "Last hit"
+msgstr ""
+
+msgid "Last plan: %1$d fix now · %2$d should fix"
+msgstr ""
+
+msgid "Last scan: %s"
+msgstr ""
+
+msgid "Last submission: %1$s — %2$s"
+msgstr ""
+
+msgid "Latest result"
+msgstr ""
+
+msgid "Lazy-loaded in the first screen: slows the main image (LCP)"
+msgstr ""
+
+msgid "Level"
+msgstr ""
+
+msgid "License (Pro)"
+msgstr ""
+
+msgid "License key"
+msgstr ""
+
+msgid "License key rejected."
+msgstr ""
+
+msgid "License removed from this site."
+msgstr ""
+
+msgid "License server is not configured yet."
+msgstr ""
+
+msgid "Lighter on phones (images)"
+msgstr ""
+
+msgid "Link Tools"
+msgstr ""
+
+msgid "Link index"
+msgstr ""
+
+msgid "Link targets"
+msgstr ""
+
+msgid "Link those pages from the home page, keep them indexable and in the sitemap (done by this plugin)."
+msgstr ""
+
+msgid "Links"
+msgstr ""
+
+msgid "Links only Googlebot sees: %s"
+msgstr ""
+
+msgid "Links without text"
+msgstr ""
+
+msgid "Live Audit (SEO + schema + responsive + snapshot)"
+msgstr ""
+
+msgid "Live — not saved yet"
+msgstr ""
+
+msgid "Local AI"
+msgstr ""
+
+msgid "Local LLM writes titles/descriptions for checked pages (max 10). Preview first — Apply saves via the normal bulk path."
+msgstr ""
+
+msgid "Local SEO"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Logo"
+msgstr ""
+
+msgid "Long hex-escaped string (obfuscation)"
+msgstr ""
+
+msgid "MCP Tools"
+msgstr ""
+
+msgid "MCP access (Claude, Cursor…)"
+msgstr ""
+
+msgid "Main reading text is %1$spx on %2$s: use %3$spx"
+msgstr ""
+
+msgid "Malware & SEO-spam scan"
+msgstr ""
+
+msgid "Malware and SEO-spam scan: core and plugin files against official checksums, backdoors, hidden spam links, cloaking."
+msgstr ""
+
+msgid "Malware check of each page (as a visitor, from Google, as Googlebot) — adds about 10 seconds per page"
+msgstr ""
+
+msgid "Malware signs"
+msgstr ""
+
+msgid "Meta Description"
+msgstr ""
+
+msgid "Meta description"
+msgstr ""
+
+msgid "Meta description is longer than 160 characters."
+msgstr ""
+
+msgid "Meta description present"
+msgstr ""
+
+msgid "Meta description too long"
+msgstr ""
+
+msgid "Minimize"
+msgstr ""
+
+msgid "Miss logging + hits + referrer, one-click redirect."
+msgstr ""
+
+msgid "Misses will appear here ordered by hits."
+msgstr ""
+
+msgid "Missing <title>"
+msgstr ""
+
+msgid "Missing Bing API key."
+msgstr ""
+
+msgid "Missing GSC OAuth token."
+msgstr ""
+
+msgid "Missing SEO title"
+msgstr ""
+
+msgid "Missing SEO title."
+msgstr ""
+
+msgid "Missing User-agent directive."
+msgstr ""
+
+msgid "Missing meta description"
+msgstr ""
+
+msgid "Missing meta description."
+msgstr ""
+
+msgid "Missing: %s"
+msgstr ""
+
+msgid "Mobile"
+msgstr ""
+
+msgid "Model"
+msgstr ""
+
+msgid "Module disabled."
+msgstr ""
+
+msgid "Module enabled."
+msgstr ""
+
+msgid "Modules"
+msgstr ""
+
+msgid "More than one H1"
+msgstr ""
+
+msgid "Most frequent issues"
+msgstr ""
+
+msgid "Multiple H1 (%d)"
+msgstr ""
+
+msgid "Multiple H1 headings found."
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "New ALT text"
+msgstr ""
+
+msgid "New URL"
+msgstr ""
+
+msgid "News"
+msgstr ""
+
+msgid "Nice to have"
+msgstr ""
+
+msgid "No 404s logged"
+msgstr ""
+
+msgid "No <title> tag found."
+msgstr ""
+
+msgid "No ALT text"
+msgstr ""
+
+msgid "No H1"
+msgstr ""
+
+msgid "No H1 heading"
+msgstr ""
+
+msgid "No H1 heading found."
+msgstr ""
+
+msgid "No H2 heading"
+msgstr ""
+
+msgid "No H2 headings"
+msgstr ""
+
+msgid "No JSON-LD schema"
+msgstr ""
+
+msgid "No Open Graph image found."
+msgstr ""
+
+msgid "No Product schema (recommended: avoids Search Console errors)"
+msgstr ""
+
+msgid "No Schema template for post type \"%s\"."
+msgstr ""
+
+msgid "No X (Twitter) card tag"
+msgstr ""
+
+msgid "No analysis yet. Type a focus keyword, or save the post, to see the checklist."
+msgstr ""
+
+msgid "No automatic image: add a featured image or a site default."
+msgstr ""
+
+msgid "No broken links found."
+msgstr ""
+
+msgid "No canonical"
+msgstr ""
+
+msgid "No canonical URL."
+msgstr ""
+
+msgid "No canonical link"
+msgstr ""
+
+msgid "No description: Google will pick a snippet from the page."
+msgstr ""
+
+msgid "No files generated yet."
+msgstr ""
+
+msgid "No focus keyword set."
+msgstr ""
+
+msgid "No history for this query yet — Sync daily builds it."
+msgstr ""
+
+msgid "No image — cards will show without one."
+msgstr ""
+
+msgid "No images found."
+msgstr ""
+
+msgid "No incoming internal links (orphan)."
+msgstr ""
+
+msgid "No internal links found."
+msgstr ""
+
+msgid "No issues"
+msgstr ""
+
+msgid "No known key found. Use the key names from the exported JSON."
+msgstr ""
+
+msgid "No link from any post or menu points here, so visitors and Google can hardly find it. Link to it from a related post or a menu. Front page, cart / checkout / account and noindex pages are left out."
+msgstr ""
+
+msgid "No malware signs"
+msgstr ""
+
+msgid "No meta description found."
+msgstr ""
+
+msgid "No meta robots found."
+msgstr ""
+
+msgid "No orphans found"
+msgstr ""
+
+msgid "No over-long paragraphs"
+msgstr ""
+
+msgid "No page checked yet"
+msgstr ""
+
+msgid "No pages missing titles or descriptions. Run a scan first."
+msgstr ""
+
+msgid "No performance data yet — connect above then Sync."
+msgstr ""
+
+msgid "No problem found"
+msgstr ""
+
+msgid "No problem found on the page."
+msgstr ""
+
+msgid "No scans yet"
+msgstr ""
+
+msgid "No schema"
+msgstr ""
+
+msgid "No schema type this plugin can fill was found in that JSON-LD."
+msgstr ""
+
+msgid "No share image — the link will show without a picture."
+msgstr ""
+
+msgid "No sign of compromise found."
+msgstr ""
+
+msgid "No srcset: every screen downloads the same file."
+msgstr ""
+
+msgid "No width/height: the page jumps while loading"
+msgstr ""
+
+msgid "Noindex attachments"
+msgstr ""
+
+msgid "Noindex author archives"
+msgstr ""
+
+msgid "Noindex search pages"
+msgstr ""
+
+msgid "Noindex tag archives"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Not copied automatically: the text is selected in the box below, press Ctrl+C."
+msgstr ""
+
+msgid "Not copied: select the CSS line under the item and press Ctrl+C."
+msgstr ""
+
+msgid "Not listed in robots.txt or llms.txt; /sitemap_index.xml and /wp-sitemap.xml return a normal 404. Search engines get this address only from you (below)."
+msgstr ""
+
+msgid "Not orphan (has incoming links)"
+msgstr ""
+
+msgid "Not set"
+msgstr ""
+
+msgid "Not submitted — see the reasons below."
+msgstr ""
+
+msgid "Note for the AI (optional), e.g. focus on mobile"
+msgstr ""
+
+msgid "Nothing applied."
+msgstr ""
+
+msgid "Nothing found in the post content. Fill the fields in by hand."
+msgstr ""
+
+msgid "Nothing left to fix on this page."
+msgstr ""
+
+msgid "Nothing to fix now on the checked pages."
+msgstr ""
+
+msgid "Nothing to fix."
+msgstr ""
+
+msgid "Notify Bing"
+msgstr ""
+
+msgid "Notify Google"
+msgstr ""
+
+msgid "Now"
+msgstr ""
+
+msgid "Number of ratings"
+msgstr ""
+
+msgid "OAuth token"
+msgstr ""
+
+msgid "OG title + description set"
+msgstr ""
+
+msgid "Off (recommended): the AI app sends suggestions; you review them in the post editor and choose what to use."
+msgstr ""
+
+msgid "Official core checksums unavailable for this version/locale: core was not verified."
+msgstr ""
+
+msgid "Old URL"
+msgstr ""
+
+msgid "Ollama/LM Studio suggestions with preview-approve + business context."
+msgstr ""
+
+msgid "On mobile (375 px)"
+msgstr ""
+
+msgid "On the page"
+msgstr ""
+
+msgid "One ingredient per line."
+msgstr ""
+
+msgid "One pair per block: question on one line, answer on the next, blank line between pairs."
+msgstr ""
+
+msgid "One script tag with a single @graph is printed in wp_head. Homepage preview:"
+msgstr ""
+
+msgid "One step per line."
+msgstr ""
+
+msgid "One step per line. Numbering is added automatically."
+msgstr ""
+
+msgid "One switch per module; pages of disabled modules disappear from the menu."
+msgstr ""
+
+msgid "Only %1$s is redirected, to %2$s"
+msgstr ""
+
+msgid "Only %d%% of the file is visible (object-fit: cover): crop to the visible area."
+msgstr ""
+
+msgid "Only URLs on this site can be audited."
+msgstr ""
+
+msgid "Only images the audit confirmed as a problem are listed. Sizes come from the real boxes measured at 1440 / 1280 / 768 / 375 px (1x and 2x)."
+msgstr ""
+
+msgid "Only set this if the rating comes from real learner reviews."
+msgstr ""
+
+msgid "Open"
+msgstr ""
+
+msgid "Open Analytics website"
+msgstr ""
+
+msgid "Open Graph title or description is empty."
+msgstr ""
+
+msgid "Open Graph title/description/image incomplete"
+msgstr ""
+
+msgid "Open Sitemap"
+msgstr ""
+
+msgid "Open any post or page: the box sits under the editor; the last audit of that page is shown there."
+msgstr ""
+
+msgid "Open in the editor to fix"
+msgstr ""
+
+msgid "Opening %s…"
+msgstr ""
+
+msgid "Opening hours"
+msgstr ""
+
+msgid "Opens every page like a visitor, checks tags, schema and fields, measures 4 screen sizes, snapshots the full page (desktop + mobile), then moves to the next page by itself. The full list is taken at start and each page is marked done as it finishes: stop, close the tab or lose the connection at any time and Continue picks up at the next unfinished page."
+msgstr ""
+
+msgid "Opens the page like a visitor, scrolls it once and checks 4 screen sizes. About 30 seconds."
+msgstr ""
+
+msgid "Optimize"
+msgstr ""
+
+msgid "Optimize these images automatically"
+msgstr ""
+
+msgid "Optional. Suggestions run against your own machine — no API fees. You can skip this entirely."
+msgstr ""
+
+msgid "Original: %s"
+msgstr ""
+
+msgid "Orphan content"
+msgstr ""
+
+msgid "Output: WebP, quality 78."
+msgstr ""
+
+msgid "Over %1$d checks: SEO %2$d → %3$d, to fix now %4$d → %5$d"
+msgstr ""
+
+msgid "Overwrite existing TQK values"
+msgstr ""
+
+msgid "PHP %s (requires 8.0+)"
+msgstr ""
+
+msgid "PHP file not in the official release of this plugin."
+msgstr ""
+
+msgid "PHP file that is not part of WordPress core."
+msgstr ""
+
+msgid "Page"
+msgstr ""
+
+msgid "Page Audit (bot view)"
+msgstr ""
+
+msgid "Page by page (worst first)"
+msgstr ""
+
+msgid "Page cannot be opened in a frame (X-Frame-Options / CSP)."
+msgstr ""
+
+msgid "Page check"
+msgstr ""
+
+msgid "Page did not load within %d s."
+msgstr ""
+
+msgid "Page did not load."
+msgstr ""
+
+msgid "Page is set to noindex"
+msgstr ""
+
+msgid "Page no longer published."
+msgstr ""
+
+msgid "Page redirects"
+msgstr ""
+
+msgid "Page scrolls sideways (tablet / mobile)"
+msgstr ""
+
+msgid "Pages"
+msgstr ""
+
+msgid "Pages are each built by hand, so every one is checked. Posts, products and other types share a template: one sample post already shows whether its SEO tags and schema are right."
+msgstr ""
+
+msgid "Pages audited"
+msgstr ""
+
+msgid "Pages checked"
+msgstr ""
+
+msgid "Pages that rank usually have at least %d words of useful text."
+msgstr ""
+
+msgid "Part %1$d/%2$d"
+msgstr ""
+
+msgid "Paste its JSON reply here: each key fills the field with the same key. You can also paste JSON-LD copied from any page: the schema type and its fields are filled for you."
+msgstr ""
+
+msgid "Paste the JSON first."
+msgstr ""
+
+msgid "Paused. Press Continue to resume from the next unfinished page."
+msgstr ""
+
+msgid "Per-page sitemap link + exclude lives in Dashboard accordion — no need to open this page. Hidden pages are skipped so bots can't crawl via sitemap."
+msgstr ""
+
+msgid "Permission denied"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Pick a query first."
+msgstr ""
+
+msgid "Pick a query…"
+msgstr ""
+
+msgid "Pick a schema type in the Advanced tab (Article, Product, FAQ…) so Google understands the page."
+msgstr ""
+
+msgid "Pick one set and copy it: each set starts with the page text (no tags, no shortcodes, up to 1,000 words), then one task. Small assistants like Gemini in Chrome read one set at a time best."
+msgstr ""
+
+msgid "Pick what to check (pages, 1 sample or all posts, archives), press Start: it runs by itself and resumes if stopped."
+msgstr ""
+
+msgid "Ping Google (reuses GSC token) + Bing on publish. Enable the module first."
+msgstr ""
+
+msgid "Plugin data reset and re-initialized."
+msgstr ""
+
+msgid "Points lost for:"
+msgstr ""
+
+msgid "Position"
+msgstr ""
+
+msgid "Position (Δ)"
+msgstr ""
+
+msgid "Post"
+msgstr ""
+
+msgid "Post not found."
+msgstr ""
+
+msgid "Post type"
+msgstr ""
+
+msgid "Posts"
+msgstr ""
+
+msgid "Prep time"
+msgstr ""
+
+msgid "Pretty permalinks enabled"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Print / Save as PDF"
+msgstr ""
+
+msgid "Private sitemap name (optional)"
+msgstr ""
+
+msgid "Pro activated."
+msgstr ""
+
+msgid "Pro active"
+msgstr ""
+
+msgid "Pro add-on installed · no license yet"
+msgstr ""
+
+msgid "Pro does these steps for you: resize, crop, compress, convert to WebP and serve through srcset, with one click."
+msgstr ""
+
+msgid "Pro is a separate add-on plugin (\"TQK WP SEO Pro\"). Install and activate it, then enter your license key here."
+msgstr ""
+
+msgid "Pro makes one file per screen (resized, cropped, compressed, WebP) and serves it through srcset. Check the list below, then Generate and Activate."
+msgstr ""
+
+msgid "Problem"
+msgstr ""
+
+msgid "Product Offer/Review schema, product sitemap. Loads only with Woo."
+msgstr ""
+
+msgid "Product price is 0: Google shows it as free. Use the \"no price\" setting instead."
+msgstr ""
+
+msgid "Product price shown as 0"
+msgstr ""
+
+msgid "Product schema without price"
+msgstr ""
+
+msgid "Product: price, stock and SKU always come from the WooCommerce product itself, so only the schema type was taken."
+msgstr ""
+
+msgid "Products without a price (\"Liên hệ\" / contact for price)"
+msgstr ""
+
+msgid "Property"
+msgstr ""
+
+msgid "Provider"
+msgstr ""
+
+msgid "Public address, listed in robots.txt. Give it a private name in Settings → Sitemap if you do not want competitors to read your full URL list."
+msgstr ""
+
+msgid "Published"
+msgstr ""
+
+msgid "Published content is set to noindex."
+msgstr ""
+
+msgid "Push all pages with issues to MCP"
+msgstr ""
+
+msgid "Push to MCP"
+msgstr ""
+
+msgid "Query"
+msgstr ""
+
+msgid "Quick"
+msgstr ""
+
+msgid "Quick fix: pages missing SEO basics (%d)"
+msgstr ""
+
+msgid "REST tools for local AI agents (token auth)."
+msgstr ""
+
+msgid "Rank history (local tracker)"
+msgstr ""
+
+msgid "Rating must be between 0 and 5."
+msgstr ""
+
+msgid "Ratings / reviews in that JSON-LD were not imported: copied ratings count as fake reviews for Google (manual action risk)."
+msgstr ""
+
+msgid "Ratings are never imported: copied or invented ratings count as fake reviews for Google."
+msgstr ""
+
+msgid "Read JSON"
+msgstr ""
+
+msgid "Read-only scan: nothing was changed or deleted. A critical finding in a cracked plugin or theme means: remove it and install the official version, then change all admin passwords."
+msgstr ""
+
+msgid "Reading the page…"
+msgstr ""
+
+msgid "Reads every published post, page and product (shortcodes expanded) plus your menus. Posts are re-indexed on save; rebuild once after installing, or after big changes."
+msgstr ""
+
+msgid "Ready"
+msgstr ""
+
+msgid "Rebuild link index"
+msgstr ""
+
+msgid "Rebuild the index, then link the orphans from related posts."
+msgstr ""
+
+msgid "Recent pings"
+msgstr ""
+
+msgid "Recipe description"
+msgstr ""
+
+msgid "Recipe name"
+msgstr ""
+
+msgid "Redirect saved."
+msgstr ""
+
+msgid "Redirects"
+msgstr ""
+
+msgid "Redirects to %s"
+msgstr ""
+
+msgid "Redirects: %1$d imported, %2$d skipped."
+msgstr ""
+
+msgid "Referrer"
+msgstr ""
+
+msgid "Regenerate"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Remove from this site"
+msgstr ""
+
+msgid "Rendered title is longer than 60 characters."
+msgstr ""
+
+msgid "Report branding (white-label)"
+msgstr ""
+
+msgid "Report language"
+msgstr ""
+
+msgid "Requests / day"
+msgstr ""
+
+msgid "Requests / minute"
+msgstr ""
+
+msgid "Reset"
+msgstr ""
+
+msgid "Reset all data"
+msgstr ""
+
+msgid "Reset to default"
+msgstr ""
+
+msgid "Resize to: %dpx"
+msgstr ""
+
+msgid "Result"
+msgstr ""
+
+msgid "Retry failed pages"
+msgstr ""
+
+msgid "Review"
+msgstr ""
+
+msgid "Robots"
+msgstr ""
+
+msgid "Role Manager"
+msgstr ""
+
+msgid "Run SEO Scan"
+msgstr ""
+
+msgid "Run first scan"
+msgstr ""
+
+msgid "Run the Live Audit: every page is opened like a visitor, at 4 screen sizes, and gets its own action plan."
+msgstr ""
+
+msgid "Runs in small steps so shared hosting never times out; it only reports, never deletes."
+msgstr ""
+
+msgid "SEO"
+msgstr ""
+
+msgid "SEO & website health report"
+msgstr ""
+
+msgid "SEO (TQK)"
+msgstr ""
+
+msgid "SEO Score"
+msgstr ""
+
+msgid "SEO Title"
+msgstr ""
+
+msgid "SEO report — %s"
+msgstr ""
+
+msgid "SEO title"
+msgstr ""
+
+msgid "SEO title is longer than 60 characters."
+msgstr ""
+
+msgid "SEO title present"
+msgstr ""
+
+msgid "SEO title too long"
+msgstr ""
+
+msgid "Same as page title"
+msgstr ""
+
+msgid "Same as the admin viewing it"
+msgstr ""
+
+msgid "Same title and description as Google (SEO)"
+msgstr ""
+
+msgid "Sample — one page per post type"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save & scan"
+msgstr ""
+
+msgid "Save ALT"
+msgstr ""
+
+msgid "Save as WebP, quality about 75-80 (PNG with transparency also works as WebP)."
+msgstr ""
+
+msgid "Save full-page snapshots (desktop + mobile)"
+msgstr ""
+
+msgid "Save robots.txt"
+msgstr ""
+
+msgid "Save rules"
+msgstr ""
+
+msgid "Save schema"
+msgstr ""
+
+msgid "Save settings"
+msgstr ""
+
+msgid "Save sitemap"
+msgstr ""
+
+msgid "Saved %d posts."
+msgstr ""
+
+msgid "Saved here once per scan. Re-audit shows the same list until you fix — no rescan needed."
+msgstr ""
+
+msgid "Saved: the editor, the dashboard and MCP now show this result."
+msgstr ""
+
+msgid "Saving…"
+msgstr ""
+
+msgid "Scan finished."
+msgstr ""
+
+msgid "Scan history and the trend versus your last run will appear here."
+msgstr ""
+
+msgid "Scan mode"
+msgstr ""
+
+msgid "Scan now"
+msgstr ""
+
+msgid "Scan the page"
+msgstr ""
+
+msgid "Scan the page first: the AI gets the report, the action plan and screenshots of 4 screens."
+msgstr ""
+
+msgid "Scan the page first: there is no report to send yet."
+msgstr ""
+
+msgid "Scans all public post types in batches of 50 (posts, pages, CPTs), plus site checks for sitemap · robots · schema. Large sites never time out."
+msgstr ""
+
+msgid "Schema"
+msgstr ""
+
+msgid "Schema & Breadcrumb"
+msgstr ""
+
+msgid "Schema Type"
+msgstr ""
+
+msgid "Schema missing required data"
+msgstr ""
+
+msgid "Schema per post type (fix missing in one go)"
+msgstr ""
+
+msgid "Schema template set"
+msgstr ""
+
+msgid "Schema templates"
+msgstr ""
+
+msgid "Schema templates not configured."
+msgstr ""
+
+msgid "Schema type"
+msgstr ""
+
+msgid "Score: %d/100"
+msgstr ""
+
+msgid "Scripts from unfamiliar domains: %s"
+msgstr ""
+
+msgid "Scripts from unknown domains"
+msgstr ""
+
+msgid "Scripts on this page"
+msgstr ""
+
+msgid "Scripts that visitors get but you (logged in) do not: %s"
+msgstr ""
+
+msgid "Search Console clicks/impressions/CTR/position."
+msgstr ""
+
+msgid "Search Console is not connected: add the property and OAuth token, or submit the sitemap by hand in Search Console."
+msgstr ""
+
+msgid "Secondary keywords (comma, max 4)"
+msgstr ""
+
+msgid "Secondary keywords in content"
+msgstr ""
+
+msgid "Secondary keywords missing in content: %s"
+msgstr ""
+
+msgid "Section by section"
+msgstr ""
+
+msgid "Security"
+msgstr ""
+
+msgid "Security alerts"
+msgstr ""
+
+msgid "Security check…"
+msgstr ""
+
+msgid "Security scan"
+msgstr ""
+
+msgid "Security warnings"
+msgstr ""
+
+msgid "See"
+msgstr ""
+
+msgid "See Schema templates above"
+msgstr ""
+
+msgid "See how"
+msgstr ""
+
+msgid "Select image"
+msgstr ""
+
+msgid "Select the text and copy it (Ctrl+C)."
+msgstr ""
+
+msgid "Send to AI"
+msgstr ""
+
+msgid "Send to an AI app via MCP (Claude, Cursor…)"
+msgstr ""
+
+msgid "Sends the last scan (%s): report, action plan, security check and screenshots of 4 screens."
+msgstr ""
+
+msgid "Sent"
+msgstr ""
+
+msgid "Sent back by AI apps connected over MCP. Nothing has been changed on these pages: open one to read the advice and choose which values to use."
+msgstr ""
+
+msgid "Sent. In Claude or Cursor, ask: \"review the pages I sent from TQK SEO\"."
+msgstr ""
+
+msgid "Sentences ≤ %1$d %2$s on average"
+msgstr ""
+
+msgid "Served as %s: convert to compressed WebP."
+msgstr ""
+
+msgid "Set a focus keyword to check this."
+msgstr ""
+
+msgid "Set once for the whole site; each post can override in its editor."
+msgstr ""
+
+msgid "Set the Site Title and a site icon (Appearance → Customize → Site Identity): Google shows them as the name and logo above the result; the plugin outputs the WebSite and Organization schema for it."
+msgstr ""
+
+msgid "Set the main title of the page as Heading H1 (only one)."
+msgstr ""
+
+msgid "Set the site-wide identity here; each post picks its own type in the editor."
+msgstr ""
+
+msgid "Set the smaller files as the background per device in the builder (Elementor and Flatsome allow a different background image per device)."
+msgstr ""
+
+msgid "Set up MCP"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Settings (one-go, no page jumps)"
+msgstr ""
+
+msgid "Settings exported."
+msgstr ""
+
+msgid "Settings imported."
+msgstr ""
+
+msgid "Settings initialized"
+msgstr ""
+
+msgid "Settings saved."
+msgstr ""
+
+msgid "Setup Wizard"
+msgstr ""
+
+msgid "Setup checklist"
+msgstr ""
+
+msgid "Setup complete"
+msgstr ""
+
+msgid "Share description (Facebook, Zalo)"
+msgstr ""
+
+msgid "Share image %1$d×%2$d is too small for Facebook/Zalo previews (min 600×315, best 1200×630)."
+msgstr ""
+
+msgid "Share image (Facebook, Zalo, X)"
+msgstr ""
+
+msgid "Share image does not load"
+msgstr ""
+
+msgid "Share image does not load: %s"
+msgstr ""
+
+msgid "Share image in the wrong ratio"
+msgstr ""
+
+msgid "Share image ratio %s: Facebook/Zalo crop it to 1.91:1 (1200×630)."
+msgstr ""
+
+msgid "Share image too small"
+msgstr ""
+
+msgid "Share tags (Facebook / Zalo) incomplete"
+msgstr ""
+
+msgid "Share title (Facebook, Zalo)"
+msgstr ""
+
+msgid "Shell command from request input"
+msgstr ""
+
+msgid "Short summary"
+msgstr ""
+
+msgid "Should fix"
+msgstr ""
+
+msgid "Signs of hacked code. Run the full Security scan (TQK SEO → Security) to find the file that adds it, and change all passwords."
+msgstr ""
+
+msgid "Single H1"
+msgstr ""
+
+msgid "Site Scanner"
+msgstr ""
+
+msgid "Site basics OK (sitemap · robots · schema)."
+msgstr ""
+
+msgid "Site issues (schema · sitemap · robots)"
+msgstr ""
+
+msgid "Site overview"
+msgstr ""
+
+msgid "Site-wide images (logo, header, footer — on every page)"
+msgstr ""
+
+msgid "Sitelinks preview from your main menu. Google decides whether to show them."
+msgstr ""
+
+msgid "Sitemap"
+msgstr ""
+
+msgid "Sitemap & robots.txt"
+msgstr ""
+
+msgid "Sitemap has no URLs."
+msgstr ""
+
+msgid "Sitemap index"
+msgstr ""
+
+msgid "Sitemap is disabled."
+msgstr ""
+
+msgid "Sitemap sent to Bing."
+msgstr ""
+
+msgid "Sitemap submitted to Google Search Console."
+msgstr ""
+
+msgid "Sitemap submitted."
+msgstr ""
+
+msgid "Skip"
+msgstr ""
+
+msgid "Snapshot"
+msgstr ""
+
+msgid "Snapshot %s…"
+msgstr ""
+
+msgid "Snapshots"
+msgstr ""
+
+msgid "Social"
+msgstr ""
+
+msgid "Social sharing"
+msgstr ""
+
+msgid "Source"
+msgstr ""
+
+msgid "Spam links (gambling/pharma) only in the Googlebot version."
+msgstr ""
+
+msgid "Split the content with H2 sub-headings so Google and readers see its structure."
+msgstr ""
+
+msgid "Start a new run? The current run and its snapshots will be replaced."
+msgstr ""
+
+msgid "Start date & time"
+msgstr ""
+
+msgid "Start new audit"
+msgstr ""
+
+msgid "Start suggestions"
+msgstr ""
+
+msgid "Starting…"
+msgstr ""
+
+msgid "Step %1$d / %2$d"
+msgstr ""
+
+msgid "Steps (one per line)"
+msgstr ""
+
+msgid "Stop"
+msgstr ""
+
+msgid "Stopped."
+msgstr ""
+
+msgid "Stopped. Continue picks up the next page."
+msgstr ""
+
+msgid "Stopping after this page…"
+msgstr ""
+
+msgid "Structured data (JSON-LD) found: schema type and fields below."
+msgstr ""
+
+msgid "Structured data (Organization, WebSite, Article, Product, FAQ, Recipe…) so Google understands the site."
+msgstr ""
+
+msgid "Submit to Google & Bing now"
+msgstr ""
+
+msgid "Suggestion dismissed."
+msgstr ""
+
+msgid "Suggestion from an AI app — waiting for your approval"
+msgstr ""
+
+msgid "Suggests titles, descriptions, focus keywords, image ALT and missing schema fields for the %d page(s) the last Live Audit flagged. Pages are sent 3 per request and spaced to your per-minute and per-day limits; unchanged pages reuse their cached suggestion. Nothing is written until you tick and apply."
+msgstr ""
+
+msgid "Supplies / materials (one per line)"
+msgstr ""
+
+msgid "Support / Donate"
+msgstr ""
+
+msgid "Support:"
+msgstr ""
+
+msgid "Switch from another SEO plugin in minutes; connect an AI app with the ready-made config."
+msgstr ""
+
+msgid "Sync now"
+msgstr ""
+
+msgid "Synced from Google."
+msgstr ""
+
+msgid "System info"
+msgstr ""
+
+msgid "TQK SEO"
+msgstr ""
+
+msgid "TQK SEO — this page"
+msgstr ""
+
+msgid "TQK WP SEO Pro needs the TQK WP SEO plugin (v0.2.0 or newer). Install and activate it first."
+msgstr ""
+
+msgid "TQK WP SEO checks every page the way a visitor sees it — on desktop, laptop, tablet and phone — turns what it finds into a plan to fix, lets an AI suggest the wording while you approve every change, and keeps the site clean of the malware cracked plugins bring."
+msgstr ""
+
+msgid "TQK WP SEO requires PHP 8.0 or higher."
+msgstr ""
+
+msgid "TQK WP SEO requires WordPress 6.0 or higher."
+msgstr ""
+
+msgid "TQK WP SEO — made by"
+msgstr ""
+
+msgid "Tag"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Target customers"
+msgstr ""
+
+msgid "Taxonomy"
+msgstr ""
+
+msgid "Technical"
+msgstr ""
+
+msgid "Tell us your industry so Local AI writes in the right context. Skippable."
+msgstr ""
+
+msgid "Templates"
+msgstr ""
+
+msgid "Term slug (empty = any)"
+msgstr ""
+
+msgid "Text hard to read (low contrast)"
+msgstr ""
+
+msgid "Text too small to read"
+msgstr ""
+
+msgid "That does not look like a license key."
+msgstr ""
+
+msgid "The AI provider returned nothing. Check endpoint and model."
+msgstr ""
+
+msgid "The MCP module is off: turn it on in Modules first."
+msgstr ""
+
+msgid "The breadcrumb schema (output by the plugin) turns the address line into \"domain › category › page\"."
+msgstr ""
+
+msgid "The course provider was read from the other page: change it to your own name."
+msgstr ""
+
+msgid "The link index has never been built on this site, so the orphan list below is not reliable yet. Press Rebuild."
+msgstr ""
+
+msgid "The page could not be opened: %s"
+msgstr ""
+
+msgid "The page could not be read."
+msgstr ""
+
+msgid "The page scrolls sideways on %1$s: %2$s"
+msgstr ""
+
+msgid "The page text is sent to the AI you paste it into. Nothing is saved until you update the post; ratings and reviews are never imported."
+msgstr ""
+
+msgid "The plugin prints a canonical by default; check it is not switched off for this page."
+msgstr ""
+
+msgid "The search box inside results (sitelinks search box) was retired by Google in November 2024: nothing to do there."
+msgstr ""
+
+msgid "The steps for each image are listed below. Pro does all of it in one click: resize, crop, compress, convert to WebP and serve the right file to each screen."
+msgstr ""
+
+msgid "Then ask the app: \"review the pages I sent from TQK SEO\". Every write is logged; regenerating the token disconnects every app."
+msgstr ""
+
+msgid "Thin content"
+msgstr ""
+
+msgid "Thin content (%d words)"
+msgstr ""
+
+msgid "This AI run is no longer current. Reload the page."
+msgstr ""
+
+msgid "This audit run is no longer current. Reload the page."
+msgstr ""
+
+msgid "This blocks the entire site from search engines."
+msgstr ""
+
+msgid "This is not valid JSON. Paste the whole reply (or the JSON-LD block)."
+msgstr ""
+
+msgid "This needs the TQK WP SEO Pro add-on."
+msgstr ""
+
+msgid "This reply was made for another post (ID %d). Check before using it."
+msgstr ""
+
+msgid "This server cannot write WebP (no Imagick/GD WebP support): files keep their original format, compressed."
+msgstr ""
+
+msgid "This tab is in the background, so the browser slows the audit down. Keep it visible (its own window is fine)."
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Title and description templates, social image, Vietnamese options, AI provider, report branding, Pro license."
+msgstr ""
+
+msgid "Title over 60 chars (%d)"
+msgstr ""
+
+msgid "Title template"
+msgstr ""
+
+msgid "Title ≤ 60 chars"
+msgstr ""
+
+msgid "Titles"
+msgstr ""
+
+msgid "To do across the site"
+msgstr ""
+
+msgid "To review"
+msgstr ""
+
+msgid "Toggle feature sets. Disabled modules unload their hooks and hide their menu pages. Scanner needs Analyzer."
+msgstr ""
+
+msgid "Token (keep it private, like a password)"
+msgstr ""
+
+msgid "Token regenerated."
+msgstr ""
+
+msgid "Too large."
+msgstr ""
+
+msgid "Tools"
+msgstr ""
+
+msgid "Tools (one per line)"
+msgstr ""
+
+msgid "Total 28d: %d clicks · %d impressions · synced %s"
+msgstr ""
+
+msgid "Total hours"
+msgstr ""
+
+msgid "Total time"
+msgstr ""
+
+msgid "Turn features on or off so the plugin only loads what you use."
+msgstr ""
+
+msgid "Turn on the \"no price\" setting instead of 0, or Google shows the product as free."
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Type %d · %d hits"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "URL (hits)"
+msgstr ""
+
+msgid "URLs"
+msgstr ""
+
+msgid "Unknown action"
+msgstr ""
+
+msgid "Unknown page in this run, skipped."
+msgstr ""
+
+msgid "Unsaved changes are not on the live page yet: use Save & scan."
+msgstr ""
+
+msgid "Untick to write different texts for Facebook / Zalo and X."
+msgstr ""
+
+msgid "Updating the checklist…"
+msgstr ""
+
+msgid "Updating…"
+msgstr ""
+
+msgid "Upgrade to Pro to audit every %s page."
+msgstr ""
+
+msgid "Upgrade to Pro to audit every %s."
+msgstr ""
+
+msgid "Upload them to the Media Library and use the image through the builder's image element so WordPress adds srcset; set sizes=\"%s\" if the builder allows it."
+msgstr ""
+
+msgid "Use ISO 8601 duration (PT30M) or a readable time like 30 phút."
+msgstr ""
+
+msgid "Use a valid date and time."
+msgstr ""
+
+msgid "Use another AI (Claude, ChatGPT…) or import JSON-LD"
+msgstr ""
+
+msgid "Use automatic image"
+msgstr ""
+
+msgid "Use the first image in the post when there is no featured image"
+msgstr ""
+
+msgid "Using the site-wide default image."
+msgstr ""
+
+msgid "VD: Nha khoa An Khang"
+msgstr ""
+
+msgid "VD: Nha khoa, Bat dong san, Thoi trang"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Values that will be imported"
+msgstr ""
+
+msgid "Variables: %title%, %site_name%, %excerpt%."
+msgstr ""
+
+msgid "Video"
+msgstr ""
+
+msgid "Waiting %d s (rate limit)…"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+msgid "Weakest display"
+msgstr ""
+
+msgid "WebP would be much lighter (%s)"
+msgstr ""
+
+msgid "Website Audit & Optimization Engine. TQK WP SEO checks every page the way a visitor sees it — on desktop, laptop, tablet and phone — turns what it finds into a plan to fix, lets an AI suggest the wording while you approve every change, and keeps the site clean of the malware cracked plugins bring. Support: 0364 999 916."
+msgstr ""
+
+msgid "Welcome"
+msgstr ""
+
+msgid "Welcome to TQK WP SEO"
+msgstr ""
+
+msgid "What"
+msgstr ""
+
+msgid "What do you do?"
+msgstr ""
+
+msgid "What each page does"
+msgstr ""
+
+msgid "When the link is shared"
+msgstr ""
+
+msgid "Where"
+msgstr ""
+
+msgid "Which types appear in sitemap_index.xml."
+msgstr ""
+
+msgid "Without it Google picks any sentence from the page. Write 1–2 sentences (about 150 characters) with the main keyword."
+msgstr ""
+
+msgid "WooCommerce SEO"
+msgstr ""
+
+msgid "WordPress %s (requires 6.0+)"
+msgstr ""
+
+msgid "Write a title of about 50–60 characters with the main keyword near the start."
+msgstr ""
+
+msgid "Writes request input to a file"
+msgstr ""
+
+msgid "Writing tone"
+msgstr ""
+
+msgid "X (Twitter) description"
+msgstr ""
+
+msgid "X (Twitter) title"
+msgstr ""
+
+msgid "XML Sitemap"
+msgstr ""
+
+msgid "XML Sitemap ready"
+msgstr ""
+
+msgid "XML sitemap for Google and Bing, with a private address if you want one, and robots.txt."
+msgstr ""
+
+msgid "XML sitemap per post type, robots.txt editor, llms.txt."
+msgstr ""
+
+msgid "Yield"
+msgstr ""
+
+msgid "You need the manage_options capability to view this page."
+msgstr ""
+
+msgid "Your business"
+msgstr ""
+
+msgid "Your login session expired. Reload this page and press Continue."
+msgstr ""
+
+msgid "Your login session expired. Reload this page and press Continue: finished pages are kept."
+msgstr ""
+
+msgid "Your name, logo and colour on the SEO report you send to clients."
+msgstr ""
+
+msgid "Your site is ready. Open the dashboard or run the first scan now."
+msgstr ""
+
+msgid "a visitor"
+msgstr ""
+
+msgid "a visitor coming from Google"
+msgstr ""
+
+msgid "another title: \"%s\""
+msgstr ""
+
+msgid "assert() on request input"
+msgstr ""
+
+msgid "builds code from character numbers (obfuscation)"
+msgstr ""
+
+msgid "cached — fix first, no rescan yet"
+msgstr ""
+
+msgid "content read from the editor (view the page once to analyse builder content)"
+msgstr ""
+
+msgid "content read from the page as visitors see it"
+msgstr ""
+
+msgid "crop + "
+msgstr ""
+
+msgid "crypto-mining code"
+msgstr ""
+
+msgid "e.g. 15 phút or PT15M."
+msgstr ""
+
+msgid "e.g. 4 servings."
+msgstr ""
+
+msgid "e.g. 45 phút or PT45M."
+msgstr ""
+
+msgid "eval() of decoded data (classic backdoor)"
+msgstr ""
+
+msgid "extra links to %s"
+msgstr ""
+
+msgid "focus keyword not in description"
+msgstr ""
+
+msgid "focus keyword not in title"
+msgstr ""
+
+msgid "from template"
+msgstr ""
+
+msgid "from the Scan button"
+msgstr ""
+
+msgid "from the Site analysis audit"
+msgstr ""
+
+msgid "from the toolbar audit"
+msgstr ""
+
+msgid "gambling / pharma links"
+msgstr ""
+
+msgid "good size"
+msgstr ""
+
+msgid "image %1$d/%2$d"
+msgstr ""
+
+msgid "image does not load"
+msgstr ""
+
+msgid "in %d · out %d"
+msgstr ""
+
+msgid "known service"
+msgstr ""
+
+msgid "large encoded blob"
+msgstr ""
+
+msgid "last on %s"
+msgstr ""
+
+msgid "loads a script from an address it assembles or decodes"
+msgstr ""
+
+msgid "long hex-encoded text (obfuscation)"
+msgstr ""
+
+msgid "malicious"
+msgstr ""
+
+msgid "not active"
+msgstr ""
+
+msgid "not in media library"
+msgstr ""
+
+msgid "nothing waiting"
+msgstr ""
+
+msgid "now: %s"
+msgstr ""
+
+msgid "og:image must be a full https:// URL."
+msgstr ""
+
+msgid "og:url differs from canonical: %s"
+msgstr ""
+
+msgid "on %d pages"
+msgstr ""
+
+msgid "one file per screen"
+msgstr ""
+
+msgid "open to review"
+msgstr ""
+
+msgid "original %1$d×%2$d"
+msgstr ""
+
+msgid "page(s) to review"
+msgstr ""
+
+msgid "page(s) with malware signs"
+msgstr ""
+
+msgid "preg_replace /e code execution"
+msgstr ""
+
+msgid "private address"
+msgstr ""
+
+msgid "redirects depending on the device or bot"
+msgstr ""
+
+msgid "redirects visitors depending on where they came from"
+msgstr ""
+
+msgid "report only"
+msgstr ""
+
+msgid "robots.txt"
+msgstr ""
+
+msgid "robots.txt reset to default."
+msgstr ""
+
+msgid "robots.txt saved."
+msgstr ""
+
+msgid "runs decoded hidden code (eval + atob/unescape)"
+msgstr ""
+
+msgid "scrolls sideways by %dpx"
+msgstr ""
+
+msgid "sizes=\"%1$s\" does not match the layout; measured: %2$s"
+msgstr ""
+
+msgid "syllables"
+msgstr ""
+
+msgid "this site"
+msgstr ""
+
+msgid "too small: under 600×315 Facebook / Zalo show a tiny thumbnail or none"
+msgstr ""
+
+msgid "unknown"
+msgstr ""
+
+msgid "until %s"
+msgstr ""
+
+msgid "will be cropped to 1.91:1 (see the frame)"
+msgstr ""
+
+msgid "words"
+msgstr ""
+
+msgid "works, 1200×630 is sharper"
+msgstr ""
+
+msgid "writes a hidden script into the page"
+msgstr ""
+
+msgid "you (logged in)"
+msgstr ""
+
+msgid "{\"tqk_seo\":1,\"fields\":{\"title\":\"…\"}} or <script type=\"application/ld+json\">…</script>"
+msgstr ""
+
+msgid "① Page text"
+msgstr ""
+
+msgid "② Title · description · keywords"
+msgstr ""
+
+msgid "③ Social"
+msgstr ""
+
+msgid "④ Schema"
+msgstr ""

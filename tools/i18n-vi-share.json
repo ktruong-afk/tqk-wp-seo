@@ -1,0 +1,16 @@
+{
+"Automatic: featured image": "Tự động: ảnh đại diện",
+"Automatic: site default image": "Tự động: ảnh mặc định của site",
+"Automatic: first image in the content": "Tự động: ảnh đầu tiên trong bài",
+"No automatic image: add a featured image or a site default.": "Chưa có ảnh tự động: hãy thêm ảnh đại diện hoặc đặt ảnh mặc định cho site.",
+"Chosen for this post": "Chọn riêng cho bài này",
+"No share image — the link will show without a picture.": "Chưa có ảnh chia sẻ — link sẽ hiện không có hình.",
+"Change image": "Đổi ảnh",
+"Use automatic image": "Dùng ảnh tự động",
+"Best size 1200×630 (1.91:1). The frame shows how Facebook and Zalo crop it.": "Kích thước tốt nhất 1200×630 (1.91:1). Khung hiển thị đúng cách Facebook và Zalo cắt ảnh.",
+"good size": "kích thước tốt",
+"works, 1200×630 is sharper": "dùng được, 1200×630 sẽ nét hơn",
+"will be cropped to 1.91:1 (see the frame)": "sẽ bị cắt về tỷ lệ 1.91:1 (xem khung)",
+"too small: under 600×315 Facebook / Zalo show a tiny thumbnail or none": "quá nhỏ: dưới 600×315 Facebook / Zalo chỉ hiện ảnh thu nhỏ hoặc không hiện",
+"image does not load": "ảnh không tải được"
+}

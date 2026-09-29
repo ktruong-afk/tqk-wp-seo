@@ -1,0 +1,19 @@
+/* TQK WP SEO — toolbar item + plan drawer on the front end. */
+#wpadminbar #wp-admin-bar-tqk-wpseo > .ab-item { display: flex; align-items: center; gap: 6px; }
+#wpadminbar .tqk-ab-icon::before { content: "\f239"; top: 2px; }
+#wpadminbar .tqk-ab-score { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 18px; padding: 0 6px; border-radius: 999px; background: #3c434a; color: #fff; font-size: 11px; font-weight: 700; line-height: 18px; box-sizing: border-box; }
+#wpadminbar .tqk-ab-score.is-good { background: #059669; }
+#wpadminbar .tqk-ab-score.is-ok { background: #d97706; }
+#wpadminbar .tqk-ab-score.is-bad { background: #e11d48; }
+
+.tqk-drawer { position: fixed; top: 32px; right: 0; bottom: 0; z-index: 100040; width: 460px; max-width: 100%; display: flex; flex-direction: column; background: #fff; box-shadow: -12px 0 40px rgba(15,23,42,.25); transform: translateX(105%); transition: transform .25s ease; font: 13px/1.5 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #0f172a; }
+.tqk-drawer.is-open { transform: translateX(0); }
+.tqk-drawer-head { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 12px 0 16px; border-bottom: 1px solid #e2e8f0; background: #f8fafc; flex-shrink: 0; }
+.tqk-drawer-head strong { flex: 1; font-size: 14px; }
+.tqk-drawer-edit { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 8px; background: #4f46e5; color: #fff !important; font-size: 12.5px; font-weight: 600; text-decoration: none !important; }
+.tqk-drawer-close { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 0; border-radius: 8px; background: transparent; font-size: 22px; line-height: 1; color: #475569; cursor: pointer; }
+.tqk-drawer-close:hover { background: #e2e8f0; }
+.tqk-drawer-body { flex: 1; overflow-y: auto; padding: 14px 16px; }
+.tqk-drawer-note { margin: 0 0 12px !important; }
+.tqk-drawer .tqk-plan-item .button { cursor: pointer; }
+@media screen and (max-width: 782px) { .tqk-drawer { top: 46px; width: 100%; } }

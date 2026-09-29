@@ -1,0 +1,3266 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "\"%1$s\" merged into %2$s on 1 July 2025: update the address."
+msgstr "\"%1$s\" đã sáp nhập vào %2$s từ 1/7/2025: hãy cập nhật địa chỉ."
+
+msgid "\"Nulled\" / cracked distribution marker"
+msgstr "Dấu hiệu bản \"nulled\" / crack"
+
+msgid "%1$d / %2$d done · %3$d failed · %4$d waiting"
+msgstr "%1$d / %2$d xong · %3$d lỗi · %4$d đang chờ"
+
+msgid "%1$d / %2$d pages · %3$d failed · %4$d requests · %5$d from cache · today %6$d/%7$d"
+msgstr "%1$d / %2$d trang · %3$d lỗi · %4$d request · %5$d từ cache · hôm nay %6$d/%7$d"
+
+msgid "%1$d / %2$d px · %3$d chars"
+msgstr "%1$d / %2$d px · %3$d ký tự"
+
+msgid "%1$d element(s) overflow — %2$s (%3$s)"
+msgstr "%1$d phần tử tràn khung — %2$s (%3$s)"
+
+msgid "%1$d files · %2$d inline"
+msgstr "%1$d file · %2$d inline"
+
+msgid "%1$d image(s) ready · phone download %2$s → %3$s · %4$s"
+msgstr "%1$d ảnh sẵn sàng · điện thoại tải %2$s → %3$s · %4$s"
+
+msgid "%1$d page(s) will be audited — about %2$s. It runs by itself and resumes if stopped."
+msgstr "Sẽ audit %1$d trang — khoảng %2$s. Tự chạy và tự tiếp tục nếu bị dừng."
+
+msgid "%1$d paragraph(s) over %2$d %3$s: split them for phone readers."
+msgstr "%1$d đoạn dài hơn %2$d %3$s: nên tách nhỏ cho người đọc trên điện thoại."
+
+msgid "%1$d post(s) with SEO data · %2$d redirect(s) (%3$d regex/partial skipped). Sample below."
+msgstr "%1$d bài có dữ liệu SEO · %2$d redirect (bỏ qua %3$d rule regex/khớp một phần). Mẫu bên dưới."
+
+msgid "%1$d px file shown at %2$d px on a phone: needs a smaller size (srcset)"
+msgstr "File %1$d px chỉ hiển thị %2$d px trên điện thoại: cần bản nhỏ hơn (srcset)"
+
+msgid "%1$d px file shown at %2$d px: too heavy"
+msgstr "File %1$d px chỉ hiển thị %2$d px: nặng thừa"
+
+msgid "%1$d px file stretched to %2$d px: blurry"
+msgstr "File %1$d px bị phóng lên %2$d px: ảnh mờ"
+
+msgid "%1$d robots meta tags, they contradict: %2$s"
+msgstr "%1$d thẻ meta robots mâu thuẫn nhau: %2$s"
+
+msgid "%1$d sections, %2$d images checked, %3$d thing(s) to fix."
+msgstr "Đã xem %1$d phần, %2$d ảnh, có %3$d điểm cần sửa."
+
+msgid "%1$d warning(s). Verified against official checksums: %2$s. Heuristics only (no official checksums): %3$s."
+msgstr "%1$d cảnh báo. Đã đối chiếu checksum chính thức: %2$s. Chỉ quét theo dấu hiệu (không có checksum chính thức): %3$s."
+
+msgid "%1$s (%2$s) is %3$spx and takes %4$s lines on %5$s: about %6$spx"
+msgstr "%1$s (%2$s) đang %3$spx, chiếm %4$s dòng trên %5$s: nên khoảng %6$spx"
+
+msgid "%1$s (%2$s) is only %3$spx on %4$s: about %5$spx"
+msgstr "%1$s (%2$s) chỉ %3$spx trên %4$s: nên khoảng %5$spx"
+
+msgid "%1$s gets a different page than %2$s: %3$s"
+msgstr "%1$s nhận trang khác với %2$s: %3$s"
+
+msgid "%1$s schema is missing: %2$s"
+msgstr "Schema %1$s thiếu: %2$s"
+
+msgid "%1$s snapshot of %2$s"
+msgstr "Ảnh chụp %1$s của %2$s"
+
+msgid "%1$s · %2$s"
+msgstr "%1$s · %2$s"
+
+msgid "%1$s · %2$s — scan again for fresh results"
+msgstr "%1$s · %2$s — scan lại để có kết quả mới"
+
+msgid "%1$s — original %2$s, box %3$s on %4$s: resize to about %5$dpx"
+msgstr "%1$s — ảnh gốc %2$s, khung %3$s trên %4$s: nên resize khoảng %5$dpx"
+
+msgid "%1$s: %2$s characters (~%3$s tokens)."
+msgstr "%1$s: %2$s ký tự (~%3$s token)."
+
+msgid "%1$s: %2$s text on %3$s is hard to read (%4$s:1, needs %5$s:1): use %6$s"
+msgstr "%1$s: chữ màu %2$s trên nền %3$s khó đọc (tỉ lệ %4$s:1, cần %5$s:1): đổi sang %6$s"
+
+msgid "%1$s: crop %2$d×%3$d at x=%4$d, y=%5$d."
+msgstr "%1$s: cắt %2$d×%3$d tại x=%4$d, y=%5$d."
+
+msgid "%1$s: file %2$dpx wide for a %3$dpx box"
+msgstr "%1$s: file rộng %2$dpx cho khung %3$dpx"
+
+msgid "%1$s: lines of about %2$s characters on %3$s: keep 60–75"
+msgstr "%1$s: mỗi dòng khoảng %2$s ký tự trên %3$s: nên 60–75"
+
+msgid "%1$s: lines too tight (line-height %2$s) on %3$s: use %4$s"
+msgstr "%1$s: dòng quá sát (line-height %2$s) trên %3$s: nên dùng %4$s"
+
+msgid "%1$s: text %2$spx is too big on %3$s: about %4$spx"
+msgstr "%1$s: chữ %2$spx quá to trên %3$s: nên khoảng %4$spx"
+
+msgid "%1$s: text %2$spx is too small on %3$s: use %4$spx"
+msgstr "%1$s: chữ %2$spx quá nhỏ trên %3$s: nên dùng %4$spx"
+
+msgid "%d administrator account(s) on this site."
+msgstr "Site có %d tài khoản quản trị (administrator)."
+
+msgid "%d button(s)/link(s) under 44px"
+msgstr "%d nút/link nhỏ hơn 44px"
+
+msgid "%d buttons / links are too small to tap"
+msgstr "%d nút / link quá nhỏ để bấm bằng ngón tay"
+
+msgid "%d characters (120-160)"
+msgstr "%d ký tự (nên 120-160)"
+
+msgid "%d characters (max 60)"
+msgstr "%d ký tự (tối đa 60)"
+
+msgid "%d checks"
+msgstr "%d mục kiểm tra"
+
+msgid "%d critical sign(s) of compromise found."
+msgstr "Phát hiện %d dấu hiệu nghiêm trọng site đã bị xâm nhập."
+
+msgid "%d field(s) filled. Review them, then update the post to save."
+msgstr "Đã điền %d trường. Xem lại rồi bấm Cập nhật bài viết để lưu."
+
+msgid "%d file(s) generated. Check them, then activate."
+msgstr "Đã tạo %d file. Kiểm tra rồi bấm kích hoạt."
+
+msgid "%d fix now"
+msgstr "%d sửa ngay"
+
+msgid "%d image(s) heavier than 500 KB."
+msgstr "%d ảnh nặng hơn 500 KB."
+
+msgid "%d image(s) missing ALT"
+msgstr "%d ảnh thiếu ALT"
+
+msgid "%d image(s) missing ALT text."
+msgstr "%d ảnh thiếu ALT."
+
+msgid "%d image(s) missing width/height."
+msgstr "%d ảnh thiếu width/height."
+
+msgid "%d image(s) should be resized for each screen"
+msgstr "%d ảnh nên được resize cho từng màn hình"
+
+msgid "%d image(s) without width/height"
+msgstr "%d ảnh thiếu width/height"
+
+msgid "%d images"
+msgstr "%d ảnh"
+
+msgid "%d images should be resized for each screen"
+msgstr "%d ảnh nên được chỉnh lại kích thước cho từng màn hình"
+
+msgid "%d link(s) without text: Google and screen readers cannot tell where they go"
+msgstr "%d link không có chữ: Google và trình đọc màn hình không biết link dẫn đi đâu"
+
+msgid "%d links without text"
+msgstr "%d link không có chữ"
+
+msgid "%d nice to have"
+msgstr "%d tốt hơn nữa"
+
+msgid "%d oversized image(s)"
+msgstr "%d ảnh quá to"
+
+msgid "%d page(s) checked, clean"
+msgstr "%d trang đã kiểm tra, sạch"
+
+msgid "%d page(s) will be audited."
+msgstr "Sẽ audit %d trang."
+
+msgid "%d page(s) with issues sent to the AI app."
+msgstr "Đã gửi %d trang có lỗi cho ứng dụng AI."
+
+msgid "%d post(s) had \"nofollow only\", which has no equivalent here: left on default."
+msgstr "%d bài đặt \"chỉ nofollow\", plugin này không có tuỳ chọn tương ứng: để mặc định."
+
+msgid "%d post(s) with data"
+msgstr "%d bài có dữ liệu"
+
+msgid "%d should fix"
+msgstr "%d nên sửa"
+
+msgid "%d text(s) under 12px"
+msgstr "%d chữ nhỏ hơn 12px"
+
+msgid "%d words"
+msgstr "%d chữ"
+
+msgid "%d%% more or less text"
+msgstr "lượng chữ chênh %d%%"
+
+msgid "%s is active and may also resize, convert or rewrite images. Use one image optimizer only, or turn off its WebP / srcset rewriting before activating ours."
+msgstr "%s đang bật và cũng có thể thu nhỏ, chuyển định dạng hoặc sửa ảnh. Chỉ nên dùng một công cụ tối ưu ảnh, hoặc tắt phần WebP / srcset của nó trước khi kích hoạt của TQK."
+
+msgid "%s is required for %s."
+msgstr "%s là bắt buộc với %s."
+
+msgid "%s: value not accepted, skipped."
+msgstr "%s: giá trị không hợp lệ, đã bỏ qua."
+
+msgid "(empty)"
+msgstr "(trống)"
+
+msgid "+%d more image(s): see \"Image optimizer\" below."
+msgstr "+%d ảnh khác: xem mục \"Tối ưu ảnh\" bên dưới."
+
+msgid "+%d more page(s): fix these first, the list refreshes after the next audit."
+msgstr "+%d trang khác: sửa các trang này trước, danh sách sẽ cập nhật sau lần audit tiếp theo."
+
+msgid "1 day (safest)"
+msgstr "1 ngày (an toàn nhất)"
+
+msgid "1 sample page"
+msgstr "1 trang mẫu"
+
+msgid "1 sample post"
+msgstr "1 bài mẫu"
+
+msgid "1–2 sentences, about 150 characters"
+msgstr "1–2 câu, khoảng 150 ký tự"
+
+msgid "30 days"
+msgstr "30 ngày"
+
+msgid "301 / 302 redirects when a URL changes, in one hop."
+msgstr "Chuyển hướng 301 / 302 khi đổi đường dẫn, chỉ một bước."
+
+msgid "301/302/307/410 manager, auto-slug, CSV import/export."
+msgstr "Quản lý redirect 301/302/307/410, tự redirect khi đổi slug, nhập/xuất CSV."
+
+msgid "404 Monitor"
+msgstr "Giám sát 404"
+
+msgid "7 days"
+msgstr "7 ngày"
+
+msgid "<html> has no lang attribute"
+msgstr "Thẻ <html> thiếu thuộc tính lang"
+
+msgid "<picture>, one crop per screen"
+msgstr "<picture>, mỗi màn hình một vùng cắt"
+
+msgid "A personal SEO engine: offline-first, no fees, local AI optional. Seven quick steps and you are done."
+msgstr "Bộ máy SEO riêng của bạn: chạy offline, không phí, AI local tuỳ chọn. Bảy bước nhanh là xong."
+
+msgid "ACTIVE on the site"
+msgstr "ĐANG ÁP DỤNG trên site"
+
+msgid "AI Advisor (Gemini Flash)"
+msgstr "Trợ lý AI (Gemini Flash)"
+
+msgid "AI apps connected by MCP may write SEO fields without my approval"
+msgstr "Cho phép ứng dụng AI (MCP) ghi trường SEO mà không cần tôi duyệt"
+
+msgid "AI provider (optional)"
+msgstr "Nhà cung cấp AI (tuỳ chọn)"
+
+msgid "AI suggestions"
+msgstr "Gợi ý AI"
+
+msgid "AI suggestions to approve"
+msgstr "Gợi ý AI chờ duyệt"
+
+msgid "AI suggestions waiting for approval (%d)"
+msgstr "Gợi ý từ AI chờ duyệt (%d)"
+
+msgid "ALT saved."
+msgstr "Đã lưu ALT."
+
+msgid "ALT · declared"
+msgstr "ALT · khai báo"
+
+msgid "ALT/dimensions/weight audit, auto ALT fallback, lazy-load check."
+msgstr "Kiểm tra ALT, kích thước, dung lượng ảnh, tự điền ALT dự phòng, kiểm tra lazy-load."
+
+msgid "API key (optional)"
+msgstr "API key (tuỳ chọn)"
+
+msgid "Account holder"
+msgstr "Chủ tài khoản"
+
+msgid "Account number"
+msgstr "Số tài khoản"
+
+msgid "Action plan"
+msgstr "Kế hoạch cải thiện"
+
+msgid "Activate"
+msgstr "Kích hoạt"
+
+msgid "Activate on site"
+msgstr "Kích hoạt trên site"
+
+msgid "Active: visitors now get the new sizes."
+msgstr "Đã kích hoạt: khách truy cập giờ nhận các kích thước mới."
+
+msgid "Add"
+msgstr "Thêm"
+
+msgid "Add old → new address; 404s can be turned into redirects with one click."
+msgstr "Thêm địa chỉ cũ → mới; lỗi 404 có thể chuyển thành redirect chỉ với 1 click."
+
+msgid "Add property + OAuth token first (guide below)."
+msgstr "Hãy thêm property + OAuth token trước (xem hướng dẫn bên dưới)."
+
+msgid "Add redirect"
+msgstr "Thêm redirect"
+
+msgid "Address"
+msgstr "Địa chỉ"
+
+msgid "Administrator created %d day(s) ago — make sure you know this account."
+msgstr "Tài khoản quản trị tạo cách đây %d ngày — hãy chắc chắn bạn biết tài khoản này."
+
+msgid "Administrators"
+msgstr "Quản trị viên"
+
+msgid "Advanced"
+msgstr "Nâng cao"
+
+msgid "Advice"
+msgstr "Lời khuyên"
+
+msgid "Agency / brand name"
+msgstr "Tên agency / thương hiệu"
+
+msgid "All %d"
+msgstr "Tất cả %d"
+
+msgid "All images have ALT"
+msgstr "Mọi ảnh đều có ALT"
+
+msgid "All images have dimensions"
+msgstr "Mọi ảnh đều có width/height"
+
+msgid "An audit is running. Leave anyway? You can continue it later."
+msgstr "Đang audit. Vẫn rời trang? Bạn có thể chạy tiếp sau."
+
+msgid "Analytics (Google)"
+msgstr "Phân tích (Google)"
+
+msgid "Analytics website"
+msgstr "Analytics website"
+
+msgid "Anchor"
+msgstr "Anchor"
+
+msgid "Applied %d change(s)."
+msgstr "Đã áp dụng %d thay đổi."
+
+msgid "Applied."
+msgstr "Đã áp dụng."
+
+msgid "Apply selected"
+msgstr "Áp dụng mục đã chọn"
+
+msgid "Apply ticked"
+msgstr "Áp dụng mục đã tick"
+
+msgid "Archive / listing page: the result is shown here but not stored (reports belong to posts and pages)."
+msgstr "Trang danh mục / danh sách: kết quả chỉ hiện ở đây, không được lưu (báo cáo gắn với từng bài và trang)."
+
+msgid "Archive pages (taxonomies)"
+msgstr "Trang lưu trữ (taxonomy)"
+
+msgid "Archive pages of %s"
+msgstr "Trang danh mục của %s"
+
+msgid "Art-directed images are wrapped in <picture>. Check the page after activating: CSS written as \"parent > img\" no longer matches a wrapped image."
+msgstr "Ảnh cắt theo từng màn hình được bọc trong <picture>. Kiểm tra lại trang sau khi kích hoạt: CSS kiểu \"cha > img\" sẽ không còn khớp với ảnh đã bọc."
+
+msgid "Article, WebPage and BreadcrumbList nodes are added on singular views."
+msgstr "Các node Article, WebPage và BreadcrumbList được thêm ở trang chi tiết."
+
+msgid "Asking Gemini…"
+msgstr "Đang hỏi Gemini…"
+
+msgid "At"
+msgstr "Lúc"
+
+msgid "Attendance mode"
+msgstr "Hình thức tham dự"
+
+msgid "Audit"
+msgstr "Audit"
+
+msgid "Audit every page (%d)"
+msgstr "Audit tất cả trang (%d)"
+
+msgid "Audit every page like a visitor: SEO tags, schema, 4 screen sizes, images, malware. Each page gets an action plan; send pages to an AI app over MCP."
+msgstr "Audit từng trang như khách thật: thẻ SEO, schema, 4 kích thước màn hình, ảnh, mã độc. Mỗi trang có kế hoạch sửa riêng; gửi trang cho ứng dụng AI qua MCP."
+
+msgid "Audit page"
+msgstr "Audit trang"
+
+msgid "Audit this page (4 screens)"
+msgstr "Audit trang này (4 màn hình)"
+
+msgid "Auditing %1$s — %2$s"
+msgstr "Đang audit %1$s — %2$s"
+
+msgid "Auditing every post of %s is a Pro feature. Choose \"1 sample\" or upgrade to Pro."
+msgstr "Audit toàn bộ %s là tính năng Pro. Hãy chọn \"1 bài mẫu\" hoặc nâng cấp Pro."
+
+msgid "Author"
+msgstr "Tác giả"
+
+msgid "Auto optimize · resize · convert to WebP"
+msgstr "Tự động tối ưu · resize · chuyển WebP"
+
+msgid "Automatic (from template)"
+msgstr "Tự động (theo template)"
+
+msgid "Automatic check"
+msgstr "Kiểm tra tự động"
+
+msgid "Automatic image optimization is a Pro feature. The manual steps are listed under each image."
+msgstr "Tự động tối ưu ảnh là tính năng Pro. Các bước làm tay được liệt kê dưới từng ảnh."
+
+msgid "Automatic: featured image"
+msgstr "Tự động: ảnh đại diện"
+
+msgid "Automatic: first image in the content"
+msgstr "Tự động: ảnh đầu tiên trong bài"
+
+msgid "Automatic: site default image"
+msgstr "Tự động: ảnh mặc định của site"
+
+msgid "Average SEO score"
+msgstr "Điểm SEO trung bình"
+
+msgid "Average mobile score"
+msgstr "Điểm mobile trung bình"
+
+msgid "Average rating (0–5)"
+msgstr "Điểm đánh giá trung bình (0–5)"
+
+msgid "Average sentence length is over %1$d %2$s."
+msgstr "Câu trung bình dài hơn %1$d %2$s."
+
+msgid "Background"
+msgstr "Ảnh nền"
+
+msgid "Background file %1$dpx wide for a %2$dpx box."
+msgstr "File ảnh nền rộng %1$dpx cho khung %2$dpx."
+
+msgid "Background set in a CSS file on an element without an id we can target: resize it by hand or in the builder."
+msgstr "Ảnh nền đặt trong file CSS, trên phần tử không có id để nhắm tới: hãy thu nhỏ bằng tay hoặc trong builder."
+
+msgid "Bank"
+msgstr "Ngân hàng"
+
+msgid "Batch audits 50/job, dashboard snapshot, orphan reports. Needs Analyzer."
+msgstr "Audit theo lô 50 bài/lần, tổng quan dashboard, báo cáo trang mồ côi. Cần module Analyzer."
+
+msgid "Beginner"
+msgstr "Cơ bản"
+
+msgid "Below the first screen but not lazy-loaded"
+msgstr "Nằm dưới màn hình đầu nhưng chưa lazy-load"
+
+msgid "Best size 1200×630 (1.91:1). The frame shows how Facebook and Zalo crop it."
+msgstr "Kích thước tốt nhất 1200×630 (1.91:1). Khung hiển thị đúng cách Facebook và Zalo cắt ảnh."
+
+msgid "Bing API key"
+msgstr "Bing API key"
+
+msgid "Bing notified."
+msgstr "Đã báo Bing."
+
+msgid "Bing refused the sitemap (HTTP %d)."
+msgstr "Bing từ chối sitemap (HTTP %d)."
+
+msgid "Bing rejected the URL (check key)."
+msgstr "Bing từ chối URL (kiểm tra key)."
+
+msgid "Blank rows are ignored. First match wins."
+msgstr "Dòng trống được bỏ qua. Rule khớp đầu tiên được dùng."
+
+msgid "Box per screen"
+msgstr "Khung theo màn hình"
+
+msgid "Box: %1$s (%2$s)"
+msgstr "Khung: %1$s (%2$s)"
+
+msgid "Branch"
+msgstr "Chi nhánh"
+
+msgid "Brand colour"
+msgstr "Màu thương hiệu"
+
+msgid "Broken links"
+msgstr "Links hỏng"
+
+msgid "Broken schema (JSON-LD)"
+msgstr "Schema (JSON-LD) bị lỗi"
+
+msgid "Bulk AI (local)"
+msgstr "AI hàng loạt (local)"
+
+msgid "Business"
+msgstr "Doanh nghiệp"
+
+msgid "Business details found (%s) were not imported: your own name, phone and address belong in Settings."
+msgstr "Thông tin doanh nghiệp tìm thấy (%s) không được nhập: tên, số điện thoại và địa chỉ của bạn nhập trong Cài đặt."
+
+msgid "Business name"
+msgstr "Tên doanh nghiệp"
+
+msgid "Business profile (for AI)"
+msgstr "Hồ sơ doanh nghiệp (cho AI)"
+
+msgid "Business profile → LocalBusiness schema + NAP."
+msgstr "Hồ sơ doanh nghiệp → schema LocalBusiness + NAP."
+
+msgid "Buttons / links too small to tap"
+msgstr "Nút / link quá nhỏ để bấm"
+
+msgid "CSS copied. Paste it in Appearance → Customize → Additional CSS."
+msgstr "Đã copy CSS. Dán vào Giao diện → Tùy biến → CSS bổ sung."
+
+msgid "Cannot create the uploads/audit-pics folder."
+msgstr "Không tạo được thư mục uploads/audit-pics."
+
+msgid "Canonical"
+msgstr "Canonical"
+
+msgid "Canonical URL"
+msgstr "Canonical URL"
+
+msgid "Canonical URL set"
+msgstr "Đã có canonical URL"
+
+msgid "Canonical points to another URL: %s"
+msgstr "Canonical trỏ sang URL khác: %s"
+
+msgid "Canonical points to another page"
+msgstr "Canonical trỏ sang trang khác"
+
+msgid "Capability per role for SEO screens."
+msgstr "Phân quyền màn hình SEO theo vai trò."
+
+msgid "Categories"
+msgstr "Chuyên mục"
+
+msgid "Categories / tags with SEO data: %d."
+msgstr "Chuyên mục / thẻ có dữ liệu SEO: %d."
+
+msgid "Categories / tags: %1$d, %2$d field(s) written."
+msgstr "Chuyên mục / thẻ: %1$d, ghi %2$d trường."
+
+msgid "Change image"
+msgstr "Đổi ảnh"
+
+msgid "Check a few pages, then deactivate and DELETE the old plugin (a cracked copy keeps its malware while it stays installed)."
+msgstr "Kiểm tra vài trang, rồi tắt và XOÁ plugin cũ (bản crack vẫn giữ mã độc chừng nào còn cài trên site)."
+
+msgid "Check links"
+msgstr "Kiểm tra link"
+
+msgid "Check which plugin, theme or tracking code adds them; remove what you do not recognise."
+msgstr "Kiểm tra plugin, theme hay mã theo dõi nào thêm chúng; gỡ những gì bạn không nhận ra."
+
+msgid "Checked %d link(s)…"
+msgstr "Đã kiểm tra %d link…"
+
+msgid "Checked the page as visitors see it (%s)."
+msgstr "Đã kiểm tra trang đúng như khách xem (%s)."
+
+msgid "Checking the page as visitors and Google get it…"
+msgstr "Đang kiểm tra trang như khách và Google nhìn thấy…"
+
+msgid "Checks external links and internal links that do not point to a post (archives, files, typos) with HTTP requests in small batches."
+msgstr "Kiểm tra link ra ngoài và link nội bộ không trỏ tới bài viết nào (trang chuyên mục, file, gõ sai) bằng request HTTP, chạy theo lô nhỏ."
+
+msgid "Choose Gemini as AI provider and paste an API key in Settings."
+msgstr "Chọn Gemini làm nhà cung cấp AI và dán API key trong Cài đặt."
+
+msgid "Choose Google Gemini and paste an API key in %s first."
+msgstr "Hãy chọn Google Gemini và dán API key trong %s trước."
+
+msgid "Choose Yoast SEO or Rank Math."
+msgstr "Chọn Yoast SEO hoặc Rank Math."
+
+msgid "Choose an AI provider (free Gemini key, or Ollama / LM Studio on your machine) to get title, description and keyword ideas. Nothing is written without your approval."
+msgstr "Chọn nhà cung cấp AI (key Gemini miễn phí, hoặc Ollama / LM Studio trên máy bạn) để nhận gợi ý tiêu đề, mô tả và từ khoá. Không ghi gì nếu bạn chưa duyệt."
+
+msgid "Choose at least one thing to audit."
+msgstr "Hãy chọn ít nhất một mục để audit."
+
+msgid "Choose what goes in, then \"Submit to Google & Bing\" sends it directly."
+msgstr "Chọn nội dung đưa vào, rồi bấm \"Gửi lên Google & Bing\" để gửi thẳng."
+
+msgid "Choose what search engines may index. Attachments and search pages are hidden by default."
+msgstr "Chọn nội dung nào được index. Attachments và trang search mặc định bị ẩn."
+
+msgid "Chosen automatically — pick an image below to change it."
+msgstr "Chọn tự động — chọn ảnh bên dưới để đổi."
+
+msgid "Chosen for this post"
+msgstr "Chọn riêng cho bài này"
+
+msgid "Claude Code — run in a terminal:"
+msgstr "Claude Code — chạy trong terminal:"
+
+msgid "Claude Desktop — Settings → Developer → Edit config (needs Node.js):"
+msgstr "Claude Desktop — Settings → Developer → Edit config (cần Node.js):"
+
+msgid "Clicks"
+msgstr "Lượt nhấp"
+
+msgid "Clicks (Δ)"
+msgstr "Lượt nhấp (Δ)"
+
+msgid "Client report (PDF)"
+msgstr "Báo cáo khách hàng (PDF)"
+
+msgid "Cloaking: "
+msgstr "Cloaking: "
+
+msgid "Close"
+msgstr "Đóng"
+
+msgid "Conditional rules (Pro-style builder)"
+msgstr "Quy tắc theo điều kiện"
+
+msgid "Connect Claude Desktop, Claude Code or Cursor to this site once, then send pages from here with one click. Turn on the MCP module first."
+msgstr "Kết nối Claude Desktop, Claude Code hoặc Cursor với site một lần, sau đó gửi trang từ đây chỉ với 1 click. Hãy bật module MCP trước."
+
+msgid "Connect an AI app once. Then scan a page in the editor and press \"Send to AI\": the app reads the report, the action plan and screenshots of 4 screens, and can fill the SEO fields after you agree."
+msgstr "Kết nối ứng dụng AI một lần. Sau đó scan trang trong trình soạn thảo và bấm \"Gửi cho AI\": ứng dụng đọc báo cáo, kế hoạch cải thiện và ảnh chụp 4 màn hình, và có thể điền các trường SEO sau khi bạn đồng ý."
+
+msgid "Connect once, Sync for clicks/impressions/CTR/position (28d). Free quota, no rank SaaS. Property format: sc-domain:example.com or https://example.com/"
+msgstr "Kết nối một lần, bấm Đồng bộ để lấy lượt nhấp/hiển thị/CTR/vị trí (28 ngày). Dùng quota miễn phí, không cần dịch vụ theo dõi thứ hạng. Định dạng property: sc-domain:example.com hoặc https://example.com/"
+
+msgid "Connection lost, retrying in %d s…"
+msgstr "Mất kết nối, thử lại sau %d giây…"
+
+msgid "Contact"
+msgstr "Liên hệ"
+
+msgid "Contact line (phone, Zalo, website)"
+msgstr "Dòng liên hệ (điện thoại, Zalo, website)"
+
+msgid "Content"
+msgstr "Nội dung"
+
+msgid "Content Analyzer"
+msgstr "Phân tích nội dung"
+
+msgid "Content checklist not met"
+msgstr "Nội dung chưa đạt danh sách kiểm tra"
+
+msgid "Content checklist: %1$d serious, %2$d warnings"
+msgstr "Danh sách kiểm tra nội dung: %1$d lỗi nặng, %2$d cảnh báo"
+
+msgid "Content is thin (under %1$d %2$s)."
+msgstr "Nội dung mỏng (dưới %1$d %2$s)."
+
+msgid "Content ≥ %1$d %2$s"
+msgstr "Nội dung ≥ %1$d %2$s"
+
+msgid "Continue"
+msgstr "Tiếp tục"
+
+msgid "Contradicting robots tags"
+msgstr "Thẻ robots mâu thuẫn"
+
+msgid "Contributor"
+msgstr "Cộng tác viên"
+
+msgid "Cook time"
+msgstr "Thời gian nấu"
+
+msgid "Copied"
+msgstr "Đã copy"
+
+msgid "Copied %1$s — %2$s characters. Paste it into the AI chat."
+msgstr "Đã copy %1$s — %2$s ký tự. Dán vào khung chat AI nhé."
+
+msgid "Copied. Paste it into Claude, ChatGPT or Gemini, then paste the reply below."
+msgstr "Đã copy. Dán vào Claude, ChatGPT hoặc Gemini, rồi dán câu trả lời vào ô bên dưới."
+
+msgid "Copied: paste it first so the AI knows the page, then send the other sets."
+msgstr "Đã copy: dán bộ này trước để AI hiểu trang, rồi gửi các bộ còn lại."
+
+msgid "Copies titles, descriptions, focus + secondary keywords, canonical, robots, social tags, schema type and redirects. Works even if the old plugin is deactivated. Empty fields are filled; existing TQK values are kept unless you tick overwrite."
+msgstr "Sao chép tiêu đề, mô tả, từ khoá chính + phụ, canonical, robots, thẻ mạng xã hội, loại schema và redirect. Vẫn chạy khi plugin cũ đã tắt. Ô trống sẽ được điền; giá trị TQK đã có được giữ nguyên trừ khi bạn tick ghi đè."
+
+msgid "Copy"
+msgstr "Copy"
+
+msgid "Copy CSS"
+msgstr "Copy CSS"
+
+msgid "Core"
+msgstr "Lõi"
+
+msgid "Core file differs from the official WordPress release."
+msgstr "File lõi khác với bản WordPress chính thức."
+
+msgid "Could not audit: %s"
+msgstr "Không audit được: %s"
+
+msgid "Could not fetch the URL."
+msgstr "Không tải được URL."
+
+msgid "Could not prepare the text. Reload the page and try again."
+msgstr "Không tạo được nội dung. Tải lại trang rồi thử lại."
+
+msgid "Could not reach Bing."
+msgstr "Không kết nối được Bing."
+
+msgid "Could not reach Google API."
+msgstr "Không kết nối được Google API."
+
+msgid "Could not reach Google."
+msgstr "Không kết nối được Google."
+
+msgid "Could not reach the license server."
+msgstr "Không kết nối được máy chủ license."
+
+msgid "Course URL"
+msgstr "URL khoá học"
+
+msgid "Course description"
+msgstr "Mô tả khoá học"
+
+msgid "Cracked \"Pro\" plugins and themes are the usual way malware gets in. This scan checks WordPress core and every WordPress.org plugin against their official checksums, scans premium plugins, themes and uploads for backdoor patterns, lists recently created admins, and compares what Googlebot sees with what visitors see (cloaking, hidden gambling / pharma links). Read-only: nothing is changed."
+msgstr "Plugin và theme \"Pro\" bản crack là đường mã độc hay vào nhất. Công cụ này đối chiếu lõi WordPress và mọi plugin trên WordPress.org với checksum chính thức, quét plugin premium, theme và thư mục uploads để tìm dấu hiệu backdoor, liệt kê admin mới tạo, và so trang Googlebot thấy với trang khách thấy (cloaking, link cờ bạc / thuốc bị giấu). Chỉ đọc: không thay đổi gì."
+
+msgid "Create redirect"
+msgstr "Tạo redirect"
+
+msgid "Creates an administrator account in code"
+msgstr "Tạo tài khoản quản trị bằng code"
+
+msgid "Critical"
+msgstr "Nghiêm trọng"
+
+msgid "Critical issues"
+msgstr "Lỗi nghiêm trọng"
+
+msgid "Crop the original to %1$d×%2$d starting at x=%3$d, y=%4$d (only that part is visible)."
+msgstr "Cắt ảnh gốc còn %1$d×%2$d, bắt đầu từ x=%3$d, y=%4$d (chỉ phần đó được hiển thị)."
+
+msgid "Crypto-mining / malicious script: %s"
+msgstr "Script đào tiền ảo / độc hại: %s"
+
+msgid "Cursor — .cursor/mcp.json:"
+msgstr "Cursor — file .cursor/mcp.json:"
+
+msgid "Daily quota used up. Resumes after %s — press Continue then."
+msgstr "Đã hết quota trong ngày. Chạy tiếp sau %s — lúc đó bấm Tiếp tục."
+
+msgid "Dashboard"
+msgstr "Tổng quan"
+
+msgid "Database tables created"
+msgstr "Đã tạo bảng dữ liệu"
+
+msgid "Day"
+msgstr "Ngày"
+
+msgid "Deactivate"
+msgstr "Tắt"
+
+msgid "Deactivated."
+msgstr "Đã tắt."
+
+msgid "Default (index, follow)"
+msgstr "Mặc định (index, follow)"
+
+msgid "Default Schema type per post type. A post can override this in its SEO box."
+msgstr "Schema type mặc định theo post type. Từng bài có thể override trong box SEO."
+
+msgid "Default share image (site-wide)"
+msgstr "Ảnh chia sẻ mặc định (toàn site)"
+
+msgid "Delete"
+msgstr "Xóa"
+
+msgid "Delete all TQK WP SEO data and start over?"
+msgstr "Xóa toàn bộ dữ liệu TQK WP SEO và làm lại?"
+
+msgid "Delete files"
+msgstr "Xoá file"
+
+msgid "Deleted."
+msgstr "Đã xóa."
+
+msgid "Describe each image in a few words (ALT), in the Media Library or in the builder."
+msgstr "Mô tả mỗi ảnh vài chữ (ALT), trong Thư viện Media hoặc trong builder."
+
+msgid "Description"
+msgstr "Mô tả"
+
+msgid "Description over 160 chars (%d)"
+msgstr "Mô tả dài hơn 160 ký tự (%d)"
+
+msgid "Description template"
+msgstr "Mẫu mô tả"
+
+msgid "Description ≤ 160 chars"
+msgstr "Mô tả ≤ 160 ký tự"
+
+msgid "Descriptions"
+msgstr "Mô tả"
+
+msgid "Dismiss this suggestion"
+msgstr "Bỏ qua gợi ý này"
+
+msgid "Display (/100)"
+msgstr "Hiển thị (/100)"
+
+msgid "Display score on this screen, out of 100."
+msgstr "Điểm hiển thị trên màn hình này, thang 100."
+
+msgid "Display score per screen (/100)"
+msgstr "Điểm hiển thị theo màn hình (/100)"
+
+msgid "Display score per screen, out of 100: points are lost for sideways scrolling, tiny text, small buttons, images without size, oversized images."
+msgstr "Điểm hiển thị theo từng màn hình, thang 100: bị trừ khi trang tràn ngang, chữ quá nhỏ, nút quá nhỏ, ảnh thiếu kích thước, ảnh quá to."
+
+msgid "District level (quận / huyện / thị xã) was abolished on 1 July 2025: use the new ward (phường / xã) + province."
+msgstr "Cấp huyện (quận / huyện / thị xã) đã bỏ từ 1/7/2025: dùng phường / xã mới + tỉnh/thành."
+
+msgid "Does not load"
+msgstr "Không tải được"
+
+msgid "Done: %1$d post(s), %2$d field(s) written, %3$d kept (already filled)."
+msgstr "Xong: %1$d bài, ghi %2$d trường, giữ nguyên %3$d (đã có sẵn)."
+
+msgid "Downloading official checksums…"
+msgstr "Đang tải checksum chính thức…"
+
+msgid "Each screen shows a different crop: serve one crop per screen with <picture>."
+msgstr "Mỗi màn hình hiện một vùng cắt khác nhau: dùng <picture> để mỗi màn hình có ảnh cắt riêng."
+
+msgid "Edit"
+msgstr "Sửa"
+
+msgid "Edit SEO of this page"
+msgstr "Sửa SEO trang này"
+
+msgid "Edit Schema"
+msgstr "Sửa Schema"
+
+msgid "Edit in Settings"
+msgstr "Sửa trong Cài đặt"
+
+msgid "Edit robots.txt"
+msgstr "Sửa robots.txt"
+
+msgid "Editor"
+msgstr "Biên tập viên"
+
+msgid "Empty = /sitemap_index.xml. With a name, the sitemap moves to /{name}.xml, the usual addresses return a normal 404 and robots.txt no longer lists it; it is sent to Google Search Console and Bing directly instead. 6-40 characters: a-z, 0-9, dashes."
+msgstr "Để trống = /sitemap_index.xml. Khi đặt tên, sitemap chuyển sang /{tên}.xml, các địa chỉ quen thuộc trả về trang 404 bình thường và robots.txt không còn ghi nó; thay vào đó sitemap được gửi thẳng cho Google Search Console và Bing. 6-40 ký tự: a-z, 0-9, dấu gạch ngang."
+
+msgid "Empty = site title template. Variables: %title%, %site_name%."
+msgstr "Để trống = dùng mẫu tiêu đề của site. Biến: %title%, %site_name%."
+
+msgid "Empty response."
+msgstr "Trả về rỗng."
+
+msgid "Enable Local AI in Settings first."
+msgstr "Hãy bật Local AI trong Cài đặt trước."
+
+msgid "Enable sitemap"
+msgstr "Bật sitemap"
+
+msgid "Enable the Analyzer module first."
+msgstr "Hãy bật module Analyzer trước."
+
+msgid "End date & time"
+msgstr "Ngày giờ kết thúc"
+
+msgid "Endpoint"
+msgstr "Địa chỉ kết nối"
+
+msgid "Every \"page not found\" hit, with how often it happens."
+msgstr "Mọi lượt \"không tìm thấy trang\", kèm số lần xảy ra."
+
+msgid "Every SEO feature is free. The Pro add-on adds the automatic image optimizer (resize, crop, compress, WebP, srcset) and \"audit all\" in Live Audit."
+msgstr "Mọi tính năng SEO đều miễn phí. Add-on Pro thêm tối ưu ảnh tự động (resize, cắt, nén, WebP, srcset) và \"audit tất cả\" trong Live Audit."
+
+msgid "Every Sync snapshots positions. Daily cron keeps history while connected — no SaaS."
+msgstr "Mỗi lần Đồng bộ lưu lại vị trí. Cron hằng ngày giữ lịch sử khi còn kết nối — không cần dịch vụ ngoài."
+
+msgid "Every indexable post and page has at least one incoming link from content or menus."
+msgstr "Mọi bài và trang cần index đều có ít nhất một link trỏ tới, từ nội dung hoặc menu."
+
+msgid "Every script visitors load, and where it comes from. Unknown domains are not always bad: check which plugin or theme adds them. Nothing is removed automatically."
+msgstr "Mọi script khách truy cập phải tải, và nó đến từ đâu. Domain lạ chưa chắc là xấu: kiểm tra plugin hay theme nào thêm vào. Không có gì bị xoá tự động."
+
+msgid "Everything"
+msgstr "Tất cả"
+
+msgid "Everything in this JSON is already filled in."
+msgstr "Mọi giá trị trong JSON này đã có sẵn."
+
+msgid "Everything is configured. Run your first scan to fill the dashboard."
+msgstr "Mọi thứ đã cấu hình xong. Chạy quét đầu tiên để lấp đầy dashboard."
+
+msgid "Exclude"
+msgstr "Loại trừ"
+
+msgid "Executable PHP file inside uploads (uploads should only hold media)."
+msgstr "File PHP chạy được nằm trong uploads (uploads chỉ nên chứa media)."
+
+msgid "Export CSV"
+msgstr "Xuất CSV"
+
+msgid "Export at %d px wide."
+msgstr "Xuất ảnh rộng %d px."
+
+msgid "Export one file per screen: %s."
+msgstr "Xuất mỗi màn hình một file: %s."
+
+msgid "Export settings (JSON)"
+msgstr "Xuất cài đặt (JSON)"
+
+msgid "Export these widths: %s px (small ones for phones, the largest for retina desktops)."
+msgstr "Xuất các độ rộng: %s px (file nhỏ cho điện thoại, file lớn nhất cho màn hình retina)."
+
+msgid "Extra roles allowed into SEO screens (admins always have access)."
+msgstr "Các vai trò khác được vào màn hình SEO (admin luôn có quyền)."
+
+msgid "Extract from post content"
+msgstr "Lấy từ nội dung bài"
+
+msgid "Extracted from post content. Review before saving."
+msgstr "Đã lấy từ nội dung bài. Xem lại trước khi lưu."
+
+msgid "FAQ items"
+msgstr "Câu hỏi FAQ"
+
+msgid "Facebook and Zalo keep the old preview for a while. After changing the image or texts, refresh it with their sharing debugger:"
+msgstr "Facebook và Zalo giữ bản xem trước cũ một thời gian. Sau khi đổi ảnh hoặc chữ, hãy làm mới bằng công cụ gỡ lỗi chia sẻ:"
+
+msgid "Facebook, Zalo and X read these tags. Open the Social tab: title, description and image are filled automatically from the SEO values."
+msgstr "Facebook, Zalo và X đọc các thẻ này. Mở tab Social: tiêu đề, mô tả và ảnh được điền tự động từ phần SEO."
+
+msgid "Fallbacks used when a post has no custom SEO title or description."
+msgstr "Giá trị dự phòng khi bài viết chưa có SEO title/description riêng."
+
+msgid "Featured image first, then this default, then the first image inside the post."
+msgstr "Ưu tiên ảnh đại diện, rồi ảnh mặc định này, rồi ảnh đầu tiên trong bài."
+
+msgid "Fetches the page exactly like an outside bot (shortcodes and builders fully rendered), then audits headings, keyword, meta, social, schema and every image. Fix in one go below — no page jumps."
+msgstr "Tải trang y như bot bên ngoài (shortcode và builder đã render đầy đủ), rồi audit heading, từ khoá, meta, mạng xã hội, schema và từng ảnh. Sửa luôn bên dưới — không phải chuyển trang."
+
+msgid "Field"
+msgstr "Trường"
+
+msgid "Fields"
+msgstr "Số trường"
+
+msgid "File"
+msgstr "File"
+
+msgid "File modified compared with the official release."
+msgstr "File đã bị sửa so với bản phát hành chính thức."
+
+msgid "Files deleted."
+msgstr "Đã xoá file."
+
+msgid "Fill selected fields"
+msgstr "Điền các trường đã chọn"
+
+msgid "Filled values are saved when you update the post."
+msgstr "Giá trị đã điền chỉ được lưu khi bạn bấm Cập nhật bài."
+
+msgid "Filled. Check the fields, then update the post to save them."
+msgstr "Đã điền. Kiểm tra lại các ô rồi bấm Cập nhật để lưu."
+
+msgid "Findings"
+msgstr "Phát hiện"
+
+msgid "Fingers need about 44×44 px. Make them bigger or add padding."
+msgstr "Ngón tay cần khoảng 44×44 px. Làm to hơn hoặc thêm padding."
+
+msgid "Finish"
+msgstr "Hoàn tất"
+
+msgid "Finished"
+msgstr "Hoàn tất"
+
+msgid "Finished."
+msgstr "Hoàn tất."
+
+msgid "Finished: %1$d done, %2$d failed."
+msgstr "Hoàn tất: %1$d xong, %2$d lỗi."
+
+msgid "Fix"
+msgstr "Sửa"
+
+msgid "Fix now"
+msgstr "Sửa ngay"
+
+msgid "Fix the frequent ones with a redirect; noise (bots, .map files) is ignored."
+msgstr "Sửa các lỗi hay gặp bằng redirect; lượt rác (bot, file .map) được bỏ qua."
+
+msgid "Focus keyword"
+msgstr "Từ khóa chính"
+
+msgid "Focus keyword set"
+msgstr "Đã đặt từ khoá chính"
+
+msgid "Focus keyword, headings, images, links, readability + score 0-100."
+msgstr "Từ khoá chính, heading, ảnh, link, độ dễ đọc + điểm 0-100."
+
+msgid "For example"
+msgstr "Ví dụ"
+
+msgid "Free"
+msgstr "Miễn phí"
+
+msgid "Free tier: keep the limits low (5/min, 200/day), each request fixes 3 pages. On the free tier Google may use what you send to improve its products."
+msgstr "Gói miễn phí: để giới hạn thấp (5/phút, 200/ngày), mỗi request xử lý 3 trang. Với gói miễn phí, Google có thể dùng dữ liệu bạn gửi để cải thiện sản phẩm."
+
+msgid "Free: each image lists the exact manual steps. Pro: the same steps done automatically with one click."
+msgstr "Miễn phí: mỗi ảnh có sẵn các bước làm tay cụ thể. Pro: làm tự động đúng các bước đó chỉ với một cú bấm."
+
+msgid "From %s"
+msgstr "Từ %s"
+
+msgid "From the pages already checked. Fill the empty fields and press Save: done here, no need to open each post. Empty SEO title = the title template is used."
+msgstr "Lấy từ các trang đã kiểm tra. Điền các ô còn trống rồi bấm Lưu: xong ngay tại đây, không cần mở từng bài. Để trống SEO title = dùng mẫu tiêu đề chung."
+
+msgid "From the site audit"
+msgstr "Từ audit toàn site"
+
+msgid "Full address"
+msgstr "Địa chỉ đầy đủ"
+
+msgid "Full screen"
+msgstr "Toàn màn hình"
+
+msgid "Full — every page"
+msgstr "Full — mọi trang"
+
+msgid "Full-page pictures of this scan: open, save, or give them to an AI for design advice."
+msgstr "Ảnh chụp toàn trang của lần scan này: mở, lưu, hoặc đưa cho AI để góp ý giao diện."
+
+msgid "Function name taken from request input"
+msgstr "Tên hàm lấy từ dữ liệu request"
+
+msgid "Gemini API key"
+msgstr "Gemini API key"
+
+msgid "Gemini API key or model is missing."
+msgstr "Thiếu Gemini API key hoặc model."
+
+msgid "Gemini answered with invalid JSON."
+msgstr "Gemini trả về JSON không hợp lệ."
+
+msgid "Generate"
+msgstr "Tạo"
+
+msgid "Generate files"
+msgstr "Tạo file"
+
+msgid "Generate writes resized, compressed files to uploads/audit-pics/{id}-page/ (original uploads are never touched); Activate serves them through WordPress srcset, so it works with any builder."
+msgstr "Tạo file sẽ ghi các file đã thu nhỏ, nén vào uploads/audit-pics/{id}-page/ (ảnh gốc không bao giờ bị sửa); Kích hoạt sẽ phục vụ chúng qua srcset của WordPress, nên chạy với mọi builder."
+
+msgid "Get TQK WP SEO Pro"
+msgstr "Mua TQK WP SEO Pro"
+
+msgid "Get token: Google Cloud Console → Enable Search Console API → OAuth consent → Desktop app → copy token. Or paste export later."
+msgstr "Lấy token: Google Cloud Console → bật Search Console API → OAuth consent → Desktop app → sao chép token. Hoặc dán bản xuất sau."
+
+msgid "Give every key page its own short, unique SEO title and description (this box)."
+msgstr "Mỗi trang quan trọng có SEO title và mô tả riêng, ngắn, không trùng nhau (ngay trong hộp này)."
+
+msgid "Go H1 → H2 → H3 in order, without skipping a level."
+msgstr "Đi lần lượt H1 → H2 → H3, không bỏ bậc."
+
+msgid "Go to Dashboard"
+msgstr "Tới Dashboard"
+
+msgid "Goes through the page slowly, one section at a time: outlines each part, points at every image (size shown vs file, weight, ALT, lazy-load, blurry or oversized) and shows the result next to the page as it goes. Then checks 4 screen sizes."
+msgstr "Đi chậm qua từng phần của trang: khoanh từng phần, chỉ vào từng ảnh (kích thước hiển thị so với file, dung lượng, ALT, lazy-load, ảnh mờ hay quá to) và hiện kết quả ngay bên cạnh trang. Sau đó kiểm tra 4 kích thước màn hình."
+
+msgid "Google API error (check token/property)."
+msgstr "Lỗi Google API (kiểm tra token/property)."
+
+msgid "Google Indexing API + Bing URL submission on publish."
+msgstr "Gửi URL cho Google Indexing API + Bing khi đăng bài."
+
+msgid "Google Search Console (standard)"
+msgstr "Google Search Console (chuẩn)"
+
+msgid "Google and Facebook / Zalo / X previews, title and description with pixel counters, live checklist, Scan of the page, AI sets and AI suggestions to approve."
+msgstr "Xem trước Google và Facebook / Zalo / X, tiêu đề và mô tả có đếm pixel, danh sách kiểm tra trực tiếp, Scan trang, các bộ gửi AI và gợi ý AI chờ duyệt."
+
+msgid "Google connection saved."
+msgstr "Đã lưu kết nối Google."
+
+msgid "Google notified."
+msgstr "Đã báo Google."
+
+msgid "Google picks sitelinks by itself; no tag or plugin can switch them on. They mostly show when people search your brand or site name."
+msgstr "Google tự chọn sitelinks, không thẻ hay plugin nào bật được. Chúng thường hiện khi người ta tìm đúng tên thương hiệu hoặc tên site."
+
+msgid "Google rejected the URL (check token)."
+msgstr "Google từ chối URL (kiểm tra token)."
+
+msgid "Google will cut it here"
+msgstr "Google sẽ cắt ở đây"
+
+msgid "Google will not show this page. Check Advanced → Robots, and Settings → Reading → \"Discourage search engines\"."
+msgstr "Google sẽ không hiện trang này. Kiểm tra tab Nâng cao → Robots, và Cài đặt → Đọc → \"Ngăn chặn các công cụ tìm kiếm\"."
+
+msgid "Googlebot"
+msgstr "Googlebot"
+
+msgid "Googlebot gets another <title>: \"%s\""
+msgstr "Googlebot nhận <title> khác: \"%s\""
+
+msgid "Googlebot text is %d%% different in length."
+msgstr "Nội dung Googlebot thấy dài/ngắn khác %d%%."
+
+msgid "Group"
+msgstr "Nhóm"
+
+msgid "H1 present"
+msgstr "Có H1"
+
+msgid "Head tags"
+msgstr "Thẻ head"
+
+msgid "Heading hierarchy OK"
+msgstr "Thứ bậc heading ổn"
+
+msgid "Heading hierarchy is broken (level skipped)."
+msgstr "Cấu trúc heading bị gãy (nhảy cấp)."
+
+msgid "Heading levels skip (%s)"
+msgstr "Thứ tự tiêu đề bị nhảy cóc (%s)"
+
+msgid "Headings too big on phones"
+msgstr "Tiêu đề quá to trên điện thoại"
+
+msgid "Health %d · Critical %d · Warnings %d"
+msgstr "Health %d · Nghiêm trọng %d · Cảnh báo %d"
+
+msgid "Heavy: %s"
+msgstr "Nặng: %s"
+
+msgid "Hidden from Google (noindex)"
+msgstr "Đang chặn Google (noindex)"
+
+msgid "Hidden iframe loading %s"
+msgstr "Iframe ẩn đang tải %s"
+
+msgid "Hidden spam link: %s"
+msgstr "Link spam bị giấu: %s"
+
+msgid "Hide from sitemap (bot won't crawl via sitemap)"
+msgstr "Ẩn khỏi sitemap (bot không crawl qua sitemap)"
+
+msgid "Home"
+msgstr "Trang chủ"
+
+msgid "Homepage"
+msgstr "Trang chủ"
+
+msgid "Homepage title or tagline is empty."
+msgstr "Tiêu đề hoặc khẩu hiệu trang chủ đang trống."
+
+msgid "Hours must be a positive number."
+msgstr "Số giờ phải là số dương."
+
+msgid "How do some sites get extra links under their result (sitelinks)?"
+msgstr "Vì sao có site hiện thêm các link con bên dưới kết quả (sitelinks)?"
+
+msgid "How-to title"
+msgstr "Tiêu đề hướng dẫn"
+
+msgid "Icon-only links need a label (aria-label or a title) so Google and screen readers know where they go."
+msgstr "Link chỉ có icon cần nhãn (aria-label hoặc title) để Google và trình đọc màn hình biết link dẫn đi đâu."
+
+msgid "Image"
+msgstr "Ảnh"
+
+msgid "Image SEO"
+msgstr "SEO hình ảnh"
+
+msgid "Image is stretched (box ratio differs, object-fit: fill). Set object-fit: cover or use a matching image."
+msgstr "Ảnh bị kéo méo (tỷ lệ khung khác, object-fit: fill). Đặt object-fit: cover hoặc dùng ảnh đúng tỷ lệ."
+
+msgid "Image optimizer (from Live Audit)"
+msgstr "Tối ưu ảnh (từ Live Audit)"
+
+msgid "Images"
+msgstr "Hình ảnh"
+
+msgid "Images (%d)"
+msgstr "Ảnh (%d)"
+
+msgid "Images per screen"
+msgstr "Ảnh theo từng màn hình"
+
+msgid "Images to optimize (%d)"
+msgstr "Ảnh cần tối ưu (%d)"
+
+msgid "Images to resize for each screen"
+msgstr "Ảnh cần resize theo màn hình"
+
+msgid "Images without ALT text"
+msgstr "Ảnh thiếu ALT"
+
+msgid "Import"
+msgstr "Nhập"
+
+msgid "Import / Export"
+msgstr "Nhập / Xuất"
+
+msgid "Import CSV"
+msgstr "Nhập CSV"
+
+msgid "Import from Yoast SEO / Rank Math"
+msgstr "Nhập từ Yoast SEO / Rank Math"
+
+msgid "Import from Yoast SEO / Rank Math, MCP connection for Claude / Cursor, settings export, reset."
+msgstr "Nhập dữ liệu từ Yoast SEO / Rank Math, kết nối MCP cho Claude / Cursor, xuất cài đặt, reset."
+
+msgid "Import redirects too"
+msgstr "Nhập cả redirect"
+
+msgid "Import settings"
+msgstr "Nhập cài đặt"
+
+msgid "Importing %1$d / %2$d…"
+msgstr "Đang nhập %1$d / %2$d…"
+
+msgid "Impressions"
+msgstr "Lượt hiển thị"
+
+msgid "In each post (TQK SEO box)"
+msgstr "Trong từng bài viết (hộp TQK SEO)"
+
+msgid "Indexability"
+msgstr "Khả năng index"
+
+msgid "Indexable (not unexpected noindex)"
+msgstr "Cho phép index (không bị noindex ngoài ý muốn)"
+
+msgid "Indexed %1$d / %2$d posts…"
+msgstr "Đã đọc %1$d / %2$d bài…"
+
+msgid "Industry"
+msgstr "Ngành nghề"
+
+msgid "Industry + audience feed every AI prompt. Fill once at setup, AI writes in context."
+msgstr "Ngành nghề + khách hàng được đưa vào mọi yêu cầu AI. Điền một lần, AI viết đúng ngữ cảnh."
+
+msgid "Ingredients (one per line)"
+msgstr "Nguyên liệu (mỗi dòng một thứ)"
+
+msgid "Inline script #%1$d: %2$s"
+msgstr "Script inline #%1$d: %2$s"
+
+msgid "Inline scripts to review"
+msgstr "Script inline cần xem lại"
+
+msgid "Instant Indexing"
+msgstr "Index tức thì"
+
+msgid "Instructions (one step per line)"
+msgstr "Các bước (mỗi dòng một bước)"
+
+msgid "Intermediate"
+msgstr "Trung cấp"
+
+msgid "Internal Links"
+msgstr "Liên kết nội bộ"
+
+msgid "Internal graph, orphans, broken-link checker."
+msgstr "Sơ đồ link nội bộ, trang mồ côi, kiểm tra link hỏng."
+
+msgid "Internal link target not found: %s"
+msgstr "Không tìm thấy đích link nội bộ: %s"
+
+msgid "Internal links between your posts, orphan pages nobody links to, and broken links."
+msgstr "Link nội bộ giữa các bài, trang mồ côi không ai trỏ tới, và link hỏng."
+
+msgid "Internal links present"
+msgstr "Có link nội bộ"
+
+msgid "Intrinsic · weight"
+msgstr "Kích thước thật · dung lượng"
+
+msgid "Invalid JSON-LD block (Google drops it)"
+msgstr "Khối JSON-LD không hợp lệ (Google bỏ qua)"
+
+msgid "Invalid answer from the license server."
+msgstr "Máy chủ license trả lời không hợp lệ."
+
+msgid "Invalid redirect (check URLs and type)."
+msgstr "Redirect không hợp lệ (kiểm tra URL và type)."
+
+msgid "Invalid settings file."
+msgstr "File cài đặt không hợp lệ."
+
+msgid "Issue"
+msgstr "Vấn đề"
+
+msgid "Issues"
+msgstr "Vấn đề"
+
+msgid "JSON-LD @graph, templates per post type, BreadcrumbList."
+msgstr "JSON-LD @graph, mẫu theo post type, BreadcrumbList."
+
+msgid "Keep a clear main menu of 4–8 key pages, with short menu labels that match those pages' titles."
+msgstr "Làm menu chính rõ ràng, 4–8 trang quan trọng, chữ trên menu ngắn và khớp với tiêu đề của trang đó."
+
+msgid "Keep audit snapshots & files"
+msgstr "Giữ ảnh chụp & file audit"
+
+msgid "Keep it under about 580 px (≈ 60 characters) so it is not cut."
+msgstr "Giữ dưới khoảng 580 px (≈ 60 ký tự) để không bị cắt."
+
+msgid "Keep it under about 920 px (≈ 155 characters) so it is not cut."
+msgstr "Giữ dưới khoảng 920 px (≈ 155 ký tự) để không bị cắt."
+
+msgid "Keep one H1 for the main title; turn the others into H2 in the builder."
+msgstr "Chỉ giữ một H1 cho tiêu đề chính; đổi các H1 còn lại thành H2 trong builder."
+
+msgid "Keyword density OK"
+msgstr "Mật độ từ khoá ổn"
+
+msgid "Keyword density is low."
+msgstr "Mật độ từ khóa thấp."
+
+msgid "Keyword in H1"
+msgstr "Từ khoá có trong H1"
+
+msgid "Keyword in H2"
+msgstr "Từ khoá có trong H2"
+
+msgid "Keyword in URL"
+msgstr "Từ khoá có trong URL"
+
+msgid "Keyword in description"
+msgstr "Từ khoá có trong mô tả"
+
+msgid "Keyword in first paragraph"
+msgstr "Từ khoá có trong đoạn đầu"
+
+msgid "Keyword in image ALT"
+msgstr "Từ khoá có trong ALT ảnh"
+
+msgid "Keyword in title"
+msgstr "Từ khoá có trong tiêu đề"
+
+msgid "Keyword not found in H1."
+msgstr "Không thấy từ khóa trong H1."
+
+msgid "Keyword not found in SEO title."
+msgstr "Không thấy từ khóa trong SEO title."
+
+msgid "Keyword not found in URL."
+msgstr "Không thấy từ khóa trong URL."
+
+msgid "Keyword not found in any H2."
+msgstr "Không thấy từ khóa trong H2 nào."
+
+msgid "Keyword not found in first paragraph."
+msgstr "Không thấy từ khóa trong đoạn đầu."
+
+msgid "Keyword not found in image ALT text."
+msgstr "Không thấy từ khóa trong ALT ảnh."
+
+msgid "Keyword not found in meta description."
+msgstr "Không thấy từ khóa trong meta description."
+
+msgid "Keyword, length, links and readability: see the checklist below."
+msgstr "Từ khóa, độ dài, link và độ dễ đọc: xem danh sách kiểm tra bên dưới."
+
+msgid "Keywords"
+msgstr "Từ khóa"
+
+msgid "Large encoded payload decoded at runtime"
+msgstr "Khối dữ liệu mã hoá lớn được giải mã khi chạy"
+
+msgid "Last check of this page"
+msgstr "Lần kiểm tra gần nhất của trang này"
+
+msgid "Last check: %s"
+msgstr "Lần kiểm tra cuối: %s"
+
+msgid "Last full index: %s"
+msgstr "Lần đọc toàn bộ gần nhất: %s"
+
+msgid "Last hit"
+msgstr "Lần cuối"
+
+msgid "Last plan: %1$d fix now · %2$d should fix"
+msgstr "Kế hoạch gần nhất: %1$d sửa ngay · %2$d nên sửa"
+
+msgid "Last scan: %s"
+msgstr "Lần quét gần nhất: %s"
+
+msgid "Last submission: %1$s — %2$s"
+msgstr "Lần gửi gần nhất: %1$s — %2$s"
+
+msgid "Latest result"
+msgstr "Kết quả mới nhất"
+
+msgid "Lazy-loaded in the first screen: slows the main image (LCP)"
+msgstr "Ảnh ở màn hình đầu đang lazy-load: làm chậm ảnh chính (LCP)"
+
+msgid "Level"
+msgstr "Mức"
+
+msgid "License (Pro)"
+msgstr "License (Pro)"
+
+msgid "License key"
+msgstr "License key"
+
+msgid "License key rejected."
+msgstr "License key bị từ chối."
+
+msgid "License removed from this site."
+msgstr "Đã gỡ license khỏi site này."
+
+msgid "License server is not configured yet."
+msgstr "Chưa cấu hình máy chủ license."
+
+msgid "Lighter on phones (images)"
+msgstr "Nhẹ hơn trên điện thoại (ảnh)"
+
+msgid "Link Tools"
+msgstr "Công cụ links"
+
+msgid "Link index"
+msgstr "Chỉ mục link"
+
+msgid "Link targets"
+msgstr "Trang đích của link"
+
+msgid "Link those pages from the home page, keep them indexable and in the sitemap (done by this plugin)."
+msgstr "Link tới các trang đó từ trang chủ, để chúng được index và có trong sitemap (plugin đã lo phần này)."
+
+msgid "Links"
+msgstr "Liên kết"
+
+msgid "Links only Googlebot sees: %s"
+msgstr "Link chỉ Googlebot thấy: %s"
+
+msgid "Links without text"
+msgstr "Link không có chữ"
+
+msgid "Live Audit (SEO + schema + responsive + snapshot)"
+msgstr "Live Audit (SEO + schema + responsive + ảnh chụp)"
+
+msgid "Live — not saved yet"
+msgstr "Trực tiếp — chưa lưu"
+
+msgid "Local AI"
+msgstr "Local AI"
+
+msgid "Local LLM writes titles/descriptions for checked pages (max 10). Preview first — Apply saves via the normal bulk path."
+msgstr "AI local viết tiêu đề/mô tả cho các trang đã chọn (tối đa 10). Xem trước — bấm Áp dụng mới lưu."
+
+msgid "Local SEO"
+msgstr "SEO địa phương"
+
+msgid "Location"
+msgstr "Địa điểm"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "Long hex-escaped string (obfuscation)"
+msgstr "Chuỗi hex dài (làm rối code)"
+
+msgid "MCP Tools"
+msgstr "Công cụ MCP"
+
+msgid "MCP access (Claude, Cursor…)"
+msgstr "Kết nối MCP (Claude, Cursor…)"
+
+msgid "Main reading text is %1$spx on %2$s: use %3$spx"
+msgstr "Chữ đọc chính chỉ %1$spx trên %2$s: nên dùng %3$spx"
+
+msgid "Malware & SEO-spam scan"
+msgstr "Quét mã độc & SEO spam"
+
+msgid "Malware and SEO-spam scan: core and plugin files against official checksums, backdoors, hidden spam links, cloaking."
+msgstr "Quét mã độc và spam SEO: đối chiếu file lõi và plugin với checksum chính thức, backdoor, link spam ẩn, cloaking."
+
+msgid "Malware check of each page (as a visitor, from Google, as Googlebot) — adds about 10 seconds per page"
+msgstr "Kiểm tra mã độc từng trang (như khách, khách từ Google, Googlebot) — thêm khoảng 10 giây mỗi trang"
+
+msgid "Malware signs"
+msgstr "Có dấu hiệu mã độc"
+
+msgid "Meta Description"
+msgstr "Meta Description"
+
+msgid "Meta description"
+msgstr "Meta description"
+
+msgid "Meta description is longer than 160 characters."
+msgstr "Meta description dài hơn 160 ký tự."
+
+msgid "Meta description present"
+msgstr "Có meta description"
+
+msgid "Meta description too long"
+msgstr "Meta description quá dài"
+
+msgid "Minimize"
+msgstr "Thu nhỏ"
+
+msgid "Miss logging + hits + referrer, one-click redirect."
+msgstr "Ghi lại lỗi 404 + số lượt + nguồn, tạo redirect một cú bấm."
+
+msgid "Misses will appear here ordered by hits."
+msgstr "Các miss sẽ hiện ở đây theo lượt hits."
+
+msgid "Missing <title>"
+msgstr "Thiếu thẻ <title>"
+
+msgid "Missing Bing API key."
+msgstr "Thiếu Bing API key."
+
+msgid "Missing GSC OAuth token."
+msgstr "Thiếu OAuth token của GSC."
+
+msgid "Missing SEO title"
+msgstr "Thiếu SEO title"
+
+msgid "Missing SEO title."
+msgstr "Thiếu SEO title."
+
+msgid "Missing User-agent directive."
+msgstr "Thiếu directive User-agent."
+
+msgid "Missing meta description"
+msgstr "Thiếu meta description"
+
+msgid "Missing meta description."
+msgstr "Thiếu meta description."
+
+msgid "Missing: %s"
+msgstr "Thiếu: %s"
+
+msgid "Mobile"
+msgstr "Mobile"
+
+msgid "Model"
+msgstr "Model"
+
+msgid "Module disabled."
+msgstr "Đã tắt module."
+
+msgid "Module enabled."
+msgstr "Đã bật module."
+
+msgid "Modules"
+msgstr "Modules"
+
+msgid "More than one H1"
+msgstr "Có nhiều hơn một H1"
+
+msgid "Most frequent issues"
+msgstr "Lỗi gặp nhiều nhất"
+
+msgid "Multiple H1 (%d)"
+msgstr "Nhiều H1 (%d)"
+
+msgid "Multiple H1 headings found."
+msgstr "Phát hiện nhiều H1."
+
+msgid "New"
+msgstr "Mới"
+
+msgid "New ALT text"
+msgstr "Nhập ALT mới"
+
+msgid "New URL"
+msgstr "URL mới"
+
+msgid "News"
+msgstr "Tin tức"
+
+msgid "Nice to have"
+msgstr "Tốt hơn nữa"
+
+msgid "No 404s logged"
+msgstr "Chưa log 404 nào"
+
+msgid "No <title> tag found."
+msgstr "Không thấy thẻ <title>."
+
+msgid "No ALT text"
+msgstr "Thiếu ALT (mô tả ảnh)"
+
+msgid "No H1"
+msgstr "Không có H1"
+
+msgid "No H1 heading"
+msgstr "Không có thẻ H1"
+
+msgid "No H1 heading found."
+msgstr "Không tìm thấy H1."
+
+msgid "No H2 heading"
+msgstr "Không có thẻ H2"
+
+msgid "No H2 headings"
+msgstr "Không có thẻ H2"
+
+msgid "No JSON-LD schema"
+msgstr "Không có schema JSON-LD"
+
+msgid "No Open Graph image found."
+msgstr "Không thấy ảnh Open Graph."
+
+msgid "No Product schema (recommended: avoids Search Console errors)"
+msgstr "Không in schema Product (khuyên dùng: tránh lỗi Search Console)"
+
+msgid "No Schema template for post type \"%s\"."
+msgstr "Chưa có mẫu Schema cho post type \"%s\"."
+
+msgid "No X (Twitter) card tag"
+msgstr "Thiếu thẻ X (Twitter) card"
+
+msgid "No analysis yet. Type a focus keyword, or save the post, to see the checklist."
+msgstr "Chưa có phân tích. Gõ từ khoá chính, hoặc lưu bài, để xem bảng kiểm."
+
+msgid "No automatic image: add a featured image or a site default."
+msgstr "Chưa có ảnh tự động: hãy thêm ảnh đại diện hoặc đặt ảnh mặc định cho site."
+
+msgid "No broken links found."
+msgstr "Không có links hỏng."
+
+msgid "No canonical"
+msgstr "Thiếu canonical"
+
+msgid "No canonical URL."
+msgstr "Thiếu canonical URL."
+
+msgid "No canonical link"
+msgstr "Không có link canonical"
+
+msgid "No description: Google will pick a snippet from the page."
+msgstr "Chưa có mô tả: Google sẽ tự lấy một đoạn trong trang."
+
+msgid "No files generated yet."
+msgstr "Chưa tạo file nào."
+
+msgid "No focus keyword set."
+msgstr "Chưa đặt từ khóa chính."
+
+msgid "No history for this query yet — Sync daily builds it."
+msgstr "Chưa có lịch sử cho truy vấn này — Đồng bộ hằng ngày sẽ tạo dần."
+
+msgid "No image — cards will show without one."
+msgstr "Không có ảnh — thẻ chia sẻ sẽ hiện không ảnh."
+
+msgid "No images found."
+msgstr "Không thấy ảnh nào."
+
+msgid "No incoming internal links (orphan)."
+msgstr "Không có link nội bộ trỏ tới (orphan)."
+
+msgid "No internal links found."
+msgstr "Không tìm thấy link nội bộ."
+
+msgid "No issues"
+msgstr "Không có lỗi"
+
+msgid "No known key found. Use the key names from the exported JSON."
+msgstr "Không thấy key nào hợp lệ. Hãy dùng đúng tên key trong JSON đã xuất."
+
+msgid "No link from any post or menu points here, so visitors and Google can hardly find it. Link to it from a related post or a menu. Front page, cart / checkout / account and noindex pages are left out."
+msgstr "Không có link nào từ bài viết hay menu trỏ tới đây, nên khách và Google khó tìm thấy. Hãy thêm link từ một bài liên quan hoặc từ menu. Trang chủ, giỏ hàng / thanh toán / tài khoản và trang noindex không được tính."
+
+msgid "No malware signs"
+msgstr "Không thấy mã độc"
+
+msgid "No meta description found."
+msgstr "Không thấy meta description."
+
+msgid "No meta robots found."
+msgstr "Không thấy meta robots."
+
+msgid "No orphans found"
+msgstr "Không có orphan"
+
+msgid "No over-long paragraphs"
+msgstr "Không có đoạn văn quá dài"
+
+msgid "No page checked yet"
+msgstr "Chưa kiểm tra trang nào"
+
+msgid "No pages missing titles or descriptions. Run a scan first."
+msgstr "Không có trang nào thiếu tiêu đề hoặc mô tả. Hãy chạy quét trước."
+
+msgid "No performance data yet — connect above then Sync."
+msgstr "Chưa có dữ liệu hiệu suất — kết nối ở trên rồi Đồng bộ."
+
+msgid "No problem found"
+msgstr "Không thấy vấn đề"
+
+msgid "No problem found on the page."
+msgstr "Không thấy lỗi nào trên trang."
+
+msgid "No scans yet"
+msgstr "Chưa quét lần nào"
+
+msgid "No schema"
+msgstr "Chưa có schema"
+
+msgid "No schema type this plugin can fill was found in that JSON-LD."
+msgstr "Không tìm thấy loại schema nào plugin có thể điền trong JSON-LD đó."
+
+msgid "No share image — the link will show without a picture."
+msgstr "Chưa có ảnh chia sẻ — link sẽ hiện không có hình."
+
+msgid "No sign of compromise found."
+msgstr "Không phát hiện dấu hiệu bị xâm nhập."
+
+msgid "No srcset: every screen downloads the same file."
+msgstr "Không có srcset: mọi màn hình đều tải cùng một file."
+
+msgid "No width/height: the page jumps while loading"
+msgstr "Thiếu width/height: trang bị giật khi tải"
+
+msgid "Noindex attachments"
+msgstr "Noindex attachments"
+
+msgid "Noindex author archives"
+msgstr "Noindex author archives"
+
+msgid "Noindex search pages"
+msgstr "Noindex search pages"
+
+msgid "Noindex tag archives"
+msgstr "Noindex tag archives"
+
+msgid "None"
+msgstr "Không"
+
+msgid "Not copied automatically: the text is selected in the box below, press Ctrl+C."
+msgstr "Chưa copy tự động được: nội dung đã được bôi đen ở ô bên dưới, bấm Ctrl+C."
+
+msgid "Not copied: select the CSS line under the item and press Ctrl+C."
+msgstr "Chưa copy được: bôi đen dòng CSS dưới mục đó rồi bấm Ctrl+C."
+
+msgid "Not listed in robots.txt or llms.txt; /sitemap_index.xml and /wp-sitemap.xml return a normal 404. Search engines get this address only from you (below)."
+msgstr "Không ghi trong robots.txt hay llms.txt; /sitemap_index.xml và /wp-sitemap.xml trả về trang 404 bình thường. Công cụ tìm kiếm chỉ biết địa chỉ này khi bạn gửi (bên dưới)."
+
+msgid "Not orphan (has incoming links)"
+msgstr "Không mồ côi (có link trỏ tới)"
+
+msgid "Not set"
+msgstr "Chưa đặt"
+
+msgid "Not submitted — see the reasons below."
+msgstr "Chưa gửi được — xem lý do bên dưới."
+
+msgid "Note for the AI (optional), e.g. focus on mobile"
+msgstr "Lời nhắn cho AI (không bắt buộc), ví dụ: tập trung vào mobile"
+
+msgid "Nothing applied."
+msgstr "Chưa áp dụng gì."
+
+msgid "Nothing found in the post content. Fill the fields in by hand."
+msgstr "Không tìm thấy trong nội dung bài. Hãy điền tay."
+
+msgid "Nothing left to fix on this page."
+msgstr "Trang này không còn gì cần sửa."
+
+msgid "Nothing to fix now on the checked pages."
+msgstr "Các trang đã kiểm tra hiện không có gì cần sửa."
+
+msgid "Nothing to fix."
+msgstr "Không có gì cần sửa."
+
+msgid "Notify Bing"
+msgstr "Báo Bing"
+
+msgid "Notify Google"
+msgstr "Báo Google"
+
+msgid "Now"
+msgstr "Hiện tại"
+
+msgid "Number of ratings"
+msgstr "Số lượt đánh giá"
+
+msgid "OAuth token"
+msgstr "OAuth token"
+
+msgid "OG title + description set"
+msgstr "Đã có tiêu đề + mô tả OG"
+
+msgid "Off (recommended): the AI app sends suggestions; you review them in the post editor and choose what to use."
+msgstr "Tắt (khuyên dùng): ứng dụng AI chỉ gửi gợi ý; bạn xem trong trang sửa bài và chọn dùng cái nào."
+
+msgid "Official core checksums unavailable for this version/locale: core was not verified."
+msgstr "Không có checksum chính thức cho phiên bản/ngôn ngữ này: chưa kiểm được lõi WordPress."
+
+msgid "Old URL"
+msgstr "URL cũ"
+
+msgid "Ollama/LM Studio suggestions with preview-approve + business context."
+msgstr "Gợi ý từ Ollama/LM Studio, xem trước rồi duyệt, có ngữ cảnh doanh nghiệp."
+
+msgid "On mobile (375 px)"
+msgstr "Trên điện thoại (375 px)"
+
+msgid "On the page"
+msgstr "Trên trang"
+
+msgid "One ingredient per line."
+msgstr "Mỗi dòng một nguyên liệu."
+
+msgid "One pair per block: question on one line, answer on the next, blank line between pairs."
+msgstr "Mỗi cặp một khối: câu hỏi một dòng, câu trả lời dòng kế tiếp, cách nhau một dòng trống."
+
+msgid "One script tag with a single @graph is printed in wp_head. Homepage preview:"
+msgstr "Một thẻ script duy nhất chứa @graph được in ra trong wp_head. Xem trước trang chủ:"
+
+msgid "One step per line."
+msgstr "Mỗi dòng một bước."
+
+msgid "One step per line. Numbering is added automatically."
+msgstr "Mỗi dòng một bước. Số thứ tự được thêm tự động."
+
+msgid "One switch per module; pages of disabled modules disappear from the menu."
+msgstr "Mỗi module một công tắc; module tắt thì trang của nó ẩn khỏi menu."
+
+msgid "Only %1$s is redirected, to %2$s"
+msgstr "Chỉ %1$s bị chuyển hướng, sang %2$s"
+
+msgid "Only %d%% of the file is visible (object-fit: cover): crop to the visible area."
+msgstr "Chỉ %d%% ảnh được hiển thị (object-fit: cover): cắt theo vùng nhìn thấy."
+
+msgid "Only URLs on this site can be audited."
+msgstr "Chỉ audit được URL thuộc site này."
+
+msgid "Only images the audit confirmed as a problem are listed. Sizes come from the real boxes measured at 1440 / 1280 / 768 / 375 px (1x and 2x)."
+msgstr "Chỉ liệt kê những ảnh mà audit đã xác nhận có vấn đề. Kích thước tính từ khung thật đo ở 1440 / 1280 / 768 / 375 px (1x và 2x)."
+
+msgid "Only set this if the rating comes from real learner reviews."
+msgstr "Chỉ điền khi điểm đánh giá đến từ học viên thật."
+
+msgid "Open"
+msgstr "Mở"
+
+msgid "Open Analytics website"
+msgstr "Mở Analytics website"
+
+msgid "Open Graph title or description is empty."
+msgstr "Tiêu đề hoặc mô tả Open Graph đang trống."
+
+msgid "Open Graph title/description/image incomplete"
+msgstr "Thiếu tiêu đề/mô tả/ảnh Open Graph"
+
+msgid "Open Sitemap"
+msgstr "Mở Sitemap"
+
+msgid "Open any post or page: the box sits under the editor; the last audit of that page is shown there."
+msgstr "Mở bài hoặc trang bất kỳ: hộp nằm dưới trình soạn thảo, hiện luôn kết quả audit gần nhất của trang đó."
+
+msgid "Open in the editor to fix"
+msgstr "Mở trình sửa để sửa"
+
+msgid "Opening %s…"
+msgstr "Đang mở %s…"
+
+msgid "Opening hours"
+msgstr "Giờ mở cửa"
+
+msgid "Opens every page like a visitor, checks tags, schema and fields, measures 4 screen sizes, snapshots the full page (desktop + mobile), then moves to the next page by itself. The full list is taken at start and each page is marked done as it finishes: stop, close the tab or lose the connection at any time and Continue picks up at the next unfinished page."
+msgstr "Mở từng trang như khách truy cập, kiểm tra thẻ, schema và các trường, đo 4 kích thước màn hình, chụp toàn trang (desktop + mobile), rồi tự sang trang tiếp. Danh sách được lấy đủ lúc bắt đầu và mỗi trang được đánh dấu xong ngay khi xong: dừng, đóng tab hay mất mạng bất cứ lúc nào thì bấm Tiếp tục sẽ chạy tiếp từ trang chưa xong."
+
+msgid "Opens the page like a visitor, scrolls it once and checks 4 screen sizes. About 30 seconds."
+msgstr "Mở trang như khách xem, cuộn một lượt và kiểm tra 4 kích thước màn hình. Khoảng 30 giây."
+
+msgid "Optimize"
+msgstr "Tối ưu"
+
+msgid "Optimize these images automatically"
+msgstr "Tự động tối ưu các ảnh này"
+
+msgid "Optional. Suggestions run against your own machine — no API fees. You can skip this entirely."
+msgstr "Tùy chọn. Gợi ý chạy trên máy của bạn — không tốn phí API. Có thể bỏ qua hoàn toàn."
+
+msgid "Original: %s"
+msgstr "Ảnh gốc: %s"
+
+msgid "Orphan content"
+msgstr "Nội dung orphan"
+
+msgid "Output: WebP, quality 78."
+msgstr "Đầu ra: WebP, chất lượng 78."
+
+msgid "Over %1$d checks: SEO %2$d → %3$d, to fix now %4$d → %5$d"
+msgstr "Qua %1$d lần kiểm tra: SEO %2$d → %3$d, việc cần sửa ngay %4$d → %5$d"
+
+msgid "Overwrite existing TQK values"
+msgstr "Ghi đè giá trị TQK đã có"
+
+msgid "PHP %s (requires 8.0+)"
+msgstr "PHP %s (yêu cầu 8.0+)"
+
+msgid "PHP file not in the official release of this plugin."
+msgstr "File PHP không có trong bản phát hành chính thức của plugin này."
+
+msgid "PHP file that is not part of WordPress core."
+msgstr "File PHP không thuộc lõi WordPress."
+
+msgid "Page"
+msgstr "Trang"
+
+msgid "Page Audit (bot view)"
+msgstr "Audit trang (góc nhìn bot)"
+
+msgid "Page by page (worst first)"
+msgstr "Từng trang (trang kém nhất trước)"
+
+msgid "Page cannot be opened in a frame (X-Frame-Options / CSP)."
+msgstr "Trang không mở được trong khung (X-Frame-Options / CSP)."
+
+msgid "Page check"
+msgstr "Kiểm tra trang"
+
+msgid "Page did not load within %d s."
+msgstr "Trang không tải xong trong %d giây."
+
+msgid "Page did not load."
+msgstr "Trang không tải được."
+
+msgid "Page is set to noindex"
+msgstr "Trang đang đặt noindex"
+
+msgid "Page no longer published."
+msgstr "Trang không còn được xuất bản."
+
+msgid "Page redirects"
+msgstr "Trang bị chuyển hướng"
+
+msgid "Page scrolls sideways (tablet / mobile)"
+msgstr "Trang tràn ngang (tablet / mobile)"
+
+msgid "Pages"
+msgstr "Số trang"
+
+msgid "Pages are each built by hand, so every one is checked. Posts, products and other types share a template: one sample post already shows whether its SEO tags and schema are right."
+msgstr "Mỗi trang (Page) được dựng riêng nên đều được kiểm tra hết. Bài viết, sản phẩm và các loại khác dùng chung một mẫu: chỉ cần 1 bài mẫu là biết thẻ SEO và schema đã chuẩn chưa."
+
+msgid "Pages audited"
+msgstr "Số trang đã audit"
+
+msgid "Pages checked"
+msgstr "Trang đã kiểm tra"
+
+msgid "Pages that rank usually have at least %d words of useful text."
+msgstr "Trang lên top thường có ít nhất %d chữ nội dung hữu ích."
+
+msgid "Part %1$d/%2$d"
+msgstr "Phần %1$d/%2$d"
+
+msgid "Paste its JSON reply here: each key fills the field with the same key. You can also paste JSON-LD copied from any page: the schema type and its fields are filled for you."
+msgstr "Dán JSON AI trả về vào đây: key nào sẽ điền đúng vào trường có key đó. Có thể dán cả JSON-LD copy từ bất kỳ trang nào: loại schema và các trường sẽ tự được điền."
+
+msgid "Paste the JSON first."
+msgstr "Hãy dán JSON vào trước."
+
+msgid "Paused. Press Continue to resume from the next unfinished page."
+msgstr "Đã tạm dừng. Bấm Tiếp tục để chạy từ trang chưa xong."
+
+msgid "Per-page sitemap link + exclude lives in Dashboard accordion — no need to open this page. Hidden pages are skipped so bots can't crawl via sitemap."
+msgstr "Link sitemap và tuỳ chọn loại trừ từng trang nằm trong Dashboard — không cần mở trang này. Trang ẩn sẽ bị bỏ qua để bot không crawl qua sitemap."
+
+msgid "Permission denied"
+msgstr "Không có quyền"
+
+msgid "Phone"
+msgstr "Điện thoại"
+
+msgid "Pick a query first."
+msgstr "Chọn một truy vấn trước."
+
+msgid "Pick a query…"
+msgstr "Chọn truy vấn…"
+
+msgid "Pick a schema type in the Advanced tab (Article, Product, FAQ…) so Google understands the page."
+msgstr "Chọn loại schema trong tab Nâng cao (Article, Product, FAQ…) để Google hiểu trang."
+
+msgid "Pick one set and copy it: each set starts with the page text (no tags, no shortcodes, up to 1,000 words), then one task. Small assistants like Gemini in Chrome read one set at a time best."
+msgstr "Chọn một bộ và copy: mỗi bộ bắt đầu bằng nội dung trang (không thẻ, không shortcode, tối đa 1.000 chữ), sau đó là một nhiệm vụ. AI nhỏ như Gemini trong Chrome đọc từng bộ một là tốt nhất."
+
+msgid "Pick what to check (pages, 1 sample or all posts, archives), press Start: it runs by itself and resumes if stopped."
+msgstr "Chọn phạm vi (trang, 1 bài mẫu hoặc tất cả bài, trang danh mục), bấm Bắt đầu: tự chạy và tự tiếp tục nếu bị dừng."
+
+msgid "Ping Google (reuses GSC token) + Bing on publish. Enable the module first."
+msgstr "Báo Google (dùng lại token GSC) + Bing khi đăng bài. Hãy bật module trước."
+
+msgid "Plugin data reset and re-initialized."
+msgstr "Đã reset và khởi tạo lại dữ liệu plugin."
+
+msgid "Points lost for:"
+msgstr "Bị trừ điểm vì:"
+
+msgid "Position"
+msgstr "Vị trí"
+
+msgid "Position (Δ)"
+msgstr "Vị trí (Δ)"
+
+msgid "Post"
+msgstr "Bài viết"
+
+msgid "Post not found."
+msgstr "Không tìm thấy bài viết."
+
+msgid "Post type"
+msgstr "Post type"
+
+msgid "Posts"
+msgstr "Bài viết"
+
+msgid "Prep time"
+msgstr "Thời gian chuẩn bị"
+
+msgid "Pretty permalinks enabled"
+msgstr "Đã bật pretty permalinks"
+
+msgid "Preview"
+msgstr "Xem trước"
+
+msgid "Print / Save as PDF"
+msgstr "In / Lưu PDF"
+
+msgid "Private sitemap name (optional)"
+msgstr "Tên sitemap riêng (tuỳ chọn)"
+
+msgid "Pro activated."
+msgstr "Đã kích hoạt Pro."
+
+msgid "Pro active"
+msgstr "Pro đang hoạt động"
+
+msgid "Pro add-on installed · no license yet"
+msgstr "Đã cài add-on Pro · chưa có license"
+
+msgid "Pro does these steps for you: resize, crop, compress, convert to WebP and serve through srcset, with one click."
+msgstr "Pro làm giúp bạn các bước này: thu nhỏ, cắt, nén, chuyển WebP và phục vụ qua srcset, chỉ với một cú bấm."
+
+msgid "Pro is a separate add-on plugin (\"TQK WP SEO Pro\"). Install and activate it, then enter your license key here."
+msgstr "Pro là plugin bổ sung riêng (\"TQK WP SEO Pro\"). Cài và kích hoạt nó, sau đó nhập license key tại đây."
+
+msgid "Pro makes one file per screen (resized, cropped, compressed, WebP) and serves it through srcset. Check the list below, then Generate and Activate."
+msgstr "Bản Pro tạo một file cho mỗi màn hình (resize, cắt, nén, WebP) và gắn qua srcset. Xem danh sách bên dưới, rồi bấm Tạo file và Kích hoạt."
+
+msgid "Problem"
+msgstr "Vấn đề"
+
+msgid "Product Offer/Review schema, product sitemap. Loads only with Woo."
+msgstr "Schema Offer/Review cho sản phẩm, sitemap sản phẩm. Chỉ chạy khi có WooCommerce."
+
+msgid "Product price is 0: Google shows it as free. Use the \"no price\" setting instead."
+msgstr "Giá sản phẩm là 0: Google sẽ hiển thị là miễn phí. Hãy dùng cài đặt \"sản phẩm không có giá\"."
+
+msgid "Product price shown as 0"
+msgstr "Sản phẩm hiện giá 0"
+
+msgid "Product schema without price"
+msgstr "Schema Product không có giá"
+
+msgid "Product: price, stock and SKU always come from the WooCommerce product itself, so only the schema type was taken."
+msgstr "Sản phẩm: giá, tồn kho và SKU luôn lấy từ chính sản phẩm WooCommerce, nên chỉ lấy loại schema."
+
+msgid "Products without a price (\"Liên hệ\" / contact for price)"
+msgstr "Sản phẩm không có giá (\"Liên hệ\")"
+
+msgid "Property"
+msgstr "Property"
+
+msgid "Provider"
+msgstr "Provider"
+
+msgid "Public address, listed in robots.txt. Give it a private name in Settings → Sitemap if you do not want competitors to read your full URL list."
+msgstr "Địa chỉ công khai, có ghi trong robots.txt. Đặt tên riêng trong Cài đặt → Sitemap nếu không muốn đối thủ đọc được toàn bộ danh sách URL của bạn."
+
+msgid "Published"
+msgstr "Đã đăng"
+
+msgid "Published content is set to noindex."
+msgstr "Nội dung đã xuất bản đang bị noindex."
+
+msgid "Push all pages with issues to MCP"
+msgstr "Push tất cả trang có lỗi sang MCP"
+
+msgid "Push to MCP"
+msgstr "Push sang MCP"
+
+msgid "Query"
+msgstr "Truy vấn"
+
+msgid "Quick"
+msgstr "Nhanh"
+
+msgid "Quick fix: pages missing SEO basics (%d)"
+msgstr "Sửa nhanh: trang thiếu thông tin SEO cơ bản (%d)"
+
+msgid "REST tools for local AI agents (token auth)."
+msgstr "Công cụ REST cho AI agent chạy local (xác thực bằng token)."
+
+msgid "Rank history (local tracker)"
+msgstr "Lịch sử thứ hạng (theo dõi local)"
+
+msgid "Rating must be between 0 and 5."
+msgstr "Điểm đánh giá phải từ 0 đến 5."
+
+msgid "Ratings / reviews in that JSON-LD were not imported: copied ratings count as fake reviews for Google (manual action risk)."
+msgstr "Điểm đánh giá / review trong JSON-LD đó không được nhập: copy điểm đánh giá bị Google xem là review giả (có thể bị phạt thủ công)."
+
+msgid "Ratings are never imported: copied or invented ratings count as fake reviews for Google."
+msgstr "Không nhập điểm đánh giá: điểm copy hoặc tự bịa bị Google xem là review giả."
+
+msgid "Read JSON"
+msgstr "Đọc JSON"
+
+msgid "Read-only scan: nothing was changed or deleted. A critical finding in a cracked plugin or theme means: remove it and install the official version, then change all admin passwords."
+msgstr "Quét chỉ đọc: không thay đổi hay xoá gì. Có lỗi nghiêm trọng trong plugin hoặc theme bản crack thì: gỡ nó, cài bản chính thức, rồi đổi toàn bộ mật khẩu admin."
+
+msgid "Reading the page…"
+msgstr "Đang đọc trang…"
+
+msgid "Reads every published post, page and product (shortcodes expanded) plus your menus. Posts are re-indexed on save; rebuild once after installing, or after big changes."
+msgstr "Đọc mọi bài, trang, sản phẩm đã xuất bản (kể cả shortcode) và các menu. Bài được đọc lại mỗi khi lưu; hãy bấm Dựng lại một lần sau khi cài plugin, hoặc sau khi thay đổi lớn."
+
+msgid "Ready"
+msgstr "Sẵn sàng"
+
+msgid "Rebuild link index"
+msgstr "Dựng lại chỉ mục link"
+
+msgid "Rebuild the index, then link the orphans from related posts."
+msgstr "Dựng lại chỉ mục, rồi thêm link tới trang mồ côi từ các bài liên quan."
+
+msgid "Recent pings"
+msgstr "Lần báo gần đây"
+
+msgid "Recipe description"
+msgstr "Mô tả công thức"
+
+msgid "Recipe name"
+msgstr "Tên món"
+
+msgid "Redirect saved."
+msgstr "Đã lưu redirect."
+
+msgid "Redirects"
+msgstr "Chuyển hướng"
+
+msgid "Redirects to %s"
+msgstr "Chuyển hướng tới %s"
+
+msgid "Redirects: %1$d imported, %2$d skipped."
+msgstr "Redirect: nhập %1$d, bỏ qua %2$d."
+
+msgid "Referrer"
+msgstr "Nguồn"
+
+msgid "Regenerate"
+msgstr "Tạo lại"
+
+msgid "Remove"
+msgstr "Xoá"
+
+msgid "Remove from this site"
+msgstr "Gỡ khỏi site này"
+
+msgid "Rendered title is longer than 60 characters."
+msgstr "Title render dài hơn 60 ký tự."
+
+msgid "Report branding (white-label)"
+msgstr "Thương hiệu trên báo cáo (white-label)"
+
+msgid "Report language"
+msgstr "Ngôn ngữ báo cáo"
+
+msgid "Requests / day"
+msgstr "Request / ngày"
+
+msgid "Requests / minute"
+msgstr "Request / phút"
+
+msgid "Reset"
+msgstr "Reset"
+
+msgid "Reset all data"
+msgstr "Reset toàn bộ"
+
+msgid "Reset to default"
+msgstr "Về mặc định"
+
+msgid "Resize to: %dpx"
+msgstr "Nên resize: %dpx"
+
+msgid "Result"
+msgstr "Kết quả"
+
+msgid "Retry failed pages"
+msgstr "Chạy lại trang lỗi"
+
+msgid "Review"
+msgstr "Xem & duyệt"
+
+msgid "Robots"
+msgstr "Robots"
+
+msgid "Role Manager"
+msgstr "Phân quyền"
+
+msgid "Run SEO Scan"
+msgstr "Chạy quét SEO"
+
+msgid "Run first scan"
+msgstr "Chạy quét đầu tiên"
+
+msgid "Run the Live Audit: every page is opened like a visitor, at 4 screen sizes, and gets its own action plan."
+msgstr "Chạy Live Audit: từng trang được mở như khách thật, ở 4 kích thước màn hình, và có kế hoạch sửa riêng."
+
+msgid "Runs in small steps so shared hosting never times out; it only reports, never deletes."
+msgstr "Chạy từng bước nhỏ nên hosting giá rẻ không bị quá tải; chỉ báo cáo, không bao giờ xoá."
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "SEO & website health report"
+msgstr "Báo cáo SEO & sức khoẻ website"
+
+msgid "SEO (TQK)"
+msgstr "SEO (TQK)"
+
+msgid "SEO Score"
+msgstr "Điểm SEO"
+
+msgid "SEO Title"
+msgstr "SEO Title"
+
+msgid "SEO report — %s"
+msgstr "Báo cáo SEO — %s"
+
+msgid "SEO title"
+msgstr "Tiêu đề SEO"
+
+msgid "SEO title is longer than 60 characters."
+msgstr "SEO title dài hơn 60 ký tự."
+
+msgid "SEO title present"
+msgstr "Có SEO title"
+
+msgid "SEO title too long"
+msgstr "SEO title quá dài"
+
+msgid "Same as page title"
+msgstr "Tự động theo tiêu đề trang"
+
+msgid "Same as the admin viewing it"
+msgstr "Theo ngôn ngữ của người đang xem"
+
+msgid "Same title and description as Google (SEO)"
+msgstr "Dùng giống Google (tiêu đề và mô tả SEO)"
+
+msgid "Sample — one page per post type"
+msgstr "Sample — 1 trang mỗi post type"
+
+msgid "Save"
+msgstr "Lưu"
+
+msgid "Save & scan"
+msgstr "Lưu & scan"
+
+msgid "Save ALT"
+msgstr "Lưu ALT"
+
+msgid "Save as WebP, quality about 75-80 (PNG with transparency also works as WebP)."
+msgstr "Lưu dạng WebP, chất lượng khoảng 75-80 (PNG có nền trong suốt vẫn dùng được WebP)."
+
+msgid "Save full-page snapshots (desktop + mobile)"
+msgstr "Lưu ảnh chụp toàn trang (desktop + mobile)"
+
+msgid "Save robots.txt"
+msgstr "Lưu robots.txt"
+
+msgid "Save rules"
+msgstr "Lưu quy tắc"
+
+msgid "Save schema"
+msgstr "Lưu schema"
+
+msgid "Save settings"
+msgstr "Lưu cài đặt"
+
+msgid "Save sitemap"
+msgstr "Lưu sitemap"
+
+msgid "Saved %d posts."
+msgstr "Đã lưu %d bài."
+
+msgid "Saved here once per scan. Re-audit shows the same list until you fix — no rescan needed."
+msgstr "Lưu tại đây sau mỗi lần quét. Audit lại sẽ hiện cùng danh sách cho tới khi bạn sửa — không cần quét lại."
+
+msgid "Saved: the editor, the dashboard and MCP now show this result."
+msgstr "Đã lưu: trang sửa bài, Dashboard và MCP giờ đều thấy kết quả này."
+
+msgid "Saving…"
+msgstr "Đang lưu…"
+
+msgid "Scan finished."
+msgstr "Đã quét xong."
+
+msgid "Scan history and the trend versus your last run will appear here."
+msgstr "Lịch sử quét và xu hướng so với lần trước sẽ hiện ở đây."
+
+msgid "Scan mode"
+msgstr "Kiểu scan"
+
+msgid "Scan now"
+msgstr "Quét ngay"
+
+msgid "Scan the page"
+msgstr "Scan trang"
+
+msgid "Scan the page first: the AI gets the report, the action plan and screenshots of 4 screens."
+msgstr "Hãy scan trang trước: AI sẽ nhận báo cáo, kế hoạch cải thiện và ảnh chụp 4 màn hình."
+
+msgid "Scan the page first: there is no report to send yet."
+msgstr "Hãy scan trang trước: chưa có báo cáo để gửi."
+
+msgid "Scans all public post types in batches of 50 (posts, pages, CPTs), plus site checks for sitemap · robots · schema. Large sites never time out."
+msgstr "Quét mọi post type công khai theo lô 50 (bài, trang, CPT), kèm kiểm tra sitemap · robots · schema. Site lớn cũng không bị timeout."
+
+msgid "Schema"
+msgstr "Schema"
+
+msgid "Schema & Breadcrumb"
+msgstr "Schema & Breadcrumb"
+
+msgid "Schema Type"
+msgstr "Schema Type"
+
+msgid "Schema missing required data"
+msgstr "Schema thiếu thông tin bắt buộc"
+
+msgid "Schema per post type (fix missing in one go)"
+msgstr "Schema theo post type (sửa chỗ thiếu một lần)"
+
+msgid "Schema template set"
+msgstr "Đã có mẫu schema"
+
+msgid "Schema templates"
+msgstr "Templates Schema"
+
+msgid "Schema templates not configured."
+msgstr "Chưa cấu hình mẫu schema."
+
+msgid "Schema type"
+msgstr "Schema type"
+
+msgid "Score: %d/100"
+msgstr "Điểm: %d/100"
+
+msgid "Scripts from unfamiliar domains: %s"
+msgstr "Script từ domain lạ: %s"
+
+msgid "Scripts from unknown domains"
+msgstr "Script từ domain lạ"
+
+msgid "Scripts on this page"
+msgstr "Script trên trang"
+
+msgid "Scripts that visitors get but you (logged in) do not: %s"
+msgstr "Script khách nhận được nhưng bạn (đang đăng nhập) không thấy: %s"
+
+msgid "Search Console clicks/impressions/CTR/position."
+msgstr "Lượt nhấp/hiển thị/CTR/vị trí từ Search Console."
+
+msgid "Search Console is not connected: add the property and OAuth token, or submit the sitemap by hand in Search Console."
+msgstr "Chưa kết nối Search Console: hãy thêm property và OAuth token, hoặc gửi sitemap bằng tay trong Search Console."
+
+msgid "Secondary keywords (comma, max 4)"
+msgstr "Từ khoá phụ (cách nhau dấu phẩy, tối đa 4)"
+
+msgid "Secondary keywords in content"
+msgstr "Từ khoá phụ có trong nội dung"
+
+msgid "Secondary keywords missing in content: %s"
+msgstr "Từ khoá phụ chưa có trong nội dung: %s"
+
+msgid "Section by section"
+msgstr "Chi tiết từng phần"
+
+msgid "Security"
+msgstr "Bảo mật"
+
+msgid "Security alerts"
+msgstr "Cảnh báo bảo mật"
+
+msgid "Security check…"
+msgstr "Đang kiểm tra bảo mật…"
+
+msgid "Security scan"
+msgstr "Quét bảo mật"
+
+msgid "Security warnings"
+msgstr "Cảnh báo bảo mật"
+
+msgid "See"
+msgstr "Xem"
+
+msgid "See Schema templates above"
+msgstr "Xem mẫu Schema ở trên"
+
+msgid "See how"
+msgstr "Xem cách làm"
+
+msgid "Select image"
+msgstr "Chọn ảnh"
+
+msgid "Select the text and copy it (Ctrl+C)."
+msgstr "Hãy bôi đen đoạn JSON và copy (Ctrl+C)."
+
+msgid "Send to AI"
+msgstr "Gửi cho AI"
+
+msgid "Send to an AI app via MCP (Claude, Cursor…)"
+msgstr "Gửi cho ứng dụng AI qua MCP (Claude, Cursor…)"
+
+msgid "Sends the last scan (%s): report, action plan, security check and screenshots of 4 screens."
+msgstr "Gửi lần scan gần nhất (%s): báo cáo, kế hoạch cải thiện, kiểm tra bảo mật và ảnh chụp 4 màn hình."
+
+msgid "Sent"
+msgstr "Đã gửi"
+
+msgid "Sent back by AI apps connected over MCP. Nothing has been changed on these pages: open one to read the advice and choose which values to use."
+msgstr "Do các ứng dụng AI (qua MCP) gửi về. Chưa có gì thay đổi trên các trang này: mở từng trang để đọc lời khuyên và chọn giá trị muốn dùng."
+
+msgid "Sent. In Claude or Cursor, ask: \"review the pages I sent from TQK SEO\"."
+msgstr "Đã gửi. Trong Claude hoặc Cursor, hãy nói: \"xem các trang tôi gửi từ TQK SEO\"."
+
+msgid "Sentences ≤ %1$d %2$s on average"
+msgstr "Câu trung bình ≤ %1$d %2$s"
+
+msgid "Served as %s: convert to compressed WebP."
+msgstr "Đang dùng %s: nên chuyển sang WebP nén."
+
+msgid "Set a focus keyword to check this."
+msgstr "Đặt từ khoá chính để kiểm tra mục này."
+
+msgid "Set once for the whole site; each post can override in its editor."
+msgstr "Đặt một lần cho cả site; từng bài có thể chỉnh riêng trong trang sửa bài."
+
+msgid "Set the Site Title and a site icon (Appearance → Customize → Site Identity): Google shows them as the name and logo above the result; the plugin outputs the WebSite and Organization schema for it."
+msgstr "Đặt Tên site và Biểu tượng site (Giao diện → Tùy biến → Nhận diện site): Google hiện chúng làm tên và logo phía trên kết quả; plugin đã xuất schema WebSite và Organization cho việc này."
+
+msgid "Set the main title of the page as Heading H1 (only one)."
+msgstr "Đặt tiêu đề chính của trang là Heading H1 (chỉ một cái)."
+
+msgid "Set the site-wide identity here; each post picks its own type in the editor."
+msgstr "Đặt thông tin chung của site ở đây; từng bài tự chọn loại schema trong trang sửa bài."
+
+msgid "Set the smaller files as the background per device in the builder (Elementor and Flatsome allow a different background image per device)."
+msgstr "Đặt các file nhỏ làm ảnh nền theo từng thiết bị trong builder (Elementor và Flatsome cho đặt ảnh nền khác nhau theo thiết bị)."
+
+msgid "Set up MCP"
+msgstr "Cài đặt MCP"
+
+msgid "Settings"
+msgstr "Cài đặt"
+
+msgid "Settings (one-go, no page jumps)"
+msgstr "Cài đặt (một lần, không chuyển trang)"
+
+msgid "Settings exported."
+msgstr "Đã xuất cài đặt."
+
+msgid "Settings imported."
+msgstr "Đã nhập cài đặt."
+
+msgid "Settings initialized"
+msgstr "Đã khởi tạo cài đặt"
+
+msgid "Settings saved."
+msgstr "Đã lưu cài đặt."
+
+msgid "Setup Wizard"
+msgstr "Trình cài đặt"
+
+msgid "Setup checklist"
+msgstr "Danh sách thiết lập"
+
+msgid "Setup complete"
+msgstr "Cài đặt hoàn tất"
+
+msgid "Share description (Facebook, Zalo)"
+msgstr "Mô tả chia sẻ (Facebook, Zalo)"
+
+msgid "Share image %1$d×%2$d is too small for Facebook/Zalo previews (min 600×315, best 1200×630)."
+msgstr "Ảnh chia sẻ %1$d×%2$d quá nhỏ cho bản xem trước Facebook/Zalo (tối thiểu 600×315, tốt nhất 1200×630)."
+
+msgid "Share image (Facebook, Zalo, X)"
+msgstr "Ảnh chia sẻ (Facebook, Zalo, X)"
+
+msgid "Share image does not load"
+msgstr "Ảnh chia sẻ không tải được"
+
+msgid "Share image does not load: %s"
+msgstr "Ảnh chia sẻ không tải được: %s"
+
+msgid "Share image in the wrong ratio"
+msgstr "Ảnh chia sẻ sai tỉ lệ"
+
+msgid "Share image ratio %s: Facebook/Zalo crop it to 1.91:1 (1200×630)."
+msgstr "Ảnh chia sẻ tỷ lệ %s: Facebook/Zalo sẽ cắt về 1.91:1 (1200×630)."
+
+msgid "Share image too small"
+msgstr "Ảnh chia sẻ quá nhỏ"
+
+msgid "Share tags (Facebook / Zalo) incomplete"
+msgstr "Thẻ chia sẻ (Facebook / Zalo) chưa đủ"
+
+msgid "Share title (Facebook, Zalo)"
+msgstr "Tiêu đề chia sẻ (Facebook, Zalo)"
+
+msgid "Shell command from request input"
+msgstr "Lệnh shell lấy từ dữ liệu request"
+
+msgid "Short summary"
+msgstr "Tóm tắt ngắn"
+
+msgid "Should fix"
+msgstr "Nên sửa"
+
+msgid "Signs of hacked code. Run the full Security scan (TQK SEO → Security) to find the file that adds it, and change all passwords."
+msgstr "Dấu hiệu bị chèn mã. Chạy Quét bảo mật đầy đủ (TQK SEO → Bảo mật) để tìm file gây ra, và đổi toàn bộ mật khẩu."
+
+msgid "Single H1"
+msgstr "Một H1 duy nhất"
+
+msgid "Site Scanner"
+msgstr "Quét site"
+
+msgid "Site basics OK (sitemap · robots · schema)."
+msgstr "Cơ bản của site ổn (sitemap · robots · schema)."
+
+msgid "Site issues (schema · sitemap · robots)"
+msgstr "Lỗi toàn site (schema · sitemap · robots)"
+
+msgid "Site overview"
+msgstr "Tổng quan website"
+
+msgid "Site-wide images (logo, header, footer — on every page)"
+msgstr "Ảnh dùng chung toàn site (logo, header, footer — có trên mọi trang)"
+
+msgid "Sitelinks preview from your main menu. Google decides whether to show them."
+msgstr "Xem trước sitelinks từ menu chính. Google tự quyết định có hiện hay không."
+
+msgid "Sitemap"
+msgstr "Sitemap"
+
+msgid "Sitemap & robots.txt"
+msgstr "Sitemap & robots.txt"
+
+msgid "Sitemap has no URLs."
+msgstr "Sitemap không có URL nào."
+
+msgid "Sitemap index"
+msgstr "Sitemap index"
+
+msgid "Sitemap is disabled."
+msgstr "Sitemap đang tắt."
+
+msgid "Sitemap sent to Bing."
+msgstr "Đã gửi sitemap cho Bing."
+
+msgid "Sitemap submitted to Google Search Console."
+msgstr "Đã gửi sitemap lên Google Search Console."
+
+msgid "Sitemap submitted."
+msgstr "Đã gửi sitemap."
+
+msgid "Skip"
+msgstr "Bỏ qua"
+
+msgid "Snapshot"
+msgstr "Ảnh chụp"
+
+msgid "Snapshot %s…"
+msgstr "Đang chụp %s…"
+
+msgid "Snapshots"
+msgstr "Ảnh chụp trang"
+
+msgid "Social"
+msgstr "Mạng xã hội"
+
+msgid "Social sharing"
+msgstr "Chia sẻ mạng xã hội"
+
+msgid "Source"
+msgstr "Nguồn"
+
+msgid "Spam links (gambling/pharma) only in the Googlebot version."
+msgstr "Link spam (cờ bạc/thuốc) chỉ có trong bản Googlebot thấy."
+
+msgid "Split the content with H2 sub-headings so Google and readers see its structure."
+msgstr "Chia nội dung bằng tiêu đề phụ H2 để Google và người đọc thấy rõ cấu trúc."
+
+msgid "Start a new run? The current run and its snapshots will be replaced."
+msgstr "Bắt đầu lượt mới? Lượt hiện tại và ảnh chụp của nó sẽ bị thay thế."
+
+msgid "Start date & time"
+msgstr "Ngày giờ bắt đầu"
+
+msgid "Start new audit"
+msgstr "Bắt đầu audit mới"
+
+msgid "Start suggestions"
+msgstr "Bắt đầu gợi ý"
+
+msgid "Starting…"
+msgstr "Đang bắt đầu…"
+
+msgid "Step %1$d / %2$d"
+msgstr "Bước %1$d / %2$d"
+
+msgid "Steps (one per line)"
+msgstr "Các bước (mỗi dòng một bước)"
+
+msgid "Stop"
+msgstr "Dừng"
+
+msgid "Stopped."
+msgstr "Đã dừng."
+
+msgid "Stopped. Continue picks up the next page."
+msgstr "Đã dừng. Tiếp tục sẽ chạy từ trang kế tiếp."
+
+msgid "Stopping after this page…"
+msgstr "Sẽ dừng sau trang này…"
+
+msgid "Structured data (JSON-LD) found: schema type and fields below."
+msgstr "Đã nhận dữ liệu có cấu trúc (JSON-LD): loại schema và các trường ở bên dưới."
+
+msgid "Structured data (Organization, WebSite, Article, Product, FAQ, Recipe…) so Google understands the site."
+msgstr "Dữ liệu có cấu trúc (Organization, WebSite, Article, Product, FAQ, Recipe…) để Google hiểu site."
+
+msgid "Submit to Google & Bing now"
+msgstr "Gửi lên Google & Bing ngay"
+
+msgid "Suggestion dismissed."
+msgstr "Đã bỏ qua gợi ý."
+
+msgid "Suggestion from an AI app — waiting for your approval"
+msgstr "Gợi ý từ ứng dụng AI — chờ bạn duyệt"
+
+msgid "Suggests titles, descriptions, focus keywords, image ALT and missing schema fields for the %d page(s) the last Live Audit flagged. Pages are sent 3 per request and spaced to your per-minute and per-day limits; unchanged pages reuse their cached suggestion. Nothing is written until you tick and apply."
+msgstr "Gợi ý tiêu đề, mô tả, từ khoá chính, ALT ảnh và các trường schema còn thiếu cho %d trang mà Live Audit gần nhất báo lỗi. Mỗi request gửi 3 trang, giãn cách theo giới hạn mỗi phút và mỗi ngày; trang không đổi dùng lại gợi ý đã lưu. Không ghi gì cho tới khi bạn tick và áp dụng."
+
+msgid "Supplies / materials (one per line)"
+msgstr "Vật liệu (mỗi dòng một thứ)"
+
+msgid "Support / Donate"
+msgstr "Ủng hộ / Donate"
+
+msgid "Support:"
+msgstr "Hỗ trợ:"
+
+msgid "Switch from another SEO plugin in minutes; connect an AI app with the ready-made config."
+msgstr "Chuyển từ plugin SEO khác trong vài phút; kết nối ứng dụng AI bằng cấu hình soạn sẵn."
+
+msgid "Sync now"
+msgstr "Đồng bộ ngay"
+
+msgid "Synced from Google."
+msgstr "Đã đồng bộ từ Google."
+
+msgid "System info"
+msgstr "Thông tin hệ thống"
+
+msgid "TQK SEO"
+msgstr "TQK SEO"
+
+msgid "TQK SEO — this page"
+msgstr "TQK SEO — trang này"
+
+msgid "TQK WP SEO Pro needs the TQK WP SEO plugin (v0.2.0 or newer). Install and activate it first."
+msgstr "TQK WP SEO Pro cần plugin TQK WP SEO (v0.2.0 trở lên). Hãy cài và kích hoạt plugin đó trước."
+
+msgid "TQK WP SEO checks every page the way a visitor sees it — on desktop, laptop, tablet and phone — turns what it finds into a plan to fix, lets an AI suggest the wording while you approve every change, and keeps the site clean of the malware cracked plugins bring."
+msgstr "TQK WP SEO kiểm tra từng trang đúng như khách xem — trên máy tính, laptop, tablet và điện thoại — biến những gì tìm thấy thành kế hoạch sửa, để AI gợi ý câu chữ còn bạn duyệt từng thay đổi, và giữ site sạch khỏi mã độc mà các plugin crack mang vào."
+
+msgid "TQK WP SEO requires PHP 8.0 or higher."
+msgstr "TQK WP SEO yêu cầu PHP 8.0 trở lên."
+
+msgid "TQK WP SEO requires WordPress 6.0 or higher."
+msgstr "TQK WP SEO yêu cầu WordPress 6.0 trở lên."
+
+msgid "TQK WP SEO — made by"
+msgstr "TQK WP SEO — phát triển bởi"
+
+msgid "Tag"
+msgstr "Thẻ"
+
+msgid "Tags"
+msgstr "Thẻ"
+
+msgid "Target customers"
+msgstr "Khách hàng mục tiêu"
+
+msgid "Taxonomy"
+msgstr "Phân loại"
+
+msgid "Technical"
+msgstr "Kỹ thuật"
+
+msgid "Tell us your industry so Local AI writes in the right context. Skippable."
+msgstr "Cho biết ngành nghề để AI local viết đúng ngữ cảnh. Có thể bỏ qua."
+
+msgid "Templates"
+msgstr "Mẫu"
+
+msgid "Term slug (empty = any)"
+msgstr "Slug của term (trống = bất kỳ)"
+
+msgid "Text hard to read (low contrast)"
+msgstr "Chữ khó đọc (tương phản thấp)"
+
+msgid "Text too small to read"
+msgstr "Chữ quá nhỏ"
+
+msgid "That does not look like a license key."
+msgstr "Chuỗi này không giống license key."
+
+msgid "The AI provider returned nothing. Check endpoint and model."
+msgstr "AI provider không trả gì. Kiểm tra endpoint và model."
+
+msgid "The MCP module is off: turn it on in Modules first."
+msgstr "Module MCP đang tắt: hãy bật trong mục Module trước."
+
+msgid "The breadcrumb schema (output by the plugin) turns the address line into \"domain › category › page\"."
+msgstr "Schema breadcrumb (plugin xuất sẵn) giúp dòng địa chỉ hiện dạng \"tên miền › danh mục › trang\"."
+
+msgid "The course provider was read from the other page: change it to your own name."
+msgstr "Đơn vị cung cấp khóa học lấy từ trang kia: hãy đổi thành tên của bạn."
+
+msgid "The link index has never been built on this site, so the orphan list below is not reliable yet. Press Rebuild."
+msgstr "Site này chưa từng dựng chỉ mục link, nên danh sách trang mồ côi bên dưới chưa đáng tin. Hãy bấm Dựng lại."
+
+msgid "The page could not be opened: %s"
+msgstr "Không mở được trang: %s"
+
+msgid "The page could not be read."
+msgstr "Không đọc được nội dung trang."
+
+msgid "The page scrolls sideways on %1$s: %2$s"
+msgstr "Trang bị tràn ngang trên %1$s: %2$s"
+
+msgid "The page text is sent to the AI you paste it into. Nothing is saved until you update the post; ratings and reviews are never imported."
+msgstr "Nội dung trang sẽ được gửi cho AI mà bạn dán vào. Không có gì được lưu cho đến khi bạn cập nhật bài; điểm đánh giá và review không bao giờ được nhập."
+
+msgid "The plugin prints a canonical by default; check it is not switched off for this page."
+msgstr "Plugin mặc định có xuất canonical; kiểm tra xem trang này có bị tắt không."
+
+msgid "The search box inside results (sitelinks search box) was retired by Google in November 2024: nothing to do there."
+msgstr "Ô tìm kiếm trong kết quả (sitelinks search box) đã bị Google bỏ từ tháng 11/2024: không cần làm gì."
+
+msgid "The steps for each image are listed below. Pro does all of it in one click: resize, crop, compress, convert to WebP and serve the right file to each screen."
+msgstr "Các bước cho từng ảnh ở ngay bên dưới. Bản Pro làm tất cả chỉ với 1 click: resize, cắt, nén, chuyển WebP và gắn đúng file cho từng màn hình."
+
+msgid "Then ask the app: \"review the pages I sent from TQK SEO\". Every write is logged; regenerating the token disconnects every app."
+msgstr "Sau đó nói với ứng dụng: \"xem các trang tôi gửi từ TQK SEO\". Mọi lần ghi đều được ghi nhật ký; tạo token mới sẽ ngắt kết nối mọi ứng dụng."
+
+msgid "Thin content"
+msgstr "Nội dung quá mỏng"
+
+msgid "Thin content (%d words)"
+msgstr "Nội dung mỏng (%d từ)"
+
+msgid "This AI run is no longer current. Reload the page."
+msgstr "Lượt AI này không còn hiện hành. Hãy tải lại trang."
+
+msgid "This audit run is no longer current. Reload the page."
+msgstr "Lượt audit này không còn hiện hành. Hãy tải lại trang."
+
+msgid "This blocks the entire site from search engines."
+msgstr "Cái này chặn toàn bộ site khỏi search engine."
+
+msgid "This is not valid JSON. Paste the whole reply (or the JSON-LD block)."
+msgstr "Đây không phải JSON hợp lệ. Hãy dán toàn bộ câu trả lời (hoặc cả khối JSON-LD)."
+
+msgid "This needs the TQK WP SEO Pro add-on."
+msgstr "Chức năng này cần add-on TQK WP SEO Pro."
+
+msgid "This reply was made for another post (ID %d). Check before using it."
+msgstr "Câu trả lời này dành cho bài khác (ID %d). Hãy kiểm tra trước khi dùng."
+
+msgid "This server cannot write WebP (no Imagick/GD WebP support): files keep their original format, compressed."
+msgstr "Máy chủ không ghi được WebP (Imagick/GD không hỗ trợ): file giữ định dạng gốc, có nén."
+
+msgid "This tab is in the background, so the browser slows the audit down. Keep it visible (its own window is fine)."
+msgstr "Tab đang chạy nền nên trình duyệt làm chậm audit. Hãy để tab hiển thị (mở cửa sổ riêng cũng được)."
+
+msgid "Title"
+msgstr "Tiêu đề"
+
+msgid "Title and description templates, social image, Vietnamese options, AI provider, report branding, Pro license."
+msgstr "Mẫu tiêu đề và mô tả, ảnh chia sẻ, tuỳ chọn cho Việt Nam, nhà cung cấp AI, thương hiệu báo cáo, bản quyền Pro."
+
+msgid "Title over 60 chars (%d)"
+msgstr "Tiêu đề dài hơn 60 ký tự (%d)"
+
+msgid "Title template"
+msgstr "Mẫu tiêu đề"
+
+msgid "Title ≤ 60 chars"
+msgstr "Tiêu đề ≤ 60 ký tự"
+
+msgid "Titles"
+msgstr "Tiêu đề"
+
+msgid "To do across the site"
+msgstr "Việc cần làm trên toàn site"
+
+msgid "To review"
+msgstr "Cần xem lại"
+
+msgid "Toggle feature sets. Disabled modules unload their hooks and hide their menu pages. Scanner needs Analyzer."
+msgstr "Bật/tắt nhóm tính năng. Module tắt sẽ gỡ hook và ẩn menu. Scanner cần Analyzer."
+
+msgid "Token (keep it private, like a password)"
+msgstr "Token (giữ bí mật như mật khẩu)"
+
+msgid "Token regenerated."
+msgstr "Đã tạo token mới."
+
+msgid "Too large."
+msgstr "Dữ liệu quá lớn."
+
+msgid "Tools"
+msgstr "Công cụ"
+
+msgid "Tools (one per line)"
+msgstr "Dụng cụ (mỗi dòng một thứ)"
+
+msgid "Total 28d: %d clicks · %d impressions · synced %s"
+msgstr "Tổng 28 ngày: %d lượt nhấp · %d lượt hiển thị · đồng bộ %s"
+
+msgid "Total hours"
+msgstr "Tổng số giờ"
+
+msgid "Total time"
+msgstr "Tổng thời gian"
+
+msgid "Turn features on or off so the plugin only loads what you use."
+msgstr "Bật/tắt từng tính năng để plugin chỉ tải những gì bạn dùng."
+
+msgid "Turn on the \"no price\" setting instead of 0, or Google shows the product as free."
+msgstr "Bật cài đặt \"không có giá\" thay vì để 0, nếu không Google sẽ hiện sản phẩm là miễn phí."
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Type %d · %d hits"
+msgstr "Type %d · %d hits"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "URL (hits)"
+msgstr "URL (hits)"
+
+msgid "URLs"
+msgstr "URLs"
+
+msgid "Unknown action"
+msgstr "Hành động không rõ"
+
+msgid "Unknown page in this run, skipped."
+msgstr "Trang không thuộc lượt này, bỏ qua."
+
+msgid "Unsaved changes are not on the live page yet: use Save & scan."
+msgstr "Thay đổi chưa lưu chưa có trên trang thật: hãy dùng Lưu & scan."
+
+msgid "Untick to write different texts for Facebook / Zalo and X."
+msgstr "Bỏ chọn để viết nội dung riêng cho Facebook / Zalo và X."
+
+msgid "Updating the checklist…"
+msgstr "Đang cập nhật danh sách kiểm tra…"
+
+msgid "Updating…"
+msgstr "Đang cập nhật…"
+
+msgid "Upgrade to Pro to audit every %s page."
+msgstr "Mời bạn nâng cấp Pro để audit toàn bộ trang %s."
+
+msgid "Upgrade to Pro to audit every %s."
+msgstr "Mời bạn nâng cấp Pro để audit toàn bộ %s."
+
+msgid "Upload them to the Media Library and use the image through the builder's image element so WordPress adds srcset; set sizes=\"%s\" if the builder allows it."
+msgstr "Tải chúng lên Thư viện Media và chèn ảnh bằng phần tử ảnh của builder để WordPress tự thêm srcset; đặt sizes=\"%s\" nếu builder cho phép."
+
+msgid "Use ISO 8601 duration (PT30M) or a readable time like 30 phút."
+msgstr "Dùng định dạng ISO 8601 (PT30M) hoặc kiểu dễ đọc như 30 phút."
+
+msgid "Use a valid date and time."
+msgstr "Hãy nhập ngày giờ hợp lệ."
+
+msgid "Use another AI (Claude, ChatGPT…) or import JSON-LD"
+msgstr "Dùng AI khác (Claude, ChatGPT…) hoặc nhập JSON-LD"
+
+msgid "Use automatic image"
+msgstr "Dùng ảnh tự động"
+
+msgid "Use the first image in the post when there is no featured image"
+msgstr "Dùng ảnh đầu tiên trong bài khi không có ảnh đại diện"
+
+msgid "Using the site-wide default image."
+msgstr "Đang dùng ảnh mặc định của site."
+
+msgid "VD: Nha khoa An Khang"
+msgstr "VD: Nha khoa An Khang"
+
+msgid "VD: Nha khoa, Bat dong san, Thoi trang"
+msgstr "VD: Nha khoa, Bất động sản, Thời trang"
+
+msgid "Value"
+msgstr "Giá trị"
+
+msgid "Values that will be imported"
+msgstr "Giá trị sẽ được nhập"
+
+msgid "Variables: %title%, %site_name%, %excerpt%."
+msgstr "Biến: %title%, %site_name%, %excerpt%."
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Waiting %d s (rate limit)…"
+msgstr "Chờ %d giây (giới hạn tốc độ)…"
+
+msgid "Warning"
+msgstr "Cảnh báo"
+
+msgid "Weakest display"
+msgstr "Hiển thị kém nhất"
+
+msgid "WebP would be much lighter (%s)"
+msgstr "Chuyển WebP sẽ nhẹ hơn nhiều (%s)"
+
+msgid "Website Audit & Optimization Engine. TQK WP SEO checks every page the way a visitor sees it — on desktop, laptop, tablet and phone — turns what it finds into a plan to fix, lets an AI suggest the wording while you approve every change, and keeps the site clean of the malware cracked plugins bring. Support: 0364 999 916."
+msgstr "Website Audit & Optimization Engine. TQK WP SEO kiểm tra từng trang đúng như khách xem — trên máy tính, laptop, tablet và điện thoại — biến những gì tìm thấy thành kế hoạch sửa, để AI gợi ý câu chữ còn bạn duyệt từng thay đổi, và giữ site sạch khỏi mã độc mà các plugin crack mang vào. Hỗ trợ: 0364 999 916."
+
+msgid "Welcome"
+msgstr "Chào mừng"
+
+msgid "Welcome to TQK WP SEO"
+msgstr "Chào mừng tới TQK WP SEO"
+
+msgid "What"
+msgstr "Nội dung"
+
+msgid "What do you do?"
+msgstr "Bạn làm gì?"
+
+msgid "What each page does"
+msgstr "Mỗi trang dùng để làm gì"
+
+msgid "When the link is shared"
+msgstr "Khi chia sẻ link"
+
+msgid "Where"
+msgstr "Ở đâu"
+
+msgid "Which types appear in sitemap_index.xml."
+msgstr "Loại nào xuất hiện trong sitemap_index.xml."
+
+msgid "Without it Google picks any sentence from the page. Write 1–2 sentences (about 150 characters) with the main keyword."
+msgstr "Không có mô tả, Google sẽ lấy bất kỳ câu nào trong trang. Viết 1–2 câu (khoảng 150 ký tự) có từ khóa chính."
+
+msgid "WooCommerce SEO"
+msgstr "SEO WooCommerce"
+
+msgid "WordPress %s (requires 6.0+)"
+msgstr "WordPress %s (yêu cầu 6.0+)"
+
+msgid "Write a title of about 50–60 characters with the main keyword near the start."
+msgstr "Viết tiêu đề khoảng 50–60 ký tự, có từ khóa chính ở gần đầu."
+
+msgid "Writes request input to a file"
+msgstr "Ghi dữ liệu request vào file"
+
+msgid "Writing tone"
+msgstr "Giọng văn"
+
+msgid "X (Twitter) description"
+msgstr "Mô tả X (Twitter)"
+
+msgid "X (Twitter) title"
+msgstr "Tiêu đề X (Twitter)"
+
+msgid "XML Sitemap"
+msgstr "XML Sitemap"
+
+msgid "XML Sitemap ready"
+msgstr "Sitemap XML sẵn sàng"
+
+msgid "XML sitemap for Google and Bing, with a private address if you want one, and robots.txt."
+msgstr "Sitemap XML cho Google và Bing, có thể đặt địa chỉ riêng tư, kèm robots.txt."
+
+msgid "XML sitemap per post type, robots.txt editor, llms.txt."
+msgstr "XML sitemap theo post type, sửa robots.txt, llms.txt."
+
+msgid "Yield"
+msgstr "Khẩu phần"
+
+msgid "You need the manage_options capability to view this page."
+msgstr "Bạn cần quyền manage_options để xem trang này."
+
+msgid "Your business"
+msgstr "Doanh nghiệp của bạn"
+
+msgid "Your login session expired. Reload this page and press Continue."
+msgstr "Phiên đăng nhập đã hết hạn. Tải lại trang rồi bấm Tiếp tục."
+
+msgid "Your login session expired. Reload this page and press Continue: finished pages are kept."
+msgstr "Phiên đăng nhập đã hết hạn. Tải lại trang rồi bấm Tiếp tục: các trang đã xong vẫn được giữ."
+
+msgid "Your name, logo and colour on the SEO report you send to clients."
+msgstr "Tên, logo và màu của bạn trên báo cáo SEO gửi khách hàng."
+
+msgid "Your site is ready. Open the dashboard or run the first scan now."
+msgstr "Site đã sẵn sàng. Mở dashboard hoặc chạy quét đầu tiên ngay."
+
+msgid "a visitor"
+msgstr "khách truy cập"
+
+msgid "a visitor coming from Google"
+msgstr "khách vào từ Google"
+
+msgid "another title: \"%s\""
+msgstr "tiêu đề khác: \"%s\""
+
+msgid "assert() on request input"
+msgstr "assert() trên dữ liệu request"
+
+msgid "builds code from character numbers (obfuscation)"
+msgstr "ghép mã từ mã ký tự (làm rối mã)"
+
+msgid "cached — fix first, no rescan yet"
+msgstr "đã cache — sửa trước, chưa quét lại"
+
+msgid "content read from the editor (view the page once to analyse builder content)"
+msgstr "đọc nội dung từ trình soạn thảo (mở xem trang một lần để phân tích nội dung builder)"
+
+msgid "content read from the page as visitors see it"
+msgstr "đọc nội dung từ trang như khách truy cập thấy"
+
+msgid "crop + "
+msgstr "cắt + "
+
+msgid "crypto-mining code"
+msgstr "mã đào tiền ảo"
+
+msgid "e.g. 15 phút or PT15M."
+msgstr "VD: 15 phút hoặc PT15M."
+
+msgid "e.g. 4 servings."
+msgstr "VD: 4 phần."
+
+msgid "e.g. 45 phút or PT45M."
+msgstr "VD: 45 phút hoặc PT45M."
+
+msgid "eval() of decoded data (classic backdoor)"
+msgstr "eval() dữ liệu đã giải mã (backdoor kinh điển)"
+
+msgid "extra links to %s"
+msgstr "thêm link tới %s"
+
+msgid "focus keyword not in description"
+msgstr "từ khoá chính không có trong mô tả"
+
+msgid "focus keyword not in title"
+msgstr "từ khoá chính không có trong tiêu đề"
+
+msgid "from template"
+msgstr "từ mẫu"
+
+msgid "from the Scan button"
+msgstr "từ nút Scan"
+
+msgid "from the Site analysis audit"
+msgstr "từ Audit trong Phân tích site"
+
+msgid "from the toolbar audit"
+msgstr "từ nút audit trên thanh công cụ"
+
+msgid "gambling / pharma links"
+msgstr "link cờ bạc / thuốc"
+
+msgid "good size"
+msgstr "kích thước tốt"
+
+msgid "image %1$d/%2$d"
+msgstr "ảnh %1$d/%2$d"
+
+msgid "image does not load"
+msgstr "ảnh không tải được"
+
+msgid "in %d · out %d"
+msgstr "vào %d · ra %d"
+
+msgid "known service"
+msgstr "dịch vụ quen"
+
+msgid "large encoded blob"
+msgstr "khối dữ liệu mã hoá lớn"
+
+msgid "last on %s"
+msgstr "lần cuối %s"
+
+msgid "loads a script from an address it assembles or decodes"
+msgstr "tải script từ địa chỉ tự ghép hoặc giải mã"
+
+msgid "long hex-encoded text (obfuscation)"
+msgstr "chuỗi mã hex dài (làm rối mã)"
+
+msgid "malicious"
+msgstr "độc hại"
+
+msgid "not active"
+msgstr "chưa kích hoạt"
+
+msgid "not in media library"
+msgstr "không có trong thư viện media"
+
+msgid "nothing waiting"
+msgstr "không có gì chờ"
+
+msgid "now: %s"
+msgstr "hiện tại: %s"
+
+msgid "og:image must be a full https:// URL."
+msgstr "og:image phải là URL đầy đủ https://."
+
+msgid "og:url differs from canonical: %s"
+msgstr "og:url khác với canonical: %s"
+
+msgid "on %d pages"
+msgstr "có trên %d trang"
+
+msgid "one file per screen"
+msgstr "mỗi màn hình một file"
+
+msgid "open to review"
+msgstr "mở để duyệt"
+
+msgid "original %1$d×%2$d"
+msgstr "gốc %1$d×%2$d"
+
+msgid "page(s) to review"
+msgstr "trang cần xem lại"
+
+msgid "page(s) with malware signs"
+msgstr "trang có dấu hiệu mã độc"
+
+msgid "preg_replace /e code execution"
+msgstr "preg_replace /e chạy code"
+
+msgid "private address"
+msgstr "địa chỉ riêng"
+
+msgid "redirects depending on the device or bot"
+msgstr "chuyển hướng tùy theo thiết bị hoặc bot"
+
+msgid "redirects visitors depending on where they came from"
+msgstr "chuyển hướng khách tùy theo nơi họ đến"
+
+msgid "report only"
+msgstr "chỉ báo cáo"
+
+msgid "robots.txt"
+msgstr "robots.txt"
+
+msgid "robots.txt reset to default."
+msgstr "robots.txt đã về mặc định."
+
+msgid "robots.txt saved."
+msgstr "Đã lưu robots.txt."
+
+msgid "runs decoded hidden code (eval + atob/unescape)"
+msgstr "chạy mã ẩn đã giải mã (eval + atob/unescape)"
+
+msgid "scrolls sideways by %dpx"
+msgstr "tràn ngang %dpx"
+
+msgid "sizes=\"%1$s\" does not match the layout; measured: %2$s"
+msgstr "sizes=\"%1$s\" không khớp layout; đo được: %2$s"
+
+msgid "syllables"
+msgstr "âm tiết"
+
+msgid "this site"
+msgstr "của site"
+
+msgid "too small: under 600×315 Facebook / Zalo show a tiny thumbnail or none"
+msgstr "quá nhỏ: dưới 600×315 Facebook / Zalo chỉ hiện ảnh thu nhỏ hoặc không hiện"
+
+msgid "unknown"
+msgstr "không rõ"
+
+msgid "until %s"
+msgstr "đến %s"
+
+msgid "will be cropped to 1.91:1 (see the frame)"
+msgstr "sẽ bị cắt về tỷ lệ 1.91:1 (xem khung)"
+
+msgid "words"
+msgstr "từ"
+
+msgid "works, 1200×630 is sharper"
+msgstr "dùng được, 1200×630 sẽ nét hơn"
+
+msgid "writes a hidden script into the page"
+msgstr "ghi một script ẩn vào trang"
+
+msgid "you (logged in)"
+msgstr "bạn (đang đăng nhập)"
+
+msgid "{\"tqk_seo\":1,\"fields\":{\"title\":\"…\"}} or <script type=\"application/ld+json\">…</script>"
+msgstr "{\"tqk_seo\":1,\"fields\":{\"title\":\"…\"}} hoặc <script type=\"application/ld+json\">…</script>"
+
+msgid "① Page text"
+msgstr "① Nội dung trang"
+
+msgid "② Title · description · keywords"
+msgstr "② Title · mô tả · từ khóa"
+
+msgid "③ Social"
+msgstr "③ Social"
+
+msgid "④ Schema"
+msgstr "④ Schema"
