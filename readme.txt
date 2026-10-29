@@ -1,11 +1,12 @@
 === TQK WP SEO ===
-Contributors: tqk
+Contributors: tqkktruong
 Tags: seo, schema, sitemap, audit, vietnamese
 Requires at least: 6.2
 Tested up to: 6.8
 Requires PHP: 8.0
 Stable tag: 0.2.0
 License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 All-in-one SEO for WordPress, built for Vietnamese sites: clean code, live page audit, malware & SEO-spam scan, one-click move from Yoast / Rank Math.
 
@@ -52,6 +53,33 @@ TQK WP SEO covers the everyday SEO work of a site, audits pages the way visitors
 3. Moving from Yoast or Rank Math? Tools → Import, check a few pages, then delete the old plugin.
 4. Run Live Audit from the Google Search Console screen.
 
+
+== 3rd Party Services ==
+
+This plugin connects to external third-party services for optional features:
+
+* Google Gemini API (https://ai.google.dev/)
+  - Purpose: Suggests SEO titles, meta descriptions, image ALT text, and keywords.
+  - Data sent: Content snippets and user prompts when an AI suggestion is explicitly requested.
+  - Terms of Service: https://ai.google.dev/terms
+  - Privacy Policy: https://policies.google.com/privacy
+
+* Google Search Console & Indexing API (https://developers.google.com/search)
+  - Purpose: Fetches site search metrics and submits URLs for immediate indexing.
+  - Data sent: Site URLs and OAuth tokens upon user authorization.
+  - Terms of Service: https://policies.google.com/terms
+  - Privacy Policy: https://policies.google.com/privacy
+
+* Bing IndexNow (https://www.indexnow.org/)
+  - Purpose: Instantly submits updated URLs to Bing and search engines supporting IndexNow.
+  - Data sent: Site URLs and verification key upon publishing or manual submission.
+  - Privacy Policy: https://privacy.microsoft.com/privacystatement
+
+* WordPress.org API (https://api.wordpress.org/)
+  - Purpose: Downloads official core and plugin checksums to detect modified or infected files in the security scanner.
+  - Data sent: Installed plugin slugs and versions.
+  - Privacy Policy: https://wordpress.org/about/privacy/
+
 == Frequently Asked Questions ==
 
 = Does it need an AI API key? =
@@ -65,6 +93,15 @@ Only when you use a feature that needs it: Gemini (AI suggestions), Google Searc
 
 = Is the uninstall clean? =
 Yes. Deleting the plugin removes its tables, options, post / term meta, cron events, role capability and the files it created in uploads. Your original media is never touched.
+
+
+== Screenshots ==
+
+1. Overview dashboard with SEO audit score and quick actions.
+2. Live Audit showing page snapshots across desktop, tablet, and mobile viewports.
+3. Schema builder and structured data preview.
+4. AI Advisor for title, meta description, and content suggestions.
+5. Security scanner checking core/plugin checksums and SEO spam links.
 
 == Changelog ==
 

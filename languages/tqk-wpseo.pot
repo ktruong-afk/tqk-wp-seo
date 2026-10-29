@@ -290,9 +290,6 @@ msgstr ""
 msgid "Action plan"
 msgstr ""
 
-msgid "Activate"
-msgstr ""
-
 msgid "Activate on site"
 msgstr ""
 
@@ -524,9 +521,6 @@ msgstr ""
 msgid "CSS copied. Paste it in Appearance → Customize → Additional CSS."
 msgstr ""
 
-msgid "Cannot create the uploads/audit-pics folder."
-msgstr ""
-
 msgid "Canonical"
 msgstr ""
 
@@ -720,9 +714,6 @@ msgid "Could not reach Google API."
 msgstr ""
 
 msgid "Could not reach Google."
-msgstr ""
-
-msgid "Could not reach the license server."
 msgstr ""
 
 msgid "Course URL"
@@ -1301,9 +1292,6 @@ msgstr ""
 msgid "Invalid JSON-LD block (Google drops it)"
 msgstr ""
 
-msgid "Invalid answer from the license server."
-msgstr ""
-
 msgid "Invalid redirect (check URLs and type)."
 msgstr ""
 
@@ -1422,18 +1410,6 @@ msgid "Level"
 msgstr ""
 
 msgid "License (Pro)"
-msgstr ""
-
-msgid "License key"
-msgstr ""
-
-msgid "License key rejected."
-msgstr ""
-
-msgid "License removed from this site."
-msgstr ""
-
-msgid "License server is not configured yet."
 msgstr ""
 
 msgid "Lighter on phones (images)"
@@ -2051,15 +2027,6 @@ msgstr ""
 msgid "Private sitemap name (optional)"
 msgstr ""
 
-msgid "Pro activated."
-msgstr ""
-
-msgid "Pro active"
-msgstr ""
-
-msgid "Pro add-on installed · no license yet"
-msgstr ""
-
 msgid "Pro does these steps for you: resize, crop, compress, convert to WebP and serve through srcset, with one click."
 msgstr ""
 
@@ -2184,9 +2151,6 @@ msgid "Regenerate"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
-
-msgid "Remove from this site"
 msgstr ""
 
 msgid "Rendered title is longer than 60 characters."
@@ -2705,9 +2669,6 @@ msgstr ""
 msgid "TQK SEO — this page"
 msgstr ""
 
-msgid "TQK WP SEO Pro needs the TQK WP SEO plugin (v0.2.0 or newer). Install and activate it first."
-msgstr ""
-
 msgid "TQK WP SEO checks every page the way a visitor sees it — on desktop, laptop, tablet and phone — turns what it finds into a plan to fix, lets an AI suggest the wording while you approve every change, and keeps the site clean of the malware cracked plugins bring."
 msgstr ""
 
@@ -2748,9 +2709,6 @@ msgid "Text hard to read (low contrast)"
 msgstr ""
 
 msgid "Text too small to read"
-msgstr ""
-
-msgid "That does not look like a license key."
 msgstr ""
 
 msgid "The AI provider returned nothing. Check endpoint and model."
@@ -3228,9 +3186,6 @@ msgid "too small: under 600×315 Facebook / Zalo show a tiny thumbnail or none"
 msgstr ""
 
 msgid "unknown"
-msgstr ""
-
-msgid "until %s"
 msgstr ""
 
 msgid "will be cropped to 1.91:1 (see the frame)"

@@ -292,9 +292,6 @@ msgstr "Số tài khoản"
 msgid "Action plan"
 msgstr "Kế hoạch cải thiện"
 
-msgid "Activate"
-msgstr "Kích hoạt"
-
 msgid "Activate on site"
 msgstr "Kích hoạt trên site"
 
@@ -526,9 +523,6 @@ msgstr "Nút / link quá nhỏ để bấm"
 msgid "CSS copied. Paste it in Appearance → Customize → Additional CSS."
 msgstr "Đã copy CSS. Dán vào Giao diện → Tùy biến → CSS bổ sung."
 
-msgid "Cannot create the uploads/audit-pics folder."
-msgstr "Không tạo được thư mục uploads/audit-pics."
-
 msgid "Canonical"
 msgstr "Canonical"
 
@@ -723,9 +717,6 @@ msgstr "Không kết nối được Google API."
 
 msgid "Could not reach Google."
 msgstr "Không kết nối được Google."
-
-msgid "Could not reach the license server."
-msgstr "Không kết nối được máy chủ license."
 
 msgid "Course URL"
 msgstr "URL khoá học"
@@ -1303,9 +1294,6 @@ msgstr "Kích thước thật · dung lượng"
 msgid "Invalid JSON-LD block (Google drops it)"
 msgstr "Khối JSON-LD không hợp lệ (Google bỏ qua)"
 
-msgid "Invalid answer from the license server."
-msgstr "Máy chủ license trả lời không hợp lệ."
-
 msgid "Invalid redirect (check URLs and type)."
 msgstr "Redirect không hợp lệ (kiểm tra URL và type)."
 
@@ -1425,18 +1413,6 @@ msgstr "Mức"
 
 msgid "License (Pro)"
 msgstr "License (Pro)"
-
-msgid "License key"
-msgstr "License key"
-
-msgid "License key rejected."
-msgstr "License key bị từ chối."
-
-msgid "License removed from this site."
-msgstr "Đã gỡ license khỏi site này."
-
-msgid "License server is not configured yet."
-msgstr "Chưa cấu hình máy chủ license."
 
 msgid "Lighter on phones (images)"
 msgstr "Nhẹ hơn trên điện thoại (ảnh)"
@@ -2053,15 +2029,6 @@ msgstr "In / Lưu PDF"
 msgid "Private sitemap name (optional)"
 msgstr "Tên sitemap riêng (tuỳ chọn)"
 
-msgid "Pro activated."
-msgstr "Đã kích hoạt Pro."
-
-msgid "Pro active"
-msgstr "Pro đang hoạt động"
-
-msgid "Pro add-on installed · no license yet"
-msgstr "Đã cài add-on Pro · chưa có license"
-
 msgid "Pro does these steps for you: resize, crop, compress, convert to WebP and serve through srcset, with one click."
 msgstr "Pro làm giúp bạn các bước này: thu nhỏ, cắt, nén, chuyển WebP và phục vụ qua srcset, chỉ với một cú bấm."
 
@@ -2187,9 +2154,6 @@ msgstr "Tạo lại"
 
 msgid "Remove"
 msgstr "Xoá"
-
-msgid "Remove from this site"
-msgstr "Gỡ khỏi site này"
 
 msgid "Rendered title is longer than 60 characters."
 msgstr "Title render dài hơn 60 ký tự."
@@ -2707,9 +2671,6 @@ msgstr "TQK SEO"
 msgid "TQK SEO — this page"
 msgstr "TQK SEO — trang này"
 
-msgid "TQK WP SEO Pro needs the TQK WP SEO plugin (v0.2.0 or newer). Install and activate it first."
-msgstr "TQK WP SEO Pro cần plugin TQK WP SEO (v0.2.0 trở lên). Hãy cài và kích hoạt plugin đó trước."
-
 msgid "TQK WP SEO checks every page the way a visitor sees it — on desktop, laptop, tablet and phone — turns what it finds into a plan to fix, lets an AI suggest the wording while you approve every change, and keeps the site clean of the malware cracked plugins bring."
 msgstr "TQK WP SEO kiểm tra từng trang đúng như khách xem — trên máy tính, laptop, tablet và điện thoại — biến những gì tìm thấy thành kế hoạch sửa, để AI gợi ý câu chữ còn bạn duyệt từng thay đổi, và giữ site sạch khỏi mã độc mà các plugin crack mang vào."
 
@@ -2751,9 +2712,6 @@ msgstr "Chữ khó đọc (tương phản thấp)"
 
 msgid "Text too small to read"
 msgstr "Chữ quá nhỏ"
-
-msgid "That does not look like a license key."
-msgstr "Chuỗi này không giống license key."
 
 msgid "The AI provider returned nothing. Check endpoint and model."
 msgstr "AI provider không trả gì. Kiểm tra endpoint và model."
@@ -3231,9 +3189,6 @@ msgstr "quá nhỏ: dưới 600×315 Facebook / Zalo chỉ hiện ảnh thu nh�
 
 msgid "unknown"
 msgstr "không rõ"
-
-msgid "until %s"
-msgstr "đến %s"
 
 msgid "will be cropped to 1.91:1 (see the frame)"
 msgstr "sẽ bị cắt về tỷ lệ 1.91:1 (xem khung)"

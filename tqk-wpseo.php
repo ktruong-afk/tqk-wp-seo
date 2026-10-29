@@ -2,7 +2,7 @@
 /**
  * Plugin Name: TQK WP SEO
  * Plugin URI: https://www.facebook.com/Unk.khai/
- * Description: Website Audit & Optimization Engine. TQK WP SEO checks every page the way a visitor sees it — on desktop, laptop, tablet and phone — turns what it finds into a plan to fix, lets an AI suggest the wording while you approve every change, and keeps the site clean of the malware cracked plugins bring. Support: 0364 999 916.
+ * Description: Website Audit & Optimization Engine. TQK WP SEO checks every page the way a visitor sees it — on desktop, laptop, tablet and phone — turns what it finds into a plan to fix, lets an AI suggest the wording while you approve every change, and keeps the site clean of the malware cracked plugins bring.
  * Version: 0.2.0
  * Author: Trương Quang Khải
  * Author URI: https://www.facebook.com/Unk.khai/
