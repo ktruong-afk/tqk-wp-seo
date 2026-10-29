@@ -100,15 +100,15 @@ class Report {
         if (class_exists('WP_Translation_Controller')) {
             \WP_Translation_Controller::get_instance()->set_locale($locale);
         }
-        unload_textdomain('tqk-wpseo');
+        unload_textdomain('tqk-wp-seo');
         if ($locale !== 'en_US') {
-            load_plugin_textdomain('tqk-wpseo', false, basename(rtrim(TQK_WPSEO_DIR, '/\\')) . '/languages');
+            load_plugin_textdomain('tqk-wp-seo', false, basename(rtrim(TQK_WPSEO_DIR, '/\\')) . '/languages');
         }
     }
 
     public static function render(): void {
         if (!\TQK_WPSEO\Admin\Access::can()) {
-            wp_die(esc_html__('Permission denied', 'tqk-wpseo'));
+            wp_die(esc_html__('Permission denied', 'tqk-wp-seo'));
         }
         check_admin_referer(self::ACTION);
         $locale = (string) Settings::get('report_locale', '');
@@ -161,8 +161,8 @@ class Report {
             }
             $pages .= '<section class="page-card">'
                 . '<div class="pc-head"><div><h3>' . esc_html((string) ($item['title'] ?: $item['url'])) . '</h3><a href="' . esc_url((string) $item['url']) . '">' . esc_html((string) $item['url']) . '</a></div>'
-                . '<div class="scores"><span class="score ' . $tone($s) . '">' . $s . '<small>SEO</small></span><span class="score ' . $tone($r) . '">' . $r . '<small>' . esc_html__('Mobile', 'tqk-wpseo') . '</small></span></div></div>'
-                . '<div class="pc-body"><ul>' . (implode('', $top) ?: '<li class="clean">' . esc_html__('No issues', 'tqk-wpseo') . '</li>') . '</ul><div class="shots">' . $shots . '</div></div>'
+                . '<div class="scores"><span class="score ' . $tone($s) . '">' . $s . '<small>SEO</small></span><span class="score ' . $tone($r) . '">' . $r . '<small>' . esc_html__('Mobile', 'tqk-wp-seo') . '</small></span></div></div>'
+                . '<div class="pc-body"><ul>' . (implode('', $top) ?: '<li class="clean">' . esc_html__('No issues', 'tqk-wp-seo') . '</li>') . '</ul><div class="shots">' . $shots . '</div></div>'
                 . '</section>';
         }
 
@@ -173,22 +173,22 @@ class Report {
 
         header('Content-Type: text/html; charset=utf-8');
         echo '<!doctype html><html lang="' . esc_attr($locale === 'vi' ? 'vi' : ($locale === 'en_US' ? 'en' : (string) get_bloginfo('language'))) . '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-            . '<title>' . esc_html(sprintf(__('SEO report — %s', 'tqk-wpseo'), $site)) . '</title>'
+            . '<title>' . esc_html(sprintf(__('SEO report — %s', 'tqk-wp-seo'), $site)) . '</title>'
             . '<style>' . self::css($color) . '</style></head><body>'
-            . '<div class="toolbar"><button onclick="window.print()">' . esc_html__('Print / Save as PDF', 'tqk-wpseo') . '</button></div>'
+            . '<div class="toolbar"><button onclick="window.print()">' . esc_html__('Print / Save as PDF', 'tqk-wp-seo') . '</button></div>'
             . '<header class="cover"><div class="brand">' . ($logo !== '' ? '<img src="' . esc_url($logo) . '" alt="">' : '') . '<strong>' . esc_html($brand) . '</strong></div>'
-            . '<h1>' . esc_html__('SEO & website health report', 'tqk-wpseo') . '</h1>'
+            . '<h1>' . esc_html__('SEO & website health report', 'tqk-wp-seo') . '</h1>'
             . '<p class="site">' . esc_html($site) . ' · ' . esc_html(home_url('/')) . '</p><p class="date">' . esc_html($date) . '</p></header>'
             . '<section class="kpis">'
-            . self::kpi((string) $sum['pages'], __('Pages audited', 'tqk-wpseo'))
-            . self::kpi($sum['seo_avg'] . '/100', __('Average SEO score', 'tqk-wpseo'), $tone($sum['seo_avg']))
-            . self::kpi($sum['rs_avg'] . '/100', __('Average mobile score', 'tqk-wpseo'), $tone($sum['rs_avg']))
-            . self::kpi((string) $sum['critical'], __('Critical issues', 'tqk-wpseo'), $sum['critical'] > 0 ? 'bad' : 'good')
-            . ($sec !== [] && !empty($sec['finished']) ? self::kpi((string) $sec_crit, __('Security alerts', 'tqk-wpseo'), $sec_crit > 0 ? 'bad' : 'good') : '')
-            . ($saved > 0 ? self::kpi(\TQK_WPSEO\Analyzer\ImageFix::fmt_bytes($saved), __('Lighter on phones (images)', 'tqk-wpseo'), 'good') : '')
+            . self::kpi((string) $sum['pages'], __('Pages audited', 'tqk-wp-seo'))
+            . self::kpi($sum['seo_avg'] . '/100', __('Average SEO score', 'tqk-wp-seo'), $tone($sum['seo_avg']))
+            . self::kpi($sum['rs_avg'] . '/100', __('Average mobile score', 'tqk-wp-seo'), $tone($sum['rs_avg']))
+            . self::kpi((string) $sum['critical'], __('Critical issues', 'tqk-wp-seo'), $sum['critical'] > 0 ? 'bad' : 'good')
+            . ($sec !== [] && !empty($sec['finished']) ? self::kpi((string) $sec_crit, __('Security alerts', 'tqk-wp-seo'), $sec_crit > 0 ? 'bad' : 'good') : '')
+            . ($saved > 0 ? self::kpi(\TQK_WPSEO\Analyzer\ImageFix::fmt_bytes($saved), __('Lighter on phones (images)', 'tqk-wp-seo'), 'good') : '')
             . '</section>'
-            . ($top_issues !== '' ? '<section><h2>' . esc_html__('Most frequent issues', 'tqk-wpseo') . '</h2><table>' . $top_issues . '</table></section>' : '')
-            . '<section><h2>' . esc_html__('Page by page (worst first)', 'tqk-wpseo') . '</h2>' . $pages . '</section>'
+            . ($top_issues !== '' ? '<section><h2>' . esc_html__('Most frequent issues', 'tqk-wp-seo') . '</h2><table>' . $top_issues . '</table></section>' : '')
+            . '<section><h2>' . esc_html__('Page by page (worst first)', 'tqk-wp-seo') . '</h2>' . $pages . '</section>'
             . '<footer><strong>' . esc_html($brand) . '</strong>' . ($contact !== '' ? ' · ' . esc_html($contact) : '') . '</footer>'
             . '</body></html>';
         exit;

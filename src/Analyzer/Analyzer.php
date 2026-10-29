@@ -97,38 +97,38 @@ class Analyzer {
 
         // --- Technical ---
         if (($data['canonical'] ?? '') === '') {
-            $add('no_canonical', 'technical', 'warning', __('No canonical URL.', 'tqk-wpseo'));
+            $add('no_canonical', 'technical', 'warning', __('No canonical URL.', 'tqk-wp-seo'));
         }
         $robots = $data['robots'] ?? ['index' => true];
         if (!($robots['index'] ?? true) && in_array($post->post_status ?? '', ['publish'], true)) {
-            $add('noindex_unexpected', 'technical', 'critical', __('Published content is set to noindex.', 'tqk-wpseo'));
+            $add('noindex_unexpected', 'technical', 'critical', __('Published content is set to noindex.', 'tqk-wp-seo'));
         }
 
         // --- Content: title / description ---
         $title = (string) ($data['title'] ?? '');
         $desc = (string) ($data['description'] ?? '');
         if ($title === '') {
-            $add('title_missing', 'content', 'critical', __('Missing SEO title.', 'tqk-wpseo'));
+            $add('title_missing', 'content', 'critical', __('Missing SEO title.', 'tqk-wp-seo'));
         } elseif (mb_strlen($title) > 60) {
-            $add('title_too_long', 'content', 'warning', __('SEO title is longer than 60 characters.', 'tqk-wpseo'));
+            $add('title_too_long', 'content', 'warning', __('SEO title is longer than 60 characters.', 'tqk-wp-seo'));
         }
         if ($desc === '') {
-            $add('description_missing', 'content', 'critical', __('Missing meta description.', 'tqk-wpseo'));
+            $add('description_missing', 'content', 'critical', __('Missing meta description.', 'tqk-wp-seo'));
         } elseif (mb_strlen($desc) > 160) {
-            $add('description_too_long', 'content', 'warning', __('Meta description is longer than 160 characters.', 'tqk-wpseo'));
+            $add('description_too_long', 'content', 'warning', __('Meta description is longer than 160 characters.', 'tqk-wp-seo'));
         }
 
         // --- Content: headings ---
         $h1 = array_values(array_filter($headings, fn($h) => $h[0] === 1));
         if ($h1 === []) {
-            $add('missing_h1', 'content', 'critical', __('No H1 heading found.', 'tqk-wpseo'));
+            $add('missing_h1', 'content', 'critical', __('No H1 heading found.', 'tqk-wp-seo'));
         } elseif (count($h1) > 1) {
-            $add('multiple_h1', 'content', 'warning', __('Multiple H1 headings found.', 'tqk-wpseo'));
+            $add('multiple_h1', 'content', 'warning', __('Multiple H1 headings found.', 'tqk-wp-seo'));
         }
         $prev = 0;
         foreach ($headings as [$level]) {
             if ($prev > 0 && $level > $prev + 1) {
-                $add('heading_skip', 'content', 'warning', __('Heading hierarchy is broken (level skipped).', 'tqk-wpseo'));
+                $add('heading_skip', 'content', 'warning', __('Heading hierarchy is broken (level skipped).', 'tqk-wp-seo'));
                 break;
             }
             $prev = $level;
@@ -138,11 +138,11 @@ class Analyzer {
         // Vietnamese counts syllables, not words ("máy lọc nước" = 3), so
         // every length rule scales: ~1.7 syllables per Vietnamese word.
         $vi = Text::is_vietnamese($plain);
-        $unit = $vi ? __('syllables', 'tqk-wpseo') : __('words', 'tqk-wpseo');
+        $unit = $vi ? __('syllables', 'tqk-wp-seo') : __('words', 'tqk-wp-seo');
         $words = count(Text::words($plain));
         $min_words = $vi ? 500 : 300;
         if ($words < $min_words) {
-            $add('thin_content', 'content', 'warning', sprintf(__('Content is thin (under %1$d %2$s).', 'tqk-wpseo'), $min_words, $unit));
+            $add('thin_content', 'content', 'warning', sprintf(__('Content is thin (under %1$d %2$s).', 'tqk-wp-seo'), $min_words, $unit));
         }
 
         // --- Content: readability ---
@@ -150,18 +150,18 @@ class Analyzer {
         $avg_sent = $sentences === [] ? 0 : round(array_sum(array_map(fn($s) => count(Text::words($s)), $sentences)) / count($sentences), 1);
         $max_sent = $vi ? 35 : 20;
         if ($avg_sent > $max_sent) {
-            $add('long_sentences', 'content', 'warning', sprintf(__('Average sentence length is over %1$d %2$s.', 'tqk-wpseo'), $max_sent, $unit));
+            $add('long_sentences', 'content', 'warning', sprintf(__('Average sentence length is over %1$d %2$s.', 'tqk-wp-seo'), $max_sent, $unit));
         }
         $max_para = $vi ? 250 : 150;
         $long_paras = count(array_filter(Text::paragraphs($html), fn($p) => count(Text::words($p)) > $max_para));
         if ($long_paras > 0) {
-            $add('long_paragraphs', 'content', 'warning', sprintf(__('%1$d paragraph(s) over %2$d %3$s: split them for phone readers.', 'tqk-wpseo'), $long_paras, $max_para, $unit));
+            $add('long_paragraphs', 'content', 'warning', sprintf(__('%1$d paragraph(s) over %2$d %3$s: split them for phone readers.', 'tqk-wp-seo'), $long_paras, $max_para, $unit));
         }
 
         // --- Keyword (primary + up to 4 secondary) ---
         $kw = Keyword::analyze((string) ($data['focus_keyword'] ?? ''), $post, $data, $plain, $headings, $images);
         if (!$kw['set']) {
-            $add('no_focus_keyword', 'content', 'warning', __('No focus keyword set.', 'tqk-wpseo'));
+            $add('no_focus_keyword', 'content', 'warning', __('No focus keyword set.', 'tqk-wp-seo'));
         } else {
             foreach ($kw['checks'] as $cid => $passed) {
                 if (!$passed) {
@@ -169,7 +169,7 @@ class Analyzer {
                 }
             }
             if ($kw['density'] < 0.5) {
-                $add('kw_low_density', 'content', 'warning', __('Keyword density is low.', 'tqk-wpseo'));
+                $add('kw_low_density', 'content', 'warning', __('Keyword density is low.', 'tqk-wp-seo'));
             }
         }
         $secondary = Keyword::parse_secondary(array_key_exists('secondary_keywords', $overrides)
@@ -177,7 +177,7 @@ class Analyzer {
             : (string) get_post_meta($post_id, '_tqk_wpseo_secondary_keywords', true));
         $sec = Keyword::analyze_secondary($secondary, ['title' => $title, 'description' => $desc], $plain);
         if ($sec['set'] && $sec['missing'] !== []) {
-            $add('kw_secondary_missing', 'content', 'warning', sprintf(__('Secondary keywords missing in content: %s', 'tqk-wpseo'), implode(', ', $sec['missing'])));
+            $add('kw_secondary_missing', 'content', 'warning', sprintf(__('Secondary keywords missing in content: %s', 'tqk-wp-seo'), implode(', ', $sec['missing'])));
         }
 
         // --- Images ---
@@ -192,22 +192,22 @@ class Analyzer {
             }
         }
         if ($missing_alt > 0) {
-            $add('missing_alt', 'images', 'warning', sprintf(__('%d image(s) missing ALT text.', 'tqk-wpseo'), $missing_alt));
+            $add('missing_alt', 'images', 'warning', sprintf(__('%d image(s) missing ALT text.', 'tqk-wp-seo'), $missing_alt));
         }
         if ($missing_dim > 0) {
-            $add('missing_dimensions', 'images', 'warning', sprintf(__('%d image(s) missing width/height.', 'tqk-wpseo'), $missing_dim));
+            $add('missing_dimensions', 'images', 'warning', sprintf(__('%d image(s) missing width/height.', 'tqk-wp-seo'), $missing_dim));
         }
 
         // --- Links ---
         $link_stats = self::link_stats($links);
         if ($link_stats['internal'] === 0 && $words >= 100) {
-            $add('no_internal_links', 'links', 'warning', __('No internal links found.', 'tqk-wpseo'));
+            $add('no_internal_links', 'links', 'warning', __('No internal links found.', 'tqk-wp-seo'));
         }
         foreach (array_slice($link_stats['unresolved'], 0, 5) as $u) {
-            $add('unresolved_link', 'links', 'warning', sprintf(__('Internal link target not found: %s', 'tqk-wpseo'), $u));
+            $add('unresolved_link', 'links', 'warning', sprintf(__('Internal link target not found: %s', 'tqk-wp-seo'), $u));
         }
         if (self::is_orphan($post_id)) {
-            $add('orphan_page', 'links', 'warning', __('No incoming internal links (orphan).', 'tqk-wpseo'));
+            $add('orphan_page', 'links', 'warning', __('No incoming internal links (orphan).', 'tqk-wp-seo'));
         }
 
         // --- Schema: CPT-aware (missing template = warning, fix in Site Analysis one-go) ---
@@ -215,12 +215,12 @@ class Analyzer {
         $schema_map = \TQK_WPSEO\Admin\Settings::get('schema_map', []);
         $override = (string) get_post_meta($post_id, '_tqk_wpseo_schema_type', true);
         if ($override === '' && (!is_array($schema_map) || trim((string) ($schema_map[$pt] ?? '')) === '')) {
-            $add('no_schema', 'schema', 'warning', sprintf(__('No Schema template for post type "%s".', 'tqk-wpseo'), $pt));
+            $add('no_schema', 'schema', 'warning', sprintf(__('No Schema template for post type "%s".', 'tqk-wp-seo'), $pt));
         }
 
         // --- Social ---
         if (($data['og_title'] ?? '') === '' || ($data['og_description'] ?? '') === '') {
-            $add('social_incomplete', 'social', 'warning', __('Open Graph title or description is empty.', 'tqk-wpseo'));
+            $add('social_incomplete', 'social', 'warning', __('Open Graph title or description is empty.', 'tqk-wp-seo'));
         }
 
         $result = [
@@ -258,13 +258,13 @@ class Analyzer {
 
     public static function keyword_message(string $cid): string {
         $map = [
-            'kw_title' => __('Keyword not found in SEO title.', 'tqk-wpseo'),
-            'kw_url' => __('Keyword not found in URL.', 'tqk-wpseo'),
-            'kw_description' => __('Keyword not found in meta description.', 'tqk-wpseo'),
-            'kw_h1' => __('Keyword not found in H1.', 'tqk-wpseo'),
-            'kw_first_para' => __('Keyword not found in first paragraph.', 'tqk-wpseo'),
-            'kw_h2' => __('Keyword not found in any H2.', 'tqk-wpseo'),
-            'kw_alt' => __('Keyword not found in image ALT text.', 'tqk-wpseo'),
+            'kw_title' => __('Keyword not found in SEO title.', 'tqk-wp-seo'),
+            'kw_url' => __('Keyword not found in URL.', 'tqk-wp-seo'),
+            'kw_description' => __('Keyword not found in meta description.', 'tqk-wp-seo'),
+            'kw_h1' => __('Keyword not found in H1.', 'tqk-wp-seo'),
+            'kw_first_para' => __('Keyword not found in first paragraph.', 'tqk-wp-seo'),
+            'kw_h2' => __('Keyword not found in any H2.', 'tqk-wp-seo'),
+            'kw_alt' => __('Keyword not found in image ALT text.', 'tqk-wp-seo'),
         ];
         return $map[$cid] ?? $cid;
     }

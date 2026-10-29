@@ -55,7 +55,7 @@ class AdminBar {
         $bar->add_node([
             'parent' => 'tqk-wpseo',
             'id' => 'tqk-wpseo-audit',
-            'title' => esc_html__('Audit this page (4 screens)', 'tqk-wpseo'),
+            'title' => esc_html__('Audit this page (4 screens)', 'tqk-wp-seo'),
             'href' => '#tqk-audit',
             'meta' => ['class' => 'tqk-ab-audit'],
         ]);
@@ -70,7 +70,7 @@ class AdminBar {
             $bar->add_node([
                 'parent' => 'tqk-wpseo',
                 'id' => 'tqk-wpseo-last',
-                'title' => esc_html(sprintf(__('Last plan: %1$d fix now · %2$d should fix', 'tqk-wpseo'), $n[1], $n[2])),
+                'title' => esc_html(sprintf(__('Last plan: %1$d fix now · %2$d should fix', 'tqk-wp-seo'), $n[1], $n[2])),
                 'href' => '#tqk-last',
                 'meta' => ['class' => 'tqk-ab-last'],
             ]);
@@ -79,14 +79,14 @@ class AdminBar {
             $bar->add_node([
                 'parent' => 'tqk-wpseo',
                 'id' => 'tqk-wpseo-edit',
-                'title' => esc_html__('Edit SEO of this page', 'tqk-wpseo'),
+                'title' => esc_html__('Edit SEO of this page', 'tqk-wp-seo'),
                 'href' => (string) get_edit_post_link($id, 'raw') . '#tqk-wpseo',
             ]);
         }
         $bar->add_node([
             'parent' => 'tqk-wpseo',
             'id' => 'tqk-wpseo-analytics',
-            'title' => esc_html__('Analytics website', 'tqk-wpseo'),
+            'title' => esc_html__('Analytics website', 'tqk-wp-seo'),
             'href' => admin_url('admin.php?page=tqk-wpseo-site-analysis'),
         ]);
     }
@@ -120,11 +120,11 @@ class AdminBar {
             'editUrl' => $id > 0 ? (string) get_edit_post_link($id, 'raw') . '#tqk-wpseo' : '',
             'last' => $last,
             't' => Metabox::js_strings() + [
-                'barTitle' => __('TQK SEO — this page', 'tqk-wpseo'),
-                'barClose' => __('Close', 'tqk-wpseo'),
-                'barOpenEditor' => __('Open in the editor to fix', 'tqk-wpseo'),
-                'barNotStored' => __('Archive / listing page: the result is shown here but not stored (reports belong to posts and pages).', 'tqk-wpseo'),
-                'barSaved' => __('Saved: the editor, the dashboard and MCP now show this result.', 'tqk-wpseo'),
+                'barTitle' => __('TQK SEO — this page', 'tqk-wp-seo'),
+                'barClose' => __('Close', 'tqk-wp-seo'),
+                'barOpenEditor' => __('Open in the editor to fix', 'tqk-wp-seo'),
+                'barNotStored' => __('Archive / listing page: the result is shown here but not stored (reports belong to posts and pages).', 'tqk-wp-seo'),
+                'barSaved' => __('Saved: the editor, the dashboard and MCP now show this result.', 'tqk-wp-seo'),
             ],
         ]);
     }

@@ -16,11 +16,11 @@ class TermFields {
     /** @return array<string,array{0:string,1:string}> meta key => [label, type] */
     public static function fields(): array {
         return [
-            '_tqk_wpseo_title' => [__('SEO Title', 'tqk-wpseo'), 'text'],
-            '_tqk_wpseo_description' => [__('Meta description', 'tqk-wpseo'), 'textarea'],
-            '_tqk_wpseo_focus_keyword' => [__('Focus keyword', 'tqk-wpseo'), 'text'],
-            '_tqk_wpseo_robots' => [__('Robots', 'tqk-wpseo'), 'robots'],
-            '_tqk_wpseo_canonical' => [__('Canonical URL', 'tqk-wpseo'), 'url'],
+            '_tqk_wpseo_title' => [__('SEO Title', 'tqk-wp-seo'), 'text'],
+            '_tqk_wpseo_description' => [__('Meta description', 'tqk-wp-seo'), 'textarea'],
+            '_tqk_wpseo_focus_keyword' => [__('Focus keyword', 'tqk-wp-seo'), 'text'],
+            '_tqk_wpseo_robots' => [__('Robots', 'tqk-wp-seo'), 'robots'],
+            '_tqk_wpseo_canonical' => [__('Canonical URL', 'tqk-wp-seo'), 'url'],
         ];
     }
 
@@ -43,7 +43,7 @@ class TermFields {
             return;
         }
         $id = (int) ($term->term_id ?? 0);
-        echo '<tr class="form-field"><th colspan="2"><h2 style="margin:12px 0 0">' . esc_html__('SEO (TQK)', 'tqk-wpseo') . '</h2>';
+        echo '<tr class="form-field"><th colspan="2"><h2 style="margin:12px 0 0">' . esc_html__('SEO (TQK)', 'tqk-wp-seo') . '</h2>';
         wp_nonce_field(self::NONCE, 'tqk_wpseo_term_nonce');
         echo '</th></tr>';
         foreach (self::fields() as $key => [$label, $type]) {
@@ -61,7 +61,7 @@ class TermFields {
                 echo '<input type="' . ($type === 'url' ? 'url' : 'text') . '" id="' . esc_attr($key) . '" name="tqk_term[' . esc_attr($key) . ']" value="' . esc_attr($val) . '">';
             }
             if ($key === '_tqk_wpseo_title') {
-                echo '<p class="description">' . esc_html__('Empty = site title template. Variables: %title%, %site_name%.', 'tqk-wpseo') . '</p>';
+                echo '<p class="description">' . esc_html__('Empty = site title template. Variables: %title%, %site_name%.', 'tqk-wp-seo') . '</p>';
             }
             echo '</td></tr>';
         }

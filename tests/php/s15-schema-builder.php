@@ -2,7 +2,7 @@
 // S15 tests: schema field specs, builder, validator, content harvest.
 // Run: php tests/php/s15-schema-builder.php
 require __DIR__ . '/stubs.php';
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 
 $fail = 0;
 function check($name, $cond) {

@@ -358,7 +358,7 @@ class Importer {
     public static function ajax(): void {
         $source = self::valid_source(sanitize_key($_POST['source'] ?? ''));
         if ($source === '') {
-            wp_send_json_error(['message' => __('Choose Yoast SEO or Rank Math.', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Choose Yoast SEO or Rank Math.', 'tqk-wp-seo')]);
         }
         $op = sanitize_key($_POST['op'] ?? '');
         if ($op === 'preview') {
@@ -390,6 +390,6 @@ class Importer {
             }
             wp_send_json_success($sum + ['next' => $offset + count($ids), 'done' => $done]);
         }
-        wp_send_json_error(['message' => __('Unknown action', 'tqk-wpseo')]);
+        wp_send_json_error(['message' => __('Unknown action', 'tqk-wp-seo')]);
     }
 }

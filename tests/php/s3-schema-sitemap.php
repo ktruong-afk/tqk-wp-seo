@@ -1,7 +1,7 @@
 <?php
 // S3 tests: schema graph, breadcrumb, sitemap, robots.txt. Run: php tests/php/s3-schema-sitemap.php
 require __DIR__ . '/stubs.php';
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 
 $fail = 0;
 function check($name, $cond) {

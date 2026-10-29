@@ -9,7 +9,7 @@ if (!function_exists('date_i18n')) {
         return date($f, $ts ?: time());
     }
 }
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 
 $fail = 0;
 function check($name, $cond) {

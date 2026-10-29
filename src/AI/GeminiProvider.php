@@ -44,7 +44,7 @@ class GeminiProvider implements ProviderInterface {
     public function call(string $prompt, ?array $schema = null, int $max_wait = 0): array {
         $out = ['status' => 'error', 'text' => '', 'data' => null, 'wait' => 0, 'daily' => false, 'error' => ''];
         if ($this->key === '' || !self::valid_model($this->model)) {
-            return ['status' => 'fatal', 'error' => __('Gemini API key or model is missing.', 'tqk-wpseo')] + $out;
+            return ['status' => 'fatal', 'error' => __('Gemini API key or model is missing.', 'tqk-wp-seo')] + $out;
         }
         $slot = RateLimiter::acquire();
         if (!$slot['ok'] && $slot['wait'] <= $max_wait && !$slot['daily']) {
@@ -100,7 +100,7 @@ class GeminiProvider implements ProviderInterface {
         if ($schema !== null) {
             $data = json_decode($text, true);
             if (!is_array($data)) {
-                return ['status' => 'error', 'error' => __('Gemini answered with invalid JSON.', 'tqk-wpseo')] + $out;
+                return ['status' => 'error', 'error' => __('Gemini answered with invalid JSON.', 'tqk-wp-seo')] + $out;
             }
             $out['data'] = $data;
         }

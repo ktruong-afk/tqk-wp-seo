@@ -302,7 +302,7 @@ class LiveAudit {
     /** @return array{id:int,url:string,title:string,type:string} */
     public static function item(int $id): array {
         if ($id === 0) {
-            return ['id' => 0, 'url' => home_url('/'), 'title' => __('Homepage', 'tqk-wpseo'), 'type' => 'home'];
+            return ['id' => 0, 'url' => home_url('/'), 'title' => __('Homepage', 'tqk-wp-seo'), 'type' => 'home'];
         }
         if ($id < 0) {
             // Taxonomy archive (category, tag, product category…): -term_id.
@@ -532,7 +532,7 @@ class LiveAudit {
             $out[] = (string) ($e['message'] ?? '');
         }
         if ((string) get_post_meta($id, '_tqk_wpseo_focus_keyword', true) === '') {
-            $out[] = __('No focus keyword set.', 'tqk-wpseo');
+            $out[] = __('No focus keyword set.', 'tqk-wp-seo');
         }
         return $out;
     }
@@ -553,7 +553,7 @@ class LiveAudit {
         $id = (int) $run['ids'][$index];
         $rec = self::clean_item($data);
         if ($failed && $rec['error'] === '') {
-            $rec['error'] = __('Page did not load.', 'tqk-wpseo');
+            $rec['error'] = __('Page did not load.', 'tqk-wp-seo');
         }
         if (!$failed) {
             $rec['error'] = '';
@@ -625,7 +625,7 @@ class LiveAudit {
                 'prio' => 2,
                 'area' => 'images',
                 'code' => 'images',
-                'title' => sprintf(__('%d image(s) should be resized for each screen', 'tqk-wpseo'), $client['images_to_optimize']),
+                'title' => sprintf(__('%d image(s) should be resized for each screen', 'tqk-wp-seo'), $client['images_to_optimize']),
                 'how' => '',
                 'css' => '',
                 'list' => $lines,
@@ -653,7 +653,7 @@ class LiveAudit {
         foreach (self::image_rows($id) as $r) {
             $out[] = $r['resize'] > 0
                 ? sprintf(
-                    __('%1$s — original %2$s, box %3$s on %4$s: resize to about %5$dpx', 'tqk-wpseo'),
+                    __('%1$s — original %2$s, box %3$s on %4$s: resize to about %5$dpx', 'tqk-wp-seo'),
                     $r['name'], $r['orig'], $r['box'], $r['screen'], $r['resize']
                 )
                 : $r['name'] . ' — ' . implode(' ', $r['notes']);
@@ -661,7 +661,7 @@ class LiveAudit {
         $more = count($out) - 3;
         $out = array_slice($out, 0, 3);
         if ($more > 0) {
-            $out[] = sprintf(__('+%d more image(s): see "Image optimizer" below.', 'tqk-wpseo'), $more);
+            $out[] = sprintf(__('+%d more image(s): see "Image optimizer" below.', 'tqk-wp-seo'), $more);
         }
         return $out;
     }
@@ -724,21 +724,21 @@ class LiveAudit {
         }
         $li = '';
         foreach (array_slice($rows, 0, 4) as $r) {
-            $meta = esc_html(sprintf(__('Original: %s', 'tqk-wpseo'), $r['orig'])) . ' · '
-                . esc_html(sprintf(__('Box: %1$s (%2$s)', 'tqk-wpseo'), $r['box'], $r['screen']))
-                . ($r['resize'] > 0 ? ' · <strong>' . esc_html(sprintf(__('Resize to: %dpx', 'tqk-wpseo'), $r['resize'])) . '</strong>' : '');
+            $meta = esc_html(sprintf(__('Original: %s', 'tqk-wp-seo'), $r['orig'])) . ' · '
+                . esc_html(sprintf(__('Box: %1$s (%2$s)', 'tqk-wp-seo'), $r['box'], $r['screen']))
+                . ($r['resize'] > 0 ? ' · <strong>' . esc_html(sprintf(__('Resize to: %dpx', 'tqk-wp-seo'), $r['resize'])) . '</strong>' : '');
             $li .= '<li><span class="tqk-la-img-name">' . esc_html($r['name']) . '</span>'
                 . '<span class="tqk-la-img-meta">' . $meta . '</span>'
                 . ($r['notes'] !== [] ? '<span class="tqk-la-img-note">' . esc_html(implode(' · ', $r['notes'])) . '</span>' : '') . '</li>';
         }
         if (count($rows) > 4) {
-            $li .= '<li class="tqk-la-img-more">' . esc_html(sprintf(__('+%d more image(s): see "Image optimizer" below.', 'tqk-wpseo'), count($rows) - 4)) . '</li>';
+            $li .= '<li class="tqk-la-img-more">' . esc_html(sprintf(__('+%d more image(s): see "Image optimizer" below.', 'tqk-wp-seo'), count($rows) - 4)) . '</li>';
         }
         $pro = \TQK_WPSEO\Core\Pro::active();
         $btn = $pro
-            ? '<a class="button button-small tqk-la-img-btn" href="#tqk-img">' . esc_html__('Optimize these images automatically', 'tqk-wpseo') . '</a>'
-            : '<a class="button button-small tqk-la-img-btn is-pro" href="' . esc_url(\TQK_WPSEO\Core\Pro::url()) . '"><span class="tqk-la-pro-badge">PRO</span>' . esc_html__('Auto optimize · resize · convert to WebP', 'tqk-wpseo') . '</a>';
-        return '<div class="tqk-la-imgs"><div class="tqk-la-imgs-head">' . esc_html(sprintf(__('Images to optimize (%d)', 'tqk-wpseo'), count($rows))) . '</div>'
+            ? '<a class="button button-small tqk-la-img-btn" href="#tqk-img">' . esc_html__('Optimize these images automatically', 'tqk-wp-seo') . '</a>'
+            : '<a class="button button-small tqk-la-img-btn is-pro" href="' . esc_url(\TQK_WPSEO\Core\Pro::url()) . '"><span class="tqk-la-pro-badge">PRO</span>' . esc_html__('Auto optimize · resize · convert to WebP', 'tqk-wp-seo') . '</a>';
+        return '<div class="tqk-la-imgs"><div class="tqk-la-imgs-head">' . esc_html(sprintf(__('Images to optimize (%d)', 'tqk-wp-seo'), count($rows))) . '</div>'
             . '<ul>' . $li . '</ul>' . $btn . '</div>';
     }
 
@@ -753,7 +753,7 @@ class LiveAudit {
             $r = \TQK_WPSEO\MCP\Reports::get((int) $id);
             $todo = count(array_filter((array) ($r['plan'] ?? []), static fn($p) => (int) ($p['prio'] ?? 3) <= 2));
             if ($r !== null && $todo > 0) {
-                \TQK_WPSEO\MCP\Reports::push((int) $id, __('From the site audit', 'tqk-wpseo'));
+                \TQK_WPSEO\MCP\Reports::push((int) $id, __('From the site audit', 'tqk-wp-seo'));
                 $n++;
             }
         }
@@ -784,7 +784,7 @@ class LiveAudit {
 
         if (!empty($rec['error'])) {
             return '<tr class="is-failed">' . $page . '<td>—</td><td>—</td>'
-                . '<td><ul class="tqk-live-findings"><li class="is-crit">' . esc_html(sprintf(__('Could not audit: %s', 'tqk-wpseo'), (string) $rec['error'])) . '</li></ul></td>'
+                . '<td><ul class="tqk-live-findings"><li class="is-crit">' . esc_html(sprintf(__('Could not audit: %s', 'tqk-wp-seo'), (string) $rec['error'])) . '</li></ul></td>'
                 . '<td></td></tr>';
         }
 
@@ -799,7 +799,7 @@ class LiveAudit {
         }
         foreach ((array) ($rec['groups'] ?? []) as $g) {
             $issues[] = '<li class="is-warn"><code>' . esc_html((string) $g['root']) . '</code> '
-                . esc_html(sprintf(__('%1$d element(s) overflow — %2$s (%3$s)', 'tqk-wpseo'), (int) $g['count'], (string) $g['reason'], (string) $g['vps'])) . '</li>';
+                . esc_html(sprintf(__('%1$d element(s) overflow — %2$s (%3$s)', 'tqk-wp-seo'), (int) $g['count'], (string) $g['reason'], (string) $g['vps'])) . '</li>';
         }
         $vps = [];
         foreach ((array) ($rec['vps'] ?? []) as $v) {
@@ -814,20 +814,20 @@ class LiveAudit {
                 continue; // pruned after the kept days
             }
             $shots .= '<a href="' . esc_url($u) . '" target="_blank" rel="noopener" class="tqk-la-shot tqk-la-shot-' . esc_attr((string) $key) . '">'
-                . '<img loading="lazy" src="' . esc_url($u) . '" alt="' . esc_attr(sprintf(__('%1$s snapshot of %2$s', 'tqk-wpseo'), (string) $key, $title)) . '"></a>';
+                . '<img loading="lazy" src="' . esc_url($u) . '" alt="' . esc_attr(sprintf(__('%1$s snapshot of %2$s', 'tqk-wp-seo'), (string) $key, $title)) . '"></a>';
         }
         $json = self::file_url((string) ($rec['json'] ?? ''));
         if ($json !== '') {
             $shots .= '<a class="tqk-la-json" href="' . esc_url($json) . '" target="_blank" rel="noopener">JSON</a>';
         }
         if ((int) ($item['id'] ?? 0) > 0 && \TQK_WPSEO\Core\Modules::is_active('mcp')) {
-            $shots .= '<button type="button" class="button button-small tqk-la-push" data-push="' . (int) $item['id'] . '">' . esc_html__('Push to MCP', 'tqk-wpseo') . '</button>';
+            $shots .= '<button type="button" class="button button-small tqk-la-push" data-push="' . (int) $item['id'] . '">' . esc_html__('Push to MCP', 'tqk-wp-seo') . '</button>';
         }
 
         return '<tr>' . $page
             . '<td><strong class="tqk-wpseo-score-num ' . $tone($seo) . '">' . $seo . '</strong></td>'
             . '<td><strong class="tqk-wpseo-score-num ' . $tone($rs) . '">' . $rs . '</strong><br>' . implode(' ', $vps) . '</td>'
-            . '<td>' . ($issues === [] && $images === '' ? '<span class="tqk-rs-clean">' . esc_html__('No issues', 'tqk-wpseo') . '</span>' : ($issues !== [] ? '<ul class="tqk-live-findings">' . implode('', $issues) . '</ul>' : '') . $images) . '</td>'
+            . '<td>' . ($issues === [] && $images === '' ? '<span class="tqk-rs-clean">' . esc_html__('No issues', 'tqk-wp-seo') . '</span>' : ($issues !== [] ? '<ul class="tqk-live-findings">' . implode('', $issues) . '</ul>' : '') . $images) . '</td>'
             . '<td class="tqk-la-shots">' . $shots . '</td>'
             . '</tr>';
     }
@@ -843,31 +843,31 @@ class LiveAudit {
         }
         $parts = [];
         if ((int) ($v['overflow'] ?? 0) > 0) {
-            $parts[] = sprintf(__('scrolls sideways by %dpx', 'tqk-wpseo'), (int) $v['overflow']);
+            $parts[] = sprintf(__('scrolls sideways by %dpx', 'tqk-wp-seo'), (int) $v['overflow']);
         }
         if ((int) ($v['tiny'] ?? 0) > 0) {
-            $parts[] = sprintf(__('%d text(s) under 12px', 'tqk-wpseo'), (int) $v['tiny']);
+            $parts[] = sprintf(__('%d text(s) under 12px', 'tqk-wp-seo'), (int) $v['tiny']);
         }
         if ((int) ($v['tap'] ?? 0) > 0) {
-            $parts[] = sprintf(__('%d button(s)/link(s) under 44px', 'tqk-wpseo'), (int) $v['tap']);
+            $parts[] = sprintf(__('%d button(s)/link(s) under 44px', 'tqk-wp-seo'), (int) $v['tap']);
         }
         if ((int) ($v['dims'] ?? 0) > 0) {
-            $parts[] = sprintf(__('%d image(s) without width/height', 'tqk-wpseo'), (int) $v['dims']);
+            $parts[] = sprintf(__('%d image(s) without width/height', 'tqk-wp-seo'), (int) $v['dims']);
         }
         if ((int) ($v['over'] ?? 0) > 0) {
-            $parts[] = sprintf(__('%d oversized image(s)', 'tqk-wpseo'), (int) $v['over']);
+            $parts[] = sprintf(__('%d oversized image(s)', 'tqk-wp-seo'), (int) $v['over']);
         }
-        return __('Display score on this screen, out of 100.', 'tqk-wpseo') . ' '
-            . ($parts === [] ? __('Nothing to fix.', 'tqk-wpseo') : __('Points lost for:', 'tqk-wpseo') . ' ' . implode(', ', $parts) . '.');
+        return __('Display score on this screen, out of 100.', 'tqk-wp-seo') . ' '
+            . ($parts === [] ? __('Nothing to fix.', 'tqk-wp-seo') : __('Points lost for:', 'tqk-wp-seo') . ' ' . implode(', ', $parts) . '.');
     }
 
     public static function table_open(): string {
         return '<div class="tqk-wpseo-table-wrap"><div class="table-responsive"><table class="tqk-wpseo-table tqk-la-table"><thead><tr>'
-            . '<th>' . esc_html__('Page', 'tqk-wpseo') . '</th>'
-            . '<th>' . esc_html__('SEO', 'tqk-wpseo') . '</th>'
-            . '<th title="' . esc_attr__('Display score per screen, out of 100: points are lost for sideways scrolling, tiny text, small buttons, images without size, oversized images.', 'tqk-wpseo') . '">' . esc_html__('Display (/100)', 'tqk-wpseo') . '</th>'
-            . '<th>' . esc_html__('Issues', 'tqk-wpseo') . '</th>'
-            . '<th>' . esc_html__('Snapshot', 'tqk-wpseo') . '</th>'
+            . '<th>' . esc_html__('Page', 'tqk-wp-seo') . '</th>'
+            . '<th>' . esc_html__('SEO', 'tqk-wp-seo') . '</th>'
+            . '<th title="' . esc_attr__('Display score per screen, out of 100: points are lost for sideways scrolling, tiny text, small buttons, images without size, oversized images.', 'tqk-wp-seo') . '">' . esc_html__('Display (/100)', 'tqk-wp-seo') . '</th>'
+            . '<th>' . esc_html__('Issues', 'tqk-wp-seo') . '</th>'
+            . '<th>' . esc_html__('Snapshot', 'tqk-wp-seo') . '</th>'
             . '</tr></thead><tbody id="tqk-la-rows">';
     }
 
@@ -885,7 +885,7 @@ class LiveAudit {
             }
             $rec = self::record((int) $id, (string) ($run['id'] ?? ''))
                 // Marked failed before anything was stored (deleted post).
-                ?? ['error' => __('Page no longer published.', 'tqk-wpseo')];
+                ?? ['error' => __('Page no longer published.', 'tqk-wp-seo')];
             $rows[] = [self::item((int) $id), $rec];
         }
         $rank = static fn(array $r) => (empty($r['error']) ? 1000 : 0) + (int) ($r['seo']['score'] ?? 0) + self::min_vp($r);
@@ -916,7 +916,7 @@ class LiveAudit {
             }
             $locked = self::needs_pro($choices);
             if ($locked !== []) {
-                wp_send_json_error(['message' => sprintf(__('Auditing every post of %s is a Pro feature. Choose "1 sample" or upgrade to Pro.', 'tqk-wpseo'), implode(', ', $locked))]);
+                wp_send_json_error(['message' => sprintf(__('Auditing every post of %s is a Pro feature. Choose "1 sample" or upgrade to Pro.', 'tqk-wp-seo'), implode(', ', $locked))]);
             }
             $run = self::start(
                 sanitize_key($_POST['mode'] ?? 'sample'),
@@ -930,7 +930,7 @@ class LiveAudit {
         }
         $run = self::run();
         if ($run === [] || (string) ($_POST['run'] ?? '') !== (string) $run['id']) {
-            wp_send_json_error(['message' => __('This audit run is no longer current. Reload the page.', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('This audit run is no longer current. Reload the page.', 'tqk-wp-seo')]);
         }
         if ($op === 'next' || $op === 'retry') {
             if ($op === 'retry') {
@@ -957,7 +957,7 @@ class LiveAudit {
             }
             $res = self::save($run, (int) ($_POST['index'] ?? -1), is_array($data) ? $data : [], $shots, !empty($_POST['failed']));
             if (!empty($res['error'])) {
-                wp_send_json_error(['message' => __('Unknown page in this run, skipped.', 'tqk-wpseo'), 'state' => self::state($res['run'])]);
+                wp_send_json_error(['message' => __('Unknown page in this run, skipped.', 'tqk-wp-seo'), 'state' => self::state($res['run'])]);
             }
             // Same page report as the editor's Scan: the editor shows it and
             // MCP agents read it.
@@ -975,8 +975,8 @@ class LiveAudit {
         }
         if ($op === 'mcp_push_all') {
             $n = self::push_all($run);
-            wp_send_json_success(['message' => sprintf(__('%d page(s) with issues sent to the AI app.', 'tqk-wpseo'), $n)]);
+            wp_send_json_success(['message' => sprintf(__('%d page(s) with issues sent to the AI app.', 'tqk-wp-seo'), $n)]);
         }
-        wp_send_json_error(['message' => __('Unknown action', 'tqk-wpseo')]);
+        wp_send_json_error(['message' => __('Unknown action', 'tqk-wp-seo')]);
     }
 }

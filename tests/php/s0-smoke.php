@@ -1,7 +1,7 @@
 <?php
 // S0 smoke test. Run: php tests/php/s0-smoke.php  (exit 0 = all pass)
 require __DIR__ . '/stubs.php';
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 
 $fail = 0;
 function check($name, $cond) {
@@ -21,7 +21,7 @@ check('activation hook registered', isset($GLOBALS['__activation']));
 check('deactivation hook registered', isset($GLOBALS['__deactivation']));
 
 do_action('plugins_loaded');
-check('textdomain loads tqk-wpseo', ($GLOBALS['__textdomain'][0] ?? '') === 'tqk-wpseo');
+check('textdomain loads tqk-wp-seo', ($GLOBALS['__textdomain'][0] ?? '') === 'tqk-wp-seo');
 
 // 2. Activation: options, tables, meta, flush.
 call_user_func($GLOBALS['__activation']);
@@ -69,7 +69,7 @@ check('foreign screen rejected', !\TQK_WPSEO\Admin\Assets::is_plugin_screen('edi
 ob_start();
 \TQK_WPSEO\Admin\Pages::dashboard();
 $dash = (string) ob_get_clean();
-check('dashboard has scope wrapper', str_contains($dash, 'tqk-wpseo'));
+check('dashboard has scope wrapper', str_contains($dash, 'tqk-wp-seo'));
 check('dashboard hero: logo, tagline, support line (no score ring)', str_contains($dash, 'tqk-hero-logo') && str_contains($dash, 'Website Audit &amp; Optimization Engine') && str_contains($dash, '0364 999 916') && !str_contains($dash, 'tqk-wpseo-ring'));
 check('dashboard honest empty state', str_contains($dash, 'No page checked yet'));
 check('dashboard explains each page', str_contains($dash, 'tqk-guide-card'));

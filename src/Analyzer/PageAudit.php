@@ -20,7 +20,7 @@ class PageAudit {
         $home_host = strtolower((string) parse_url(home_url('/'), PHP_URL_HOST));
         $parts = parse_url(trim($url));
         if (!is_array($parts) || !isset($parts['host']) || strcasecmp((string) $parts['host'], $home_host) !== 0) {
-            return ['ok' => false, 'error' => __('Only URLs on this site can be audited.', 'tqk-wpseo')];
+            return ['ok' => false, 'error' => __('Only URLs on this site can be audited.', 'tqk-wp-seo')];
         }
         $post_id = (int) url_to_postid($url);
         if ($post_id > 0) {
@@ -34,11 +34,11 @@ class PageAudit {
         }
         $res = wp_remote_get($url, ['timeout' => 20, 'redirection' => 3, 'headers' => ['User-Agent' => self::UA]]);
         if (is_wp_error($res)) {
-            return ['ok' => false, 'error' => __('Could not fetch the URL.', 'tqk-wpseo')];
+            return ['ok' => false, 'error' => __('Could not fetch the URL.', 'tqk-wp-seo')];
         }
         $html = (string) wp_remote_retrieve_body($res);
         if ($html === '') {
-            return ['ok' => false, 'error' => __('Empty response.', 'tqk-wpseo')];
+            return ['ok' => false, 'error' => __('Empty response.', 'tqk-wp-seo')];
         }
         $report = self::audit_html($url, $html);
         if ($post_id > 0) {
@@ -81,39 +81,39 @@ class PageAudit {
 
         // Head tags.
         if ($head['title'] === '') {
-            $add('title_tag_missing', 'technical', 'critical', __('No <title> tag found.', 'tqk-wpseo'));
+            $add('title_tag_missing', 'technical', 'critical', __('No <title> tag found.', 'tqk-wp-seo'));
         } elseif (mb_strlen($head['title']) > 60) {
-            $add('title_too_long', 'content', 'warning', __('Rendered title is longer than 60 characters.', 'tqk-wpseo'));
+            $add('title_too_long', 'content', 'warning', __('Rendered title is longer than 60 characters.', 'tqk-wp-seo'));
         }
         if ($head['description'] === '') {
-            $add('meta_desc_missing', 'technical', 'critical', __('No meta description found.', 'tqk-wpseo'));
+            $add('meta_desc_missing', 'technical', 'critical', __('No meta description found.', 'tqk-wp-seo'));
         }
         if ($head['canonical'] === '') {
-            $add('no_canonical', 'technical', 'warning', __('No canonical URL.', 'tqk-wpseo'));
+            $add('no_canonical', 'technical', 'warning', __('No canonical URL.', 'tqk-wp-seo'));
         }
         if ($head['robots'] === '') {
-            $add('robots_missing', 'technical', 'warning', __('No meta robots found.', 'tqk-wpseo'));
+            $add('robots_missing', 'technical', 'warning', __('No meta robots found.', 'tqk-wp-seo'));
         }
 
         // Social tags.
         if ($head['og_title'] === '' || $head['og_description'] === '') {
-            $add('social_incomplete', 'social', 'warning', __('Open Graph title or description is empty.', 'tqk-wpseo'));
+            $add('social_incomplete', 'social', 'warning', __('Open Graph title or description is empty.', 'tqk-wp-seo'));
         }
         if ($head['og_image'] === '') {
-            $add('og_image_missing', 'social', 'warning', __('No Open Graph image found.', 'tqk-wpseo'));
+            $add('og_image_missing', 'social', 'warning', __('No Open Graph image found.', 'tqk-wp-seo'));
         }
 
         // Headings.
         $h1 = array_values(array_filter($headings, fn($h) => $h[0] === 1));
         if ($h1 === []) {
-            $add('missing_h1', 'content', 'critical', __('No H1 heading found.', 'tqk-wpseo'));
+            $add('missing_h1', 'content', 'critical', __('No H1 heading found.', 'tqk-wp-seo'));
         } elseif (count($h1) > 1) {
-            $add('multiple_h1', 'content', 'warning', __('Multiple H1 headings found.', 'tqk-wpseo'));
+            $add('multiple_h1', 'content', 'warning', __('Multiple H1 headings found.', 'tqk-wp-seo'));
         }
 
         // Keyword on rendered text.
         if (!$kw['set']) {
-            $add('no_focus_keyword', 'content', 'warning', __('No focus keyword set.', 'tqk-wpseo'));
+            $add('no_focus_keyword', 'content', 'warning', __('No focus keyword set.', 'tqk-wp-seo'));
         } else {
             foreach ($kw['checks'] as $cid => $passed) {
                 if (!$passed) {
@@ -128,20 +128,20 @@ class PageAudit {
                 $plain
             );
             if ($sec['set'] && $sec['missing'] !== []) {
-                $add('kw_secondary_missing', 'content', 'warning', sprintf(__('Secondary keywords missing in content: %s', 'tqk-wpseo'), implode(', ', $sec['missing'])));
+                $add('kw_secondary_missing', 'content', 'warning', sprintf(__('Secondary keywords missing in content: %s', 'tqk-wp-seo'), implode(', ', $sec['missing'])));
             }
         }
 
         // Images: aggregate + per-image detail.
         $detail = self::image_details($images);
         if ($detail['missing_alt'] > 0) {
-            $add('missing_alt', 'images', 'warning', sprintf(__('%d image(s) missing ALT text.', 'tqk-wpseo'), $detail['missing_alt']));
+            $add('missing_alt', 'images', 'warning', sprintf(__('%d image(s) missing ALT text.', 'tqk-wp-seo'), $detail['missing_alt']));
         }
         if ($detail['missing_dim'] > 0) {
-            $add('missing_dimensions', 'images', 'warning', sprintf(__('%d image(s) missing width/height.', 'tqk-wpseo'), $detail['missing_dim']));
+            $add('missing_dimensions', 'images', 'warning', sprintf(__('%d image(s) missing width/height.', 'tqk-wp-seo'), $detail['missing_dim']));
         }
         if ($detail['heavy'] > 0) {
-            $add('heavy_images', 'images', 'warning', sprintf(__('%d image(s) heavier than 500 KB.', 'tqk-wpseo'), $detail['heavy']));
+            $add('heavy_images', 'images', 'warning', sprintf(__('%d image(s) heavier than 500 KB.', 'tqk-wp-seo'), $detail['heavy']));
         }
 
         $groups = Analyzer::scores($findings);
@@ -282,13 +282,13 @@ class PageAudit {
     /** @return string Report HTML fragment for AJAX inject. */
     public static function report_html(array $r): string {
         $tone = \TQK_WPSEO\Admin\View::score_tone((int) ($r['score'] ?? 0));
-        $cached = !empty($r['cached']) ? ' <span class="tqk-wpseo-ptype">' . esc_html__('cached — fix first, no rescan yet', 'tqk-wpseo') . '</span>' : '';
+        $cached = !empty($r['cached']) ? ' <span class="tqk-wpseo-ptype">' . esc_html__('cached — fix first, no rescan yet', 'tqk-wp-seo') . '</span>' : '';
         $html = '<div class="tqk-wpseo-card"><h3>' . esc_html($r['url'] ?? '') . $cached . '</h3>'
             . '<p><strong class="tqk-wpseo-score-num ' . esc_attr($tone) . '">'
-            . esc_html(sprintf(__('Score: %d/100', 'tqk-wpseo'), (int) ($r['score'] ?? 0))) . '</strong></p>';
+            . esc_html(sprintf(__('Score: %d/100', 'tqk-wp-seo'), (int) ($r['score'] ?? 0))) . '</strong></p>';
         $heads = [
-            'title' => __('Title', 'tqk-wpseo'), 'description' => __('Description', 'tqk-wpseo'),
-            'canonical' => __('Canonical', 'tqk-wpseo'), 'robots' => __('Robots', 'tqk-wpseo'),
+            'title' => __('Title', 'tqk-wp-seo'), 'description' => __('Description', 'tqk-wp-seo'),
+            'canonical' => __('Canonical', 'tqk-wp-seo'), 'robots' => __('Robots', 'tqk-wp-seo'),
             'og_title' => 'OG title', 'og_description' => 'OG description', 'og_image' => 'OG image',
         ];
         // Head key => [bulk field, meta key]. Editable inline when post is known.
@@ -318,7 +318,7 @@ class PageAudit {
                         '<span class="tqk-head-edit" data-tqk-post="%d" data-tqk-field="robots"><select>%s</select><button type="button" class="button button-small" data-tqk-save-head>%s</button></span>',
                         $post_id,
                         $opts,
-                        esc_html__('Save', 'tqk-wpseo')
+                        esc_html__('Save', 'tqk-wp-seo')
                     );
                 } else {
                     $edit = sprintf(
@@ -327,14 +327,14 @@ class PageAudit {
                         esc_attr($bulk_field),
                         esc_attr($stored),
                         esc_attr(mb_strimwidth($v, 0, 60, '…')),
-                        esc_html__('Save', 'tqk-wpseo')
+                        esc_html__('Save', 'tqk-wp-seo')
                     );
                 }
             }
             $rows[] = [$label, $v === '' ? '✗' : mb_strimwidth($v, 0, 80, '…'), $edit];
         }
         // Schema row: resolved type + one-go override (missing schema fixed here).
-        $schema_label = __('Schema', 'tqk-wpseo');
+        $schema_label = __('Schema', 'tqk-wp-seo');
         if ($post_id > 0) {
             $post_obj = get_post($post_id);
             $resolved = $post_obj ? \TQK_WPSEO\Schema\Schema::type_for($post_obj) : '';
@@ -350,18 +350,18 @@ class PageAudit {
                     '<span class="tqk-head-edit" data-tqk-post="%d" data-tqk-field="schema"><select>%s</select><button type="button" class="button button-small" data-tqk-save-head>%s</button></span>',
                     $post_id,
                     $opts,
-                    esc_html__('Save', 'tqk-wpseo')
+                    esc_html__('Save', 'tqk-wp-seo')
                 ),
             ];
         } else {
             // Homepage / archive: points to global template (one place).
-            $rows[] = [$schema_label, __('See Schema templates above', 'tqk-wpseo'), ''];
+            $rows[] = [$schema_label, __('See Schema templates above', 'tqk-wp-seo'), ''];
         }
-        $html .= '<h4>' . esc_html__('Head tags', 'tqk-wpseo') . '</h4>'
-            . \TQK_WPSEO\Admin\View::issue_table([__('Tag', 'tqk-wpseo'), __('Value', 'tqk-wpseo'), ''], $rows);
+        $html .= '<h4>' . esc_html__('Head tags', 'tqk-wp-seo') . '</h4>'
+            . \TQK_WPSEO\Admin\View::issue_table([__('Tag', 'tqk-wp-seo'), __('Value', 'tqk-wp-seo'), ''], $rows);
         $findings = (array) ($r['findings'] ?? []);
         if ($findings !== []) {
-            $html .= '<h4>' . esc_html__('Findings', 'tqk-wpseo') . '</h4><ul class="tqk-wpseo-findings">';
+            $html .= '<h4>' . esc_html__('Findings', 'tqk-wp-seo') . '</h4><ul class="tqk-wpseo-findings">';
             foreach ($findings as $f) {
                 $mark = ($f['severity'] ?? '') === 'critical' ? '✗' : '⚠';
                 $html .= '<li>' . esc_html($mark . ' ' . ($f['message'] ?? '')) . '</li>';
@@ -378,11 +378,11 @@ class PageAudit {
                 $edit = sprintf(
                     '<span class="tqk-alt-edit"><input type="text" size="18" placeholder="%s" value="%s" data-tqk-alt-for="%d">'
                     . '<button type="button" class="button button-small" data-tqk-set-alt="%d">%s</button></span>',
-                    esc_attr__('New ALT text', 'tqk-wpseo'),
+                    esc_attr__('New ALT text', 'tqk-wp-seo'),
                     esc_attr($alt),
                     $att_id,
                     $att_id,
-                    esc_html__('Save ALT', 'tqk-wpseo')
+                    esc_html__('Save ALT', 'tqk-wp-seo')
                 );
             }
             $img_rows[] = [
@@ -392,11 +392,11 @@ class PageAudit {
                 $edit,
             ];
         }
-        $html .= '<h4>' . esc_html(sprintf(__('Images (%d)', 'tqk-wpseo'), count($img_rows))) . '</h4>';
+        $html .= '<h4>' . esc_html(sprintf(__('Images (%d)', 'tqk-wp-seo'), count($img_rows))) . '</h4>';
         $html .= $img_rows === []
-            ? '<p>' . esc_html__('No images found.', 'tqk-wpseo') . '</p>'
+            ? '<p>' . esc_html__('No images found.', 'tqk-wp-seo') . '</p>'
             : \TQK_WPSEO\Admin\View::issue_table(
-                [__('Source', 'tqk-wpseo'), __('ALT · declared', 'tqk-wpseo'), __('Intrinsic · weight', 'tqk-wpseo'), ''],
+                [__('Source', 'tqk-wp-seo'), __('ALT · declared', 'tqk-wp-seo'), __('Intrinsic · weight', 'tqk-wp-seo'), ''],
                 $img_rows
             );
         return $html . '</div>';

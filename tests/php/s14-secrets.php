@@ -3,7 +3,7 @@
  * S14 — Secrets at rest: encryption, masking, export redaction, uninstall.
  */
 require __DIR__ . '/stubs.php';
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 
 $fail = 0;
 function check($name, $cond) {

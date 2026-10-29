@@ -50,11 +50,11 @@ class Metabox {
         check_ajax_referer(Ajax::NONCE);
         $id = (int) ($_POST['post_id'] ?? 0);
         if ($id <= 0 || !current_user_can('edit_post', $id)) {
-            wp_send_json_error(['message' => __('Permission denied', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Permission denied', 'tqk-wp-seo')]);
         }
         $html = (string) wp_unslash($_POST['html'] ?? '');
         if ($html === '' || strlen($html) > 400000) {
-            wp_send_json_error(['message' => __('The page could not be read.', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('The page could not be read.', 'tqk-wp-seo')]);
         }
         // Same extraction as the server-side capture; only ever parsed, never printed.
         $html = \TQK_WPSEO\Analyzer\Frontend::main_html($html);
@@ -116,7 +116,7 @@ class Metabox {
         check_ajax_referer(Ajax::NONCE);
         $id = (int) ($_POST['post_id'] ?? 0);
         if ($id <= 0 || !current_user_can('edit_post', $id)) {
-            wp_send_json_error(['message' => __('Permission denied', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Permission denied', 'tqk-wp-seo')]);
         }
         if (($_POST['mode'] ?? '') === 'export') {
             wp_send_json_success(['json' => AiJson::export($id)]);
@@ -128,7 +128,7 @@ class Metabox {
         }
         $raw = (string) wp_unslash($_POST['json'] ?? '');
         if (strlen($raw) > 500000) {
-            wp_send_json_error(['message' => __('Too large.', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Too large.', 'tqk-wp-seo')]);
         }
         $r = AiJson::parse($raw, $id);
         if (isset($r['error'])) {
@@ -150,8 +150,8 @@ class Metabox {
         echo '<div class="tqk-ai-review">';
         printf(
             '<div class="tqk-ai-review-head"><span class="tqk-ai-review-badge">AI</span><strong>%s</strong><span class="description">%s</span></div>',
-            esc_html__('Suggestion from an AI app — waiting for your approval', 'tqk-wpseo'),
-            esc_html(sprintf(__('%1$s · %2$s', 'tqk-wpseo'), (string) ($s['from'] ?? 'AI'), wp_date('d/m/Y H:i', (int) ($s['at'] ?? 0))))
+            esc_html__('Suggestion from an AI app — waiting for your approval', 'tqk-wp-seo'),
+            esc_html(sprintf(__('%1$s · %2$s', 'tqk-wp-seo'), (string) ($s['from'] ?? 'AI'), wp_date('d/m/Y H:i', (int) ($s['at'] ?? 0))))
         );
         if ((string) ($s['advice'] ?? '') !== '') {
             echo '<div class="tqk-ai-advice">' . nl2br(esc_html((string) $s['advice'])) . '</div>';
@@ -164,8 +164,8 @@ class Metabox {
         printf(
             '<div class="tqk-ai-review-foot"><input type="hidden" name="tqk_wpseo_ai_applied" value=""><button type="button" class="button tqk-ai-dismiss">%s</button>'
             . '<span class="description">%s</span><span class="tqk-ai-review-msg" aria-live="polite"></span></div>',
-            esc_html__('Dismiss this suggestion', 'tqk-wpseo'),
-            esc_html__('Filled values are saved when you update the post.', 'tqk-wpseo')
+            esc_html__('Dismiss this suggestion', 'tqk-wp-seo'),
+            esc_html__('Filled values are saved when you update the post.', 'tqk-wp-seo')
         );
         echo '</div>';
     }
@@ -175,10 +175,10 @@ class Metabox {
         check_ajax_referer(Ajax::NONCE);
         $id = (int) ($_POST['post_id'] ?? 0);
         if ($id <= 0 || !current_user_can('edit_post', $id)) {
-            wp_send_json_error(['message' => __('Permission denied', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Permission denied', 'tqk-wp-seo')]);
         }
         \TQK_WPSEO\MCP\Reports::close_suggestion($id, 'dismissed');
-        wp_send_json_success(['message' => __('Suggestion dismissed.', 'tqk-wpseo')]);
+        wp_send_json_success(['message' => __('Suggestion dismissed.', 'tqk-wp-seo')]);
     }
 
     /** Puts the post in the MCP inbox (its stored scan report goes with it). */
@@ -186,13 +186,13 @@ class Metabox {
         check_ajax_referer(Ajax::NONCE);
         $id = (int) ($_POST['post_id'] ?? 0);
         if ($id <= 0 || !current_user_can('edit_post', $id)) {
-            wp_send_json_error(['message' => __('Permission denied', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Permission denied', 'tqk-wp-seo')]);
         }
         if (\TQK_WPSEO\MCP\Reports::get($id) === null) {
-            wp_send_json_error(['message' => __('Scan the page first: there is no report to send yet.', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Scan the page first: there is no report to send yet.', 'tqk-wp-seo')]);
         }
         \TQK_WPSEO\MCP\Reports::push($id, (string) wp_unslash($_POST['note'] ?? ''));
-        wp_send_json_success(['message' => __('Sent. In Claude or Cursor, ask: "review the pages I sent from TQK SEO".', 'tqk-wpseo')]);
+        wp_send_json_success(['message' => __('Sent. In Claude or Cursor, ask: "review the pages I sent from TQK SEO".', 'tqk-wp-seo')]);
     }
 
     /** Live checklist for unsaved editor values (own nonce + edit rights on that post). */
@@ -208,7 +208,7 @@ class Metabox {
 
     public static function register(): void {
         foreach (self::post_types() as $pt) {
-            add_meta_box('tqk-wpseo', __('TQK SEO', 'tqk-wpseo'), [self::class, 'render'], $pt, 'normal', 'high');
+            add_meta_box('tqk-wpseo', __('TQK SEO', 'tqk-wp-seo'), [self::class, 'render'], $pt, 'normal', 'high');
         }
     }
 
@@ -260,104 +260,104 @@ class Metabox {
     /** Texts of the editor scan / plan / AI tools; also used by the toolbar audit. */
     public static function js_strings(): array {
         return [
-            'updating' => __('Updating…', 'tqk-wpseo'),
-            'template' => __('from template', 'tqk-wpseo'),
-            'px' => __('%1$d / %2$d px · %3$d chars', 'tqk-wpseo'),
-            'cut' => __('Google will cut it here', 'tqk-wpseo'),
-            'noDesc' => __('No description: Google will pick a snippet from the page.', 'tqk-wpseo'),
-            'sizeOk' => __('good size', 'tqk-wpseo'),
-            'sizeLow' => __('works, 1200×630 is sharper', 'tqk-wpseo'),
-            'sizeRatio' => __('will be cropped to 1.91:1 (see the frame)', 'tqk-wpseo'),
-            'sizeSmall' => __('too small: under 600×315 Facebook / Zalo show a tiny thumbnail or none', 'tqk-wpseo'),
-            'sizeBroken' => __('image does not load', 'tqk-wpseo'),
+            'updating' => __('Updating…', 'tqk-wp-seo'),
+            'template' => __('from template', 'tqk-wp-seo'),
+            'px' => __('%1$d / %2$d px · %3$d chars', 'tqk-wp-seo'),
+            'cut' => __('Google will cut it here', 'tqk-wp-seo'),
+            'noDesc' => __('No description: Google will pick a snippet from the page.', 'tqk-wp-seo'),
+            'sizeOk' => __('good size', 'tqk-wp-seo'),
+            'sizeLow' => __('works, 1200×630 is sharper', 'tqk-wp-seo'),
+            'sizeRatio' => __('will be cropped to 1.91:1 (see the frame)', 'tqk-wp-seo'),
+            'sizeSmall' => __('too small: under 600×315 Facebook / Zalo show a tiny thumbnail or none', 'tqk-wp-seo'),
+            'sizeBroken' => __('image does not load', 'tqk-wp-seo'),
             'stage' => Pages::stage_strings(),
             'seo' => Pages::seo_strings(),
-            'scanLoad' => __('Opening %s…', 'tqk-wpseo'),
-            'scanRead' => __('Reading the page…', 'tqk-wpseo'),
-            'scanShot' => __('Snapshot %s…', 'tqk-wpseo'),
-            'scanSaving' => __('Updating the checklist…', 'tqk-wpseo'),
-            'scanDone' => __('Checked the page as visitors see it (%s).', 'tqk-wpseo'),
-            'scanFail' => __('The page could not be opened: %s', 'tqk-wpseo'),
-            'scanStopped' => __('Stopped.', 'tqk-wpseo'),
-            'scanDirty' => __('Unsaved changes are not on the live page yet: use Save & scan.', 'tqk-wpseo'),
-            'scanScreens' => __('Display score per screen (/100)', 'tqk-wpseo'),
-            'whyTitle' => __('Display score on this screen, out of 100.', 'tqk-wpseo'),
-            'whyLost' => __('Points lost for:', 'tqk-wpseo'),
-            'whyNone' => __('Nothing to fix.', 'tqk-wpseo'),
-            'whyOverflow' => __('scrolls sideways by %dpx', 'tqk-wpseo'),
-            'whyTiny' => __('%d text(s) under 12px', 'tqk-wpseo'),
-            'whyTap' => __('%d button(s)/link(s) under 44px', 'tqk-wpseo'),
-            'whyDims' => __('%d image(s) without width/height', 'tqk-wpseo'),
-            'whyOver' => __('%d oversized image(s)', 'tqk-wpseo'),
-            'scanPage' => __('On the page', 'tqk-wpseo'),
-            'scanNoIssue' => __('No problem found on the page.', 'tqk-wpseo'),
-            'saving' => __('Saving…', 'tqk-wpseo'),
-            'jsonCopied' => __('Copied. Paste it into Claude, ChatGPT or Gemini, then paste the reply below.', 'tqk-wpseo'),
-            'jsonCopyFail' => __('Select the text and copy it (Ctrl+C).', 'tqk-wpseo'),
-            'jsonCopiedSet' => __('%1$s: %2$s characters (~%3$s tokens).', 'tqk-wpseo'),
-            'jsonCopiedText' => __('Copied: paste it first so the AI knows the page, then send the other sets.', 'tqk-wpseo'),
-            'toastCopied' => __('Copied %1$s — %2$s characters. Paste it into the AI chat.', 'tqk-wpseo'),
-            'toastNotCopied' => __('Not copied automatically: the text is selected in the box below, press Ctrl+C.', 'tqk-wpseo'),
-            'toastFailed' => __('Could not prepare the text. Reload the page and try again.', 'tqk-wpseo'),
-            'toastCss' => __('CSS copied. Paste it in Appearance → Customize → Additional CSS.', 'tqk-wpseo'),
-            'toastCssFail' => __('Not copied: select the CSS line under the item and press Ctrl+C.', 'tqk-wpseo'),
-            'jsonEmpty' => __('Paste the JSON first.', 'tqk-wpseo'),
-            'jsonField' => __('Field', 'tqk-wpseo'),
-            'jsonNow' => __('Now', 'tqk-wpseo'),
-            'jsonNew' => __('New', 'tqk-wpseo'),
-            'jsonApply' => __('Fill selected fields', 'tqk-wpseo'),
-            'jsonApplied' => __('%d field(s) filled. Review them, then update the post to save.', 'tqk-wpseo'),
-            'jsonSame' => __('Everything in this JSON is already filled in.', 'tqk-wpseo'),
-            'jsonMismatch' => __('This reply was made for another post (ID %d). Check before using it.', 'tqk-wpseo'),
-            'jsonFromLd' => __('Structured data (JSON-LD) found: schema type and fields below.', 'tqk-wpseo'),
-            'empty' => __('(empty)', 'tqk-wpseo'),
+            'scanLoad' => __('Opening %s…', 'tqk-wp-seo'),
+            'scanRead' => __('Reading the page…', 'tqk-wp-seo'),
+            'scanShot' => __('Snapshot %s…', 'tqk-wp-seo'),
+            'scanSaving' => __('Updating the checklist…', 'tqk-wp-seo'),
+            'scanDone' => __('Checked the page as visitors see it (%s).', 'tqk-wp-seo'),
+            'scanFail' => __('The page could not be opened: %s', 'tqk-wp-seo'),
+            'scanStopped' => __('Stopped.', 'tqk-wp-seo'),
+            'scanDirty' => __('Unsaved changes are not on the live page yet: use Save & scan.', 'tqk-wp-seo'),
+            'scanScreens' => __('Display score per screen (/100)', 'tqk-wp-seo'),
+            'whyTitle' => __('Display score on this screen, out of 100.', 'tqk-wp-seo'),
+            'whyLost' => __('Points lost for:', 'tqk-wp-seo'),
+            'whyNone' => __('Nothing to fix.', 'tqk-wp-seo'),
+            'whyOverflow' => __('scrolls sideways by %dpx', 'tqk-wp-seo'),
+            'whyTiny' => __('%d text(s) under 12px', 'tqk-wp-seo'),
+            'whyTap' => __('%d button(s)/link(s) under 44px', 'tqk-wp-seo'),
+            'whyDims' => __('%d image(s) without width/height', 'tqk-wp-seo'),
+            'whyOver' => __('%d oversized image(s)', 'tqk-wp-seo'),
+            'scanPage' => __('On the page', 'tqk-wp-seo'),
+            'scanNoIssue' => __('No problem found on the page.', 'tqk-wp-seo'),
+            'saving' => __('Saving…', 'tqk-wp-seo'),
+            'jsonCopied' => __('Copied. Paste it into Claude, ChatGPT or Gemini, then paste the reply below.', 'tqk-wp-seo'),
+            'jsonCopyFail' => __('Select the text and copy it (Ctrl+C).', 'tqk-wp-seo'),
+            'jsonCopiedSet' => __('%1$s: %2$s characters (~%3$s tokens).', 'tqk-wp-seo'),
+            'jsonCopiedText' => __('Copied: paste it first so the AI knows the page, then send the other sets.', 'tqk-wp-seo'),
+            'toastCopied' => __('Copied %1$s — %2$s characters. Paste it into the AI chat.', 'tqk-wp-seo'),
+            'toastNotCopied' => __('Not copied automatically: the text is selected in the box below, press Ctrl+C.', 'tqk-wp-seo'),
+            'toastFailed' => __('Could not prepare the text. Reload the page and try again.', 'tqk-wp-seo'),
+            'toastCss' => __('CSS copied. Paste it in Appearance → Customize → Additional CSS.', 'tqk-wp-seo'),
+            'toastCssFail' => __('Not copied: select the CSS line under the item and press Ctrl+C.', 'tqk-wp-seo'),
+            'jsonEmpty' => __('Paste the JSON first.', 'tqk-wp-seo'),
+            'jsonField' => __('Field', 'tqk-wp-seo'),
+            'jsonNow' => __('Now', 'tqk-wp-seo'),
+            'jsonNew' => __('New', 'tqk-wp-seo'),
+            'jsonApply' => __('Fill selected fields', 'tqk-wp-seo'),
+            'jsonApplied' => __('%d field(s) filled. Review them, then update the post to save.', 'tqk-wp-seo'),
+            'jsonSame' => __('Everything in this JSON is already filled in.', 'tqk-wp-seo'),
+            'jsonMismatch' => __('This reply was made for another post (ID %d). Check before using it.', 'tqk-wp-seo'),
+            'jsonFromLd' => __('Structured data (JSON-LD) found: schema type and fields below.', 'tqk-wp-seo'),
+            'empty' => __('(empty)', 'tqk-wp-seo'),
             'plan' => self::plan_strings(),
-            'aiFilled' => __('Filled. Check the fields, then update the post to save them.', 'tqk-wpseo'),
-            'aiDismissed' => __('Suggestion dismissed.', 'tqk-wpseo'),
-            'lastTitle' => __('Last check of this page', 'tqk-wpseo'),
-            'trend' => __('Over %1$d checks: SEO %2$d → %3$d, to fix now %4$d → %5$d', 'tqk-wpseo'),
-            'lastWhen' => __('%1$s · %2$s — scan again for fresh results', 'tqk-wpseo'),
+            'aiFilled' => __('Filled. Check the fields, then update the post to save them.', 'tqk-wp-seo'),
+            'aiDismissed' => __('Suggestion dismissed.', 'tqk-wp-seo'),
+            'lastTitle' => __('Last check of this page', 'tqk-wp-seo'),
+            'trend' => __('Over %1$d checks: SEO %2$d → %3$d, to fix now %4$d → %5$d', 'tqk-wp-seo'),
+            'lastWhen' => __('%1$s · %2$s — scan again for fresh results', 'tqk-wp-seo'),
             'sources' => [
-                'site audit' => __('from the Site analysis audit', 'tqk-wpseo'),
-                'editor scan' => __('from the Scan button', 'tqk-wpseo'),
-                'toolbar' => __('from the toolbar audit', 'tqk-wpseo'),
+                'site audit' => __('from the Site analysis audit', 'tqk-wp-seo'),
+                'editor scan' => __('from the Scan button', 'tqk-wp-seo'),
+                'toolbar' => __('from the toolbar audit', 'tqk-wp-seo'),
             ],
-            'secRunning' => __('Checking the page as visitors and Google get it…', 'tqk-wpseo'),
-            'scriptsTitle' => __('Scripts on this page', 'tqk-wpseo'),
-            'scriptsSum' => __('%1$d files · %2$d inline', 'tqk-wpseo'),
-            'scriptsHow' => __('Every script visitors load, and where it comes from. Unknown domains are not always bad: check which plugin or theme adds them. Nothing is removed automatically.', 'tqk-wpseo'),
-            'inlineFlagged' => __('Inline scripts to review', 'tqk-wpseo'),
+            'secRunning' => __('Checking the page as visitors and Google get it…', 'tqk-wp-seo'),
+            'scriptsTitle' => __('Scripts on this page', 'tqk-wp-seo'),
+            'scriptsSum' => __('%1$d files · %2$d inline', 'tqk-wp-seo'),
+            'scriptsHow' => __('Every script visitors load, and where it comes from. Unknown domains are not always bad: check which plugin or theme adds them. Nothing is removed automatically.', 'tqk-wp-seo'),
+            'inlineFlagged' => __('Inline scripts to review', 'tqk-wp-seo'),
             'kinds' => [
-                'local' => __('this site', 'tqk-wpseo'),
-                'known' => __('known service', 'tqk-wpseo'),
-                'unknown' => __('unknown', 'tqk-wpseo'),
-                'bad' => __('malicious', 'tqk-wpseo'),
+                'local' => __('this site', 'tqk-wp-seo'),
+                'known' => __('known service', 'tqk-wp-seo'),
+                'unknown' => __('unknown', 'tqk-wp-seo'),
+                'bad' => __('malicious', 'tqk-wp-seo'),
             ],
-            'shotsTitle' => __('Snapshots', 'tqk-wpseo'),
-            'shotsHow' => __('Full-page pictures of this scan: open, save, or give them to an AI for design advice.', 'tqk-wpseo'),
-            'imagesTitle' => __('Images per screen', 'tqk-wpseo'),
-            'copied' => __('Copied', 'tqk-wpseo'),
-            'secTitle' => __('Section by section', 'tqk-wpseo'),
-            'secDone' => __('%1$d sections, %2$d images checked, %3$d thing(s) to fix.', 'tqk-wpseo'),
+            'shotsTitle' => __('Snapshots', 'tqk-wp-seo'),
+            'shotsHow' => __('Full-page pictures of this scan: open, save, or give them to an AI for design advice.', 'tqk-wp-seo'),
+            'imagesTitle' => __('Images per screen', 'tqk-wp-seo'),
+            'copied' => __('Copied', 'tqk-wp-seo'),
+            'secTitle' => __('Section by section', 'tqk-wp-seo'),
+            'secDone' => __('%1$d sections, %2$d images checked, %3$d thing(s) to fix.', 'tqk-wp-seo'),
             'sec' => [
-                'part' => __('Part %1$d/%2$d', 'tqk-wpseo'),
-                'imgCheck' => __('image %1$d/%2$d', 'tqk-wpseo'),
-                'ok' => __('No problem found', 'tqk-wpseo'),
-                'words' => __('%d words', 'tqk-wpseo'),
-                'images' => __('%d images', 'tqk-wpseo'),
-                'bg' => __('Background', 'tqk-wpseo'),
-                'mobile' => __('On mobile (375 px)', 'tqk-wpseo'),
-                'broken' => __('Does not load', 'tqk-wpseo'),
-                'noAlt' => __('No ALT text', 'tqk-wpseo'),
-                'oversized' => __('%1$d px file shown at %2$d px: too heavy', 'tqk-wpseo'),
-                'upscaled' => __('%1$d px file stretched to %2$d px: blurry', 'tqk-wpseo'),
-                'mobileBig' => __('%1$d px file shown at %2$d px on a phone: needs a smaller size (srcset)', 'tqk-wpseo'),
-                'noDims' => __('No width/height: the page jumps while loading', 'tqk-wpseo'),
-                'heavy' => __('Heavy: %s', 'tqk-wpseo'),
-                'webp' => __('WebP would be much lighter (%s)', 'tqk-wpseo'),
-                'lazyTop' => __('Lazy-loaded in the first screen: slows the main image (LCP)', 'tqk-wpseo'),
-                'noLazy' => __('Below the first screen but not lazy-loaded', 'tqk-wpseo'),
-                'emptyLink' => __('%d link(s) without text: Google and screen readers cannot tell where they go', 'tqk-wpseo'),
+                'part' => __('Part %1$d/%2$d', 'tqk-wp-seo'),
+                'imgCheck' => __('image %1$d/%2$d', 'tqk-wp-seo'),
+                'ok' => __('No problem found', 'tqk-wp-seo'),
+                'words' => __('%d words', 'tqk-wp-seo'),
+                'images' => __('%d images', 'tqk-wp-seo'),
+                'bg' => __('Background', 'tqk-wp-seo'),
+                'mobile' => __('On mobile (375 px)', 'tqk-wp-seo'),
+                'broken' => __('Does not load', 'tqk-wp-seo'),
+                'noAlt' => __('No ALT text', 'tqk-wp-seo'),
+                'oversized' => __('%1$d px file shown at %2$d px: too heavy', 'tqk-wp-seo'),
+                'upscaled' => __('%1$d px file stretched to %2$d px: blurry', 'tqk-wp-seo'),
+                'mobileBig' => __('%1$d px file shown at %2$d px on a phone: needs a smaller size (srcset)', 'tqk-wp-seo'),
+                'noDims' => __('No width/height: the page jumps while loading', 'tqk-wp-seo'),
+                'heavy' => __('Heavy: %s', 'tqk-wp-seo'),
+                'webp' => __('WebP would be much lighter (%s)', 'tqk-wp-seo'),
+                'lazyTop' => __('Lazy-loaded in the first screen: slows the main image (LCP)', 'tqk-wp-seo'),
+                'noLazy' => __('Below the first screen but not lazy-loaded', 'tqk-wp-seo'),
+                'emptyLink' => __('%d link(s) without text: Google and screen readers cannot tell where they go', 'tqk-wp-seo'),
             ],
         ];
     }
@@ -365,67 +365,67 @@ class Metabox {
     /** Texts of the action plan shown after a scan (assets/js/tqk-wpseo-plan.js). */
     public static function plan_strings(): array {
         return [
-            'title' => __('Action plan', 'tqk-wpseo'),
-            'now' => __('Fix now', 'tqk-wpseo'),
-            'should' => __('Should fix', 'tqk-wpseo'),
-            'nice' => __('Nice to have', 'tqk-wpseo'),
-            'nNow' => __('%d fix now', 'tqk-wpseo'),
-            'nShould' => __('%d should fix', 'tqk-wpseo'),
-            'nNice' => __('%d nice to have', 'tqk-wpseo'),
-            'empty' => __('Nothing left to fix on this page.', 'tqk-wpseo'),
-            'words' => __('%d words', 'tqk-wpseo'),
-            'fix' => __('Fix', 'tqk-wpseo'),
-            'copyCss' => __('Copy CSS', 'tqk-wpseo'),
-            'seeImages' => __('Optimize', 'tqk-wpseo'),
-            'seeImagesFree' => __('See how', 'tqk-wpseo'),
-            'seeChecklist' => __('See', 'tqk-wpseo'),
-            'noH2' => __('No H2 heading', 'tqk-wpseo'),
-            'hSkip' => __('Heading levels skip (%s)', 'tqk-wpseo'),
-            'noTwitter' => __('No X (Twitter) card tag', 'tqk-wpseo'),
-            'overflow' => __('The page scrolls sideways on %1$s: %2$s', 'tqk-wpseo'),
-            'smallTap' => __('%d buttons / links are too small to tap', 'tqk-wpseo'),
-            'smallTapHow' => __('Fingers need about 44×44 px. Make them bigger or add padding.', 'tqk-wpseo'),
-            'emptyLinks' => __('%d links without text', 'tqk-wpseo'),
-            'emptyLinksHow' => __('Icon-only links need a label (aria-label or a title) so Google and screen readers know where they go.', 'tqk-wpseo'),
-            'images' => __('%d images should be resized for each screen', 'tqk-wpseo'),
-            'imagesPro' => __('Pro makes one file per screen (resized, cropped, compressed, WebP) and serves it through srcset. Check the list below, then Generate and Activate.', 'tqk-wpseo'),
-            'imagesFree' => __('The steps for each image are listed below. Pro does all of it in one click: resize, crop, compress, convert to WebP and serve the right file to each screen.', 'tqk-wpseo'),
-            'checklist' => __('Content checklist: %1$d serious, %2$d warnings', 'tqk-wpseo'),
-            'checklistHow' => __('Keyword, length, links and readability: see the checklist below.', 'tqk-wpseo'),
-            'secHow' => __('Signs of hacked code. Run the full Security scan (TQK SEO → Security) to find the file that adds it, and change all passwords.', 'tqk-wpseo'),
-            'unknownScripts' => __('Scripts from unfamiliar domains: %s', 'tqk-wpseo'),
-            'unknownHow' => __('Check which plugin, theme or tracking code adds them; remove what you do not recognise.', 'tqk-wpseo'),
+            'title' => __('Action plan', 'tqk-wp-seo'),
+            'now' => __('Fix now', 'tqk-wp-seo'),
+            'should' => __('Should fix', 'tqk-wp-seo'),
+            'nice' => __('Nice to have', 'tqk-wp-seo'),
+            'nNow' => __('%d fix now', 'tqk-wp-seo'),
+            'nShould' => __('%d should fix', 'tqk-wp-seo'),
+            'nNice' => __('%d nice to have', 'tqk-wp-seo'),
+            'empty' => __('Nothing left to fix on this page.', 'tqk-wp-seo'),
+            'words' => __('%d words', 'tqk-wp-seo'),
+            'fix' => __('Fix', 'tqk-wp-seo'),
+            'copyCss' => __('Copy CSS', 'tqk-wp-seo'),
+            'seeImages' => __('Optimize', 'tqk-wp-seo'),
+            'seeImagesFree' => __('See how', 'tqk-wp-seo'),
+            'seeChecklist' => __('See', 'tqk-wp-seo'),
+            'noH2' => __('No H2 heading', 'tqk-wp-seo'),
+            'hSkip' => __('Heading levels skip (%s)', 'tqk-wp-seo'),
+            'noTwitter' => __('No X (Twitter) card tag', 'tqk-wp-seo'),
+            'overflow' => __('The page scrolls sideways on %1$s: %2$s', 'tqk-wp-seo'),
+            'smallTap' => __('%d buttons / links are too small to tap', 'tqk-wp-seo'),
+            'smallTapHow' => __('Fingers need about 44×44 px. Make them bigger or add padding.', 'tqk-wp-seo'),
+            'emptyLinks' => __('%d links without text', 'tqk-wp-seo'),
+            'emptyLinksHow' => __('Icon-only links need a label (aria-label or a title) so Google and screen readers know where they go.', 'tqk-wp-seo'),
+            'images' => __('%d images should be resized for each screen', 'tqk-wp-seo'),
+            'imagesPro' => __('Pro makes one file per screen (resized, cropped, compressed, WebP) and serves it through srcset. Check the list below, then Generate and Activate.', 'tqk-wp-seo'),
+            'imagesFree' => __('The steps for each image are listed below. Pro does all of it in one click: resize, crop, compress, convert to WebP and serve the right file to each screen.', 'tqk-wp-seo'),
+            'checklist' => __('Content checklist: %1$d serious, %2$d warnings', 'tqk-wp-seo'),
+            'checklistHow' => __('Keyword, length, links and readability: see the checklist below.', 'tqk-wp-seo'),
+            'secHow' => __('Signs of hacked code. Run the full Security scan (TQK SEO → Security) to find the file that adds it, and change all passwords.', 'tqk-wp-seo'),
+            'unknownScripts' => __('Scripts from unfamiliar domains: %s', 'tqk-wp-seo'),
+            'unknownHow' => __('Check which plugin, theme or tracking code adds them; remove what you do not recognise.', 'tqk-wp-seo'),
             'verdict' => [
-                'clean' => __('No malware signs', 'tqk-wpseo'),
-                'review' => __('To review', 'tqk-wpseo'),
-                'infected' => __('Malware signs', 'tqk-wpseo'),
+                'clean' => __('No malware signs', 'tqk-wp-seo'),
+                'review' => __('To review', 'tqk-wp-seo'),
+                'infected' => __('Malware signs', 'tqk-wp-seo'),
             ],
             'how' => [
-                'noindex' => __('Google will not show this page. Check Advanced → Robots, and Settings → Reading → "Discourage search engines".', 'tqk-wpseo'),
-                'noTitle' => __('Write a title of about 50–60 characters with the main keyword near the start.', 'tqk-wpseo'),
-                'noDesc' => __('Without it Google picks any sentence from the page. Write 1–2 sentences (about 150 characters) with the main keyword.', 'tqk-wpseo'),
-                'longTitle' => __('Keep it under about 580 px (≈ 60 characters) so it is not cut.', 'tqk-wpseo'),
-                'longDesc' => __('Keep it under about 920 px (≈ 155 characters) so it is not cut.', 'tqk-wpseo'),
-                'noH1' => __('Set the main title of the page as Heading H1 (only one).', 'tqk-wpseo'),
-                'manyH1' => __('Keep one H1 for the main title; turn the others into H2 in the builder.', 'tqk-wpseo'),
-                'noH2' => __('Split the content with H2 sub-headings so Google and readers see its structure.', 'tqk-wpseo'),
-                'hSkip' => __('Go H1 → H2 → H3 in order, without skipping a level.', 'tqk-wpseo'),
-                'noOg' => __('Facebook, Zalo and X read these tags. Open the Social tab: title, description and image are filled automatically from the SEO values.', 'tqk-wpseo'),
-                'noSchema' => __('Pick a schema type in the Advanced tab (Article, Product, FAQ…) so Google understands the page.', 'tqk-wpseo'),
-                'noAlt' => __('Describe each image in a few words (ALT), in the Media Library or in the builder.', 'tqk-wpseo'),
-                'thin' => __('Pages that rank usually have at least %d words of useful text.', 'tqk-wpseo'),
-                'noCanon' => __('The plugin prints a canonical by default; check it is not switched off for this page.', 'tqk-wpseo'),
-                'priceZero' => __('Turn on the "no price" setting instead of 0, or Google shows the product as free.', 'tqk-wpseo'),
+                'noindex' => __('Google will not show this page. Check Advanced → Robots, and Settings → Reading → "Discourage search engines".', 'tqk-wp-seo'),
+                'noTitle' => __('Write a title of about 50–60 characters with the main keyword near the start.', 'tqk-wp-seo'),
+                'noDesc' => __('Without it Google picks any sentence from the page. Write 1–2 sentences (about 150 characters) with the main keyword.', 'tqk-wp-seo'),
+                'longTitle' => __('Keep it under about 580 px (≈ 60 characters) so it is not cut.', 'tqk-wp-seo'),
+                'longDesc' => __('Keep it under about 920 px (≈ 155 characters) so it is not cut.', 'tqk-wp-seo'),
+                'noH1' => __('Set the main title of the page as Heading H1 (only one).', 'tqk-wp-seo'),
+                'manyH1' => __('Keep one H1 for the main title; turn the others into H2 in the builder.', 'tqk-wp-seo'),
+                'noH2' => __('Split the content with H2 sub-headings so Google and readers see its structure.', 'tqk-wp-seo'),
+                'hSkip' => __('Go H1 → H2 → H3 in order, without skipping a level.', 'tqk-wp-seo'),
+                'noOg' => __('Facebook, Zalo and X read these tags. Open the Social tab: title, description and image are filled automatically from the SEO values.', 'tqk-wp-seo'),
+                'noSchema' => __('Pick a schema type in the Advanced tab (Article, Product, FAQ…) so Google understands the page.', 'tqk-wp-seo'),
+                'noAlt' => __('Describe each image in a few words (ALT), in the Media Library or in the builder.', 'tqk-wp-seo'),
+                'thin' => __('Pages that rank usually have at least %d words of useful text.', 'tqk-wp-seo'),
+                'noCanon' => __('The plugin prints a canonical by default; check it is not switched off for this page.', 'tqk-wp-seo'),
+                'priceZero' => __('Turn on the "no price" setting instead of 0, or Google shows the product as free.', 'tqk-wp-seo'),
             ],
             'type' => [
-                'mainSmall' => __('Main reading text is %1$spx on %2$s: use %3$spx', 'tqk-wpseo'),
-                'bodySmall' => __('%1$s: text %2$spx is too small on %3$s: use %4$spx', 'tqk-wpseo'),
-                'bodyBig' => __('%1$s: text %2$spx is too big on %3$s: about %4$spx', 'tqk-wpseo'),
-                'hBig' => __('%1$s (%2$s) is %3$spx and takes %4$s lines on %5$s: about %6$spx', 'tqk-wpseo'),
-                'hSmall' => __('%1$s (%2$s) is only %3$spx on %4$s: about %5$spx', 'tqk-wpseo'),
-                'lh' => __('%1$s: lines too tight (line-height %2$s) on %3$s: use %4$s', 'tqk-wpseo'),
-                'measure' => __('%1$s: lines of about %2$s characters on %3$s: keep 60–75', 'tqk-wpseo'),
-                'contrast' => __('%1$s: %2$s text on %3$s is hard to read (%4$s:1, needs %5$s:1): use %6$s', 'tqk-wpseo'),
+                'mainSmall' => __('Main reading text is %1$spx on %2$s: use %3$spx', 'tqk-wp-seo'),
+                'bodySmall' => __('%1$s: text %2$spx is too small on %3$s: use %4$spx', 'tqk-wp-seo'),
+                'bodyBig' => __('%1$s: text %2$spx is too big on %3$s: about %4$spx', 'tqk-wp-seo'),
+                'hBig' => __('%1$s (%2$s) is %3$spx and takes %4$s lines on %5$s: about %6$spx', 'tqk-wp-seo'),
+                'hSmall' => __('%1$s (%2$s) is only %3$spx on %4$s: about %5$spx', 'tqk-wp-seo'),
+                'lh' => __('%1$s: lines too tight (line-height %2$s) on %3$s: use %4$s', 'tqk-wp-seo'),
+                'measure' => __('%1$s: lines of about %2$s characters on %3$s: keep 60–75', 'tqk-wp-seo'),
+                'contrast' => __('%1$s: %2$s text on %3$s is hard to read (%4$s:1, needs %5$s:1): use %6$s', 'tqk-wp-seo'),
             ],
         ];
     }
@@ -433,25 +433,25 @@ class Metabox {
     /** @return array Field key => [label, type]. */
     public static function fields(): array {
         return [
-            '_tqk_wpseo_focus_keyword'      => [__('Focus keyword', 'tqk-wpseo'), 'text'],
-            '_tqk_wpseo_secondary_keywords' => [__('Secondary keywords (comma, max 4)', 'tqk-wpseo'), 'text'],
-            '_tqk_wpseo_title'              => [__('SEO Title', 'tqk-wpseo'), 'text'],
-            '_tqk_wpseo_description'        => [__('Meta Description', 'tqk-wpseo'), 'textarea'],
-            '_tqk_wpseo_canonical'          => [__('Canonical URL', 'tqk-wpseo'), 'url'],
-            '_tqk_wpseo_robots'             => [__('Robots', 'tqk-wpseo'), 'select'],
-            '_tqk_wpseo_og_title'           => [__('Share title (Facebook, Zalo)', 'tqk-wpseo'), 'text'],
-            '_tqk_wpseo_og_description'     => [__('Share description (Facebook, Zalo)', 'tqk-wpseo'), 'textarea'],
-            '_tqk_wpseo_og_image'           => [__('Share image (Facebook, Zalo, X)', 'tqk-wpseo'), 'image'],
-            '_tqk_wpseo_twitter_title'      => [__('X (Twitter) title', 'tqk-wpseo'), 'text'],
-            '_tqk_wpseo_twitter_description' => [__('X (Twitter) description', 'tqk-wpseo'), 'textarea'],
-            '_tqk_wpseo_schema_type'        => [__('Schema Type', 'tqk-wpseo'), 'schema'],
-            '_tqk_wpseo_sitemap_exclude'    => [__('Hide from sitemap (bot won\'t crawl via sitemap)', 'tqk-wpseo'), 'checkbox'],
+            '_tqk_wpseo_focus_keyword'      => [__('Focus keyword', 'tqk-wp-seo'), 'text'],
+            '_tqk_wpseo_secondary_keywords' => [__('Secondary keywords (comma, max 4)', 'tqk-wp-seo'), 'text'],
+            '_tqk_wpseo_title'              => [__('SEO Title', 'tqk-wp-seo'), 'text'],
+            '_tqk_wpseo_description'        => [__('Meta Description', 'tqk-wp-seo'), 'textarea'],
+            '_tqk_wpseo_canonical'          => [__('Canonical URL', 'tqk-wp-seo'), 'url'],
+            '_tqk_wpseo_robots'             => [__('Robots', 'tqk-wp-seo'), 'select'],
+            '_tqk_wpseo_og_title'           => [__('Share title (Facebook, Zalo)', 'tqk-wp-seo'), 'text'],
+            '_tqk_wpseo_og_description'     => [__('Share description (Facebook, Zalo)', 'tqk-wp-seo'), 'textarea'],
+            '_tqk_wpseo_og_image'           => [__('Share image (Facebook, Zalo, X)', 'tqk-wp-seo'), 'image'],
+            '_tqk_wpseo_twitter_title'      => [__('X (Twitter) title', 'tqk-wp-seo'), 'text'],
+            '_tqk_wpseo_twitter_description' => [__('X (Twitter) description', 'tqk-wp-seo'), 'textarea'],
+            '_tqk_wpseo_schema_type'        => [__('Schema Type', 'tqk-wp-seo'), 'schema'],
+            '_tqk_wpseo_sitemap_exclude'    => [__('Hide from sitemap (bot won\'t crawl via sitemap)', 'tqk-wp-seo'), 'checkbox'],
         ];
     }
 
     public static function robot_options(): array {
         return [
-            ''                 => __('Default (index, follow)', 'tqk-wpseo'),
+            ''                 => __('Default (index, follow)', 'tqk-wp-seo'),
             'index,follow'     => 'index, follow',
             'noindex,follow'   => 'noindex, follow',
             'noindex,nofollow' => 'noindex, nofollow',
@@ -460,7 +460,7 @@ class Metabox {
 
     public static function schema_options(): array {
         return [
-            '' => __('Automatic (from template)', 'tqk-wpseo'),
+            '' => __('Automatic (from template)', 'tqk-wp-seo'),
             'Article' => 'Article',
             'BlogPosting' => 'BlogPosting',
             'WebPage' => 'WebPage',
@@ -513,7 +513,7 @@ class Metabox {
                 '<button type="button" class="button tqk-wpseo-schema-harvest" data-harvest="%s" data-post="%d">%s</button>',
                 esc_attr($slug),
                 $post_id,
-                esc_html__('Extract from post content', 'tqk-wpseo')
+                esc_html__('Extract from post content', 'tqk-wp-seo')
             );
             foreach ($block['fields'] as $name => $spec) {
                 self::schema_field($name, $spec, (string) get_post_meta($post_id, (string) $spec['key'], true));
@@ -599,9 +599,9 @@ class Metabox {
         $analysis = \TQK_WPSEO\Analyzer\Analyzer::stored($id);
         $score = $analysis === null ? null : (int) ($analysis['score'] ?? 0);
         $tabs = [
-            'seo'      => __('SEO', 'tqk-wpseo'),
-            'social'   => __('Social', 'tqk-wpseo'),
-            'advanced' => __('Advanced', 'tqk-wpseo'),
+            'seo'      => __('SEO', 'tqk-wp-seo'),
+            'social'   => __('Social', 'tqk-wp-seo'),
+            'advanced' => __('Advanced', 'tqk-wp-seo'),
         ];
         $spec_json = [];
         foreach (self::schema_field_blocks() as $slug => $block) {
@@ -682,7 +682,7 @@ class Metabox {
                     '<label class="tqk-check"><input type="checkbox" id="tqk-title-sync" name="%s" value="1"%s><span>%s</span></label>',
                     esc_attr(self::TITLE_SYNC),
                     get_post_meta($id, self::TITLE_SYNC, true) === '1' ? ' checked' : '',
-                    esc_html__('Same as page title', 'tqk-wpseo')
+                    esc_html__('Same as page title', 'tqk-wp-seo')
                 );
             }
             if ($type === 'text' || $type === 'textarea') {
@@ -695,7 +695,7 @@ class Metabox {
                     '<label class="tqk-check"><input type="checkbox" id="%1$s" name="%1$s" value="1"%2$s><span>%3$s</span></label>',
                     esc_attr($key),
                     $val === '1' ? ' checked' : '',
-                    esc_html__('Exclude', 'tqk-wpseo')
+                    esc_html__('Exclude', 'tqk-wp-seo')
                 );
             } elseif ($type === 'textarea') {
                 printf(
@@ -742,7 +742,7 @@ class Metabox {
             '<div class="tqk-wpseo-image tqk-share-pick" data-image-field data-auto-url="%s" data-auto-label="%s" data-custom-label="%s">',
             esc_attr($auto['url']),
             esc_attr($auto['label']),
-            esc_attr__('Chosen for this post', 'tqk-wpseo')
+            esc_attr__('Chosen for this post', 'tqk-wp-seo')
         );
         printf(
             '<div class="tqk-share-frame%s"><img class="tqk-wpseo-image-preview" src="%s" alt=""%s><span class="tqk-share-empty"%s>%s</span></div>',
@@ -750,27 +750,27 @@ class Metabox {
             esc_url($shown),
             $shown === '' ? ' hidden' : '',
             $shown === '' ? '' : ' hidden',
-            esc_html__('No share image — the link will show without a picture.', 'tqk-wpseo')
+            esc_html__('No share image — the link will show without a picture.', 'tqk-wp-seo')
         );
         printf('<input type="hidden" id="%1$s" name="%1$s" value="%2$s" data-image-url>', esc_attr($key), esc_attr($picked));
         echo '<div class="tqk-share-side">';
         printf(
             '<div class="tqk-share-meta"><span class="tqk-share-source" data-source="%s">%s</span><span class="tqk-share-size"></span></div>',
             $picked !== '' ? 'custom' : ($auto['url'] !== '' ? 'auto' : 'none'),
-            esc_html($picked !== '' ? __('Chosen for this post', 'tqk-wpseo') : $auto['label'])
+            esc_html($picked !== '' ? __('Chosen for this post', 'tqk-wp-seo') : $auto['label'])
         );
         printf(
             '<div class="tqk-share-actions"><button type="button" class="button tqk-wpseo-image-pick" data-label-select="%s" data-label-change="%s">%s</button>',
-            esc_attr__('Select image', 'tqk-wpseo'),
-            esc_attr__('Change image', 'tqk-wpseo'),
-            esc_html($picked !== '' ? __('Change image', 'tqk-wpseo') : __('Select image', 'tqk-wpseo'))
+            esc_attr__('Select image', 'tqk-wp-seo'),
+            esc_attr__('Change image', 'tqk-wp-seo'),
+            esc_html($picked !== '' ? __('Change image', 'tqk-wp-seo') : __('Select image', 'tqk-wp-seo'))
         );
         printf(
             '<button type="button" class="button-link tqk-wpseo-image-clear"%s>%s</button></div>',
             $picked === '' ? ' hidden' : '',
-            esc_html__('Use automatic image', 'tqk-wpseo')
+            esc_html__('Use automatic image', 'tqk-wp-seo')
         );
-        echo '<small class="description">' . esc_html__('Best size 1200×630 (1.91:1). The frame shows how Facebook and Zalo crop it.', 'tqk-wpseo') . '</small>';
+        echo '<small class="description">' . esc_html__('Best size 1200×630 (1.91:1). The frame shows how Facebook and Zalo crop it.', 'tqk-wp-seo') . '</small>';
         echo '</div></div>';
     }
 
@@ -781,7 +781,7 @@ class Metabox {
         }
         $status = (string) get_post_status($id);
         $url = $status === 'publish' ? (string) get_permalink($id) : (string) get_preview_post_link($id);
-        echo '<div class="tqk-sub">' . esc_html__('Page check', 'tqk-wpseo') . '</div>';
+        echo '<div class="tqk-sub">' . esc_html__('Page check', 'tqk-wp-seo') . '</div>';
         // form="…" with no such form: the radios are never posted with the post.
         printf(
             '<div class="tqk-scan-bar" data-scan-url="%s"><div class="tqk-scan-row">'
@@ -793,13 +793,13 @@ class Metabox {
             . '<span class="tqk-scan-msg" aria-live="polite"></span></div>'
             . '<p class="description tqk-scan-help" data-detail="%s" data-fast="%s"></p></div>',
             esc_url($url),
-            esc_attr__('Scan mode', 'tqk-wpseo'),
-            esc_html__('Section by section', 'tqk-wpseo'),
-            esc_html__('Quick', 'tqk-wpseo'),
-            esc_html__('Scan the page', 'tqk-wpseo'),
-            esc_html__('Save & scan', 'tqk-wpseo'),
-            esc_attr__('Goes through the page slowly, one section at a time: outlines each part, points at every image (size shown vs file, weight, ALT, lazy-load, blurry or oversized) and shows the result next to the page as it goes. Then checks 4 screen sizes.', 'tqk-wpseo'),
-            esc_attr__('Opens the page like a visitor, scrolls it once and checks 4 screen sizes. About 30 seconds.', 'tqk-wpseo')
+            esc_attr__('Scan mode', 'tqk-wp-seo'),
+            esc_html__('Section by section', 'tqk-wp-seo'),
+            esc_html__('Quick', 'tqk-wp-seo'),
+            esc_html__('Scan the page', 'tqk-wp-seo'),
+            esc_html__('Save & scan', 'tqk-wp-seo'),
+            esc_attr__('Goes through the page slowly, one section at a time: outlines each part, points at every image (size shown vs file, weight, ALT, lazy-load, blurry or oversized) and shows the result next to the page as it goes. Then checks 4 screen sizes.', 'tqk-wp-seo'),
+            esc_attr__('Opens the page like a visitor, scrolls it once and checks 4 screen sizes. About 30 seconds.', 'tqk-wp-seo')
         );
         echo '<div class="tqk-scan-report" hidden></div>';
         // Last report of this page (Live Audit or an earlier Scan), shown at once.
@@ -820,29 +820,29 @@ class Metabox {
 
     /** Hand the page to any outside AI as JSON, paste its reply (or a JSON-LD) back. */
     private static function json_box(int $id): void {
-        echo '<details class="tqk-json-box"><summary>' . esc_html__('Use another AI (Claude, ChatGPT…) or import JSON-LD', 'tqk-wpseo') . '</summary>';
-        echo '<ol class="tqk-json-steps"><li>' . esc_html__('Pick one set and copy it: each set starts with the page text (no tags, no shortcodes, up to 1,000 words), then one task. Small assistants like Gemini in Chrome read one set at a time best.', 'tqk-wpseo') . '</li>'
-            . '<li>' . esc_html__('Paste its JSON reply here: each key fills the field with the same key. You can also paste JSON-LD copied from any page: the schema type and its fields are filled for you.', 'tqk-wpseo') . '</li></ol>';
+        echo '<details class="tqk-json-box"><summary>' . esc_html__('Use another AI (Claude, ChatGPT…) or import JSON-LD', 'tqk-wp-seo') . '</summary>';
+        echo '<ol class="tqk-json-steps"><li>' . esc_html__('Pick one set and copy it: each set starts with the page text (no tags, no shortcodes, up to 1,000 words), then one task. Small assistants like Gemini in Chrome read one set at a time best.', 'tqk-wp-seo') . '</li>'
+            . '<li>' . esc_html__('Paste its JSON reply here: each key fills the field with the same key. You can also paste JSON-LD copied from any page: the schema type and its fields are filled for you.', 'tqk-wp-seo') . '</li></ol>';
         echo '<div class="tqk-json-sets" role="group">';
         foreach ([
-            'content' => __('① Page text', 'tqk-wpseo'),
-            'seo' => __('② Title · description · keywords', 'tqk-wpseo'),
-            'social' => __('③ Social', 'tqk-wpseo'),
-            'schema' => __('④ Schema', 'tqk-wpseo'),
-            'all' => __('Everything', 'tqk-wpseo'),
+            'content' => __('① Page text', 'tqk-wp-seo'),
+            'seo' => __('② Title · description · keywords', 'tqk-wp-seo'),
+            'social' => __('③ Social', 'tqk-wp-seo'),
+            'schema' => __('④ Schema', 'tqk-wp-seo'),
+            'all' => __('Everything', 'tqk-wp-seo'),
         ] as $b => $label) {
             printf('<button type="button" class="button tqk-json-set" data-bundle="%s">%s</button>', esc_attr($b), esc_html($label));
         }
         echo '</div><p class="tqk-json-status"><span class="tqk-json-msg" aria-live="polite"></span></p>';
         printf(
             '<textarea class="large-text code tqk-json-in" rows="5" placeholder="%s"></textarea>',
-            esc_attr__('{"tqk_seo":1,"fields":{"title":"…"}} or <script type="application/ld+json">…</script>', 'tqk-wpseo')
+            esc_attr__('{"tqk_seo":1,"fields":{"title":"…"}} or <script type="application/ld+json">…</script>', 'tqk-wp-seo')
         );
         printf(
             '<p><button type="button" class="button tqk-json-read">%s</button></p><div class="tqk-json-result"></div>',
-            esc_html__('Read JSON', 'tqk-wpseo')
+            esc_html__('Read JSON', 'tqk-wp-seo')
         );
-        echo '<p class="description">' . esc_html__('The page text is sent to the AI you paste it into. Nothing is saved until you update the post; ratings and reviews are never imported.', 'tqk-wpseo') . '</p>';
+        echo '<p class="description">' . esc_html__('The page text is sent to the AI you paste it into. Nothing is saved until you update the post; ratings and reviews are never imported.', 'tqk-wp-seo') . '</p>';
         echo '</details>';
         self::mcp_box($id);
     }
@@ -853,13 +853,13 @@ class Metabox {
      */
     private static function mcp_box(int $id): void {
         $on = \TQK_WPSEO\Core\Modules::is_active('mcp');
-        echo '<details class="tqk-json-box tqk-mcp-box"><summary>' . esc_html__('Send to an AI app via MCP (Claude, Cursor…)', 'tqk-wpseo') . '</summary>';
+        echo '<details class="tqk-json-box tqk-mcp-box"><summary>' . esc_html__('Send to an AI app via MCP (Claude, Cursor…)', 'tqk-wp-seo') . '</summary>';
         if (!$on) {
             printf(
                 '<p class="description">%s <a href="%s">%s</a></p></details>',
-                esc_html__('Connect Claude Desktop, Claude Code or Cursor to this site once, then send pages from here with one click. Turn on the MCP module first.', 'tqk-wpseo'),
+                esc_html__('Connect Claude Desktop, Claude Code or Cursor to this site once, then send pages from here with one click. Turn on the MCP module first.', 'tqk-wp-seo'),
                 esc_url(admin_url('admin.php?page=tqk-wpseo-tools#mcp')),
-                esc_html__('Set up MCP', 'tqk-wpseo')
+                esc_html__('Set up MCP', 'tqk-wp-seo')
             );
             return;
         }
@@ -867,14 +867,14 @@ class Metabox {
         printf(
             '<p class="description">%s</p>',
             esc_html($r
-                ? sprintf(__('Sends the last scan (%s): report, action plan, security check and screenshots of 4 screens.', 'tqk-wpseo'), wp_date('d/m H:i', (int) ($r['at'] ?? 0)))
-                : __('Scan the page first: the AI gets the report, the action plan and screenshots of 4 screens.', 'tqk-wpseo'))
+                ? sprintf(__('Sends the last scan (%s): report, action plan, security check and screenshots of 4 screens.', 'tqk-wp-seo'), wp_date('d/m H:i', (int) ($r['at'] ?? 0)))
+                : __('Scan the page first: the AI gets the report, the action plan and screenshots of 4 screens.', 'tqk-wp-seo'))
         );
         printf(
             '<div class="tqk-mcp-row"><input type="text" class="tqk-mcp-note" form="tqk-wpseo-noform" placeholder="%s"><button type="button" class="button button-primary tqk-mcp-push">%s</button></div>'
             . '<p class="tqk-mcp-msg" aria-live="polite"></p>',
-            esc_attr__('Note for the AI (optional), e.g. focus on mobile', 'tqk-wpseo'),
-            esc_html__('Send to AI', 'tqk-wpseo')
+            esc_attr__('Note for the AI (optional), e.g. focus on mobile', 'tqk-wp-seo'),
+            esc_html__('Send to AI', 'tqk-wp-seo')
         );
         echo '</details>';
     }
@@ -889,18 +889,18 @@ class Metabox {
         $thumb = (int) get_post_thumbnail_id($id);
         $src = $thumb > 0 ? wp_get_attachment_image_src($thumb, 'full') : false;
         if (is_array($src) && !empty($src[0])) {
-            return ['url' => (string) $src[0], 'label' => __('Automatic: featured image', 'tqk-wpseo')];
+            return ['url' => (string) $src[0], 'label' => __('Automatic: featured image', 'tqk-wp-seo')];
         }
         $default = (string) \TQK_WPSEO\Admin\Settings::get('social_default_image', '');
         if ($default !== '') {
-            return ['url' => $default, 'label' => __('Automatic: site default image', 'tqk-wpseo')];
+            return ['url' => $default, 'label' => __('Automatic: site default image', 'tqk-wp-seo')];
         }
         // Whatever Data resolved (first image in content when enabled).
         $url = (string) (self::preview($id)['og_image'] ?? '');
         if ($url !== '' && $url !== (string) get_post_meta($id, '_tqk_wpseo_og_image', true)) {
-            return ['url' => $url, 'label' => __('Automatic: first image in the content', 'tqk-wpseo')];
+            return ['url' => $url, 'label' => __('Automatic: first image in the content', 'tqk-wp-seo')];
         }
-        return ['url' => '', 'label' => __('No automatic image: add a featured image or a site default.', 'tqk-wpseo')];
+        return ['url' => '', 'label' => __('No automatic image: add a featured image or a site default.', 'tqk-wp-seo')];
     }
 
 
@@ -912,13 +912,13 @@ class Metabox {
      */
     private static function social_image_source(string $img): array {
         if ($img === '') {
-            return ['slug' => 'none', 'label' => __('No image — cards will show without one.', 'tqk-wpseo')];
+            return ['slug' => 'none', 'label' => __('No image — cards will show without one.', 'tqk-wp-seo')];
         }
         $default = (string) \TQK_WPSEO\Admin\Settings::get('social_default_image', '');
         if ($default !== '' && $img === $default) {
-            return ['slug' => 'default', 'label' => __('Using the site-wide default image.', 'tqk-wpseo')];
+            return ['slug' => 'default', 'label' => __('Using the site-wide default image.', 'tqk-wp-seo')];
         }
-        return ['slug' => 'auto', 'label' => __('Chosen automatically — pick an image below to change it.', 'tqk-wpseo')];
+        return ['slug' => 'auto', 'label' => __('Chosen automatically — pick an image below to change it.', 'tqk-wp-seo')];
     }
 
     /**
@@ -938,7 +938,7 @@ class Metabox {
         $im = sprintf('<img class="tqk-wpseo-social-img" data-social-img src="%s" alt=""%s>', esc_url($img), $img === '' ? ' hidden' : '');
 
         echo '<div class="tqk-wpseo-social tqk-social-preview">';
-        echo '<div class="tqk-social-head"><span class="tqk-sub-inline">' . esc_html__('When the link is shared', 'tqk-wpseo') . '</span>';
+        echo '<div class="tqk-social-head"><span class="tqk-sub-inline">' . esc_html__('When the link is shared', 'tqk-wp-seo') . '</span>';
         echo '<span class="tqk-seg tqk-social-tabs" role="tablist">';
         foreach (['facebook' => 'Facebook', 'zalo' => 'Zalo', 'x' => 'X (Twitter)'] as $net => $name) {
             printf('<button type="button" role="tab" data-net="%s" aria-selected="%s">%s</button>', $net, $net === 'facebook' ? 'true' : 'false', esc_html($name));
@@ -972,12 +972,12 @@ class Metabox {
             . '<div class="tqk-x-from">%s</div></div>',
             $im,
             esc_html((string) ($p['twitter_title'] ?? ($p['og_title'] ?? ''))),
-            esc_html(sprintf(__('From %s', 'tqk-wpseo'), $host))
+            esc_html(sprintf(__('From %s', 'tqk-wp-seo'), $host))
         );
         printf('<div class="tqk-wpseo-social-source" data-source="%s">%s</div>', esc_attr($src['slug']), esc_html($src['label']));
         printf(
             '<p class="tqk-social-refresh">%s <a href="%s" target="_blank" rel="noopener">Facebook</a> · <a href="https://developers.zalo.me/tools/debug-sharing" target="_blank" rel="noopener">Zalo</a></p>',
-            esc_html__('Facebook and Zalo keep the old preview for a while. After changing the image or texts, refresh it with their sharing debugger:', 'tqk-wpseo'),
+            esc_html__('Facebook and Zalo keep the old preview for a while. After changing the image or texts, refresh it with their sharing debugger:', 'tqk-wp-seo'),
             esc_url('https://developers.facebook.com/tools/debug/?q=' . rawurlencode($url))
         );
         echo '</div>';
@@ -996,9 +996,9 @@ class Metabox {
             '<label class="tqk-check"><input type="checkbox" id="tqk-social-sync" name="%s" value="1"%s><span>%s</span></label>',
             esc_attr(self::SOCIAL_SYNC),
             $sync ? ' checked' : '',
-            esc_html__('Same title and description as Google (SEO)', 'tqk-wpseo')
+            esc_html__('Same title and description as Google (SEO)', 'tqk-wp-seo')
         );
-        echo '<small class="description">' . esc_html__('Untick to write different texts for Facebook / Zalo and X.', 'tqk-wpseo') . '</small></div>';
+        echo '<small class="description">' . esc_html__('Untick to write different texts for Facebook / Zalo and X.', 'tqk-wp-seo') . '</small></div>';
         printf('<div class="tqk-social-custom"%s>', $sync ? ' hidden' : '');
         self::render_fields($id, array_intersect_key($f, array_flip($texts)), $p);
         echo '</div>';
@@ -1077,7 +1077,7 @@ class Metabox {
             '<span class="tqk-wpseo-serp-desc%s" id="tqk-wpseo-serp-desc" data-effective="%s">%s</span>',
             $d === '' ? ' is-empty' : '',
             esc_attr($d),
-            esc_html($d !== '' ? $d : __('No description: Google will pick a snippet from the page.', 'tqk-wpseo'))
+            esc_html($d !== '' ? $d : __('No description: Google will pick a snippet from the page.', 'tqk-wp-seo'))
         );
         echo '</div>';
 
@@ -1091,18 +1091,18 @@ class Metabox {
                     esc_html($l['desc'])
                 );
             }
-            echo '</div><div class="tqk-serp-note">' . esc_html__('Sitelinks preview from your main menu. Google decides whether to show them.', 'tqk-wpseo') . '</div>';
+            echo '</div><div class="tqk-serp-note">' . esc_html__('Sitelinks preview from your main menu. Google decides whether to show them.', 'tqk-wp-seo') . '</div>';
         }
 
-        echo '<details class="tqk-serp-help"><summary>' . esc_html__('How do some sites get extra links under their result (sitelinks)?', 'tqk-wpseo') . '</summary><ul>';
+        echo '<details class="tqk-serp-help"><summary>' . esc_html__('How do some sites get extra links under their result (sitelinks)?', 'tqk-wp-seo') . '</summary><ul>';
         foreach ([
-            __('Google picks sitelinks by itself; no tag or plugin can switch them on. They mostly show when people search your brand or site name.', 'tqk-wpseo'),
-            __('Keep a clear main menu of 4–8 key pages, with short menu labels that match those pages\' titles.', 'tqk-wpseo'),
-            __('Give every key page its own short, unique SEO title and description (this box).', 'tqk-wpseo'),
-            __('Link those pages from the home page, keep them indexable and in the sitemap (done by this plugin).', 'tqk-wpseo'),
-            __('Set the Site Title and a site icon (Appearance → Customize → Site Identity): Google shows them as the name and logo above the result; the plugin outputs the WebSite and Organization schema for it.', 'tqk-wpseo'),
-            __('The breadcrumb schema (output by the plugin) turns the address line into "domain › category › page".', 'tqk-wpseo'),
-            __('The search box inside results (sitelinks search box) was retired by Google in November 2024: nothing to do there.', 'tqk-wpseo'),
+            __('Google picks sitelinks by itself; no tag or plugin can switch them on. They mostly show when people search your brand or site name.', 'tqk-wp-seo'),
+            __('Keep a clear main menu of 4–8 key pages, with short menu labels that match those pages\' titles.', 'tqk-wp-seo'),
+            __('Give every key page its own short, unique SEO title and description (this box).', 'tqk-wp-seo'),
+            __('Link those pages from the home page, keep them indexable and in the sitemap (done by this plugin).', 'tqk-wp-seo'),
+            __('Set the Site Title and a site icon (Appearance → Customize → Site Identity): Google shows them as the name and logo above the result; the plugin outputs the WebSite and Organization schema for it.', 'tqk-wp-seo'),
+            __('The breadcrumb schema (output by the plugin) turns the address line into "domain › category › page".', 'tqk-wp-seo'),
+            __('The search box inside results (sitelinks search box) was retired by Google in November 2024: nothing to do there.', 'tqk-wp-seo'),
         ] as $tip) {
             echo '<li>' . esc_html($tip) . '</li>';
         }
@@ -1112,30 +1112,30 @@ class Metabox {
 
     private static function ai_box(int $id): void {
         $enabled = \TQK_WPSEO\AI\Factory::create() !== null;
-        echo '<hr><h4>' . esc_html__('AI suggestions', 'tqk-wpseo') . '</h4>';
+        echo '<hr><h4>' . esc_html__('AI suggestions', 'tqk-wp-seo') . '</h4>';
         self::json_box($id);
         if (!$enabled) {
             printf(
                 '<p class="description">%s <a href="%s">%s</a></p>',
-                esc_html__('Choose an AI provider (free Gemini key, or Ollama / LM Studio on your machine) to get title, description and keyword ideas. Nothing is written without your approval.', 'tqk-wpseo'),
+                esc_html__('Choose an AI provider (free Gemini key, or Ollama / LM Studio on your machine) to get title, description and keyword ideas. Nothing is written without your approval.', 'tqk-wp-seo'),
                 esc_url(admin_url('admin.php?page=tqk-wpseo-settings')),
-                esc_html__('Settings', 'tqk-wpseo')
+                esc_html__('Settings', 'tqk-wp-seo')
             );
             return;
         }
-        foreach (['title' => __('Titles', 'tqk-wpseo'), 'description' => __('Descriptions', 'tqk-wpseo'), 'keywords' => __('Keywords', 'tqk-wpseo')] as $type => $label) {
+        foreach (['title' => __('Titles', 'tqk-wp-seo'), 'description' => __('Descriptions', 'tqk-wp-seo'), 'keywords' => __('Keywords', 'tqk-wp-seo')] as $type => $label) {
             printf(
                 '<button type="button" class="button tqk-wpseo-ai-btn" data-ai="%s" data-post="%d" data-nonce="%s">%s: %s</button> ',
                 esc_attr($type),
                 $id,
                 esc_attr(wp_create_nonce('tqk-wpseo-ai')),
-                esc_html__('Generate', 'tqk-wpseo'),
+                esc_html__('Generate', 'tqk-wp-seo'),
                 esc_html($label)
             );
         }
         echo '<div class="tqk-wpseo-ai-modal" id="tqk-wpseo-ai-modal" hidden><div class="tqk-wpseo-ai-box">'
             . '<div id="tqk-wpseo-ai-options"></div>'
-            . sprintf('<p><button type="button" class="button" id="tqk-wpseo-ai-close">%s</button></p>', esc_html__('Close', 'tqk-wpseo'))
+            . sprintf('<p><button type="button" class="button" id="tqk-wpseo-ai-close">%s</button></p>', esc_html__('Close', 'tqk-wp-seo'))
             . '</div></div>';
     }
 

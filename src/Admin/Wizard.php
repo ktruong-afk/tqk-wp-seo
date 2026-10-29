@@ -22,8 +22,8 @@ class Wizard {
     public static function register(): void {
         add_submenu_page(
             \TQK_WPSEO\Admin\Menu::TOP_SLUG,
-            __('Setup Wizard', 'tqk-wpseo'),
-            __('Setup Wizard', 'tqk-wpseo'),
+            __('Setup Wizard', 'tqk-wp-seo'),
+            __('Setup Wizard', 'tqk-wp-seo'),
             \TQK_WPSEO\Admin\Access::CAP,
             self::SLUG,
             [self::class, 'render']
@@ -50,21 +50,21 @@ class Wizard {
     /** @return array Step number => title. */
     public static function steps(): array {
         return [
-            1 => __('Welcome', 'tqk-wpseo'),
-            2 => __('Business', 'tqk-wpseo'),
-            3 => __('Templates', 'tqk-wpseo'),
-            4 => __('Indexability', 'tqk-wpseo'),
-            5 => __('Sitemap', 'tqk-wpseo'),
-            6 => __('Local AI', 'tqk-wpseo'),
-            7 => __('Finish', 'tqk-wpseo'),
+            1 => __('Welcome', 'tqk-wp-seo'),
+            2 => __('Business', 'tqk-wp-seo'),
+            3 => __('Templates', 'tqk-wp-seo'),
+            4 => __('Indexability', 'tqk-wp-seo'),
+            5 => __('Sitemap', 'tqk-wp-seo'),
+            6 => __('Local AI', 'tqk-wp-seo'),
+            7 => __('Finish', 'tqk-wp-seo'),
         ];
     }
 
     public static function render(): void {
         if (!\TQK_WPSEO\Admin\Access::can()) {
-            View::page(__('Setup Wizard', 'tqk-wpseo'), View::empty_state(
-                __('Permission denied', 'tqk-wpseo'),
-                __('You need the manage_options capability to view this page.', 'tqk-wpseo')
+            View::page(__('Setup Wizard', 'tqk-wp-seo'), View::empty_state(
+                __('Permission denied', 'tqk-wp-seo'),
+                __('You need the manage_options capability to view this page.', 'tqk-wp-seo')
             ));
             return;
         }
@@ -73,7 +73,7 @@ class Wizard {
             . '<div id="tqk-wpseo-wizard-progress">' . self::progress($step) . '</div>'
             . '<div id="tqk-wpseo-wizard-body">' . self::step_html($step) . '</div>'
             . '</div>';
-        View::page(__('Setup Wizard', 'tqk-wpseo'), $body);
+        View::page(__('Setup Wizard', 'tqk-wp-seo'), $body);
     }
 
     /** AJAX: save current step fields, return next step HTML. */
@@ -157,7 +157,7 @@ class Wizard {
     }
 
     private static function nav(int $step): string {
-        $next = $step >= 7 ? __('Finish', 'tqk-wpseo') : __('Continue', 'tqk-wpseo');
+        $next = $step >= 7 ? __('Finish', 'tqk-wp-seo') : __('Continue', 'tqk-wp-seo');
         $html = sprintf(
             '<p class="tqk-wpseo-wizard-nav"><button type="submit" class="button button-primary button-large">%s</button> ',
             esc_html($next)
@@ -166,7 +166,7 @@ class Wizard {
             $html .= sprintf(
                 '<button type="button" class="button button-large" data-tqk-wizard-skip="%d">%s</button>',
                 $step,
-                esc_html__('Skip', 'tqk-wpseo')
+                esc_html__('Skip', 'tqk-wp-seo')
             );
         }
         return $html . '</p></form>';
@@ -177,62 +177,62 @@ class Wizard {
         switch ($step) {
             case 2:
                 return self::form_open(2)
-                    . '<h2>' . esc_html__('Your business', 'tqk-wpseo') . '</h2>'
-                    . '<p>' . esc_html__('Tell us your industry so Local AI writes in the right context. Skippable.', 'tqk-wpseo') . '</p>'
-                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_name" value="%s" placeholder="%s"></label></p>', esc_html__('Business name', 'tqk-wpseo'), esc_attr((string) $s['business_name']), esc_attr__('VD: Nha khoa An Khang', 'tqk-wpseo'))
-                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_industry" value="%s" placeholder="%s"></label></p>', esc_html__('Industry', 'tqk-wpseo'), esc_attr((string) $s['business_industry']), esc_attr__('VD: Nha khoa, Bat dong san, Thoi trang', 'tqk-wpseo'))
-                    . sprintf('<p><label><strong>%s</strong><br><textarea class="large-text" rows="2" name="business_description">%s</textarea></label></p>', esc_html__('What do you do?', 'tqk-wpseo'), esc_html((string) $s['business_description']))
-                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_audience" value="%s"></label></p>', esc_html__('Target customers', 'tqk-wpseo'), esc_attr((string) $s['business_audience']))
-                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_tone" value="%s"></label></p>', esc_html__('Writing tone', 'tqk-wpseo'), esc_attr((string) $s['business_tone']))
-                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_phone" value="%s"></label></p>', esc_html__('Phone', 'tqk-wpseo'), esc_attr((string) ($s['business_phone'] ?? '')))
-                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_address" value="%s"></label></p>', esc_html__('Address', 'tqk-wpseo'), esc_attr((string) ($s['business_address'] ?? '')))
-                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_hours" value="%s"></label></p>', esc_html__('Opening hours', 'tqk-wpseo'), esc_attr((string) ($s['business_hours'] ?? '')))
+                    . '<h2>' . esc_html__('Your business', 'tqk-wp-seo') . '</h2>'
+                    . '<p>' . esc_html__('Tell us your industry so Local AI writes in the right context. Skippable.', 'tqk-wp-seo') . '</p>'
+                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_name" value="%s" placeholder="%s"></label></p>', esc_html__('Business name', 'tqk-wp-seo'), esc_attr((string) $s['business_name']), esc_attr__('VD: Nha khoa An Khang', 'tqk-wp-seo'))
+                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_industry" value="%s" placeholder="%s"></label></p>', esc_html__('Industry', 'tqk-wp-seo'), esc_attr((string) $s['business_industry']), esc_attr__('VD: Nha khoa, Bat dong san, Thoi trang', 'tqk-wp-seo'))
+                    . sprintf('<p><label><strong>%s</strong><br><textarea class="large-text" rows="2" name="business_description">%s</textarea></label></p>', esc_html__('What do you do?', 'tqk-wp-seo'), esc_html((string) $s['business_description']))
+                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_audience" value="%s"></label></p>', esc_html__('Target customers', 'tqk-wp-seo'), esc_attr((string) $s['business_audience']))
+                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_tone" value="%s"></label></p>', esc_html__('Writing tone', 'tqk-wp-seo'), esc_attr((string) $s['business_tone']))
+                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_phone" value="%s"></label></p>', esc_html__('Phone', 'tqk-wp-seo'), esc_attr((string) ($s['business_phone'] ?? '')))
+                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_address" value="%s"></label></p>', esc_html__('Address', 'tqk-wp-seo'), esc_attr((string) ($s['business_address'] ?? '')))
+                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="business_hours" value="%s"></label></p>', esc_html__('Opening hours', 'tqk-wp-seo'), esc_attr((string) ($s['business_hours'] ?? '')))
                     . self::nav(2);
             case 3:
                 return self::form_open(3)
-                    . '<h2>' . esc_html__('Templates', 'tqk-wpseo') . '</h2>'
-                    . '<p>' . esc_html__('Fallbacks used when a post has no custom SEO title or description.', 'tqk-wpseo') . '</p>'
-                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="title_template" value="%s"></label></p>', esc_html__('Title template', 'tqk-wpseo'), esc_attr((string) $s['title_template']))
-                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="description_template" value="%s"></label></p>', esc_html__('Description template', 'tqk-wpseo'), esc_attr((string) $s['description_template']))
+                    . '<h2>' . esc_html__('Templates', 'tqk-wp-seo') . '</h2>'
+                    . '<p>' . esc_html__('Fallbacks used when a post has no custom SEO title or description.', 'tqk-wp-seo') . '</p>'
+                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="title_template" value="%s"></label></p>', esc_html__('Title template', 'tqk-wp-seo'), esc_attr((string) $s['title_template']))
+                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="description_template" value="%s"></label></p>', esc_html__('Description template', 'tqk-wp-seo'), esc_attr((string) $s['description_template']))
                     . self::nav(3);
             case 4:
                 $html = self::form_open(4)
-                    . '<h2>' . esc_html__('Indexability', 'tqk-wpseo') . '</h2>'
-                    . '<p>' . esc_html__('Choose what search engines may index. Attachments and search pages are hidden by default.', 'tqk-wpseo') . '</p>';
-                foreach (['noindex_attachments' => __('Noindex attachments', 'tqk-wpseo'), 'noindex_search' => __('Noindex search pages', 'tqk-wpseo'), 'noindex_author' => __('Noindex author archives', 'tqk-wpseo'), 'noindex_tag' => __('Noindex tag archives', 'tqk-wpseo')] as $k => $label) {
+                    . '<h2>' . esc_html__('Indexability', 'tqk-wp-seo') . '</h2>'
+                    . '<p>' . esc_html__('Choose what search engines may index. Attachments and search pages are hidden by default.', 'tqk-wp-seo') . '</p>';
+                foreach (['noindex_attachments' => __('Noindex attachments', 'tqk-wp-seo'), 'noindex_search' => __('Noindex search pages', 'tqk-wp-seo'), 'noindex_author' => __('Noindex author archives', 'tqk-wp-seo'), 'noindex_tag' => __('Noindex tag archives', 'tqk-wp-seo')] as $k => $label) {
                     $html .= View::switch($k, !empty($s[$k]), $label);
                 }
                 return $html . self::nav(4);
             case 5:
                 $html = self::form_open(5)
-                    . '<h2>' . esc_html__('Sitemap', 'tqk-wpseo') . '</h2>';
-                $html .= View::switch('sitemap_enabled', !empty($s['sitemap_enabled']), __('Enable sitemap', 'tqk-wpseo'));
-                foreach (['post' => __('Posts', 'tqk-wpseo'), 'page' => __('Pages', 'tqk-wpseo'), 'category' => __('Categories', 'tqk-wpseo'), 'post_tag' => __('Tags', 'tqk-wpseo')] as $m => $label) {
+                    . '<h2>' . esc_html__('Sitemap', 'tqk-wp-seo') . '</h2>';
+                $html .= View::switch('sitemap_enabled', !empty($s['sitemap_enabled']), __('Enable sitemap', 'tqk-wp-seo'));
+                foreach (['post' => __('Posts', 'tqk-wp-seo'), 'page' => __('Pages', 'tqk-wp-seo'), 'category' => __('Categories', 'tqk-wp-seo'), 'post_tag' => __('Tags', 'tqk-wp-seo')] as $m => $label) {
                     $html .= View::switch('sitemap_maps[' . $m . ']', in_array($m, (array) $s['sitemap_maps'], true), $label);
                 }
                 return $html . self::nav(5);
             case 6:
-                $providers = ['none' => __('None', 'tqk-wpseo'), 'ollama' => 'Ollama', 'lmstudio' => 'LM Studio'];
+                $providers = ['none' => __('None', 'tqk-wp-seo'), 'ollama' => 'Ollama', 'lmstudio' => 'LM Studio'];
                 $opts = '';
                 foreach ($providers as $v => $label) {
                     $opts .= sprintf('<option value="%s"%s>%s</option>', esc_attr($v), $v === $s['ai_provider'] ? ' selected' : '', esc_html($label));
                 }
                 return self::form_open(6)
-                    . '<h2>' . esc_html__('Local AI', 'tqk-wpseo') . '</h2>'
-                    . '<p>' . esc_html__('Optional. Suggestions run against your own machine — no API fees. You can skip this entirely.', 'tqk-wpseo') . '</p>'
-                    . sprintf('<p><label><strong>%s</strong><br><select name="ai_provider">%s</select></label></p>', esc_html__('Provider', 'tqk-wpseo'), $opts)
-                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="ai_endpoint" value="%s"></label></p>', esc_html__('Endpoint', 'tqk-wpseo'), esc_attr((string) $s['ai_endpoint']))
-                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="ai_model" value="%s"></label></p>', esc_html__('Model', 'tqk-wpseo'), esc_attr((string) $s['ai_model']))
+                    . '<h2>' . esc_html__('Local AI', 'tqk-wp-seo') . '</h2>'
+                    . '<p>' . esc_html__('Optional. Suggestions run against your own machine — no API fees. You can skip this entirely.', 'tqk-wp-seo') . '</p>'
+                    . sprintf('<p><label><strong>%s</strong><br><select name="ai_provider">%s</select></label></p>', esc_html__('Provider', 'tqk-wp-seo'), $opts)
+                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="ai_endpoint" value="%s"></label></p>', esc_html__('Endpoint', 'tqk-wp-seo'), esc_attr((string) $s['ai_endpoint']))
+                    . sprintf('<p><label><strong>%s</strong><br><input type="text" class="large-text" name="ai_model" value="%s"></label></p>', esc_html__('Model', 'tqk-wp-seo'), esc_attr((string) $s['ai_model']))
                     . self::nav(6);
             case 7:
                 return self::form_open(7)
-                    . '<h2>' . esc_html__('Ready', 'tqk-wpseo') . '</h2>'
-                    . '<p>' . esc_html__('Everything is configured. Run your first scan to fill the dashboard.', 'tqk-wpseo') . '</p>'
+                    . '<h2>' . esc_html__('Ready', 'tqk-wp-seo') . '</h2>'
+                    . '<p>' . esc_html__('Everything is configured. Run your first scan to fill the dashboard.', 'tqk-wp-seo') . '</p>'
                     . self::nav(7);
             default:
                 return self::form_open(1)
-                    . '<h2>' . esc_html__('Welcome to TQK WP SEO', 'tqk-wpseo') . '</h2>'
-                    . '<p>' . esc_html__('A personal SEO engine: offline-first, no fees, local AI optional. Seven quick steps and you are done.', 'tqk-wpseo') . '</p>'
+                    . '<h2>' . esc_html__('Welcome to TQK WP SEO', 'tqk-wp-seo') . '</h2>'
+                    . '<p>' . esc_html__('A personal SEO engine: offline-first, no fees, local AI optional. Seven quick steps and you are done.', 'tqk-wp-seo') . '</p>'
                     . self::nav(1);
         }
     }
@@ -240,9 +240,9 @@ class Wizard {
     private static function finish_html(): string {
         return '<div class="tqk-wpseo-empty"><span class="tqk-wpseo-empty-ico">'
             . '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>'
-            . '</span><h2>' . esc_html__('Setup complete', 'tqk-wpseo') . '</h2>'
-            . '<p>' . esc_html__('Your site is ready. Open the dashboard or run the first scan now.', 'tqk-wpseo') . '</p>'
-            . '<p><a class="tqk-btn tqk-btn-primary" href="' . esc_url(admin_url('admin.php?page=tqk-wpseo')) . '">' . esc_html__('Go to Dashboard', 'tqk-wpseo') . '</a> '
-            . '<a class="tqk-btn tqk-btn-outline" href="' . esc_url(admin_url('admin.php?page=tqk-wpseo-site-analysis')) . '">' . esc_html__('Run first scan', 'tqk-wpseo') . '</a></p></div>';
+            . '</span><h2>' . esc_html__('Setup complete', 'tqk-wp-seo') . '</h2>'
+            . '<p>' . esc_html__('Your site is ready. Open the dashboard or run the first scan now.', 'tqk-wp-seo') . '</p>'
+            . '<p><a class="tqk-btn tqk-btn-primary" href="' . esc_url(admin_url('admin.php?page=tqk-wpseo')) . '">' . esc_html__('Go to Dashboard', 'tqk-wp-seo') . '</a> '
+            . '<a class="tqk-btn tqk-btn-outline" href="' . esc_url(admin_url('admin.php?page=tqk-wpseo-site-analysis')) . '">' . esc_html__('Run first scan', 'tqk-wp-seo') . '</a></p></div>';
     }
 }

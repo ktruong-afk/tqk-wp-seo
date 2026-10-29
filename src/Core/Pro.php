@@ -81,8 +81,8 @@ class Pro {
         if (self::$addon !== null) {
             return self::$addon->settings_html();
         }
-        return '<div id="tqk-license"><p><span class="tqk-wpseo-badge is-wait">' . esc_html__('Free', 'tqk-wpseo') . '</span></p>'
-            . '<p class="description">' . esc_html__('Pro is a separate add-on plugin ("TQK WP SEO Pro"). Install and activate it, then enter your license key here.', 'tqk-wpseo') . '</p>'
-            . '<p><a class="button" href="' . esc_url(self::BUY_URL) . '" target="_blank" rel="noopener">' . esc_html__('Get TQK WP SEO Pro', 'tqk-wpseo') . '</a></p></div>';
+        return '<div id="tqk-license"><p><span class="tqk-wpseo-badge is-wait">' . esc_html__('Free', 'tqk-wp-seo') . '</span></p>'
+            . '<p class="description">' . esc_html__('Pro is a separate add-on plugin ("TQK WP SEO Pro"). Install and activate it, then enter your license key here.', 'tqk-wp-seo') . '</p>'
+            . '<p><a class="button" href="' . esc_url(self::BUY_URL) . '" target="_blank" rel="noopener">' . esc_html__('Get TQK WP SEO Pro', 'tqk-wp-seo') . '</a></p></div>';
     }
 }

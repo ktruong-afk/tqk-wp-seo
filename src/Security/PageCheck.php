@@ -222,21 +222,21 @@ class PageCheck {
         $why = [];
         $title = static fn($h) => preg_match('/<title[^>]*>(.*?)<\/title>/is', $h, $m) ? trim(html_entity_decode(strip_tags($m[1]), ENT_QUOTES, 'UTF-8')) : '';
         if ($full && $title($a) !== $title($b)) {
-            $why[] = sprintf(__('another title: "%s"', 'tqk-wpseo'), mb_substr($title($a), 0, 80));
+            $why[] = sprintf(__('another title: "%s"', 'tqk-wp-seo'), mb_substr($title($a), 0, 80));
         }
         $extra = array_diff(self::link_hosts($a, $home_host), self::link_hosts($b, $home_host));
         $extra = array_values(array_filter($extra, static fn($h) => !self::matches($h, self::KNOWN)));
         if ($extra !== []) {
-            $why[] = sprintf(__('extra links to %s', 'tqk-wpseo'), implode(', ', array_slice($extra, 0, 6)));
+            $why[] = sprintf(__('extra links to %s', 'tqk-wp-seo'), implode(', ', array_slice($extra, 0, 6)));
         }
         if (count(Scan::spam_links_in($a, $home_host)) > count(Scan::spam_links_in($b, $home_host))) {
-            $why[] = __('gambling / pharma links', 'tqk-wpseo');
+            $why[] = __('gambling / pharma links', 'tqk-wp-seo');
         }
         if ($full) {
             $la = strlen(trim(strip_tags((string) preg_replace('/<(script|style)\b.*?<\/\1>/is', '', $a))));
             $lb = max(1, strlen(trim(strip_tags((string) preg_replace('/<(script|style)\b.*?<\/\1>/is', '', $b)))));
             if (abs($la - $lb) / $lb > 0.5 && abs($la - $lb) > 3000) {
-                $why[] = sprintf(__('%d%% more or less text', 'tqk-wpseo'), (int) round(100 * abs($la - $lb) / $lb));
+                $why[] = sprintf(__('%d%% more or less text', 'tqk-wp-seo'), (int) round(100 * abs($la - $lb) / $lb));
             }
         }
         return $why;
@@ -302,10 +302,10 @@ class PageCheck {
             $checks[] = ['sev' => $sev, 'msg' => $msg];
         };
         $names = [
-            'admin' => __('you (logged in)', 'tqk-wpseo'),
-            'visitor' => __('a visitor', 'tqk-wpseo'),
-            'referred' => __('a visitor coming from Google', 'tqk-wpseo'),
-            'googlebot' => __('Googlebot', 'tqk-wpseo'),
+            'admin' => __('you (logged in)', 'tqk-wp-seo'),
+            'visitor' => __('a visitor', 'tqk-wp-seo'),
+            'referred' => __('a visitor coming from Google', 'tqk-wp-seo'),
+            'googlebot' => __('Googlebot', 'tqk-wp-seo'),
         ];
         $base = $v['visitor'] ?? $v['admin'];
 
@@ -315,7 +315,7 @@ class PageCheck {
                 $to = self::redirect_of($v[$who] ?? []);
                 if ($to !== '' && $to !== self::redirect_of($base)) {
                     $sev = self::host_of($to, $home_host) !== strtolower($home_host) ? 'critical' : 'warning';
-                    $add($sev, sprintf(__('Only %1$s is redirected, to %2$s', 'tqk-wpseo'), $names[$who], $to));
+                    $add($sev, sprintf(__('Only %1$s is redirected, to %2$s', 'tqk-wp-seo'), $names[$who], $to));
                 }
             }
             // Content that differs by audience.
@@ -326,7 +326,7 @@ class PageCheck {
                 // Against the admin version only links count: the admin page
                 // legitimately carries the admin bar and builder tools.
                 foreach (self::diff($v[$a]['body'], $v[$b]['body'], $home_host, $b !== 'admin') as $why) {
-                    $add($b === 'admin' ? 'warning' : 'critical', sprintf(__('%1$s gets a different page than %2$s: %3$s', 'tqk-wpseo'), self::ucfirst($names[$a]), $names[$b], $why));
+                    $add($b === 'admin' ? 'warning' : 'critical', sprintf(__('%1$s gets a different page than %2$s: %3$s', 'tqk-wp-seo'), self::ucfirst($names[$a]), $names[$b], $why));
                 }
             }
             // Scripts only some audiences get.
@@ -336,22 +336,22 @@ class PageCheck {
                 $extra = array_filter($extra, static fn($h) => !self::matches($h, self::KNOWN) && $h !== strtolower((string) preg_replace('/^www\./', '', $home_host)));
                 if ($extra !== []) {
                     // Warning, not critical: analytics are often switched off for admins.
-                    $add('warning', sprintf(__('Scripts that visitors get but you (logged in) do not: %s', 'tqk-wpseo'), implode(', ', array_slice(array_unique(array_values($extra)), 0, 5))));
+                    $add('warning', sprintf(__('Scripts that visitors get but you (logged in) do not: %s', 'tqk-wp-seo'), implode(', ', array_slice(array_unique(array_values($extra)), 0, 5))));
                 }
             }
         }
 
         $html = (string) ($base['body'] ?? '');
         foreach (Scan::hidden_spam_links($html, $home_host) as $l) {
-            $add('critical', sprintf(__('Hidden spam link: %s', 'tqk-wpseo'), $l));
+            $add('critical', sprintf(__('Hidden spam link: %s', 'tqk-wp-seo'), $l));
         }
         foreach (self::hidden_iframes($html, $home_host) as $h) {
-            $add('critical', sprintf(__('Hidden iframe loading %s', 'tqk-wpseo'), $h));
+            $add('critical', sprintf(__('Hidden iframe loading %s', 'tqk-wp-seo'), $h));
         }
         $scripts = self::scripts($html, $home_host);
         foreach ($scripts as $s) {
             if ($s['kind'] === 'bad') {
-                $add('critical', sprintf(__('Crypto-mining / malicious script: %s', 'tqk-wpseo'), $s['host']));
+                $add('critical', sprintf(__('Crypto-mining / malicious script: %s', 'tqk-wp-seo'), $s['host']));
             }
         }
         $unknown = array_values(array_unique(array_column(array_filter($scripts, static fn($s) => $s['kind'] === 'unknown'), 'origin')));
@@ -359,7 +359,7 @@ class PageCheck {
         $labels = self::flag_labels();
         foreach ($inline as $s) {
             foreach ($s['flags'] as $fl) {
-                $add($fl['severity'], sprintf(__('Inline script #%1$d: %2$s', 'tqk-wpseo'), $s['index'] + 1, $labels[$fl['id']] ?? $fl['id']));
+                $add($fl['severity'], sprintf(__('Inline script #%1$d: %2$s', 'tqk-wp-seo'), $s['index'] + 1, $labels[$fl['id']] ?? $fl['id']));
             }
         }
         $crit = count(array_filter($checks, static fn($c) => $c['sev'] === 'critical'));
@@ -376,15 +376,15 @@ class PageCheck {
 
     public static function flag_labels(): array {
         return [
-            'eval_decode' => __('runs decoded hidden code (eval + atob/unescape)', 'tqk-wpseo'),
-            'charcode' => __('builds code from character numbers (obfuscation)', 'tqk-wpseo'),
-            'write_script' => __('writes a hidden script into the page', 'tqk-wpseo'),
-            'referrer_redirect' => __('redirects visitors depending on where they came from', 'tqk-wpseo'),
-            'device_redirect' => __('redirects depending on the device or bot', 'tqk-wpseo'),
-            'hex' => __('long hex-encoded text (obfuscation)', 'tqk-wpseo'),
-            'base64' => __('large encoded blob', 'tqk-wpseo'),
-            'built_src' => __('loads a script from an address it assembles or decodes', 'tqk-wpseo'),
-            'miner' => __('crypto-mining code', 'tqk-wpseo'),
+            'eval_decode' => __('runs decoded hidden code (eval + atob/unescape)', 'tqk-wp-seo'),
+            'charcode' => __('builds code from character numbers (obfuscation)', 'tqk-wp-seo'),
+            'write_script' => __('writes a hidden script into the page', 'tqk-wp-seo'),
+            'referrer_redirect' => __('redirects visitors depending on where they came from', 'tqk-wp-seo'),
+            'device_redirect' => __('redirects depending on the device or bot', 'tqk-wp-seo'),
+            'hex' => __('long hex-encoded text (obfuscation)', 'tqk-wp-seo'),
+            'base64' => __('large encoded blob', 'tqk-wp-seo'),
+            'built_src' => __('loads a script from an address it assembles or decodes', 'tqk-wp-seo'),
+            'miner' => __('crypto-mining code', 'tqk-wp-seo'),
         ];
     }
 
@@ -393,7 +393,7 @@ class PageCheck {
         check_ajax_referer(\TQK_WPSEO\Admin\Ajax::NONCE);
         $id = (int) ($_POST['post_id'] ?? 0);
         if ($id <= 0 || !current_user_can('edit_post', $id)) {
-            wp_send_json_error(['message' => __('Permission denied', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Permission denied', 'tqk-wp-seo')]);
         }
         $r = self::run($id);
         // Kept with the scan report, for AI agents reading it over MCP.

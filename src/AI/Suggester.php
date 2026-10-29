@@ -102,11 +102,11 @@ class Suggester {
     public static function generate(string $type, int $post_id, ?ProviderInterface $provider = null): array {
         $provider = $provider ?? Factory::create();
         if (!$provider) {
-            return ['error' => __('Enable Local AI in Settings first.', 'tqk-wpseo')];
+            return ['error' => __('Enable Local AI in Settings first.', 'tqk-wp-seo')];
         }
         $post = get_post($post_id);
         if (!$post) {
-            return ['error' => __('Post not found.', 'tqk-wpseo')];
+            return ['error' => __('Post not found.', 'tqk-wp-seo')];
         }
         $data = \TQK_WPSEO\Core\Data::for(['type' => 'singular', 'object_id' => $post_id, 'post_type' => $post->post_type ?? 'post']);
         $raw = match ($type) {
@@ -119,7 +119,7 @@ class Suggester {
             default => '',
         };
         if (trim($raw) === '') {
-            return ['error' => __('The AI provider returned nothing. Check endpoint and model.', 'tqk-wpseo')];
+            return ['error' => __('The AI provider returned nothing. Check endpoint and model.', 'tqk-wp-seo')];
         }
         return $type === 'explain' ? [$raw] : self::parse_list($raw);
     }
@@ -145,7 +145,7 @@ class Suggester {
         if (!$provider) {
             $out = [];
             foreach (array_slice(array_values(array_unique(array_map('intval', $ids))), 0, 10) as $id) {
-                $out[$id] = ['error' => __('Enable Local AI in Settings first.', 'tqk-wpseo')];
+                $out[$id] = ['error' => __('Enable Local AI in Settings first.', 'tqk-wp-seo')];
             }
             return $out;
         }
@@ -162,11 +162,11 @@ class Suggester {
     public static function ajax(): void {
         check_ajax_referer('tqk-wpseo-ai');
         if (!current_user_can('edit_posts')) {
-            wp_send_json_error(['message' => __('Permission denied', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Permission denied', 'tqk-wp-seo')]);
         }
         $type = sanitize_key($_POST['ai_type'] ?? '');
         if (!in_array($type, ['title', 'description', 'keywords'], true)) {
-            wp_send_json_error(['message' => __('Unknown action', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Unknown action', 'tqk-wp-seo')]);
         }
         $raw_ids = isset($_POST['post_ids']) && is_array($_POST['post_ids']) ? $_POST['post_ids'] : [];
         if ($raw_ids !== []) {

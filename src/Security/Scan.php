@@ -31,16 +31,16 @@ class Scan {
     /** Signatures: [id, regex, severity, label]. Tuned for low noise over coverage. */
     public static function signatures(): array {
         return [
-            ['eval_decode', '/\beval\s*\(\s*(?:base64_decode|gzinflate|gzuncompress|gzdecode|str_rot13|strrev|rawurldecode|hex2bin)\s*\(/i', 'critical', __('eval() of decoded data (classic backdoor)', 'tqk-wpseo')],
-            ['assert_input', '/\bassert\s*\(\s*\$_(?:POST|GET|REQUEST|COOKIE)/i', 'critical', __('assert() on request input', 'tqk-wpseo')],
-            ['exec_input', '/\b(?:shell_exec|passthru|system|proc_open|popen|exec)\s*\(\s*\$_(?:POST|GET|REQUEST|COOKIE)/i', 'critical', __('Shell command from request input', 'tqk-wpseo')],
-            ['call_input', '/\$_(?:POST|GET|REQUEST|COOKIE)\s*\[[^\]]{1,40}\]\s*\(/i', 'critical', __('Function name taken from request input', 'tqk-wpseo')],
-            ['preg_e', '/preg_replace\s*\(\s*([\'"])(.).{0,200}\2[imsx]*e[imsx]*\1/i', 'critical', __('preg_replace /e code execution', 'tqk-wpseo')],
-            ['write_input', '/\b(?:file_put_contents|fwrite)\s*\([^;]{0,120}\$_(?:POST|GET|REQUEST)/i', 'warning', __('Writes request input to a file', 'tqk-wpseo')],
-            ['long_b64', '/(?:base64_decode|gzinflate)\s*\(\s*[\'"][A-Za-z0-9+\/=]{800,}/', 'warning', __('Large encoded payload decoded at runtime', 'tqk-wpseo')],
-            ['hex_blob', '/(?:\\\\x[0-9a-f]{2}){40,}/i', 'warning', __('Long hex-escaped string (obfuscation)', 'tqk-wpseo')],
-            ['create_admin', '/wp_(?:insert|create)_user\s*\([^;]{0,300}administrator/is', 'critical', __('Creates an administrator account in code', 'tqk-wpseo')],
-            ['nulled', '/\b(?:nulled\s+by|wplocker|null24|babiato|gpl\s*pirate|warez|cracked\s+by)\b/i', 'warning', __('"Nulled" / cracked distribution marker', 'tqk-wpseo')],
+            ['eval_decode', '/\beval\s*\(\s*(?:base64_decode|gzinflate|gzuncompress|gzdecode|str_rot13|strrev|rawurldecode|hex2bin)\s*\(/i', 'critical', __('eval() of decoded data (classic backdoor)', 'tqk-wp-seo')],
+            ['assert_input', '/\bassert\s*\(\s*\$_(?:POST|GET|REQUEST|COOKIE)/i', 'critical', __('assert() on request input', 'tqk-wp-seo')],
+            ['exec_input', '/\b(?:shell_exec|passthru|system|proc_open|popen|exec)\s*\(\s*\$_(?:POST|GET|REQUEST|COOKIE)/i', 'critical', __('Shell command from request input', 'tqk-wp-seo')],
+            ['call_input', '/\$_(?:POST|GET|REQUEST|COOKIE)\s*\[[^\]]{1,40}\]\s*\(/i', 'critical', __('Function name taken from request input', 'tqk-wp-seo')],
+            ['preg_e', '/preg_replace\s*\(\s*([\'"])(.).{0,200}\2[imsx]*e[imsx]*\1/i', 'critical', __('preg_replace /e code execution', 'tqk-wp-seo')],
+            ['write_input', '/\b(?:file_put_contents|fwrite)\s*\([^;]{0,120}\$_(?:POST|GET|REQUEST)/i', 'warning', __('Writes request input to a file', 'tqk-wp-seo')],
+            ['long_b64', '/(?:base64_decode|gzinflate)\s*\(\s*[\'"][A-Za-z0-9+\/=]{800,}/', 'warning', __('Large encoded payload decoded at runtime', 'tqk-wp-seo')],
+            ['hex_blob', '/(?:\\\\x[0-9a-f]{2}){40,}/i', 'warning', __('Long hex-escaped string (obfuscation)', 'tqk-wp-seo')],
+            ['create_admin', '/wp_(?:insert|create)_user\s*\([^;]{0,300}administrator/is', 'critical', __('Creates an administrator account in code', 'tqk-wp-seo')],
+            ['nulled', '/\b(?:nulled\s+by|wplocker|null24|babiato|gpl\s*pirate|warez|cracked\s+by)\b/i', 'warning', __('"Nulled" / cracked distribution marker', 'tqk-wp-seo')],
         ];
     }
 
@@ -128,21 +128,21 @@ class Scan {
         };
         $why = [];
         if ($title($as_bot) !== $title($as_user)) {
-            $why[] = sprintf(__('Googlebot gets another <title>: "%s"', 'tqk-wpseo'), mb_substr($title($as_bot), 0, 80));
+            $why[] = sprintf(__('Googlebot gets another <title>: "%s"', 'tqk-wp-seo'), mb_substr($title($as_bot), 0, 80));
         }
         $only_bot = array_diff($ext($as_bot), $ext($as_user));
         if ($only_bot !== []) {
-            $why[] = sprintf(__('Links only Googlebot sees: %s', 'tqk-wpseo'), implode(', ', array_slice($only_bot, 0, 6)));
+            $why[] = sprintf(__('Links only Googlebot sees: %s', 'tqk-wp-seo'), implode(', ', array_slice($only_bot, 0, 6)));
         }
         $bot_spam = self::spam_links_in($as_bot, $home_host);
         $user_spam = self::spam_links_in($as_user, $home_host);
         if (count($bot_spam) > count($user_spam)) {
-            $why[] = __('Spam links (gambling/pharma) only in the Googlebot version.', 'tqk-wpseo');
+            $why[] = __('Spam links (gambling/pharma) only in the Googlebot version.', 'tqk-wp-seo');
         }
         $len_b = strlen(strip_tags($as_bot));
         $len_u = max(1, strlen(strip_tags($as_user)));
         if (abs($len_b - $len_u) / $len_u > 0.5 && abs($len_b - $len_u) > 3000) {
-            $why[] = sprintf(__('Googlebot text is %d%% different in length.', 'tqk-wpseo'), (int) round(100 * abs($len_b - $len_u) / $len_u));
+            $why[] = sprintf(__('Googlebot text is %d%% different in length.', 'tqk-wp-seo'), (int) round(100 * abs($len_b - $len_u) / $len_u));
         }
         return $why;
     }
@@ -289,7 +289,7 @@ class Scan {
                 continue;
             }
             if (md5_file($path) !== $md5) {
-                self::add($s, 'critical', $file, __('Core file differs from the official WordPress release.', 'tqk-wpseo'));
+                self::add($s, 'critical', $file, __('Core file differs from the official WordPress release.', 'tqk-wp-seo'));
             }
         }
     }
@@ -297,7 +297,7 @@ class Scan {
     private static function task_core_extra(array &$s): void {
         $sums = self::core_checksums();
         if (!is_array($sums)) {
-            self::add($s, 'info', 'WordPress', __('Official core checksums unavailable for this version/locale: core was not verified.', 'tqk-wpseo'));
+            self::add($s, 'info', 'WordPress', __('Official core checksums unavailable for this version/locale: core was not verified.', 'tqk-wp-seo'));
             return;
         }
         foreach (['wp-admin', 'wp-includes'] as $dir) {
@@ -305,7 +305,7 @@ class Scan {
             foreach ($it as $f) {
                 $rel = $dir . '/' . str_replace('\\', '/', substr($f->getPathname(), strlen(ABSPATH . $dir) + 1));
                 if (self::is_executable_name($rel) && !isset($sums[$rel])) {
-                    self::add($s, 'critical', $rel, __('PHP file that is not part of WordPress core.', 'tqk-wpseo'));
+                    self::add($s, 'critical', $rel, __('PHP file that is not part of WordPress core.', 'tqk-wp-seo'));
                 }
             }
         }
@@ -349,14 +349,14 @@ class Scan {
             }
             if (!isset($sums[$rel])) {
                 if (self::is_executable_name($rel) && !self::is_harmless_stub((string) @file_get_contents($f->getPathname(), false, null, 0, 4096))) {
-                    self::add($s, 'critical', 'plugin ' . $name . ': ' . $rel, __('PHP file not in the official release of this plugin.', 'tqk-wpseo'));
+                    self::add($s, 'critical', 'plugin ' . $name . ': ' . $rel, __('PHP file not in the official release of this plugin.', 'tqk-wp-seo'));
                 }
                 continue;
             }
             $md5 = $sums[$rel]['md5'] ?? '';
             $ok = is_array($md5) ? in_array(md5_file($f->getPathname()), $md5, true) : md5_file($f->getPathname()) === $md5;
             if (!$ok) {
-                self::add($s, 'critical', 'plugin ' . $name . ': ' . $rel, __('File modified compared with the official release.', 'tqk-wpseo'));
+                self::add($s, 'critical', 'plugin ' . $name . ': ' . $rel, __('File modified compared with the official release.', 'tqk-wp-seo'));
             }
         }
     }
@@ -401,7 +401,7 @@ class Scan {
                 continue;
             }
             $rel = 'uploads/' . str_replace('\\', '/', substr($f->getPathname(), strlen($dir) + 1));
-            self::add($s, 'critical', $rel, __('Executable PHP file inside uploads (uploads should only hold media).', 'tqk-wpseo'));
+            self::add($s, 'critical', $rel, __('Executable PHP file inside uploads (uploads should only hold media).', 'tqk-wp-seo'));
         }
     }
 
@@ -410,10 +410,10 @@ class Scan {
         foreach ((array) $admins as $u) {
             $age = time() - (int) strtotime((string) $u->user_registered);
             if ($age < 30 * DAY_IN_SECONDS) {
-                self::add($s, 'warning', 'user ' . $u->user_login, sprintf(__('Administrator created %d day(s) ago — make sure you know this account.', 'tqk-wpseo'), (int) floor($age / DAY_IN_SECONDS)));
+                self::add($s, 'warning', 'user ' . $u->user_login, sprintf(__('Administrator created %d day(s) ago — make sure you know this account.', 'tqk-wp-seo'), (int) floor($age / DAY_IN_SECONDS)));
             }
         }
-        self::add($s, 'info', __('Administrators', 'tqk-wpseo'), sprintf(__('%d administrator account(s) on this site.', 'tqk-wpseo'), count((array) $admins)));
+        self::add($s, 'info', __('Administrators', 'tqk-wp-seo'), sprintf(__('%d administrator account(s) on this site.', 'tqk-wp-seo'), count((array) $admins)));
     }
 
     private static function task_cloak(array &$s, string $url): void {
@@ -427,17 +427,17 @@ class Scan {
         $hb = (string) wp_remote_retrieve_body($bot);
         $hu = (string) wp_remote_retrieve_body($user);
         foreach (self::compare_cloak($hb, $hu, $host) as $why) {
-            self::add($s, 'critical', $url, __('Cloaking: ', 'tqk-wpseo') . $why);
+            self::add($s, 'critical', $url, __('Cloaking: ', 'tqk-wp-seo') . $why);
         }
         foreach (self::hidden_spam_links($hu, $host) as $l) {
-            self::add($s, 'critical', $url, sprintf(__('Hidden spam link: %s', 'tqk-wpseo'), $l));
+            self::add($s, 'critical', $url, sprintf(__('Hidden spam link: %s', 'tqk-wp-seo'), $l));
         }
     }
 
     /** AJAX entry, routed from Admin\Ajax (nonce + capability already checked). */
     public static function ajax(): void {
         if (!current_user_can('manage_options')) {
-            wp_send_json_error(['message' => __('Permission denied', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Permission denied', 'tqk-wp-seo')]);
         }
         $op = sanitize_key($_POST['op'] ?? '');
         $s = $op === 'start' ? self::start() : ($op === 'step' ? self::step() : self::state());
@@ -456,9 +456,9 @@ class Scan {
         $crit = $count('critical');
         $html = '<div class="tqk-sec-summary ' . ($crit > 0 ? 'is-bad' : 'is-good') . '"><strong>'
             . esc_html($crit > 0
-                ? sprintf(__('%d critical sign(s) of compromise found.', 'tqk-wpseo'), $crit)
-                : __('No sign of compromise found.', 'tqk-wpseo'))
-            . '</strong> ' . esc_html(sprintf(__('%1$d warning(s). Verified against official checksums: %2$s. Heuristics only (no official checksums): %3$s.', 'tqk-wpseo'),
+                ? sprintf(__('%d critical sign(s) of compromise found.', 'tqk-wp-seo'), $crit)
+                : __('No sign of compromise found.', 'tqk-wp-seo'))
+            . '</strong> ' . esc_html(sprintf(__('%1$d warning(s). Verified against official checksums: %2$s. Heuristics only (no official checksums): %3$s.', 'tqk-wp-seo'),
                 $count('warning'),
                 ($s['core_ok'] ?? false ? 'WordPress core, ' : '') . (implode(', ', (array) ($s['verified'] ?? [])) ?: '—'),
                 implode(', ', (array) ($s['unverified'] ?? [])) ?: '—'))
@@ -469,9 +469,9 @@ class Scan {
         usort($f, static fn($a, $b) => ['critical' => 0, 'warning' => 1, 'info' => 2][$a['sev']] <=> ['critical' => 0, 'warning' => 1, 'info' => 2][$b['sev']]);
         $rows = [];
         foreach ($f as $x) {
-            $rows[] = [$x['sev'] === 'critical' ? '✗ ' . __('Critical', 'tqk-wpseo') : ($x['sev'] === 'warning' ? '⚠ ' . __('Warning', 'tqk-wpseo') : 'ℹ'), $x['where'], esc_html($x['what'])];
+            $rows[] = [$x['sev'] === 'critical' ? '✗ ' . __('Critical', 'tqk-wp-seo') : ($x['sev'] === 'warning' ? '⚠ ' . __('Warning', 'tqk-wp-seo') : 'ℹ'), $x['where'], esc_html($x['what'])];
         }
-        return $html . \TQK_WPSEO\Admin\View::issue_table([__('Level', 'tqk-wpseo'), __('Where', 'tqk-wpseo'), __('What', 'tqk-wpseo')], $rows)
-            . '<p class="description">' . esc_html__('Read-only scan: nothing was changed or deleted. A critical finding in a cracked plugin or theme means: remove it and install the official version, then change all admin passwords.', 'tqk-wpseo') . '</p>';
+        return $html . \TQK_WPSEO\Admin\View::issue_table([__('Level', 'tqk-wp-seo'), __('Where', 'tqk-wp-seo'), __('What', 'tqk-wp-seo')], $rows)
+            . '<p class="description">' . esc_html__('Read-only scan: nothing was changed or deleted. A critical finding in a cracked plugin or theme means: remove it and install the official version, then change all admin passwords.', 'tqk-wp-seo') . '</p>';
     }
 }

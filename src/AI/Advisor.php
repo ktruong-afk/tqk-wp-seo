@@ -171,15 +171,15 @@ class Advisor {
         $d = (string) ($s['seo_description'] ?? '');
         $out = ['seo_title' => '', 'seo_description' => ''];
         if ($t === '' || mb_strlen($t) > 60) {
-            $out['seo_title'] = sprintf(__('%d characters (max 60)', 'tqk-wpseo'), mb_strlen($t));
+            $out['seo_title'] = sprintf(__('%d characters (max 60)', 'tqk-wp-seo'), mb_strlen($t));
         } elseif ($kw !== '' && mb_stripos($t, $kw) === false) {
-            $out['seo_title'] = __('focus keyword not in title', 'tqk-wpseo');
+            $out['seo_title'] = __('focus keyword not in title', 'tqk-wp-seo');
         }
         $dl = mb_strlen($d);
         if ($dl < 120 || $dl > 160) {
-            $out['seo_description'] = sprintf(__('%d characters (120-160)', 'tqk-wpseo'), $dl);
+            $out['seo_description'] = sprintf(__('%d characters (120-160)', 'tqk-wp-seo'), $dl);
         } elseif ($kw !== '' && mb_stripos($d, $kw) === false) {
-            $out['seo_description'] = __('focus keyword not in description', 'tqk-wpseo');
+            $out['seo_description'] = __('focus keyword not in description', 'tqk-wp-seo');
         }
         return $out;
     }
@@ -327,7 +327,7 @@ class Advisor {
         }
         if ($gemini === null) {
             $run['status'] = 'paused';
-            $run['error'] = __('Choose Gemini as AI provider and paste an API key in Settings.', 'tqk-wpseo');
+            $run['error'] = __('Choose Gemini as AI provider and paste an API key in Settings.', 'tqk-wp-seo');
             self::save_run($run);
             return ['run' => $run, 'fatal' => $run['error']] + $out;
         }
@@ -431,13 +431,13 @@ class Advisor {
             return '<label class="tqk-ai-opt"><input type="checkbox" data-pick="' . esc_attr($field) . '"' . ($problem === '' ? ' checked' : '') . '>'
                 . '<span class="tqk-ai-k">' . esc_html($label) . '</span>'
                 . '<span class="tqk-ai-v">' . esc_html($value)
-                . ($current !== '' ? '<small class="tqk-ai-was">' . esc_html(sprintf(__('now: %s', 'tqk-wpseo'), $current)) . '</small>' : '')
+                . ($current !== '' ? '<small class="tqk-ai-was">' . esc_html(sprintf(__('now: %s', 'tqk-wp-seo'), $current)) . '</small>' : '')
                 . ($problem !== '' ? '<small class="tqk-ai-flag">' . esc_html($problem) . '</small>' : '')
                 . '</span></label>';
         };
-        $body = $line('seo_title', __('Title', 'tqk-wpseo'), (string) get_post_meta($id, '_tqk_wpseo_title', true), (string) ($d['seo_title'] ?? ''), (string) ($checks['seo_title'] ?? ''))
-            . $line('seo_description', __('Description', 'tqk-wpseo'), (string) get_post_meta($id, '_tqk_wpseo_description', true), (string) ($d['seo_description'] ?? ''), (string) ($checks['seo_description'] ?? ''))
-            . $line('focus_keyword', __('Focus keyword', 'tqk-wpseo'), (string) get_post_meta($id, '_tqk_wpseo_focus_keyword', true), (string) ($d['focus_keyword'] ?? ''), '');
+        $body = $line('seo_title', __('Title', 'tqk-wp-seo'), (string) get_post_meta($id, '_tqk_wpseo_title', true), (string) ($d['seo_title'] ?? ''), (string) ($checks['seo_title'] ?? ''))
+            . $line('seo_description', __('Description', 'tqk-wp-seo'), (string) get_post_meta($id, '_tqk_wpseo_description', true), (string) ($d['seo_description'] ?? ''), (string) ($checks['seo_description'] ?? ''))
+            . $line('focus_keyword', __('Focus keyword', 'tqk-wp-seo'), (string) get_post_meta($id, '_tqk_wpseo_focus_keyword', true), (string) ($d['focus_keyword'] ?? ''), '');
         foreach ((array) ($d['image_alts'] ?? []) as $a) {
             $body .= '<label class="tqk-ai-opt"><input type="checkbox" data-pick-alt="' . esc_attr((string) $a['src']) . '" checked>'
                 . '<span class="tqk-ai-k">ALT</span><span class="tqk-ai-v">' . esc_html((string) $a['alt'])
@@ -452,8 +452,8 @@ class Advisor {
         }
         return '<div class="tqk-ai-card" data-post="' . $id . '">'
             . '<div class="tqk-ai-head"><a href="' . esc_url((string) get_permalink($id)) . '" target="_blank" rel="noopener">' . esc_html($title) . '</a>'
-            . '<span class="tqk-ai-actions"><a href="' . esc_url(admin_url('post.php?post=' . $id . '&action=edit')) . '" class="button button-small">' . esc_html__('Edit', 'tqk-wpseo') . '</a> '
-            . '<button type="button" class="button button-small button-primary" data-ai-apply>' . esc_html__('Apply ticked', 'tqk-wpseo') . '</button></span></div>'
+            . '<span class="tqk-ai-actions"><a href="' . esc_url(admin_url('post.php?post=' . $id . '&action=edit')) . '" class="button button-small">' . esc_html__('Edit', 'tqk-wp-seo') . '</a> '
+            . '<button type="button" class="button button-small button-primary" data-ai-apply>' . esc_html__('Apply ticked', 'tqk-wp-seo') . '</button></span></div>'
             . $body . '</div>';
     }
 
@@ -469,13 +469,13 @@ class Advisor {
             $pick = json_decode((string) wp_unslash($_POST['pick'] ?? ''), true);
             $done = self::apply($id, is_array($pick) ? $pick : []);
             if ($done === []) {
-                wp_send_json_error(['message' => __('Nothing applied.', 'tqk-wpseo')]);
+                wp_send_json_error(['message' => __('Nothing applied.', 'tqk-wp-seo')]);
             }
-            wp_send_json_success(['message' => sprintf(__('Applied %d change(s).', 'tqk-wpseo'), count($done))]);
+            wp_send_json_success(['message' => sprintf(__('Applied %d change(s).', 'tqk-wp-seo'), count($done))]);
         }
         $run = self::run();
         if ($run === [] || (string) ($_POST['run'] ?? '') !== (string) $run['id']) {
-            wp_send_json_error(['message' => __('This AI run is no longer current. Reload the page.', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('This AI run is no longer current. Reload the page.', 'tqk-wp-seo')]);
         }
         if ($op === 'retry') {
             $run = self::retry_failed($run);
@@ -502,6 +502,6 @@ class Advisor {
                 'rows' => $rows,
             ]);
         }
-        wp_send_json_error(['message' => __('Unknown action', 'tqk-wpseo')]);
+        wp_send_json_error(['message' => __('Unknown action', 'tqk-wp-seo')]);
     }
 }

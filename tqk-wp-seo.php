@@ -6,10 +6,12 @@
  * Version: 0.2.0
  * Author: Trương Quang Khải
  * Author URI: https://www.facebook.com/Unk.khai/
- * Text Domain: tqk-wpseo
+ * Text Domain: tqk-wp-seo
  * Domain Path: /languages
  * Requires at least: 6.2
  * Requires PHP: 8.0
+ * License: GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 defined('ABSPATH') || exit;
@@ -23,10 +25,10 @@ define('TQK_WPSEO_VERSION_OPTION', 'tqk_wpseo_version');
 
 /**
  * i18n MANDATORY: load text-domain first, before any module.
- * Rule: every user-facing string MUST use text-domain 'tqk-wpseo'.
+ * Rule: every user-facing string MUST use text-domain 'tqk-wp-seo'.
  */
 function tqk_wpseo_load_textdomain() {
-    load_plugin_textdomain('tqk-wpseo', false, dirname(plugin_basename(__FILE__)) . '/languages');
+    load_plugin_textdomain('tqk-wp-seo', false, dirname(plugin_basename(__FILE__)) . '/languages');
 }
 add_action('plugins_loaded', 'tqk_wpseo_load_textdomain');
 

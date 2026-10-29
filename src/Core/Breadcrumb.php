@@ -14,7 +14,7 @@ class Breadcrumb {
         if ($ctx === []) {
             $ctx = Context::resolve();
         }
-        $trail = [[__('Home', 'tqk-wpseo'), home_url('/')]];
+        $trail = [[__('Home', 'tqk-wp-seo'), home_url('/')]];
         $type = $ctx['type'] ?? 'general';
 
         if ($type === 'singular') {

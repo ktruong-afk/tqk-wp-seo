@@ -3,7 +3,7 @@
 // No network: Gemini answers are mocked through $GLOBALS['__http_queue'].
 // Run: php tests/php/s17-gemini-advisor.php
 require __DIR__ . '/stubs.php';
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 
 if (!function_exists('wp_generate_password')) {
     function wp_generate_password($len = 12, $special = true, $extra = false) {

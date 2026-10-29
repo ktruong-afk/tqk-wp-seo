@@ -30,10 +30,10 @@ class Activator {
         global $wp_version;
 
         if (version_compare(PHP_VERSION, '8.0', '<')) {
-            wp_die(esc_html__('TQK WP SEO requires PHP 8.0 or higher.', 'tqk-wpseo'));
+            wp_die(esc_html__('TQK WP SEO requires PHP 8.0 or higher.', 'tqk-wp-seo'));
         }
         if (isset($wp_version) && version_compare($wp_version, '6.0', '<')) {
-            wp_die(esc_html__('TQK WP SEO requires WordPress 6.0 or higher.', 'tqk-wpseo'));
+            wp_die(esc_html__('TQK WP SEO requires WordPress 6.0 or higher.', 'tqk-wp-seo'));
         }
     }
     /** @return string[] Created table names (without prefix handling for tests). */
@@ -215,7 +215,11 @@ class Activator {
         if (get_option(TQK_WPSEO_OPTION) === false) {
             add_option(TQK_WPSEO_OPTION, self::default_settings());
         }
-        register_setting('tqk_wpseo', TQK_WPSEO_OPTION);
+        register_setting('tqk_wpseo', TQK_WPSEO_OPTION, [
+            'type' => 'array',
+            'sanitize_callback' => ['\TQK_WPSEO\Admin\Settings', 'sanitize'],
+            'default' => self::default_settings(),
+        ]);
     }
 
     /** @return string[] Registered meta keys. */

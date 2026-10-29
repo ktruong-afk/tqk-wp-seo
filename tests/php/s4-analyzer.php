@@ -1,7 +1,7 @@
 <?php
 // S4 tests: analyzer findings, keyword, scores, queue. Run: php tests/php/s4-analyzer.php
 require __DIR__ . '/stubs.php';
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 
 $fail = 0;
 function check($name, $cond) {

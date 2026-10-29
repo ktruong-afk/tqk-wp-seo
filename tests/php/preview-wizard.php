@@ -1,7 +1,7 @@
 <?php
 // Appended by preview run: wizard shots.
 require __DIR__ . '/stubs.php';
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 call_user_func($GLOBALS['__activation']);
 do_action('init');
 $out = 'C:\\Users\\KHAI\\AppData\\Local\\Temp\\opencode\\tqk-ui';

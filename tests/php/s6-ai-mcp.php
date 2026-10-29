@@ -1,7 +1,7 @@
 <?php
 // S6 tests: AI providers, suggester, MCP tools. Run: php tests/php/s6-ai-mcp.php
 require __DIR__ . '/stubs.php';
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 
 $fail = 0;
 function check($name, $cond) {

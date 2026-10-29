@@ -14,7 +14,7 @@ defined('ABSPATH') || exit;
       <?php echo \TQK_WPSEO\Admin\View::mark(); // phpcs:ignore ?>
       <div>
         <p class="tqk-wpseo-brand" style="margin:0">
-          <?php esc_html_e('TQK WP SEO', 'tqk-wpseo'); ?>
+          <?php esc_html_e('TQK WP SEO', 'tqk-wp-seo'); ?>
           <span class="tqk-wpseo-ver"><?php echo esc_html(TQK_WPSEO_VERSION); ?></span>
         </p>
         <h1><?php echo esc_html($title); ?></h1>

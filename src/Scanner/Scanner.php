@@ -204,9 +204,9 @@ class Scanner {
         $out = [];
         $settings = array_merge(\TQK_WPSEO\Core\Activator::default_settings(), (array) get_option(TQK_WPSEO_OPTION, []));
         if (empty($settings['sitemap_enabled'])) {
-            $out[] = ['id' => 'site_sitemap_off', 'group' => 'technical', 'severity' => 'critical', 'message' => __('Sitemap is disabled.', 'tqk-wpseo'), 'fix' => 'sitemap'];
+            $out[] = ['id' => 'site_sitemap_off', 'group' => 'technical', 'severity' => 'critical', 'message' => __('Sitemap is disabled.', 'tqk-wp-seo'), 'fix' => 'sitemap'];
         } elseif (self::maps_empty()) {
-            $out[] = ['id' => 'site_sitemap_empty', 'group' => 'technical', 'severity' => 'warning', 'message' => __('Sitemap has no URLs.', 'tqk-wpseo'), 'fix' => 'sitemap'];
+            $out[] = ['id' => 'site_sitemap_empty', 'group' => 'technical', 'severity' => 'warning', 'message' => __('Sitemap has no URLs.', 'tqk-wp-seo'), 'fix' => 'sitemap'];
         }
         $robots = is_string(get_option(\TQK_WPSEO\Sitemap\Sitemap::ROBOTS_OPTION, '')) ? (string) get_option(\TQK_WPSEO\Sitemap\Sitemap::ROBOTS_OPTION, '') : '';
         $robots = trim($robots) !== '' ? $robots : \TQK_WPSEO\Sitemap\Sitemap::default_robots();
@@ -215,10 +215,10 @@ class Scanner {
         }
         $map = is_array($settings['schema_map'] ?? null) ? $settings['schema_map'] : [];
         if ($map === [] || count(array_filter($map)) === 0) {
-            $out[] = ['id' => 'site_schema_map', 'group' => 'schema', 'severity' => 'warning', 'message' => __('Schema templates not configured.', 'tqk-wpseo'), 'fix' => 'schema'];
+            $out[] = ['id' => 'site_schema_map', 'group' => 'schema', 'severity' => 'warning', 'message' => __('Schema templates not configured.', 'tqk-wp-seo'), 'fix' => 'schema'];
         }
         if (trim((string) get_bloginfo('name')) === '' || trim((string) get_bloginfo('description')) === '') {
-            $out[] = ['id' => 'site_home_meta', 'group' => 'content', 'severity' => 'warning', 'message' => __('Homepage title or tagline is empty.', 'tqk-wpseo'), 'fix' => 'home'];
+            $out[] = ['id' => 'site_home_meta', 'group' => 'content', 'severity' => 'warning', 'message' => __('Homepage title or tagline is empty.', 'tqk-wp-seo'), 'fix' => 'home'];
         }
         return $out;
     }
@@ -239,11 +239,11 @@ class Scanner {
     public static function ajax(): void {
         check_ajax_referer('tqk-wpseo-scan');
         if (!\TQK_WPSEO\Admin\Access::can()) {
-            wp_send_json_error(['message' => __('Permission denied', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Permission denied', 'tqk-wp-seo')]);
         }
         $op = sanitize_key($_POST['op'] ?? 'status');
         if (($op === 'start' || $op === 'step') && !\TQK_WPSEO\Core\Modules::is_active('analyzer')) {
-            wp_send_json_error(['message' => __('Enable the Analyzer module first.', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Enable the Analyzer module first.', 'tqk-wp-seo')]);
         }
         if ($op === 'start') {
             wp_send_json_success(self::start(sanitize_key($_POST['mode'] ?? 'full')));
@@ -262,10 +262,10 @@ class Scanner {
             $att_id = (int) ($_POST['attachment_id'] ?? 0);
             $alt = sanitize_text_field(wp_unslash($_POST['alt'] ?? ''));
             if ($att_id <= 0 || get_post_type($att_id) !== 'attachment') {
-                wp_send_json_error(['message' => __('Post not found.', 'tqk-wpseo')]);
+                wp_send_json_error(['message' => __('Post not found.', 'tqk-wp-seo')]);
             }
             $alt === '' ? delete_post_meta($att_id, '_wp_attachment_image_alt') : update_post_meta($att_id, '_wp_attachment_image_alt', $alt);
-            wp_send_json_success(['message' => __('ALT saved.', 'tqk-wpseo')]);
+            wp_send_json_success(['message' => __('ALT saved.', 'tqk-wp-seo')]);
         }
         wp_send_json_success([
             'job' => get_option(self::JOB_OPTION, []),

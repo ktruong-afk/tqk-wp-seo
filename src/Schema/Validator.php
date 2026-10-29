@@ -28,7 +28,7 @@ class Validator {
                 if ($spec['required']) {
                     $errors[] = [
                         'field' => $name,
-                        'message' => sprintf(__('%s is required for %s.', 'tqk-wpseo'), $spec['label'], $type),
+                        'message' => sprintf(__('%s is required for %s.', 'tqk-wp-seo'), $spec['label'], $type),
                     ];
                 }
                 continue;
@@ -55,18 +55,18 @@ class Validator {
      */
     private static function rules_for(string $name): array {
         $duration = [
-            ['kind' => 'duration', 'param' => '', 'message' => __('Use ISO 8601 duration (PT30M) or a readable time like 30 phút.', 'tqk-wpseo')],
+            ['kind' => 'duration', 'param' => '', 'message' => __('Use ISO 8601 duration (PT30M) or a readable time like 30 phút.', 'tqk-wp-seo')],
         ];
         return match ($name) {
             'prep_time', 'cook_time', 'total_time', 'howto_total_time' => $duration,
             'course_rating' => [
-                ['kind' => 'number_range', 'param' => [0, 5], 'message' => __('Rating must be between 0 and 5.', 'tqk-wpseo')],
+                ['kind' => 'number_range', 'param' => [0, 5], 'message' => __('Rating must be between 0 and 5.', 'tqk-wp-seo')],
             ],
             'course_hours' => [
-                ['kind' => 'number_range', 'param' => [0, 10000], 'message' => __('Hours must be a positive number.', 'tqk-wpseo')],
+                ['kind' => 'number_range', 'param' => [0, 10000], 'message' => __('Hours must be a positive number.', 'tqk-wp-seo')],
             ],
             'event_start', 'event_end' => [
-                ['kind' => 'date', 'param' => '', 'message' => __('Use a valid date and time.', 'tqk-wpseo')],
+                ['kind' => 'date', 'param' => '', 'message' => __('Use a valid date and time.', 'tqk-wp-seo')],
             ],
             default => [],
         };

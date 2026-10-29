@@ -22,12 +22,12 @@ import sys
 import zipfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-INCLUDE = ['tqk-wpseo.php', 'uninstall.php', 'readme.txt', 'src', 'assets', 'templates', 'languages']
+INCLUDE = ['tqk-wp-seo.php', 'uninstall.php', 'readme.txt', 'src', 'assets', 'templates', 'languages']
 SKIP_NAMES = {'.DS_Store', 'Thumbs.db'}
 
 
 def versions():
-    main = (ROOT / 'tqk-wpseo.php').read_text(encoding='utf-8')
+    main = (ROOT / 'tqk-wp-seo.php').read_text(encoding='utf-8')
     readme = (ROOT / 'readme.txt').read_text(encoding='utf-8')
     header = re.search(r'^\s*\*\s*Version:\s*([\w.\-]+)', main, re.M)
     const = re.search(r"define\('TQK_WPSEO_VERSION',\s*'([^']+)'\)", main)
@@ -45,7 +45,7 @@ def main():
 
     dist = ROOT / 'dist'
     dist.mkdir(exist_ok=True)
-    out = dist / ('tqk-wpseo-%s.zip' % version)
+    out = dist / ('tqk-wp-seo-%s.zip' % version)
     count = 0
     with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
         for item in INCLUDE:
@@ -54,7 +54,7 @@ def main():
             for f in files:
                 if f.name in SKIP_NAMES:
                     continue
-                z.write(f, 'tqk-wpseo/' + f.relative_to(ROOT).as_posix())
+                z.write(f, 'tqk-wp-seo/' + f.relative_to(ROOT).as_posix())
                 count += 1
     print('built %s (%d files, %.1f KB)' % (out.relative_to(ROOT), count, out.stat().st_size / 1024))
     build_pro(dist)

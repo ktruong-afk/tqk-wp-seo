@@ -15,21 +15,21 @@ class Modules {
     /** @return array Slug => [title, description, default]. */
     public static function all(): array {
         return [
-            'sitemap' => [__('Sitemap & robots.txt', 'tqk-wpseo'), __('XML sitemap per post type, robots.txt editor, llms.txt.', 'tqk-wpseo'), true],
-            'schema' => [__('Schema & Breadcrumb', 'tqk-wpseo'), __('JSON-LD @graph, templates per post type, BreadcrumbList.', 'tqk-wpseo'), true],
-            'analyzer' => [__('Content Analyzer', 'tqk-wpseo'), __('Focus keyword, headings, images, links, readability + score 0-100.', 'tqk-wpseo'), true],
-            'scanner' => [__('Site Scanner', 'tqk-wpseo'), __('Batch audits 50/job, dashboard snapshot, orphan reports. Needs Analyzer.', 'tqk-wpseo'), true],
-            'analytics' => [__('Analytics (Google)', 'tqk-wpseo'), __('Search Console clicks/impressions/CTR/position.', 'tqk-wpseo'), true],
-            'redirects' => [__('Redirects', 'tqk-wpseo'), __('301/302/307/410 manager, auto-slug, CSV import/export.', 'tqk-wpseo'), true],
-            'monitor-404' => [__('404 Monitor', 'tqk-wpseo'), __('Miss logging + hits + referrer, one-click redirect.', 'tqk-wpseo'), true],
-            'links' => [__('Link Tools', 'tqk-wpseo'), __('Internal graph, orphans, broken-link checker.', 'tqk-wpseo'), true],
-            'image-seo' => [__('Image SEO', 'tqk-wpseo'), __('ALT/dimensions/weight audit, auto ALT fallback, lazy-load check.', 'tqk-wpseo'), true],
-            'role-manager' => [__('Role Manager', 'tqk-wpseo'), __('Capability per role for SEO screens.', 'tqk-wpseo'), true],
-            'instant-indexing' => [__('Instant Indexing', 'tqk-wpseo'), __('Google Indexing API + Bing URL submission on publish.', 'tqk-wpseo'), false],
-            'local-seo' => [__('Local SEO', 'tqk-wpseo'), __('Business profile → LocalBusiness schema + NAP.', 'tqk-wpseo'), true],
-            'woo' => [__('WooCommerce SEO', 'tqk-wpseo'), __('Product Offer/Review schema, product sitemap. Loads only with Woo.', 'tqk-wpseo'), true],
-            'ai' => [__('Local AI', 'tqk-wpseo'), __('Ollama/LM Studio suggestions with preview-approve + business context.', 'tqk-wpseo'), true],
-            'mcp' => [__('MCP Tools', 'tqk-wpseo'), __('REST tools for local AI agents (token auth).', 'tqk-wpseo'), true],
+            'sitemap' => [__('Sitemap & robots.txt', 'tqk-wp-seo'), __('XML sitemap per post type, robots.txt editor, llms.txt.', 'tqk-wp-seo'), true],
+            'schema' => [__('Schema & Breadcrumb', 'tqk-wp-seo'), __('JSON-LD @graph, templates per post type, BreadcrumbList.', 'tqk-wp-seo'), true],
+            'analyzer' => [__('Content Analyzer', 'tqk-wp-seo'), __('Focus keyword, headings, images, links, readability + score 0-100.', 'tqk-wp-seo'), true],
+            'scanner' => [__('Site Scanner', 'tqk-wp-seo'), __('Batch audits 50/job, dashboard snapshot, orphan reports. Needs Analyzer.', 'tqk-wp-seo'), true],
+            'analytics' => [__('Analytics (Google)', 'tqk-wp-seo'), __('Search Console clicks/impressions/CTR/position.', 'tqk-wp-seo'), true],
+            'redirects' => [__('Redirects', 'tqk-wp-seo'), __('301/302/307/410 manager, auto-slug, CSV import/export.', 'tqk-wp-seo'), true],
+            'monitor-404' => [__('404 Monitor', 'tqk-wp-seo'), __('Miss logging + hits + referrer, one-click redirect.', 'tqk-wp-seo'), true],
+            'links' => [__('Link Tools', 'tqk-wp-seo'), __('Internal graph, orphans, broken-link checker.', 'tqk-wp-seo'), true],
+            'image-seo' => [__('Image SEO', 'tqk-wp-seo'), __('ALT/dimensions/weight audit, auto ALT fallback, lazy-load check.', 'tqk-wp-seo'), true],
+            'role-manager' => [__('Role Manager', 'tqk-wp-seo'), __('Capability per role for SEO screens.', 'tqk-wp-seo'), true],
+            'instant-indexing' => [__('Instant Indexing', 'tqk-wp-seo'), __('Google Indexing API + Bing URL submission on publish.', 'tqk-wp-seo'), false],
+            'local-seo' => [__('Local SEO', 'tqk-wp-seo'), __('Business profile → LocalBusiness schema + NAP.', 'tqk-wp-seo'), true],
+            'woo' => [__('WooCommerce SEO', 'tqk-wp-seo'), __('Product Offer/Review schema, product sitemap. Loads only with Woo.', 'tqk-wp-seo'), true],
+            'ai' => [__('Local AI', 'tqk-wp-seo'), __('Ollama/LM Studio suggestions with preview-approve + business context.', 'tqk-wp-seo'), true],
+            'mcp' => [__('MCP Tools', 'tqk-wp-seo'), __('REST tools for local AI agents (token auth).', 'tqk-wp-seo'), true],
         ];
     }
 

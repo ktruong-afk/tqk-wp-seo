@@ -3,7 +3,7 @@
 // Browser-side measurement and snapshots run in JS and are NOT covered here.
 // Run: php tests/php/s16-live-audit.php
 require __DIR__ . '/stubs.php';
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 
 if (!function_exists('wp_generate_password')) {
     function wp_generate_password($len = 12, $special = true, $extra = false) {

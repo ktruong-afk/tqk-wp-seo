@@ -245,7 +245,7 @@ class AiJson {
     public static function parse(string $raw, int $id): array {
         $docs = self::decode($raw);
         if ($docs === []) {
-            return ['error' => __('This is not valid JSON. Paste the whole reply (or the JSON-LD block).', 'tqk-wpseo')];
+            return ['error' => __('This is not valid JSON. Paste the whole reply (or the JSON-LD block).', 'tqk-wp-seo')];
         }
         $out = ['kind' => 'reply', 'fields' => [], 'labels' => [], 'notes' => [], 'dropped' => [], 'post_mismatch' => false];
         $first = $docs[0];
@@ -266,7 +266,7 @@ class AiJson {
         foreach ((array) $values as $k => $v) {
             $k = (string) $k;
             if (in_array($k, self::BLOCKED, true)) {
-                $out['dropped'][] = __('Ratings are never imported: copied or invented ratings count as fake reviews for Google.', 'tqk-wpseo');
+                $out['dropped'][] = __('Ratings are never imported: copied or invented ratings count as fake reviews for Google.', 'tqk-wp-seo');
                 continue;
             }
             if (!isset($map[$k])) {
@@ -275,7 +275,7 @@ class AiJson {
             [$meta, $type, $label] = $map[$k];
             $clean = self::clean($k, $type, $v);
             if ($clean === null) {
-                $out['notes'][] = sprintf(__('%s: value not accepted, skipped.', 'tqk-wpseo'), $label);
+                $out['notes'][] = sprintf(__('%s: value not accepted, skipped.', 'tqk-wp-seo'), $label);
                 continue;
             }
             $out['fields'][$meta] = $clean;
@@ -284,7 +284,7 @@ class AiJson {
         $out['notes'] = array_values(array_unique($out['notes']));
         $out['dropped'] = array_values(array_unique($out['dropped']));
         if ($out['fields'] === [] && $out['notes'] === [] && $out['dropped'] === []) {
-            $out['notes'][] = __('No known key found. Use the key names from the exported JSON.', 'tqk-wpseo');
+            $out['notes'][] = __('No known key found. Use the key names from the exported JSON.', 'tqk-wp-seo');
         }
         return $out;
     }
@@ -399,7 +399,7 @@ class AiJson {
         $notes = [];
         $dropped = [];
         if ($rating) {
-            $dropped[] = __('Ratings / reviews in that JSON-LD were not imported: copied ratings count as fake reviews for Google (manual action risk).', 'tqk-wpseo');
+            $dropped[] = __('Ratings / reviews in that JSON-LD were not imported: copied ratings count as fake reviews for Google (manual action risk).', 'tqk-wp-seo');
         }
         foreach (['Recipe', 'HowTo', 'Course', 'Event', 'FAQPage', 'Product', 'BlogPosting', 'Article'] as $fam) {
             if (!empty($found[$fam])) {
@@ -462,7 +462,7 @@ class AiJson {
                 'course_level' => str_contains($level, 'begin') ? 'beginner' : (str_contains($level, 'inter') ? 'intermediate' : (str_contains($level, 'adv') ? 'advanced' : '')),
                 'course_hours' => $hours,
             ]);
-            $notes[] = __('The course provider was read from the other page: change it to your own name.', 'tqk-wpseo');
+            $notes[] = __('The course provider was read from the other page: change it to your own name.', 'tqk-wp-seo');
         }
         if (!empty($found['Event'])) {
             $n = $found['Event'][0];
@@ -478,17 +478,17 @@ class AiJson {
             ]);
         }
         if (!empty($found['Product'])) {
-            $notes[] = __('Product: price, stock and SKU always come from the WooCommerce product itself, so only the schema type was taken.', 'tqk-wpseo');
+            $notes[] = __('Product: price, stock and SKU always come from the WooCommerce product itself, so only the schema type was taken.', 'tqk-wp-seo');
         }
         if (!empty($found['Business'])) {
             $b = $found['Business'][0];
             $notes[] = sprintf(
-                __('Business details found (%s) were not imported: your own name, phone and address belong in Settings.', 'tqk-wpseo'),
+                __('Business details found (%s) were not imported: your own name, phone and address belong in Settings.', 'tqk-wp-seo'),
                 implode(' · ', array_filter([self::text($b['name'] ?? ''), self::text($b['telephone'] ?? ''), self::address($b['address'] ?? '')]))
             );
         }
         if (!isset($v['schema_type']) && empty($found['Business'])) {
-            $notes[] = __('No schema type this plugin can fill was found in that JSON-LD.', 'tqk-wpseo');
+            $notes[] = __('No schema type this plugin can fill was found in that JSON-LD.', 'tqk-wp-seo');
         }
         return [$v, $notes, $dropped];
     }

@@ -8,7 +8,7 @@ if (!function_exists('is_admin_bar_showing')) {
         return $GLOBALS['__bar'] ?? true;
     }
 }
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 
 $fail = 0;
 function check($name, $cond) {

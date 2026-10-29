@@ -269,10 +269,10 @@ class Sitemap {
     /** @return string[] Map key => label (respects saved selection). */
     public static function maps(): array {
         $all = [
-            'post' => __('Posts', 'tqk-wpseo'),
-            'page' => __('Pages', 'tqk-wpseo'),
-            'category' => __('Categories', 'tqk-wpseo'),
-            'post_tag' => __('Tags', 'tqk-wpseo'),
+            'post' => __('Posts', 'tqk-wp-seo'),
+            'page' => __('Pages', 'tqk-wp-seo'),
+            'category' => __('Categories', 'tqk-wp-seo'),
+            'post_tag' => __('Tags', 'tqk-wp-seo'),
         ];
         $saved = get_option(TQK_WPSEO_OPTION, []);
         $sel = is_array($saved) && isset($saved['sitemap_maps']) ? (array) $saved['sitemap_maps'] : array_keys($all);
@@ -326,8 +326,8 @@ class Sitemap {
     /** @return string[] Special maps (news/video) enabled in selection. */
     public static function special_maps(): array {
         $all = [
-            'news' => __('News', 'tqk-wpseo'),
-            'video' => __('Video', 'tqk-wpseo'),
+            'news' => __('News', 'tqk-wp-seo'),
+            'video' => __('Video', 'tqk-wp-seo'),
         ];
         $saved = get_option(TQK_WPSEO_OPTION, []);
         $sel = is_array($saved) && isset($saved['sitemap_maps']) ? (array) $saved['sitemap_maps'] : [];
@@ -451,9 +451,9 @@ class Sitemap {
         return '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
             . '<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n"
             . '<xsl:output method="html" encoding="UTF-8"/>' . "\n"
-            . '<xsl:template match="/"><html><head><title>' . esc_html__('XML Sitemap', 'tqk-wpseo') . '</title>'
+            . '<xsl:template match="/"><html><head><title>' . esc_html__('XML Sitemap', 'tqk-wp-seo') . '</title>'
             . '<style>body{font-family:system-ui,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;color:#0f172a}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #e2e8f0}th{color:#64748b;text-transform:uppercase;font-size:11px;letter-spacing:.06em}a{color:#4f46e5}</style>'
-            . '</head><body><h1>' . esc_html__('XML Sitemap', 'tqk-wpseo') . '</h1>'
+            . '</head><body><h1>' . esc_html__('XML Sitemap', 'tqk-wp-seo') . '</h1>'
             . '<table><tr><th>URL</th></tr>'
             . '<xsl:for-each select="sitemap:sitemapindex/sitemap:sitemap"><tr><td><a><xsl:attribute name="href"><xsl:value-of select="sitemap:loc"/></xsl:attribute><xsl:value-of select="sitemap:loc"/></a></td></tr></xsl:for-each>'
             . '<xsl:for-each select="sitemap:urlset/sitemap:url"><tr><td><a><xsl:attribute name="href"><xsl:value-of select="sitemap:loc"/></xsl:attribute><xsl:value-of select="sitemap:loc"/></a></td></tr></xsl:for-each>'
@@ -498,12 +498,12 @@ class Sitemap {
         foreach (explode("\n", $content) as $line) {
             $line = trim($line);
             if (stripos($line, 'disallow:') === 0 && trim(substr($line, 9)) === '/') {
-                $warnings[] = __('This blocks the entire site from search engines.', 'tqk-wpseo');
+                $warnings[] = __('This blocks the entire site from search engines.', 'tqk-wp-seo');
                 break;
             }
         }
         if (stripos($content, 'user-agent:') === false) {
-            $warnings[] = __('Missing User-agent directive.', 'tqk-wpseo');
+            $warnings[] = __('Missing User-agent directive.', 'tqk-wp-seo');
         }
         return $warnings;
     }

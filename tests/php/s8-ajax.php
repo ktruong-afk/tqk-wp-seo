@@ -1,7 +1,7 @@
 <?php
 // S8 tests: every admin action over AJAX, append-not-reload. Run: php tests/php/s8-ajax.php
 require __DIR__ . '/stubs.php';
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 
 $fail = 0;
 function check($name, $cond) {

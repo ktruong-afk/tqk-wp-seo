@@ -1,7 +1,7 @@
 <?php
 // S10 tests: rendered-HTML analyze, live badge, page-audit bot. Run: php tests/php/s10-audit.php
 require __DIR__ . '/stubs.php';
-require dirname(__DIR__, 2) . '/tqk-wpseo.php';
+require dirname(__DIR__, 2) . '/tqk-wp-seo.php';
 
 $fail = 0;
 function check($name, $cond) {

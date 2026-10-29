@@ -224,7 +224,7 @@ class Vault {
         }
         $page = (string) ($_GET['page'] ?? '');
         $screen = $GLOBALS['pagenow'] ?? '';
-        if (str_starts_with($page, 'tqk-wpseo') || in_array($screen, ['post.php', 'post-new.php'], true)) {
+        if (str_starts_with($page, 'tqk-wp-seo') || in_array($screen, ['post.php', 'post-new.php'], true)) {
             self::prune();
         }
     }

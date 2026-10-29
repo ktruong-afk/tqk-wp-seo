@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Rebuild languages/tqk-wpseo.pot, tqk-wpseo-vi.po and tqk-wpseo-vi.mo from the PHP sources.
+"""Rebuild languages/tqk-wp-seo.pot, tqk-wp-seo-vi.po and tqk-wp-seo-vi.mo from the PHP sources.
 
 Translations come from, in increasing priority:
-  1. msgstr already in languages/tqk-wpseo-vi.po,
+  1. msgstr already in languages/tqk-wp-seo-vi.po,
   2. the TR dict in tools/sync-i18n.py,
   3. tools/i18n-vi-extra.json.
 
@@ -35,7 +35,7 @@ def used_strings():
     used = set()
     # The Pro add-on (sibling folder) uses this plugin's text domain.
     pro = ROOT.parent / 'tqk-wpseo-pro'
-    files = sorted((ROOT / 'src').rglob('*.php')) + [ROOT / 'tqk-wpseo.php']
+    files = sorted((ROOT / 'src').rglob('*.php')) + [ROOT / 'tqk-wp-seo.php']
     if pro.is_dir():
         files += sorted((pro / 'src').rglob('*.php')) + [pro / 'tqk-wpseo-pro.php']
     for f in files:
@@ -91,7 +91,7 @@ def write_mo(path, pairs, header):
 
 def main():
     used = used_strings()
-    po_tr, header = existing_po(LANG / 'tqk-wpseo-vi.po')
+    po_tr, header = existing_po(LANG / 'tqk-wp-seo-vi.po')
     tr = dict(po_tr)
     tr.update(sync_tr())
     # Every tools/i18n-vi-*.json dictionary, in name order.
@@ -112,9 +112,9 @@ def main():
             pairs[s] = vi
         else:
             missing.append(s)
-    (LANG / 'tqk-wpseo.pot').write_text('\n'.join(pot), encoding='utf-8')
-    (LANG / 'tqk-wpseo-vi.po').write_text('\n'.join(po), encoding='utf-8')
-    write_mo(LANG / 'tqk-wpseo-vi.mo', pairs, header)
+    (LANG / 'tqk-wp-seo.pot').write_text('\n'.join(pot), encoding='utf-8')
+    (LANG / 'tqk-wp-seo-vi.po').write_text('\n'.join(po), encoding='utf-8')
+    write_mo(LANG / 'tqk-wp-seo-vi.mo', pairs, header)
     print('strings:', len(used), 'translated:', len(pairs), 'missing:', len(missing))
     for m in missing:
         print('  -', m)

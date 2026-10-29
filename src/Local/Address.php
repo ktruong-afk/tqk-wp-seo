@@ -80,7 +80,7 @@ class Address {
                 if (str_contains(' ' . $norm . ' ', ' ' . $v . ' ')) {
                     $out['old'] = $old;
                     $out['new'] = $new;
-                    $out['messages'][] = sprintf(__('"%1$s" merged into %2$s on 1 July 2025: update the address.', 'tqk-wpseo'), $old, $new);
+                    $out['messages'][] = sprintf(__('"%1$s" merged into %2$s on 1 July 2025: update the address.', 'tqk-wp-seo'), $old, $new);
                     break 2;
                 }
             }
@@ -88,7 +88,7 @@ class Address {
         // District level abolished. "Quận 1", "Q. Bình Thạnh", "Huyện Củ Chi", "TX. ...".
         if (preg_match('/(?:^|[\s,])(quận|huyện|thị xã|q\.|h\.|tx\.)\s*[\p{L}\d]/iu', $address)) {
             $out['district'] = true;
-            $out['messages'][] = __('District level (quận / huyện / thị xã) was abolished on 1 July 2025: use the new ward (phường / xã) + province.', 'tqk-wpseo');
+            $out['messages'][] = __('District level (quận / huyện / thị xã) was abolished on 1 July 2025: use the new ward (phường / xã) + province.', 'tqk-wp-seo');
         }
         return $out;
     }

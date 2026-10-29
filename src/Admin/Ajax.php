@@ -24,7 +24,7 @@ class Ajax {
         $action = (string) ($_POST['tqk_action'] ?? '');
         check_ajax_referer(self::NONCE);
         if (!\TQK_WPSEO\Admin\Access::can()) {
-            wp_send_json_error(['message' => __('Permission denied', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Permission denied', 'tqk-wp-seo')]);
         }
         match ($action) {
             'wizard' => Wizard::ajax(),
@@ -48,7 +48,7 @@ class Ajax {
             'security' => \TQK_WPSEO\Security\Scan::ajax(),
             'license' => self::addon('license'),
             'sitemap_submit' => self::sitemap_submit(),
-            default => wp_send_json_error(['message' => __('Unknown action', 'tqk-wpseo')]),
+            default => wp_send_json_error(['message' => __('Unknown action', 'tqk-wp-seo')]),
         };
     }
 
@@ -58,17 +58,17 @@ class Ajax {
      */
     private static function addon(string $name): void {
         if (!has_action('tqk_wpseo_ajax_' . $name)) {
-            wp_send_json_error(['message' => __('This needs the TQK WP SEO Pro add-on.', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('This needs the TQK WP SEO Pro add-on.', 'tqk-wp-seo')]);
         }
         do_action('tqk_wpseo_ajax_' . $name);
-        wp_send_json_error(['message' => __('Unknown action', 'tqk-wpseo')]);
+        wp_send_json_error(['message' => __('Unknown action', 'tqk-wp-seo')]);
     }
 
     private static function redirect(): void {
         $op = sanitize_key($_POST['op'] ?? '');
         if ($op === 'del') {
             Redirects::delete((int) ($_POST['id'] ?? 0));
-            wp_send_json_success(['message' => __('Deleted.', 'tqk-wpseo')]);
+            wp_send_json_success(['message' => __('Deleted.', 'tqk-wp-seo')]);
         }
         if ($op === 'export') {
             $lines = ['source,target,type,hits'];
@@ -83,15 +83,15 @@ class Ajax {
             (int) ($_POST['type'] ?? 301)
         );
         if ($id <= 0) {
-            wp_send_json_error(['message' => __('Invalid redirect (check URLs and type).', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Invalid redirect (check URLs and type).', 'tqk-wp-seo')]);
         }
         $row = Redirects::get(sanitize_text_field(wp_unslash($_POST['source'] ?? '')));
-        wp_send_json_success(['message' => __('Redirect saved.', 'tqk-wpseo'), 'row' => Pages::redirect_row($row)]);
+        wp_send_json_success(['message' => __('Redirect saved.', 'tqk-wp-seo'), 'row' => Pages::redirect_row($row)]);
     }
 
     private static function four04(): void {
         Monitor404::delete((int) ($_POST['id'] ?? 0));
-        wp_send_json_success(['message' => __('Deleted.', 'tqk-wpseo')]);
+        wp_send_json_success(['message' => __('Deleted.', 'tqk-wp-seo')]);
     }
 
     /**
@@ -173,7 +173,7 @@ class Ajax {
         if ($fresh !== []) {
             self::patch_summary($fresh);
         }
-        wp_send_json_success(['message' => sprintf(__('Saved %d posts.', 'tqk-wpseo'), $n), 'saved' => $n, 'fresh' => $fresh]);
+        wp_send_json_success(['message' => sprintf(__('Saved %d posts.', 'tqk-wp-seo'), $n), 'saved' => $n, 'fresh' => $fresh]);
     }
 
     /** Patch dashboard snapshot in place so saved cards finish without full rescan. */
@@ -218,7 +218,7 @@ class Ajax {
         // Site-level save → refresh site snapshot only.
         self::refresh_site_snapshot();
         \TQK_WPSEO\Admin\Access::sync();
-        wp_send_json_success(['message' => __('Settings saved.', 'tqk-wpseo')]);
+        wp_send_json_success(['message' => __('Settings saved.', 'tqk-wp-seo')]);
     }
 
     /** Recompute site_issues into summary so site cards finish without full rescan. */
@@ -250,13 +250,13 @@ class Ajax {
     private static function robots(): void {
         if (sanitize_key($_POST['op'] ?? '') === 'reset') {
             delete_option(\TQK_WPSEO\Sitemap\Sitemap::ROBOTS_OPTION);
-            wp_send_json_success(['message' => __('robots.txt reset to default.', 'tqk-wpseo'), 'content' => \TQK_WPSEO\Sitemap\Sitemap::default_robots()]);
+            wp_send_json_success(['message' => __('robots.txt reset to default.', 'tqk-wp-seo'), 'content' => \TQK_WPSEO\Sitemap\Sitemap::default_robots()]);
         }
         $content = sanitize_textarea_field(wp_unslash($_POST['content'] ?? ''));
         update_option(\TQK_WPSEO\Sitemap\Sitemap::ROBOTS_OPTION, $content);
         self::refresh_site_snapshot();
         wp_send_json_success([
-            'message' => __('robots.txt saved.', 'tqk-wpseo'),
+            'message' => __('robots.txt saved.', 'tqk-wp-seo'),
             'warnings' => \TQK_WPSEO\Sitemap\Sitemap::validate_robots($content),
         ]);
     }
@@ -265,7 +265,7 @@ class Ajax {
         $op = sanitize_key($_POST['op'] ?? 'reset');
         if ($op === 'export') {
             wp_send_json_success([
-                'message' => __('Settings exported.', 'tqk-wpseo'),
+                'message' => __('Settings exported.', 'tqk-wp-seo'),
                 'json' => wp_json_encode([
                     'plugin' => 'tqk-wpseo',
                     'version' => TQK_WPSEO_VERSION,
@@ -277,7 +277,7 @@ class Ajax {
         if ($op === 'import') {
             $decoded = json_decode((string) ($_POST['payload'] ?? ''), true);
             if (!is_array($decoded)) {
-                wp_send_json_error(['message' => __('Invalid settings file.', 'tqk-wpseo')]);
+                wp_send_json_error(['message' => __('Invalid settings file.', 'tqk-wp-seo')]);
             }
             if (isset($decoded['settings']) && is_array($decoded['settings'])) {
                 update_option(TQK_WPSEO_OPTION, Settings::sanitize($decoded['settings']));
@@ -288,7 +288,7 @@ class Ajax {
                 }
             }
             \TQK_WPSEO\Admin\Access::sync();
-            wp_send_json_success(['message' => __('Settings imported.', 'tqk-wpseo')]);
+            wp_send_json_success(['message' => __('Settings imported.', 'tqk-wp-seo')]);
         }
         global $wpdb;
         foreach (\TQK_WPSEO\Core\Activator::table_names($wpdb->prefix) as $table) {
@@ -300,7 +300,7 @@ class Ajax {
         delete_option(\TQK_WPSEO\Scanner\Scanner::SUMMARY_OPTION);
         delete_option(\TQK_WPSEO\Scanner\Scanner::HISTORY_OPTION);
         \TQK_WPSEO\Core\Activator::activate();
-        wp_send_json_success(['message' => __('Plugin data reset and re-initialized.', 'tqk-wpseo')]);
+        wp_send_json_success(['message' => __('Plugin data reset and re-initialized.', 'tqk-wp-seo')]);
     }
 
     private static function report(): void {
@@ -313,7 +313,7 @@ class Ajax {
             $r = \TQK_WPSEO\Links\Engine::rebuild_batch($offset);
             wp_send_json_success($r + [
                 'html' => $r['done'] ? Pages::orphans_html() : '',
-                'message' => sprintf(__('Indexed %1$d / %2$d posts…', 'tqk-wpseo'), min($r['next'], $r['total']), $r['total']),
+                'message' => sprintf(__('Indexed %1$d / %2$d posts…', 'tqk-wp-seo'), min($r['next'], $r['total']), $r['total']),
             ]);
         }
         [$checked, $broken, $next] = \TQK_WPSEO\Links\Engine::check_links($offset);
@@ -324,7 +324,7 @@ class Ajax {
             'next' => $next,
             'done' => $done,
             'html' => $done ? Pages::broken_html() : '',
-            'message' => sprintf(__('Checked %d link(s)…', 'tqk-wpseo'), $next),
+            'message' => sprintf(__('Checked %d link(s)…', 'tqk-wp-seo'), $next),
         ]);
     }
 
@@ -334,8 +334,8 @@ class Ajax {
             'google' => $r['google'],
             'bing' => $r['bing'],
             'message' => ($r['google']['ok'] ?? false) || ($r['bing']['ok'] ?? false)
-                ? __('Sitemap submitted.', 'tqk-wpseo')
-                : __('Not submitted — see the reasons below.', 'tqk-wpseo'),
+                ? __('Sitemap submitted.', 'tqk-wp-seo')
+                : __('Not submitted — see the reasons below.', 'tqk-wp-seo'),
         ]);
     }
 
@@ -343,11 +343,11 @@ class Ajax {
         if (sanitize_key($_POST['op'] ?? '') === 'regen') {
             delete_option(\TQK_WPSEO\MCP\Server::TOKEN_OPTION);
             wp_send_json_success([
-                'message' => __('Token regenerated.', 'tqk-wpseo'),
+                'message' => __('Token regenerated.', 'tqk-wp-seo'),
                 'token' => \TQK_WPSEO\MCP\Server::token(),
             ]);
         }
-        wp_send_json_error(['message' => __('Unknown action', 'tqk-wpseo')]);
+        wp_send_json_error(['message' => __('Unknown action', 'tqk-wp-seo')]);
     }
 
     private static function module(): void {
@@ -355,10 +355,10 @@ class Ajax {
         $on = !empty($_POST['on']);
         $states = \TQK_WPSEO\Core\Modules::set($slug, $on);
         if (!array_key_exists($slug, $states)) {
-            wp_send_json_error(['message' => __('Unknown action', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Unknown action', 'tqk-wp-seo')]);
         }
         wp_send_json_success([
-            'message' => $on ? __('Module enabled.', 'tqk-wpseo') : __('Module disabled.', 'tqk-wpseo'),
+            'message' => $on ? __('Module enabled.', 'tqk-wp-seo') : __('Module disabled.', 'tqk-wp-seo'),
             'states' => $states,
         ]);
     }
@@ -369,14 +369,14 @@ class Ajax {
             $input = is_array($_POST['settings'] ?? null) ? wp_unslash($_POST['settings']) : [];
             $cur = (array) get_option(TQK_WPSEO_OPTION, []);
             update_option(TQK_WPSEO_OPTION, Settings::sanitize(array_merge($cur, $input)));
-            wp_send_json_success(['message' => __('Google connection saved.', 'tqk-wpseo')]);
+            wp_send_json_success(['message' => __('Google connection saved.', 'tqk-wp-seo')]);
         }
         $op = sanitize_key($_POST['op'] ?? 'sync');
         if ($op === 'save') {
             $input = is_array($_POST['settings'] ?? null) ? wp_unslash($_POST['settings']) : [];
             $cur = (array) get_option(TQK_WPSEO_OPTION, []);
             update_option(TQK_WPSEO_OPTION, Settings::sanitize(array_merge($cur, $input)));
-            wp_send_json_success(['message' => __('Google connection saved.', 'tqk-wpseo')]);
+            wp_send_json_success(['message' => __('Google connection saved.', 'tqk-wp-seo')]);
         }
         $r = \TQK_WPSEO\Google\SearchConsole::sync();
         if (!($r['ok'] ?? false)) {
@@ -393,12 +393,12 @@ class Ajax {
         $id = (int) ($_POST['post_id'] ?? 0);
         $type = sanitize_text_field(wp_unslash((string) ($_POST['schema_type'] ?? '')));
         if ($id <= 0 || !get_post($id) || !current_user_can('edit_post', $id)) {
-            wp_send_json_error(['message' => __('Permission denied', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Permission denied', 'tqk-wp-seo')]);
         }
         $fields = \TQK_WPSEO\Schema\Builder::harvest($id, $type);
         if ($fields === []) {
             wp_send_json_error([
-                'message' => __('Nothing found in the post content. Fill the fields in by hand.', 'tqk-wpseo'),
+                'message' => __('Nothing found in the post content. Fill the fields in by hand.', 'tqk-wp-seo'),
                 'fields' => [],
             ]);
         }
@@ -407,7 +407,7 @@ class Ajax {
             $keyed[(string) \TQK_WPSEO\Schema\Fields::key((string) $name)] = $value;
         }
         wp_send_json_success([
-            'message' => __('Extracted from post content. Review before saving.', 'tqk-wpseo'),
+            'message' => __('Extracted from post content. Review before saving.', 'tqk-wp-seo'),
             'fields' => $keyed,
         ]);
     }
@@ -415,7 +415,7 @@ class Ajax {
     private static function gsc_history(): void {
         $q = sanitize_text_field(wp_unslash($_POST['query'] ?? ''));
         if ($q === '') {
-            wp_send_json_error(['message' => __('Pick a query first.', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Pick a query first.', 'tqk-wp-seo')]);
         }
         wp_send_json_success(['html' => \TQK_WPSEO\Google\SearchConsole::history_html($q)]);
     }

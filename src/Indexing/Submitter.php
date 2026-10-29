@@ -65,7 +65,7 @@ class Submitter {
     public static function google(string $url): array {
         $token = trim((string) \TQK_WPSEO\Admin\Settings::get('gsc_token', ''));
         if ($token === '') {
-            return ['ok' => false, 'message' => __('Missing GSC OAuth token.', 'tqk-wpseo')];
+            return ['ok' => false, 'message' => __('Missing GSC OAuth token.', 'tqk-wp-seo')];
         }
         $res = wp_remote_post('https://indexing.googleapis.com/v3/urlNotifications:publish', [
             'timeout' => 15,
@@ -73,19 +73,19 @@ class Submitter {
             'body' => wp_json_encode(['url' => $url, 'type' => 'URL_UPDATED']),
         ]);
         if (is_wp_error($res)) {
-            return ['ok' => false, 'message' => __('Could not reach Google.', 'tqk-wpseo')];
+            return ['ok' => false, 'message' => __('Could not reach Google.', 'tqk-wp-seo')];
         }
         if ((int) wp_remote_retrieve_response_code($res) !== 200) {
-            return ['ok' => false, 'message' => __('Google rejected the URL (check token).', 'tqk-wpseo')];
+            return ['ok' => false, 'message' => __('Google rejected the URL (check token).', 'tqk-wp-seo')];
         }
-        return ['ok' => true, 'message' => __('Google notified.', 'tqk-wpseo')];
+        return ['ok' => true, 'message' => __('Google notified.', 'tqk-wp-seo')];
     }
 
     /** @return array [ok, message] */
     public static function bing(string $url): array {
         $key = trim((string) \TQK_WPSEO\Admin\Settings::get('bing_api_key', ''));
         if ($key === '') {
-            return ['ok' => false, 'message' => __('Missing Bing API key.', 'tqk-wpseo')];
+            return ['ok' => false, 'message' => __('Missing Bing API key.', 'tqk-wp-seo')];
         }
         $res = wp_remote_post('https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=' . rawurlencode($key), [
             'timeout' => 15,
@@ -93,12 +93,12 @@ class Submitter {
             'body' => wp_json_encode(['siteUrl' => home_url('/'), 'urlList' => [$url]]),
         ]);
         if (is_wp_error($res)) {
-            return ['ok' => false, 'message' => __('Could not reach Bing.', 'tqk-wpseo')];
+            return ['ok' => false, 'message' => __('Could not reach Bing.', 'tqk-wp-seo')];
         }
         if ((int) wp_remote_retrieve_response_code($res) !== 200) {
-            return ['ok' => false, 'message' => __('Bing rejected the URL (check key).', 'tqk-wpseo')];
+            return ['ok' => false, 'message' => __('Bing rejected the URL (check key).', 'tqk-wp-seo')];
         }
-        return ['ok' => true, 'message' => __('Bing notified.', 'tqk-wpseo')];
+        return ['ok' => true, 'message' => __('Bing notified.', 'tqk-wp-seo')];
     }
 
     /**
@@ -108,7 +108,7 @@ class Submitter {
     public static function bing_sitemap(string $sitemap_url): array {
         $key = trim((string) \TQK_WPSEO\Admin\Settings::get('bing_api_key', ''));
         if ($key === '') {
-            return ['ok' => false, 'message' => __('Missing Bing API key.', 'tqk-wpseo')];
+            return ['ok' => false, 'message' => __('Missing Bing API key.', 'tqk-wp-seo')];
         }
         $res = wp_remote_post('https://ssl.bing.com/webmaster/api.svc/json/SubmitFeed?apikey=' . rawurlencode($key), [
             'timeout' => 15,
@@ -116,15 +116,15 @@ class Submitter {
             'body' => wp_json_encode(['siteUrl' => home_url('/'), 'feedUrl' => $sitemap_url]),
         ]);
         if (is_wp_error($res)) {
-            return ['ok' => false, 'message' => __('Could not reach Bing.', 'tqk-wpseo')];
+            return ['ok' => false, 'message' => __('Could not reach Bing.', 'tqk-wp-seo')];
         }
         $code = (int) wp_remote_retrieve_response_code($res);
         if ($code !== 200) {
             $json = json_decode((string) wp_remote_retrieve_body($res), true);
             $msg = is_array($json) ? (string) ($json['Message'] ?? $json['message'] ?? '') : '';
-            return ['ok' => false, 'message' => $msg !== '' ? 'Bing: ' . mb_substr($msg, 0, 200) : sprintf(__('Bing refused the sitemap (HTTP %d).', 'tqk-wpseo'), $code)];
+            return ['ok' => false, 'message' => $msg !== '' ? 'Bing: ' . mb_substr($msg, 0, 200) : sprintf(__('Bing refused the sitemap (HTTP %d).', 'tqk-wp-seo'), $code)];
         }
-        return ['ok' => true, 'message' => __('Sitemap sent to Bing.', 'tqk-wpseo')];
+        return ['ok' => true, 'message' => __('Sitemap sent to Bing.', 'tqk-wp-seo')];
     }
 
     private static function log(string $url, array $out): void {

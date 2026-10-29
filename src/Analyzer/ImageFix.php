@@ -244,7 +244,7 @@ class ImageFix {
             $need = max($need, (int) $v['w'] * 2);
             // Served file far bigger than the box needs even on a retina screen.
             if ((int) $v['nw'] > 0 && (int) $v['nw'] > $v['w'] * 2 * 1.25 && (int) $v['nw'] - $v['w'] * 2 > 100) {
-                $out['issues'][] = sprintf(__('%1$s: file %2$dpx wide for a %3$dpx box', 'tqk-wpseo'), ucfirst((string) $k), (int) $v['nw'], (int) $v['w']);
+                $out['issues'][] = sprintf(__('%1$s: file %2$dpx wide for a %3$dpx box', 'tqk-wp-seo'), ucfirst((string) $k), (int) $v['nw'], (int) $v['w']);
             }
         }
         $out['need'] = $need;
@@ -253,10 +253,10 @@ class ImageFix {
 
         if ($im['kind'] === 'bg') {
             if ($orig !== null && $orig['w'] > $need * 1.25) {
-                $out['issues'][] = sprintf(__('Background file %1$dpx wide for a %2$dpx box.', 'tqk-wpseo'), $orig['w'], (int) round($need / 2));
+                $out['issues'][] = sprintf(__('Background file %1$dpx wide for a %2$dpx box.', 'tqk-wp-seo'), $orig['w'], (int) round($need / 2));
             }
             if ($legacy) {
-                $out['issues'][] = sprintf(__('Served as %s: convert to compressed WebP.', 'tqk-wpseo'), strtoupper($served));
+                $out['issues'][] = sprintf(__('Served as %s: convert to compressed WebP.', 'tqk-wp-seo'), strtoupper($served));
             }
             if ($out['issues'] === []) {
                 return $out;
@@ -266,7 +266,7 @@ class ImageFix {
                 return $out;
             }
             if (!$hook) {
-                $out['issues'][] = __('Background set in a CSS file on an element without an id we can target: resize it by hand or in the builder.', 'tqk-wpseo');
+                $out['issues'][] = __('Background set in a CSS file on an element without an id we can target: resize it by hand or in the builder.', 'tqk-wp-seo');
                 return $out;
             }
             foreach ($vp as $k => $v) {
@@ -290,7 +290,7 @@ class ImageFix {
             $off = max(array_map(static fn($r) => abs($r - $or) / $or, $ratios));
             if ($off > 0.04) {
                 if (in_array('fill', $fits, true)) {
-                    $out['issues'][] = __('Image is stretched (box ratio differs, object-fit: fill). Set object-fit: cover or use a matching image.', 'tqk-wpseo');
+                    $out['issues'][] = __('Image is stretched (box ratio differs, object-fit: fill). Set object-fit: cover or use a matching image.', 'tqk-wp-seo');
                 } elseif (count(array_unique($fits)) === 1 && $fits[0] === 'cover') {
                     $same = (max($ratios) - min($ratios)) / max(0.01, min($ratios)) < 0.03;
                     if ($same) {
@@ -298,7 +298,7 @@ class ImageFix {
                         $crop = self::cover_region($orig['w'], $orig['h'], (int) $any['w'], (int) $any['h'], (string) $any['pos']);
                         if (($crop[2] * $crop[3]) < 0.9 * $orig['w'] * $orig['h']) {
                             $out['crop'] = $crop;
-                            $out['issues'][] = sprintf(__('Only %d%% of the file is visible (object-fit: cover): crop to the visible area.', 'tqk-wpseo'), (int) round(100 * $crop[2] * $crop[3] / ($orig['w'] * $orig['h'])));
+                            $out['issues'][] = sprintf(__('Only %d%% of the file is visible (object-fit: cover): crop to the visible area.', 'tqk-wp-seo'), (int) round(100 * $crop[2] * $crop[3] / ($orig['w'] * $orig['h'])));
                         }
                     } else {
                         $art = [];
@@ -306,21 +306,21 @@ class ImageFix {
                             $art[$k] = self::cover_region($orig['w'], $orig['h'], (int) $v['w'], (int) $v['h'], (string) $v['pos']);
                         }
                         $out['art'] = $art;
-                        $out['issues'][] = __('Each screen shows a different crop: serve one crop per screen with <picture>.', 'tqk-wpseo');
+                        $out['issues'][] = __('Each screen shows a different crop: serve one crop per screen with <picture>.', 'tqk-wp-seo');
                     }
                 }
             }
         }
         if (empty($im['srcset'])) {
-            $out['issues'][] = __('No srcset: every screen downloads the same file.', 'tqk-wpseo');
+            $out['issues'][] = __('No srcset: every screen downloads the same file.', 'tqk-wp-seo');
         }
         if ($legacy) {
-            $out['issues'][] = sprintf(__('Served as %s: convert to compressed WebP.', 'tqk-wpseo'), strtoupper($served));
+            $out['issues'][] = sprintf(__('Served as %s: convert to compressed WebP.', 'tqk-wp-seo'), strtoupper($served));
         }
         $sizes = self::sizes_attr($vp);
         $cur = trim((string) ($im['sizes'] ?? ''));
         if (!empty($im['srcset']) && !empty($im['wdesc']) && ($cur === '' || (preg_match('/^\(max-width:\s*\d+px\)\s*100vw,\s*\d+px$/', $cur) && isset($vp['desktop']) && $vp['desktop']['w'] < 0.6 * self::VPS['desktop']))) {
-            $out['issues'][] = sprintf(__('sizes="%1$s" does not match the layout; measured: %2$s', 'tqk-wpseo'), $cur === '' ? '—' : $cur, $sizes);
+            $out['issues'][] = sprintf(__('sizes="%1$s" does not match the layout; measured: %2$s', 'tqk-wp-seo'), $cur === '' ? '—' : $cur, $sizes);
         }
         $out['sizes'] = $sizes;
         if ($orig !== null && $out['issues'] !== []) {
@@ -363,11 +363,11 @@ class ImageFix {
         $steps = [];
         if ($a['crop'] !== null) {
             [$x, $y, $w, $h] = $a['crop'];
-            $steps[] = sprintf(__('Crop the original to %1$d×%2$d starting at x=%3$d, y=%4$d (only that part is visible).', 'tqk-wpseo'), $w, $h, $x, $y);
+            $steps[] = sprintf(__('Crop the original to %1$d×%2$d starting at x=%3$d, y=%4$d (only that part is visible).', 'tqk-wp-seo'), $w, $h, $x, $y);
         }
         if (!empty($a['art'])) {
             foreach ($a['art'] as $k => [$x, $y, $w, $h]) {
-                $steps[] = sprintf(__('%1$s: crop %2$d×%3$d at x=%4$d, y=%5$d.', 'tqk-wpseo'), ucfirst((string) $k), $w, $h, $x, $y);
+                $steps[] = sprintf(__('%1$s: crop %2$d×%3$d at x=%4$d, y=%5$d.', 'tqk-wp-seo'), ucfirst((string) $k), $w, $h, $x, $y);
             }
         }
         if ($kind === 'bg' && !empty($a['bgw'])) {
@@ -375,18 +375,18 @@ class ImageFix {
             foreach ($a['bgw'] as $k => $w) {
                 $parts[] = ucfirst((string) $k) . ' ' . $w . 'px';
             }
-            $steps[] = sprintf(__('Export one file per screen: %s.', 'tqk-wpseo'), implode(', ', $parts));
+            $steps[] = sprintf(__('Export one file per screen: %s.', 'tqk-wp-seo'), implode(', ', $parts));
         } else {
             $widths = $a['widths'] !== [] ? $a['widths'] : [min($orig['w'], self::ceil10(max(1, $a['need'])))];
             $steps[] = count($widths) > 1
-                ? sprintf(__('Export these widths: %s px (small ones for phones, the largest for retina desktops).', 'tqk-wpseo'), implode(', ', $widths))
-                : sprintf(__('Export at %d px wide.', 'tqk-wpseo'), $widths[0]);
+                ? sprintf(__('Export these widths: %s px (small ones for phones, the largest for retina desktops).', 'tqk-wp-seo'), implode(', ', $widths))
+                : sprintf(__('Export at %d px wide.', 'tqk-wp-seo'), $widths[0]);
         }
-        $steps[] = __('Save as WebP, quality about 75-80 (PNG with transparency also works as WebP).', 'tqk-wpseo');
+        $steps[] = __('Save as WebP, quality about 75-80 (PNG with transparency also works as WebP).', 'tqk-wp-seo');
         if ($kind === 'img' && $a['sizes'] !== '') {
-            $steps[] = sprintf(__('Upload them to the Media Library and use the image through the builder\'s image element so WordPress adds srcset; set sizes="%s" if the builder allows it.', 'tqk-wpseo'), $a['sizes']);
+            $steps[] = sprintf(__('Upload them to the Media Library and use the image through the builder\'s image element so WordPress adds srcset; set sizes="%s" if the builder allows it.', 'tqk-wp-seo'), $a['sizes']);
         } else {
-            $steps[] = __('Set the smaller files as the background per device in the builder (Elementor and Flatsome allow a different background image per device).', 'tqk-wpseo');
+            $steps[] = __('Set the smaller files as the background per device in the builder (Elementor and Flatsome allow a different background image per device).', 'tqk-wp-seo');
         }
         return $steps;
     }
@@ -838,17 +838,17 @@ class ImageFix {
     private static function fix_cell(array $a, ?array $orig, string $kind, bool $pro): string {
         if ($pro) {
             if (!$a['fixable']) {
-                return '<small>' . esc_html__('report only', 'tqk-wpseo') . '</small>';
+                return '<small>' . esc_html__('report only', 'tqk-wp-seo') . '</small>';
             }
             $what = $kind === 'bg'
-                ? __('one file per screen', 'tqk-wpseo') . ': ' . implode(', ', array_map(static fn($w) => $w . 'w', $a['widths']))
-                : (!empty($a['art']) ? __('<picture>, one crop per screen', 'tqk-wpseo') . ': ' : ($a['crop'] !== null ? __('crop + ', 'tqk-wpseo') : ''))
+                ? __('one file per screen', 'tqk-wp-seo') . ': ' . implode(', ', array_map(static fn($w) => $w . 'w', $a['widths']))
+                : (!empty($a['art']) ? __('<picture>, one crop per screen', 'tqk-wp-seo') . ': ' : ($a['crop'] !== null ? __('crop + ', 'tqk-wp-seo') : ''))
                     . ($kind === 'img' ? implode(', ', array_map(static fn($w) => $w . 'w', $a['widths'])) : '');
             return '<small>' . esc_html($what) . '</small>';
         }
         $steps = self::manual_steps($a, $orig, $kind);
         return $steps === []
-            ? '<small>' . esc_html__('report only', 'tqk-wpseo') . '</small>'
+            ? '<small>' . esc_html__('report only', 'tqk-wp-seo') . '</small>'
             : '<ol class="tqk-img-steps">' . implode('', array_map(static fn($s) => '<li>' . esc_html($s) . '</li>', $steps)) . '</ol>';
     }
 
@@ -871,39 +871,39 @@ class ImageFix {
             $thumb = $im['kind'] === 'img' ? '<img src="' . esc_url((string) $im['src']) . '" alt="" loading="lazy">' : '<span class="tqk-img-bg">BG</span>';
             $html_rows .= '<tr><td class="tqk-img-thumb">' . $thumb . '</td>'
                 . '<td><code>' . esc_html(basename((string) strtok((string) $im['src'], '?'))) . '</code><br><small>'
-                . ($row['orig'] ? esc_html(sprintf(__('original %1$d×%2$d', 'tqk-wpseo'), $row['orig']['w'], $row['orig']['h'])) : esc_html__('not in media library', 'tqk-wpseo'))
-                . (isset($im['pages']) ? '<br>' . esc_html(sprintf(__('on %d pages', 'tqk-wpseo'), (int) $im['pages'])) : '')
+                . ($row['orig'] ? esc_html(sprintf(__('original %1$d×%2$d', 'tqk-wp-seo'), $row['orig']['w'], $row['orig']['h'])) : esc_html__('not in media library', 'tqk-wp-seo'))
+                . (isset($im['pages']) ? '<br>' . esc_html(sprintf(__('on %d pages', 'tqk-wp-seo'), (int) $im['pages'])) : '')
                 . '</small></td>'
                 . '<td><small>' . implode('<br>', $boxes) . '</small></td>'
                 . '<td><ul class="tqk-live-findings">' . implode('', array_map(static fn($i) => '<li class="is-warn">' . esc_html($i) . '</li>', $a['issues'])) . '</ul></td>'
                 . '<td>' . self::fix_cell($a, $row['orig'], (string) $im['kind'], $pro) . '</td></tr>';
         }
         $state = $plan === []
-            ? esc_html__('No files generated yet.', 'tqk-wpseo')
+            ? esc_html__('No files generated yet.', 'tqk-wp-seo')
             : esc_html(sprintf(
-                __('%1$d image(s) ready · phone download %2$s → %3$s · %4$s', 'tqk-wpseo'),
+                __('%1$d image(s) ready · phone download %2$s → %3$s · %4$s', 'tqk-wp-seo'),
                 count((array) ($plan['images'] ?? [])),
                 self::fmt_bytes((int) ($plan['bytes_before'] ?? 0)),
                 self::fmt_bytes((int) ($plan['bytes_after'] ?? 0)),
-                !empty($plan['active']) ? __('ACTIVE on the site', 'tqk-wpseo') : __('not active', 'tqk-wpseo')
+                !empty($plan['active']) ? __('ACTIVE on the site', 'tqk-wp-seo') : __('not active', 'tqk-wp-seo')
             ));
         $title = $scope === 'site'
-            ? __('Site-wide images (logo, header, footer — on every page)', 'tqk-wpseo')
+            ? __('Site-wide images (logo, header, footer — on every page)', 'tqk-wp-seo')
             : (string) (get_post((int) $scope)->post_title ?? '#' . $scope);
         return '<details class="tqk-wpseo-pageissue tqk-img-page" data-page="' . esc_attr((string) $scope) . '"><summary class="tqk-wpseo-pageissue-head">'
             . esc_html($title) . ' <span class="tqk-rs-badge">' . count($rows) . '</span></summary>'
             . '<div class="tqk-wpseo-acc-body">'
             . '<p class="tqk-img-state">' . $state . '</p>'
-            . ($has_art && $pro ? '<p class="description">' . esc_html__('Art-directed images are wrapped in <picture>. Check the page after activating: CSS written as "parent > img" no longer matches a wrapped image.', 'tqk-wpseo') . '</p>' : '')
+            . ($has_art && $pro ? '<p class="description">' . esc_html__('Art-directed images are wrapped in <picture>. Check the page after activating: CSS written as "parent > img" no longer matches a wrapped image.', 'tqk-wp-seo') . '</p>' : '')
             . '<p class="tqk-la-buttons">'
             . ($pro
-                ? '<button type="button" class="button button-primary" data-img-op="generate">' . esc_html__('Generate files', 'tqk-wpseo') . '</button> '
-                    . '<button type="button" class="button" data-img-op="activate"' . ($plan === [] || !empty($plan['active']) ? ' hidden' : '') . '>' . esc_html__('Activate on site', 'tqk-wpseo') . '</button> '
-                : '<span class="tqk-pro-note">' . esc_html__('Pro does these steps for you: resize, crop, compress, convert to WebP and serve through srcset, with one click.', 'tqk-wpseo') . '</span> ')
-            . '<button type="button" class="button" data-img-op="deactivate"' . (empty($plan['active']) ? ' hidden' : '') . '>' . esc_html__('Deactivate', 'tqk-wpseo') . '</button> '
-            . '<button type="button" class="button-link" data-img-op="purge"' . ($plan === [] ? ' hidden' : '') . '>' . esc_html__('Delete files', 'tqk-wpseo') . '</button>'
+                ? '<button type="button" class="button button-primary" data-img-op="generate">' . esc_html__('Generate files', 'tqk-wp-seo') . '</button> '
+                    . '<button type="button" class="button" data-img-op="activate"' . ($plan === [] || !empty($plan['active']) ? ' hidden' : '') . '>' . esc_html__('Activate on site', 'tqk-wp-seo') . '</button> '
+                : '<span class="tqk-pro-note">' . esc_html__('Pro does these steps for you: resize, crop, compress, convert to WebP and serve through srcset, with one click.', 'tqk-wp-seo') . '</span> ')
+            . '<button type="button" class="button" data-img-op="deactivate"' . (empty($plan['active']) ? ' hidden' : '') . '>' . esc_html__('Deactivate', 'tqk-wp-seo') . '</button> '
+            . '<button type="button" class="button-link" data-img-op="purge"' . ($plan === [] ? ' hidden' : '') . '>' . esc_html__('Delete files', 'tqk-wp-seo') . '</button>'
             . '</p>'
-            . '<div class="tqk-wpseo-table-wrap"><div class="table-responsive"><table class="tqk-wpseo-table"><thead><tr><th></th><th>' . esc_html__('Image', 'tqk-wpseo') . '</th><th>' . esc_html__('Box per screen', 'tqk-wpseo') . '</th><th>' . esc_html__('Issues', 'tqk-wpseo') . '</th><th>' . esc_html__('Fix', 'tqk-wpseo') . '</th></tr></thead><tbody>'
+            . '<div class="tqk-wpseo-table-wrap"><div class="table-responsive"><table class="tqk-wpseo-table"><thead><tr><th></th><th>' . esc_html__('Image', 'tqk-wp-seo') . '</th><th>' . esc_html__('Box per screen', 'tqk-wp-seo') . '</th><th>' . esc_html__('Issues', 'tqk-wp-seo') . '</th><th>' . esc_html__('Fix', 'tqk-wp-seo') . '</th></tr></thead><tbody>'
             . $html_rows . '</tbody></table></div></div></div></details>';
     }
 
@@ -912,34 +912,34 @@ class ImageFix {
         $scope = self::scope(sanitize_key((string) ($_POST['page_id'] ?? '')));
         $allowed = $scope === 'site' ? current_user_can('manage_options') : ($scope > 0 && current_user_can('edit_post', $scope));
         if (!$allowed) {
-            wp_send_json_error(['message' => __('Permission denied', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Permission denied', 'tqk-wp-seo')]);
         }
         $op = sanitize_key($_POST['op'] ?? '');
         // Pro: making / switching on optimized files. Switching off and
         // deleting stay free, so nobody is ever stuck with files they paid for.
         if (in_array($op, ['generate', 'activate'], true) && !\TQK_WPSEO\Core\Pro::active()) {
-            wp_send_json_error(['message' => __('Automatic image optimization is a Pro feature. The manual steps are listed under each image.', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Automatic image optimization is a Pro feature. The manual steps are listed under each image.', 'tqk-wp-seo')]);
         }
         $msg = '';
         if ($op === 'generate') {
             if (!current_user_can('upload_files')) {
-                wp_send_json_error(['message' => __('Permission denied', 'tqk-wpseo')]);
+                wp_send_json_error(['message' => __('Permission denied', 'tqk-wp-seo')]);
             }
             // Pro add-on: writes the files and saves the (inactive) plan.
             $r = apply_filters('tqk_wpseo_image_generate', null, $scope);
             if (!is_array($r)) {
-                wp_send_json_error(['message' => __('Automatic image optimization is a Pro feature. The manual steps are listed under each image.', 'tqk-wpseo')]);
+                wp_send_json_error(['message' => __('Automatic image optimization is a Pro feature. The manual steps are listed under each image.', 'tqk-wp-seo')]);
             }
             $r += ['made' => 0, 'errors' => []];
-            $msg = $r['errors'] !== [] ? implode(' ', array_unique($r['errors'])) : sprintf(__('%d file(s) generated. Check them, then activate.', 'tqk-wpseo'), $r['made']);
+            $msg = $r['errors'] !== [] ? implode(' ', array_unique($r['errors'])) : sprintf(__('%d file(s) generated. Check them, then activate.', 'tqk-wp-seo'), $r['made']);
         } elseif ($op === 'activate' || $op === 'deactivate') {
             self::set_active($scope, $op === 'activate');
-            $msg = $op === 'activate' ? __('Active: visitors now get the new sizes.', 'tqk-wpseo') : __('Deactivated.', 'tqk-wpseo');
+            $msg = $op === 'activate' ? __('Active: visitors now get the new sizes.', 'tqk-wp-seo') : __('Deactivated.', 'tqk-wp-seo');
         } elseif ($op === 'purge') {
             self::purge($scope);
-            $msg = __('Files deleted.', 'tqk-wpseo');
+            $msg = __('Files deleted.', 'tqk-wp-seo');
         } else {
-            wp_send_json_error(['message' => __('Unknown action', 'tqk-wpseo')]);
+            wp_send_json_error(['message' => __('Unknown action', 'tqk-wp-seo')]);
         }
         wp_send_json_success(['message' => $msg, 'html' => self::page_html($scope)]);
     }

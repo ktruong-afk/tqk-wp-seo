@@ -45,13 +45,13 @@ class SearchConsole {
         $prop = trim((string) \TQK_WPSEO\Admin\Settings::get('gsc_property', ''));
         $token = trim((string) \TQK_WPSEO\Admin\Settings::get('gsc_token', ''));
         if ($prop === '' || $token === '') {
-            return ['ok' => false, 'message' => __('Search Console is not connected: add the property and OAuth token, or submit the sitemap by hand in Search Console.', 'tqk-wpseo')];
+            return ['ok' => false, 'message' => __('Search Console is not connected: add the property and OAuth token, or submit the sitemap by hand in Search Console.', 'tqk-wp-seo')];
         }
         $base = 'https://www.googleapis.com/webmasters/v3/sites/' . rawurlencode($prop) . '/sitemaps/';
         $args = ['timeout' => 15, 'headers' => ['Authorization' => 'Bearer ' . $token, 'Content-Length' => '0']];
         $res = wp_remote_request($base . rawurlencode($sitemap_url), $args + ['method' => 'PUT']);
         if (is_wp_error($res)) {
-            return ['ok' => false, 'message' => __('Could not reach Google API.', 'tqk-wpseo')];
+            return ['ok' => false, 'message' => __('Could not reach Google API.', 'tqk-wp-seo')];
         }
         $code = (int) wp_remote_retrieve_response_code($res);
         if ($code < 200 || $code >= 300) {
@@ -62,14 +62,14 @@ class SearchConsole {
         if ($old_url !== '' && $old_url !== $sitemap_url) {
             wp_remote_request($base . rawurlencode($old_url), $args + ['method' => 'DELETE']);
         }
-        return ['ok' => true, 'message' => __('Sitemap submitted to Google Search Console.', 'tqk-wpseo')];
+        return ['ok' => true, 'message' => __('Sitemap submitted to Google Search Console.', 'tqk-wp-seo')];
     }
 
     public static function sync(): array {
         $prop = trim((string) \TQK_WPSEO\Admin\Settings::get('gsc_property', ''));
         $token = trim((string) \TQK_WPSEO\Admin\Settings::get('gsc_token', ''));
         if ($prop === '' || $token === '') {
-            return ['ok' => false, 'error' => __('Add property + OAuth token first (guide below).', 'tqk-wpseo')];
+            return ['ok' => false, 'error' => __('Add property + OAuth token first (guide below).', 'tqk-wp-seo')];
         }
         $url = 'https://www.googleapis.com/webmasters/v3/sites/' . rawurlencode($prop) . '/searchAnalytics/query';
         $body = wp_json_encode([
@@ -84,12 +84,12 @@ class SearchConsole {
             'body' => $body,
         ]);
         if (is_wp_error($res)) {
-            return ['ok' => false, 'error' => __('Could not reach Google API.', 'tqk-wpseo')];
+            return ['ok' => false, 'error' => __('Could not reach Google API.', 'tqk-wp-seo')];
         }
         $code = (int) wp_remote_retrieve_response_code($res);
         $json = json_decode((string) wp_remote_retrieve_body($res), true);
         if ($code !== 200 || !is_array($json)) {
-            $msg = is_array($json) && isset($json['error']['message']) ? (string) $json['error']['message'] : __('Google API error (check token/property).', 'tqk-wpseo');
+            $msg = is_array($json) && isset($json['error']['message']) ? (string) $json['error']['message'] : __('Google API error (check token/property).', 'tqk-wp-seo');
             return ['ok' => false, 'error' => $msg];
         }
         $rows = [];
@@ -108,7 +108,7 @@ class SearchConsole {
         $data = ['synced_at' => gmdate('Y-m-d H:i'), 'rows' => $rows, 'totals' => ['clicks' => $clicks, 'impressions' => $impr]];
         update_option(self::DATA_OPTION, $data);
         self::snapshot($rows);
-        return ['ok' => true, 'message' => __('Synced from Google.', 'tqk-wpseo'), 'rows' => $rows, 'totals' => $data['totals']];
+        return ['ok' => true, 'message' => __('Synced from Google.', 'tqk-wp-seo'), 'rows' => $rows, 'totals' => $data['totals']];
     }
 
     public static function table(): string {
@@ -200,7 +200,7 @@ class SearchConsole {
     public static function history_html(string $query): string {
         $rows = self::history($query);
         if ($rows === []) {
-            return '<p>' . esc_html__('No history for this query yet — Sync daily builds it.', 'tqk-wpseo') . '</p>';
+            return '<p>' . esc_html__('No history for this query yet — Sync daily builds it.', 'tqk-wp-seo') . '</p>';
         }
         $html = '';
         $prev = null;
@@ -220,15 +220,15 @@ class SearchConsole {
             $prev = $r;
         }
         return '<div class="tqk-wpseo-table-wrap"><div class="table-responsive"><table class="tqk-wpseo-table"><thead><tr>'
-            . '<th>' . esc_html__('Day', 'tqk-wpseo') . '</th><th>' . esc_html__('Position (Δ)', 'tqk-wpseo') . '</th>'
-            . '<th>' . esc_html__('Clicks (Δ)', 'tqk-wpseo') . '</th><th>' . esc_html__('Impressions', 'tqk-wpseo') . '</th><th>CTR</th>'
+            . '<th>' . esc_html__('Day', 'tqk-wp-seo') . '</th><th>' . esc_html__('Position (Δ)', 'tqk-wp-seo') . '</th>'
+            . '<th>' . esc_html__('Clicks (Δ)', 'tqk-wp-seo') . '</th><th>' . esc_html__('Impressions', 'tqk-wp-seo') . '</th><th>CTR</th>'
             . '</tr></thead><tbody>' . $html . '</tbody></table></div></div>';
     }
 
     public static function table_html(): string {
         $st = self::status();
         if ($st['rows'] === []) {
-            return '<p>' . esc_html__('No performance data yet — connect above then Sync.', 'tqk-wpseo') . '</p>';
+            return '<p>' . esc_html__('No performance data yet — connect above then Sync.', 'tqk-wp-seo') . '</p>';
         }
         $rows = '';
         foreach ($st['rows'] as $r) {
@@ -242,9 +242,9 @@ class SearchConsole {
             );
         }
         return '<div class="tqk-wpseo-table-wrap"><div class="table-responsive"><table class="tqk-wpseo-table"><thead><tr>'
-            . '<th>' . esc_html__('Query', 'tqk-wpseo') . '</th><th>' . esc_html__('Clicks', 'tqk-wpseo') . '</th>'
-            . '<th>' . esc_html__('Impressions', 'tqk-wpseo') . '</th><th>CTR</th><th>' . esc_html__('Position', 'tqk-wpseo') . '</th>'
+            . '<th>' . esc_html__('Query', 'tqk-wp-seo') . '</th><th>' . esc_html__('Clicks', 'tqk-wp-seo') . '</th>'
+            . '<th>' . esc_html__('Impressions', 'tqk-wp-seo') . '</th><th>CTR</th><th>' . esc_html__('Position', 'tqk-wp-seo') . '</th>'
             . '</tr></thead><tbody>' . $rows . '</tbody></table></div></div>'
-            . '<p class="description">' . esc_html(sprintf(__('Total 28d: %d clicks · %d impressions · synced %s', 'tqk-wpseo'), (int) ($st['totals']['clicks'] ?? 0), (int) ($st['totals']['impressions'] ?? 0), (string) ($st['synced_at'] ?? ''))) . '</p>';
+            . '<p class="description">' . esc_html(sprintf(__('Total 28d: %d clicks · %d impressions · synced %s', 'tqk-wp-seo'), (int) ($st['totals']['clicks'] ?? 0), (int) ($st['totals']['impressions'] ?? 0), (string) ($st['synced_at'] ?? ''))) . '</p>';
     }
 }
