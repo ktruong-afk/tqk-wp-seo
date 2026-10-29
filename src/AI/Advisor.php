@@ -70,7 +70,7 @@ class Advisor {
         $words = preg_split('/\s+/u', trim($plain)) ?: [];
         $outline = [];
         foreach (array_slice(Text::headings($content), 0, 15) as $h) {
-            $outline[] = 'H' . (int) $h[0] . ': ' . mb_substr(trim(strip_tags((string) $h[1])), 0, 90);
+            $outline[] = 'H' . (int) $h[0] . ': ' . mb_substr(trim(wp_strip_all_tags((string) $h[1])), 0, 90);
         }
         $no_alt = [];
         foreach (Text::images($content) as $attrs) {

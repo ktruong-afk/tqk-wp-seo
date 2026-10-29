@@ -8,7 +8,7 @@ class Canonical {
 
     /** @return string Cleaned URL. */
     public static function clean(string $url): string {
-        $parts = parse_url($url);
+        $parts = wp_parse_url($url);
         if (!is_array($parts) || !isset($parts['scheme'], $parts['host'])) {
             return $url;
         }

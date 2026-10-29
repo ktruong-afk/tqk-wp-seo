@@ -115,10 +115,11 @@ class Vault {
             return;
         }
         foreach (array_merge((array) glob($base . '/' . $folder . '/*.jpg'), (array) glob($base . '/' . $folder . '/*.json')) as $f) {
-            @unlink((string) $f);
+            @wp_delete_file((string) $f);
         }
-        @unlink($base . '/' . $folder . '/index.php');
-        @rmdir($base . '/' . $folder);
+        @wp_delete_file($base . '/' . $folder . '/index.php');
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_rmdir
+            @rmdir($base . '/' . $folder);
     }
 
     /**
@@ -166,6 +167,7 @@ class Vault {
         // No copy kept by the browser: on a shared computer a logged-out
         // person must not see a cached screenshot.
         header('Cache-Control: no-store, private');
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_readfile
         readfile($path);
         exit;
     }
@@ -180,12 +182,13 @@ class Vault {
         $n = 0;
         foreach ((array) glob($base . '/*', GLOB_ONLYDIR) as $dir) {
             foreach (array_merge((array) glob($dir . '/*.jpg'), (array) glob($dir . '/*.json')) as $f) {
-                if (@filemtime((string) $f) < $limit && @unlink((string) $f)) {
+                if (@filemtime((string) $f) < $limit && @wp_delete_file((string) $f)) {
                     $n++;
                 }
             }
             if (count((array) glob($dir . '/*')) <= 1) {
-                @unlink($dir . '/index.php');
+                @wp_delete_file($dir . '/index.php');
+                // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_rmdir
                 @rmdir((string) $dir);
             }
         }
@@ -207,13 +210,15 @@ class Vault {
         $n = 0;
         foreach ((array) glob($old . '/*', GLOB_ONLYDIR) as $dir) {
             foreach (array_merge((array) glob($dir . '/*.jpg'), (array) glob($dir . '/*.json')) as $f) {
-                $n += @unlink((string) $f) ? 1 : 0;
+                $n += @wp_delete_file((string) $f) ? 1 : 0;
             }
-            @unlink($dir . '/index.php');
-            @rmdir((string) $dir);
+            @wp_delete_file($dir . '/index.php');
+            // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_rmdir
+                @rmdir((string) $dir);
         }
-        @unlink($old . '/index.php');
-        @rmdir($old);
+        @wp_delete_file($old . '/index.php');
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_rmdir
+            @rmdir($old);
         return $n;
     }
 

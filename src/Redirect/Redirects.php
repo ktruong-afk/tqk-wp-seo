@@ -25,8 +25,8 @@ class Redirects {
      * 301: a redirect chain. Query string is kept.
      */
     public static function target_path(string $target): string {
-        $path = '/' . ltrim((string) (parse_url($target, PHP_URL_PATH) ?: '/'), '/');
-        $query = (string) parse_url($target, PHP_URL_QUERY);
+        $path = '/' . ltrim((string) (wp_parse_url($target, PHP_URL_PATH) ?: '/'), '/');
+        $query = (string) wp_parse_url($target, PHP_URL_QUERY);
         if ($path !== '/' && !preg_match('/\.[a-z0-9]{2,5}$/i', $path) && function_exists('user_trailingslashit')) {
             $path = user_trailingslashit(rtrim($path, '/'));
         }
@@ -36,7 +36,7 @@ class Redirects {
     /** @return int Inserted ID (0 on invalid). */
     public static function add(string $source, string $target, int $type = 301): int {
         global $wpdb;
-        $source = self::normalize((string) parse_url($source, PHP_URL_PATH) ?: $source);
+        $source = self::normalize((string) wp_parse_url($source, PHP_URL_PATH) ?: $source);
         $target = trim($target);
         if (str_starts_with($target, '/')) {
             $target = self::target_path($target);
@@ -44,7 +44,7 @@ class Redirects {
         if ($source === '' || $target === '' || !in_array($type, [301, 302, 307, 410], true)) {
             return 0;
         }
-        if ($type !== 410 && self::normalize((string) parse_url($target, PHP_URL_PATH)) === $source && !str_contains($target, '://')) {
+        if ($type !== 410 && self::normalize((string) wp_parse_url($target, PHP_URL_PATH)) === $source && !str_contains($target, '://')) {
             return 0; // Never create loops.
         }
         Monitor404::resolve($source);
@@ -60,8 +60,10 @@ class Redirects {
 
     public static function get(string $source) {
         global $wpdb;
+        $table = self::table();
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared
         return $wpdb->get_row($wpdb->prepare(
-            'SELECT * FROM ' . self::table() . ' WHERE source = %s AND active = 1',
+            "SELECT * FROM {$table} WHERE source = %s AND active = 1",
             self::normalize($source)
         ));
     }
@@ -69,7 +71,9 @@ class Redirects {
     /** @return object[] */
     public static function all(int $limit = 200): array {
         global $wpdb;
-        return $wpdb->get_results('SELECT * FROM ' . self::table() . ' ORDER BY hits DESC LIMIT ' . $limit);
+        $table = self::table();
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared
+        return (array) $wpdb->get_results($wpdb->prepare("SELECT * FROM {$table} ORDER BY hits DESC LIMIT %d", $limit));
     }
 
     public static function delete(int $id): void {
@@ -82,7 +86,7 @@ class Redirects {
     }
 
     public static function request_path(): string {
-        return self::normalize((string) parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH));
+        return self::normalize((string) wp_parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH));
     }
 
     public static function handle(): void {

@@ -145,7 +145,7 @@ class Sitemap {
 
     public static function dispatch(): void {
         $slug = self::slug();
-        $path = (string) parse_url((string) ($_SERVER['REQUEST_URI'] ?? '/'), PHP_URL_PATH);
+        $path = (string) wp_parse_url((string) ($_SERVER['REQUEST_URI'] ?? '/'), PHP_URL_PATH);
         $private = self::match_private($path, $slug);
         if ($private !== '') {
             self::output($private);

@@ -79,7 +79,7 @@ class Importer {
         $ours = ['title' => '%title%', 'sitename' => '%site_name%', 'sitedesc' => '%site_description%', 'excerpt' => '%excerpt%',
             'excerpt_only' => '%excerpt%', 'category' => '%category%', 'primary_category' => '%category%', 'date' => '%date%',
             'modified' => '%modified%', 'name' => '%author%', 'author' => '%author%', 'post_author' => '%author%',
-            'sep' => $sep, 'page' => '', 'pagenumber' => '', 'pagetotal' => '', 'currentyear' => date('Y'), 'currentmonth' => date_i18n('F'),
+            'sep' => $sep, 'page' => '', 'pagenumber' => '', 'pagetotal' => '', 'currentyear' => gmdate('Y'), 'currentmonth' => date_i18n('F'),
             'seo_title' => '%title%', 'seo_description' => '%excerpt%'];
         $re = $source === 'yoast' ? '/%%([a-z0-9_]+)%%/i' : '/%([a-z0-9_]+)(?:\([^)]*\))?%/i';
         $out = (string) preg_replace_callback($re, static function ($m) use ($ours) {
@@ -215,6 +215,7 @@ class Importer {
             "SELECT DISTINCT post_id FROM {$wpdb->postmeta} WHERE meta_key IN ($in) AND meta_value <> '' ORDER BY post_id ASC LIMIT %d OFFSET %d",
             ...array_merge($keys, [$limit, $offset])
         );
+        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return array_map('intval', (array) $wpdb->get_col($sql));
     }
 

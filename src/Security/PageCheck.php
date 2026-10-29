@@ -44,7 +44,7 @@ class PageCheck {
         if (strpos($url, '//') === 0) {
             $url = 'https:' . $url;
         }
-        $h = strtolower((string) parse_url($url, PHP_URL_HOST));
+        $h = strtolower((string) wp_parse_url($url, PHP_URL_HOST));
         return $h === '' ? strtolower($home_host) : $h;
     }
 
@@ -74,7 +74,7 @@ class PageCheck {
             $host = self::host_of($src, $home_host);
             $bare = (string) preg_replace('/^www\./', '', $host);
             if ($bare === $home) {
-                $path = (string) parse_url($src, PHP_URL_PATH);
+                $path = (string) wp_parse_url($src, PHP_URL_PATH);
                 if (preg_match('#/wp-content/plugins/([^/]+)/#', $path, $pm)) {
                     $origin = 'plugin:' . $pm[1];
                 } elseif (preg_match('#/wp-content/themes/([^/]+)/#', $path, $tm)) {
@@ -220,7 +220,7 @@ class PageCheck {
      */
     public static function diff(string $a, string $b, string $home_host, bool $full = true): array {
         $why = [];
-        $title = static fn($h) => preg_match('/<title[^>]*>(.*?)<\/title>/is', $h, $m) ? trim(html_entity_decode(strip_tags($m[1]), ENT_QUOTES, 'UTF-8')) : '';
+        $title = static fn($h) => preg_match('/<title[^>]*>(.*?)<\/title>/is', $h, $m) ? trim(html_entity_decode(wp_strip_all_tags($m[1]), ENT_QUOTES, 'UTF-8')) : '';
         if ($full && $title($a) !== $title($b)) {
             $why[] = sprintf(__('another title: "%s"', 'tqk-wp-seo'), mb_substr($title($a), 0, 80));
         }
@@ -233,8 +233,8 @@ class PageCheck {
             $why[] = __('gambling / pharma links', 'tqk-wp-seo');
         }
         if ($full) {
-            $la = strlen(trim(strip_tags((string) preg_replace('/<(script|style)\b.*?<\/\1>/is', '', $a))));
-            $lb = max(1, strlen(trim(strip_tags((string) preg_replace('/<(script|style)\b.*?<\/\1>/is', '', $b)))));
+            $la = strlen(trim(wp_strip_all_tags((string) preg_replace('/<(script|style)\b.*?<\/\1>/is', '', $a))));
+            $lb = max(1, strlen(trim(wp_strip_all_tags((string) preg_replace('/<(script|style)\b.*?<\/\1>/is', '', $b)))));
             if (abs($la - $lb) / $lb > 0.5 && abs($la - $lb) > 3000) {
                 $why[] = sprintf(__('%d%% more or less text', 'tqk-wp-seo'), (int) round(100 * abs($la - $lb) / $lb));
             }
@@ -279,7 +279,7 @@ class PageCheck {
 
     /** Runs the whole check for one post. */
     public static function run(int $post_id): array {
-        $home_host = (string) parse_url(home_url('/'), PHP_URL_HOST);
+        $home_host = (string) wp_parse_url(home_url('/'), PHP_URL_HOST);
         $public = get_post_status($post_id) === 'publish';
         $url = $public ? (string) get_permalink($post_id) : (string) get_preview_post_link($post_id);
         $v = ['admin' => self::fetch($url, ['User-Agent' => self::UA_BROWSER, 'Cookie' => self::login_cookies()])];

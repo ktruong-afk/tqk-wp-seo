@@ -117,7 +117,7 @@ class Engine {
         if (in_array($post_id, self::system_ids(), true)) {
             return 0; // cart / checkout / account: app screens, not content
         }
-        $home_host = strtolower((string) parse_url(home_url('/'), PHP_URL_HOST));
+        $home_host = strtolower((string) wp_parse_url(home_url('/'), PHP_URL_HOST));
         $html = self::content_for_links($post);
         $n = 0;
         foreach (array_unique(Text::links($html)) as $href) {
@@ -125,7 +125,7 @@ class Engine {
             if ($href === '' || str_starts_with($href, '#') || preg_match('#^(mailto|tel|javascript|sms|zalo):#i', $href)) {
                 continue;
             }
-            $host = strtolower((string) parse_url($href, PHP_URL_HOST));
+            $host = strtolower((string) wp_parse_url($href, PHP_URL_HOST));
             $internal = $host === '' || $host === $home_host;
             $target = 0;
             if ($internal) {
@@ -198,9 +198,9 @@ class Engine {
     public static function check_links(int $offset = 0, int $limit = self::CHECK_BATCH): array {
         global $wpdb;
         // target_id = 0 covers both: external links never resolve to a post.
-        $rows = $wpdb->get_results(
-            'SELECT * FROM ' . self::table() . ' WHERE target_id = 0 ORDER BY id ASC LIMIT ' . max(0, $offset) . ', ' . max(1, $limit)
-        );
+        $table = self::table();
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared
+        $rows = $wpdb->get_results($wpdb->prepare("SELECT * FROM {$table} WHERE target_id = 0 ORDER BY id ASC LIMIT %d, %d", max(0, $offset), max(1, $limit)));
         $checked = 0;
         $broken = 0;
         foreach ((array) $rows as $row) {
@@ -258,7 +258,10 @@ class Engine {
         global $wpdb;
         $ids = array_map('intval', (array) get_posts(['post_type' => self::orphan_types(), 'post_status' => ['publish'], 'numberposts' => 5000, 'fields' => 'ids']));
         $linked = [];
-        foreach ((array) $wpdb->get_results('SELECT DISTINCT target_id FROM ' . self::table()) as $r) {
+        $table = self::table();
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared
+        $distinct = $wpdb->get_results("SELECT DISTINCT target_id FROM {$table}");
+        foreach ((array) $distinct as $r) {
             if ((int) ($r->target_id ?? 0) > 0) {
                 $linked[] = (int) $r->target_id;
             }
@@ -280,7 +283,9 @@ class Engine {
     /** @return object[] Broken links, newest first. */
     public static function broken(int $limit = 50): array {
         global $wpdb;
-        return $wpdb->get_results('SELECT * FROM ' . self::table() . ' WHERE is_broken = 1 ORDER BY id DESC LIMIT ' . max(1, $limit));
+        $table = self::table();
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared
+        return (array) $wpdb->get_results($wpdb->prepare("SELECT * FROM {$table} WHERE is_broken = 1 ORDER BY id DESC LIMIT %d", max(1, $limit)));
     }
 
     /** @return array [incoming, outgoing]. */

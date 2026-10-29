@@ -17,8 +17,8 @@ class PageAudit {
      * nothing changed since last audit (minimalist: no refetch until save).
      */
     public static function audit_url(string $url): array {
-        $home_host = strtolower((string) parse_url(home_url('/'), PHP_URL_HOST));
-        $parts = parse_url(trim($url));
+        $home_host = strtolower((string) wp_parse_url(home_url('/'), PHP_URL_HOST));
+        $parts = wp_parse_url(trim($url));
         if (!is_array($parts) || !isset($parts['host']) || strcasecmp((string) $parts['host'], $home_host) !== 0) {
             return ['ok' => false, 'error' => __('Only URLs on this site can be audited.', 'tqk-wp-seo')];
         }
@@ -173,7 +173,7 @@ class PageAudit {
         }
         $head = $m[1];
         if (preg_match('/<title[^>]*>(.*?)<\/title>/is', $head, $t)) {
-            $out['title'] = trim(html_entity_decode(strip_tags($t[1]), ENT_QUOTES, 'UTF-8'));
+            $out['title'] = trim(html_entity_decode(wp_strip_all_tags($t[1]), ENT_QUOTES, 'UTF-8'));
         }
         if (preg_match_all('/<meta\b([^>]*)>/i', $head, $mm)) {
             foreach ($mm[1] as $attrs) {

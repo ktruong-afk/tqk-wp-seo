@@ -89,15 +89,15 @@ class Scan {
             return [];
         }
         foreach ($m as $a) {
-            $host = strtolower((string) parse_url($a[1], PHP_URL_HOST));
+            $host = strtolower((string) wp_parse_url($a[1], PHP_URL_HOST));
             if ($host === '' || $host === strtolower($home_host)) {
                 continue;
             }
-            $hay = mb_strtolower(strip_tags($a[2]) . ' ' . $a[1]);
+            $hay = mb_strtolower(wp_strip_all_tags($a[2]) . ' ' . $a[1]);
             foreach (self::spam_words() as $w) {
                 // Whole words only: "sex" must not hit "Essex" or "unisex".
                 if (preg_match('/(?<![\p{L}\p{N}])' . preg_quote($w, '/') . '(?![\p{L}\p{N}])/u', $hay)) {
-                    $out[] = $host . ' — ' . mb_substr(trim(strip_tags($a[2])), 0, 60);
+                    $out[] = $host . ' — ' . mb_substr(trim(wp_strip_all_tags($a[2])), 0, 60);
                     break;
                 }
             }
@@ -113,7 +113,7 @@ class Scan {
      * @return string[] Reasons; [] when both look the same.
      */
     public static function compare_cloak(string $as_bot, string $as_user, string $home_host): array {
-        $title = static fn($h) => preg_match('/<title[^>]*>(.*?)<\/title>/is', $h, $m) ? trim(html_entity_decode(strip_tags($m[1]), ENT_QUOTES, 'UTF-8')) : '';
+        $title = static fn($h) => preg_match('/<title[^>]*>(.*?)<\/title>/is', $h, $m) ? trim(html_entity_decode(wp_strip_all_tags($m[1]), ENT_QUOTES, 'UTF-8')) : '';
         $ext = static function ($h) use ($home_host) {
             $hosts = [];
             if (preg_match_all('/<a\b[^>]*href\s*=\s*["\']https?:\/\/([^\/"\'?#]+)/i', $h, $m)) {
@@ -139,8 +139,8 @@ class Scan {
         if (count($bot_spam) > count($user_spam)) {
             $why[] = __('Spam links (gambling/pharma) only in the Googlebot version.', 'tqk-wp-seo');
         }
-        $len_b = strlen(strip_tags($as_bot));
-        $len_u = max(1, strlen(strip_tags($as_user)));
+        $len_b = strlen(wp_strip_all_tags($as_bot));
+        $len_u = max(1, strlen(wp_strip_all_tags($as_user)));
         if (abs($len_b - $len_u) / $len_u > 0.5 && abs($len_b - $len_u) > 3000) {
             $why[] = sprintf(__('Googlebot text is %d%% different in length.', 'tqk-wp-seo'), (int) round(100 * abs($len_b - $len_u) / $len_u));
         }
@@ -417,7 +417,7 @@ class Scan {
     }
 
     private static function task_cloak(array &$s, string $url): void {
-        $host = (string) parse_url(home_url('/'), PHP_URL_HOST);
+        $host = (string) wp_parse_url(home_url('/'), PHP_URL_HOST);
         $get = static fn(string $ua) => wp_remote_get($url, ['timeout' => 20, 'redirection' => 3, 'headers' => ['User-Agent' => $ua, 'Cache-Control' => 'no-cache']]);
         $bot = $get('Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)');
         $user = $get('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36');

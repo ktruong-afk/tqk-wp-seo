@@ -51,7 +51,7 @@ class Text {
     }
 
     public static function words(string $s): array {
-        $s = trim(strip_tags($s));
+        $s = trim(wp_strip_all_tags($s));
         if ($s === '') {
             return [];
         }
@@ -61,7 +61,7 @@ class Text {
     public static function plain(string $html): string {
         $html = (string) preg_replace('/<(script|style)[^>]*>.*?<\/\1>/is', ' ', $html);
         $html = str_replace('><', '> <', $html);
-        return trim(html_entity_decode(strip_tags($html), ENT_QUOTES, 'UTF-8'));
+        return trim(html_entity_decode(wp_strip_all_tags($html), ENT_QUOTES, 'UTF-8'));
     }
 
     /** @return array List of [level, text]. */

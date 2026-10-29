@@ -457,10 +457,11 @@ class LiveAudit {
             return;
         }
         foreach (array_merge((array) glob($path . '/*.jpg'), (array) glob($path . '/*.json')) as $f) {
-            @unlink((string) $f);
+            @wp_delete_file((string) $f);
         }
-        @unlink($path . '/index.php');
-        @rmdir($path);
+        @wp_delete_file($path . '/index.php');
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_rmdir
+            @rmdir($path);
     }
 
     /** File name stem of a queued page: post ID, or 'home' for the blog homepage. */

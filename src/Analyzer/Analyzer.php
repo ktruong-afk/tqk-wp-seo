@@ -271,7 +271,7 @@ class Analyzer {
 
     /** @return array [internal, external, unresolved[]]. */
     public static function link_stats(array $hrefs): array {
-        $home_host = (string) parse_url(home_url('/'), PHP_URL_HOST);
+        $home_host = (string) wp_parse_url(home_url('/'), PHP_URL_HOST);
         $internal = 0;
         $external = 0;
         $unresolved = [];
@@ -280,7 +280,7 @@ class Analyzer {
             if ($href === '' || str_starts_with($href, '#')) {
                 continue;
             }
-            $host = (string) parse_url($href, PHP_URL_HOST);
+            $host = (string) wp_parse_url($href, PHP_URL_HOST);
             $is_internal = $host === '' || strcasecmp($host, $home_host) === 0;
             if (!$is_internal) {
                 $external++;

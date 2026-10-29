@@ -141,9 +141,9 @@ class SearchConsole {
     /** @return string[] Distinct tracked queries (newest first). */
     public static function queries(int $limit = 50): array {
         global $wpdb;
-        $rows = $wpdb->get_results(
-            'SELECT DISTINCT query FROM ' . self::table() . ' ORDER BY query ASC LIMIT ' . max(1, $limit)
-        );
+        $table = self::table();
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared
+        $rows = $wpdb->get_results($wpdb->prepare("SELECT DISTINCT query FROM {$table} ORDER BY query ASC LIMIT %d", max(1, $limit)));
         $out = [];
         foreach ((array) $rows as $r) {
             $q = (string) ($r->query ?? '');
@@ -157,9 +157,10 @@ class SearchConsole {
     /** @return array Rows for a query: [day, clicks, impressions, ctr, position]. */
     public static function history(string $query, int $days = 30): array {
         global $wpdb;
+        $table = self::table();
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared
         $rows = $wpdb->get_results($wpdb->prepare(
-            'SELECT day, clicks, impressions, ctr, position FROM ' . self::table()
-            . ' WHERE query = %s ORDER BY day DESC LIMIT %d',
+            "SELECT day, clicks, impressions, ctr, position FROM {$table} WHERE query = %s ORDER BY day DESC LIMIT %d",
             $query,
             max(1, $days)
         ));

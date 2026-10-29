@@ -58,7 +58,8 @@ class Monitor404 {
         if ($total <= self::LIMIT) {
             return;
         }
-        $old = $wpdb->get_results("SELECT id FROM {$table} ORDER BY last_hit ASC LIMIT " . ($total - self::LIMIT));
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared
+        $old = $wpdb->get_results($wpdb->prepare("SELECT id FROM {$table} ORDER BY last_hit ASC LIMIT %d", $total - self::LIMIT));
         foreach ($old as $row) {
             $wpdb->delete($table, ['id' => $row->id]);
         }
@@ -67,7 +68,9 @@ class Monitor404 {
     /** @return object[] Hottest first. */
     public static function all(int $limit = 200): array {
         global $wpdb;
-        return $wpdb->get_results('SELECT * FROM ' . self::table() . ' ORDER BY hits DESC LIMIT ' . $limit);
+        $table = self::table();
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared
+        return (array) $wpdb->get_results($wpdb->prepare("SELECT * FROM {$table} ORDER BY hits DESC LIMIT %d", $limit));
     }
 
     public static function delete(int $id): void {
@@ -78,6 +81,6 @@ class Monitor404 {
     /** A redirect now handles this URL: the miss is resolved, drop it. */
     public static function resolve(string $url): void {
         global $wpdb;
-        $wpdb->delete(self::table(), ['url' => Redirects::normalize((string) (parse_url($url, PHP_URL_PATH) ?: $url))]);
+        $wpdb->delete(self::table(), ['url' => Redirects::normalize((string) (wp_parse_url($url, PHP_URL_PATH) ?: $url))]);
     }
 }

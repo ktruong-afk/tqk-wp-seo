@@ -1402,7 +1402,7 @@ class Pages {
             return;
         }
         $sm = \TQK_WPSEO\Sitemap\Sitemap::class;
-        $file = static fn(string $url) => sprintf('<a href="%s" target="_blank" rel="noopener">%s</a>', esc_url($url), esc_html(basename((string) parse_url($url, PHP_URL_PATH))));
+        $file = static fn(string $url) => sprintf('<a href="%s" target="_blank" rel="noopener">%s</a>', esc_url($url), esc_html(basename((string) wp_parse_url($url, PHP_URL_PATH))));
         $rows = [];
         foreach ($sm::maps() as $type => $label) {
             $rows[] = [$label, (string) count($sm::items($type)), $file($sm::map_url($type))];

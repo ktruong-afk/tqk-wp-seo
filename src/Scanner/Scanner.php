@@ -104,8 +104,10 @@ class Scanner {
 
     private static function finish(array $job): void {
         global $wpdb;
+        $table = self::table();
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared
         $rows = $wpdb->get_results($wpdb->prepare(
-            'SELECT * FROM ' . self::table() . ' WHERE job_id = %s',
+            "SELECT * FROM {$table} WHERE job_id = %s",
             $job['id']
         ));
         $group_sums = [];

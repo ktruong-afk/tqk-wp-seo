@@ -593,10 +593,11 @@ class ImageFix {
         if ($path !== '' && is_dir($path)) {
             foreach ((array) glob($path . '/*') as $f) {
                 if (preg_match('/\.(jpe?g|png|webp|gif|avif)$/i', (string) $f)) {
-                    @unlink((string) $f);
+                    @wp_delete_file((string) $f);
                 }
             }
-            @unlink($path . '/index.php');
+            @wp_delete_file($path . '/index.php');
+            // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_rmdir
             @rmdir($path);
         }
         self::save_plan($scope, []);
